@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+src/apiEurostat/__init__.py
+src/apiEurostat/download_eurostat.py
+src/apiEurostat/transform_reponse.py
+src/apiEurostat.egg-info/PKG-INFO
+src/apiEurostat.egg-info/SOURCES.txt
+src/apiEurostat.egg-info/dependency_links.txt
+src/apiEurostat.egg-info/top_level.txt
