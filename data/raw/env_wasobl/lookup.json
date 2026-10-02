@@ -1,0 +1,79 @@
+{
+  "freq": {
+    "A": "Annual"
+  },
+  "wst_oper": {
+    "GEN": "Waste generated",
+    "COL_SEP": "Separate collection",
+    "RCV_E": "Recovery - energy recovery (R1)",
+    "RCV_OTH": "Recovery - other",
+    "RCY_PRP_REU": "Recycling and preparing for reuse",
+    "RCY": "Recycling",
+    "PRP_REU": "Preparing for reuse"
+  },
+  "waste": {
+    "TOTAL": "Total waste",
+    "W063_122_MUN": "Metal wastes - municipal",
+    "W063_122_MUN_INC": "Metal wastes - metals separated after incineration of municipal waste",
+    "W071_MUN": "Glass wastes - municipal",
+    "W072_MUN": "Paper and cardboard wastes - municipal",
+    "W074_MUN": "Plastic wastes - municipal",
+    "W075_MUN": "Wood wastes - municipal",
+    "W076_MUN": "Textile wastes - municipal",
+    "W082_84_MUN": "Electrical and electronic equipment  - municipal",
+    "W0841_MUN": "Batteries and accumulators wastes - municipal",
+    "W091_092_MUN": "Bio-waste - municipal",
+    "W091_092_MUN_S": "Bio-waste separated and recycled at source - municipal",
+    "W1011_MUN": "Bulky waste",
+    "W1011_1021_MUN": "Mixed wastes - municipal",
+    "MUN_OTH": "Other municipal waste"
+  },
+  "unit": {
+    "KG_HAB": "Kilograms per capita",
+    "THS_T": "Thousand tonnes",
+    "PC": "Percentage"
+  },
+  "geo": {
+    "BE": "Belgium",
+    "BG": "Bulgaria",
+    "CZ": "Czechia",
+    "DK": "Denmark",
+    "DE": "Germany",
+    "EE": "Estonia",
+    "IE": "Ireland",
+    "EL": "Greece",
+    "ES": "Spain",
+    "FR": "France",
+    "HR": "Croatia",
+    "IT": "Italy",
+    "CY": "Cyprus",
+    "LV": "Latvia",
+    "LT": "Lithuania",
+    "LU": "Luxembourg",
+    "HU": "Hungary",
+    "MT": "Malta",
+    "NL": "Netherlands",
+    "AT": "Austria",
+    "PL": "Poland",
+    "PT": "Portugal",
+    "RO": "Romania",
+    "SI": "Slovenia",
+    "SK": "Slovakia",
+    "FI": "Finland",
+    "SE": "Sweden",
+    "IS": "Iceland",
+    "NO": "Norway",
+    "CH": "Switzerland",
+    "BA": "Bosnia and Herzegovina",
+    "ME": "Montenegro",
+    "AL": "Albania",
+    "RS": "Serbia",
+    "TR": "Türkiye"
+  },
+  "time": {
+    "2020": "2020",
+    "2021": "2021",
+    "2022": "2022",
+    "2023": "2023"
+  }
+}

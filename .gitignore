@@ -21,3 +21,6 @@ renv/staging/
 # OS/editor
 .DS_Store
 Thumbs.db
+
+# raw data: re-downloadable via scripts/download_and_save_eurostat_raw_sources.py
+data/raw/**/*.parquet

@@ -1,0 +1,68 @@
+{
+  "freq": {
+    "A": "Annual"
+  },
+  "waste": {
+    "W1501": "Packaging",
+    "W150101": "Paper and cardboard packaging",
+    "W150102": "Plastic packaging",
+    "W150103": "Wooden packaging",
+    "W150104": "Metallic packaging",
+    "W15010401": "Aluminium packaging",
+    "W15010402": "Steel packaging",
+    "W150107": "Glass packaging",
+    "W150199": "Other packaging"
+  },
+  "unit": {
+    "RT_T2008": "Rate (2008 target)",
+    "RT_TGT2025": "Rate (2025 target and onwards)"
+  },
+  "geo": {
+    "BE": "Belgium",
+    "BG": "Bulgaria",
+    "CZ": "Czechia",
+    "DK": "Denmark",
+    "DE": "Germany",
+    "EE": "Estonia",
+    "IE": "Ireland",
+    "EL": "Greece",
+    "ES": "Spain",
+    "FR": "France",
+    "HR": "Croatia",
+    "IT": "Italy",
+    "CY": "Cyprus",
+    "LV": "Latvia",
+    "LT": "Lithuania",
+    "LU": "Luxembourg",
+    "HU": "Hungary",
+    "MT": "Malta",
+    "NL": "Netherlands",
+    "AT": "Austria",
+    "PL": "Poland",
+    "PT": "Portugal",
+    "RO": "Romania",
+    "SI": "Slovenia",
+    "SK": "Slovakia",
+    "FI": "Finland",
+    "SE": "Sweden",
+    "IS": "Iceland",
+    "LI": "Liechtenstein",
+    "NO": "Norway"
+  },
+  "time": {
+    "2010": "2010",
+    "2011": "2011",
+    "2012": "2012",
+    "2013": "2013",
+    "2014": "2014",
+    "2015": "2015",
+    "2016": "2016",
+    "2017": "2017",
+    "2018": "2018",
+    "2019": "2019",
+    "2020": "2020",
+    "2021": "2021",
+    "2022": "2022",
+    "2023": "2023"
+  }
+}

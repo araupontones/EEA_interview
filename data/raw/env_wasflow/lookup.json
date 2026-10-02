@@ -1,0 +1,63 @@
+{
+  "freq": {
+    "A": "Annual"
+  },
+  "wst_oper": {
+    "TRT": "Waste treatment",
+    "DSP_L": "Disposal - landfill (D1, D5, D12)",
+    "DSP_I": "Disposal - incineration (D10)",
+    "DSP_OTH": "Disposal - other (D2-D4, D6-D7)",
+    "RCV_E": "Recovery - energy recovery (R1)",
+    "RCV_R": "Recovery - recycling",
+    "RCV_B": "Recovery - backfilling"
+  },
+  "stk_flow": {
+    "IMP": "Imports",
+    "EXP": "Exports",
+    "BAL_TRD": "Trade balance",
+    "FLOW_GRS": "Gross flow",
+    "FLOW_NET": "Net flow"
+  },
+  "unit": {
+    "T": "Tonne"
+  },
+  "geo": {
+    "BE": "Belgium",
+    "BG": "Bulgaria",
+    "CZ": "Czechia",
+    "DK": "Denmark",
+    "DE": "Germany",
+    "EE": "Estonia",
+    "IE": "Ireland",
+    "EL": "Greece",
+    "ES": "Spain",
+    "FR": "France",
+    "HR": "Croatia",
+    "IT": "Italy",
+    "CY": "Cyprus",
+    "LV": "Latvia",
+    "LT": "Lithuania",
+    "LU": "Luxembourg",
+    "HU": "Hungary",
+    "MT": "Malta",
+    "NL": "Netherlands",
+    "AT": "Austria",
+    "PL": "Poland",
+    "PT": "Portugal",
+    "RO": "Romania",
+    "SI": "Slovenia",
+    "SK": "Slovakia",
+    "FI": "Finland",
+    "SE": "Sweden",
+    "UK": "United Kingdom"
+  },
+  "time": {
+    "2010": "2010",
+    "2012": "2012",
+    "2014": "2014",
+    "2016": "2016",
+    "2018": "2018",
+    "2020": "2020",
+    "2022": "2022"
+  }
+}

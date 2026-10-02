@@ -1,7 +1,12 @@
 #functions to transform JSON file containing Eurostat data into a pandas dataframe. and to create lookup tables for the dimensions of the data.
 
+from datetime import datetime, timezone
 from pyjstat import pyjstat
 from pathlib import Path
+import json
+from pathlib import Path
+
+
 
 
 def print_data_keys(data):
@@ -19,6 +24,28 @@ def print_data_keys(data):
     for key in data.keys():
          print(f"{key}: {data[key]}")
 
+
+#-----------------------------------------------------------------------
+
+def get_metadata(data):
+    """
+    Extract metadata from the Eurostat data.
+    
+    Parameters:
+    data (dict): The JSON object containing Eurostat data.
+    
+    Returns:
+    dict: A dictionary containing the metadata.
+    """
+    metadata = {
+        "label": data.get('label'),
+        "source": data.get('source'),
+        "updated": data.get('updated'),
+        "dataSource": data['extension']['id'],
+        "retrieved_at": datetime.now(timezone.utc).isoformat()
+    }
+    
+    return metadata 
 
 #-----------------------------------------------------------------------
 
@@ -111,7 +138,6 @@ def create_output_directory(datasetCode, path = 'c:/repositaries/4.personal/EEA_
     return output_dir
 
 #-----------------------------------------------------------------------
-from pathlib import Path
 
 def save_parquet(object, output_dir, file_name):
     """
@@ -137,3 +163,21 @@ def save_parquet(object, output_dir, file_name):
 
     print(f"Saved: {file_path}")
 
+    #-----------------------------------------------------------------------
+
+def save_json(obj, path):
+    path = Path(path)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+
+#-----------------------------------------------------------------------
+
+def save_raw_data(output_dir, df= None, lookups = None, meta = None ):
+    folder = Path(output_dir)
+    
+    if df is not None:
+        df.to_parquet(folder / "df.parquet", index=False)
+    if lookups is not None:
+        save_json(lookups, folder / "lookup.json")
+    if meta is not None:
+        save_json(meta, folder / "metadata.json")

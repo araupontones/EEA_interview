@@ -1,0 +1,7 @@
+{
+  "label": "Generation of waste by waste category, hazardousness and NACE Rev. 2 activity",
+  "source": "ESTAT",
+  "updated": "2025-09-22T23:00:00+0200",
+  "dataSource": "ENV_WASGEN",
+  "retrieved_at": "2026-10-02T15:02:21.195652+00:00"
+}
