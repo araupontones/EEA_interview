@@ -1,0 +1,9 @@
+source_code,label,retrieved_at,source_updated,n_rows,n_dims,dims,status
+demo_gind,Population change - Demographic balance and crude rates at national level,2026-10-02T15:02:23.364865+00:00,2026-09-30T23:00:00+0200,,4,"freq, indic_de, geo, time",complete
+env_waseleeos,"Waste electrical and electronic equipment (WEEE) by waste management operations - open scope, 6 product categories (from 2018 onwards)",2026-10-02T15:01:54.945715+00:00,2026-04-08T11:00:00+0200,,6,"freq, waste, wst_oper, unit, geo, time",complete
+env_wasflow,"Management of waste excluding major mineral waste, by waste management operations and waste flow",2026-10-02T15:01:52.850060+00:00,2024-11-28T23:00:00+0100,,6,"freq, wst_oper, stk_flow, unit, geo, time",complete
+env_wasgen,"Generation of waste by waste category, hazardousness and NACE Rev. 2 activity",2026-10-02T15:02:21.195652+00:00,2025-09-22T23:00:00+0200,,7,"freq, unit, hazard, nace_r2, waste, geo, time",complete
+env_wasmun,Municipal waste by waste management operations,2026-10-02T15:01:50.063444+00:00,2026-03-30T23:00:00+0200,,5,"freq, wst_oper, unit, geo, time",complete
+env_wasobl,Municipal waste reporting obligation,2026-10-02T15:01:52.068166+00:00,2026-03-27T11:00:00+0100,,6,"freq, wst_oper, waste, unit, geo, time",complete
+env_waspacr,"Recycling rates of packaging waste for monitoring compliance with policy targets, by type of packaging",2026-10-02T15:01:52.438746+00:00,2026-05-11T23:00:00+0200,,5,"freq, waste, unit, geo, time",complete
+nama_10_pc,Gross domestic product (GDP) and main components per capita - annual data,2026-10-02T15:02:22.894069+00:00,2026-10-02T11:00:00+0200,,5,"freq, unit, na_item, geo, time",complete
