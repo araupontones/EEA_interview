@@ -48,6 +48,15 @@ def missing_share(df, cols=None, max_share=0.0, severity="warning"):
     )
 
 
+def missing_share_2(df, max_share = 0, severity = 'warning'):
+    '''Columns with missing values'''
+    miss = [f"{m}: {df[m].isna().mean():.2%}"
+            for m in df.columns
+            if df[m].isna().mean() > max_share]
+    
+    return CheckResult("missing_share_2", severity, not miss, len(miss), str(miss))
+   
+
 def constant_columns(df, severity="info"):
     """Columns with a single distinct value (including all-missing columns)."""
     if df.empty:
