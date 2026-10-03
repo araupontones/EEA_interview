@@ -60,11 +60,7 @@ def response_to_dataframe(data):
     pd.DataFrame: A pandas DataFrame containing the Eurostat data.
     """
 
-    print(pyjstat)
-    print(type(pyjstat))
-    print(hasattr(pyjstat, "from_json_stat"))
-
-    # Convert the JSON object to a pandas DataFrame
+       # Convert the JSON object to a pandas DataFrame
     df = pyjstat.from_json_stat(data, naming = "id")[0]
 
     return df
