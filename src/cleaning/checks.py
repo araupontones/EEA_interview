@@ -37,18 +37,8 @@ def numeric_dtypes(df, cols=("time", "value"), severity="warning"):
     return CheckResult("numeric_dtypes", severity, not detail, len(detail), str(detail))
 
 
-def missing_share(df, cols=None, max_share=0.0, severity="warning"):
-    """Share of missing values per column; fails if any column exceeds max_share."""
-    cols = list(cols) if cols is not None else list(df.columns)
-    shares = df[cols].isna().mean().round(3)
-    over = shares[shares > max_share]
-    return CheckResult(
-        "missing_share", severity, over.empty, shares,
-        f"max_share={max_share}; all={shares.to_dict()}; over={over.to_dict()}",
-    )
 
-
-def missing_share_2(df, max_share = 0, severity = 'warning'):
+def missing_share(df, max_share = 0, severity = 'warning'):
     '''Columns with missing values'''
     miss = [f"{m}: {df[m].isna().mean():.2%}"
             for m in df.columns
