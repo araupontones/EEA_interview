@@ -13,15 +13,15 @@
 
 ## Data sources
 
-Total Waste ENV_WASGEN, NAMA_10_PC, DEMO_GIND
-waste generation (kg per capita) ENV_WASMUN
+env_wasmun: Total Waste ENV_WASGEN, NAMA_10_PC, DEMO_GIND
 Population (DEMO_GIND)
 Municipal waste management
 Rates of recycling
 Packaging waste
 
-cei_pc031 : Generation of municipal waste per capita
-cei_wm011: recycling rates
+env_wasmun: waste generation (kg per capita)
+
+env_wasobl,Municipal waste reporting obligation (by type of material)
 
 https://www.eea.europa.eu/en/topics/in-depth/waste-and-recycling/country-profiles-on-waste-prevention-2025/de-waste-prevention-factsheet-final.pdf/@@download/file
 
