@@ -12,7 +12,7 @@ def download_eurostat(datasetCode, host_Url =  "https://ec.europa.eu/eurostat/ap
                       response_type = "data",
                       format = "JSON",
                       lang= "EN",
-                      geoLevel = "country",
+                      geoLevel = ("country", "aggregate"),
                       sinceTimePeriod =  "2010",
                       untilTimePeriod = '2026'                      
                       ):
@@ -29,7 +29,9 @@ def download_eurostat(datasetCode, host_Url =  "https://ec.europa.eu/eurostat/ap
         response_type (str): The type of response to request. Default is "data".
         format (str): The format of the response. Default is "JSON".
         lang (str): The language of the response. Default is "EN".  
-        geoLevel (str): The level of geographical detail. Default is "country".
+        geoLevel (str or tuple of str): The level(s) of geographical detail. Default is
+            ("country", "aggregate"): the countries plus the EU-level totals, such as EU27_2020
+            (some datasets also include EU28, euro area or EFTA totals). Use "country" for countries only.
         sinceTimePeriod (str): The start time period for the data. Default is "2010".
         untilTimePeriod (str): The end time period for the data. Default is "2026".
     

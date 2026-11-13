@@ -19,6 +19,7 @@
     "THS_T": "Thousand tonnes"
   },
   "geo": {
+    "EU27_2020": "European Union - 27 countries (from 2020)",
     "BE": "Belgium",
     "BG": "Bulgaria",
     "CZ": "Czechia",
@@ -52,6 +53,7 @@
     "BA": "Bosnia and Herzegovina",
     "ME": "Montenegro",
     "MK": "North Macedonia",
+    "GE": "Georgia",
     "AL": "Albania",
     "RS": "Serbia",
     "TR": "Türkiye",

@@ -5,15 +5,6 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
-# R
-.Rhistory
-.RData
-.Ruserdata
-
-# renv local library
-renv/library/
-renv/staging/
-
 # Environment/secrets
 .env
 .env.*
@@ -22,5 +13,7 @@ renv/staging/
 .DS_Store
 Thumbs.db
 
-# raw data: re-downloadable via scripts/download_and_save_eurostat_raw_sources.py
+# raw data: re-downloadable via scripts/raw/download_and_save_eurostat_raw_sources.py
 data/raw/**/*.parquet
+# private exam material, not shared
+exam/

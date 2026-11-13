@@ -18,6 +18,7 @@
     "RT_TGT2025": "Rate (2025 target and onwards)"
   },
   "geo": {
+    "EU27_2020": "European Union - 27 countries (from 2020)",
     "BE": "Belgium",
     "BG": "Bulgaria",
     "CZ": "Czechia",
@@ -63,6 +64,7 @@
     "2020": "2020",
     "2021": "2021",
     "2022": "2022",
-    "2023": "2023"
+    "2023": "2023",
+    "2024": "2024"
   }
 }

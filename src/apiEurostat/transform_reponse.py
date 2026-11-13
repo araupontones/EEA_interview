@@ -4,7 +4,9 @@ from datetime import datetime, timezone
 from pyjstat import pyjstat
 from pathlib import Path
 import json
-from pathlib import Path
+
+# data/raw at the project root (this file is src/apiEurostat/transform_reponse.py)
+RAW_DATA_DIR = Path(__file__).resolve().parents[2] / "data" / "raw"
 
 
 
@@ -112,7 +114,7 @@ def get_source_label(data):
 
 #-----------------------------------------------------------------------
 
-def create_output_directory(datasetCode, path = 'c:/repositaries/4.personal/EEA_interview/data/raw'):
+def create_output_directory(datasetCode, path = RAW_DATA_DIR):
     """
     Create the output directory if it does not exist.
     
