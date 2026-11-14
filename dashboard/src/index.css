@@ -1,0 +1,98 @@
+:root {
+  --surface: #fcfcfb;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --grid: #e5e5e5;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-primary);
+  background: var(--surface);
+}
+
+body {
+  margin: 0;
+  background: var(--surface);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.hero {
+  padding: 32px 0 16px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+}
+
+.section {
+  padding: 24px 0;
+  border-top: 1px solid var(--grid);
+}
+
+/* charts: text uses the app font; sizes to be defined later for all charts */
+svg text {
+  font-family: inherit;
+  fill: var(--text-primary);
+}
+
+.chart-axis {
+  font-size: 12px;
+  fill: var(--text-secondary);
+}
+
+.chart-row-label {
+  font-size: 13px;
+}
+
+.chart-label {
+  font-size: 11px;
+  fill: var(--text-secondary);
+}
+
+.chart-label-extreme {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.chart-label-strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* row above a chart: search box on the left, legend on the right, vertically centred;
+   on narrow screens the legend wraps below the search box */
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px 24px;
+  margin-bottom: 16px;
+}
+
+.chart-controls input {
+  font: inherit;
+  padding: 6px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  width: 220px;
+}
+
+.chart-legend {
+  display: block;
+}
+
+/* temporary: marks where a chart will go */
+.chart-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: 16px;
+  border: 1px dashed var(--text-secondary);
+  color: var(--text-secondary);
+  text-align: center;
+}

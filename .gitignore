@@ -20,3 +20,7 @@ exam/
 
 # build metadata from pip install -e .
 *.egg-info/
+
+# dashboard: Node dependencies and build output (rebuilt by npm and the GitHub Action)
+dashboard/node_modules/
+dashboard/dist/

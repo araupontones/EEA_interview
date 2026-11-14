@@ -17,6 +17,15 @@ Explores the data of the EEA's Waste Data Reporting (WDR) cycle: downloads Euros
 
 - Never add Claude as co-author in commits: no `Co-Authored-By` lines or other Claude attribution in commit messages or PR descriptions.
 
+## Dashboard
+
+- React + D3 app in `dashboard/` (Vite), published on GitHub Pages by `.github/workflows/deploy-dashboard.yml` on push to `main`. Commands run from `dashboard/`: `npm install`, `npm run dev`, `npm run build`.
+- D3 does the maths, React renders: use `d3-array`, `d3-scale`, `d3-shape` to compute scales, paths and ticks, and render them as JSX. Never use `d3-selection` or edit the DOM directly.
+- Data is loaded only in `dashboard/src/data.js`, by importing the JSON files from `data/processed/` and `data/lookups/` (`@data` alias). No copies of the data in `dashboard/`.
+- The processed JSON files are the dashboard's data contract: when renaming a column or file in a processed script, update `data.js` and the charts in the same change.
+- Texts shown in the dashboard (notes, captions) come from data files built by the pipeline (e.g. `data/lookups/decoupling_notes.json`), not from the React code.
+- Before committing dashboard changes, run `npm run build` and check it passes.
+
 ## Pipeline
 
 Layers: `data/raw` → `data/lookups` → `data/interim` → `data/processed`, with one folder of scripts per layer in `scripts/`.

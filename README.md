@@ -52,6 +52,9 @@ src/
   eurostat_api/         download and save Eurostat datasets
   cleaning/             helpers to profile and check raw tables (used in notebooks)
 notebooks/python/       exploration; each script was first developed in a notebook
+dashboard/              React + D3 dashboard (Vite app), published on GitHub Pages
+  src/data.js           the only file that loads data (from data/processed and data/lookups)
+.github/workflows/      deploy-dashboard.yml: builds and publishes the dashboard
 dashboard_notes/        method notes
 background/             reference documents
 ```
@@ -96,6 +99,38 @@ The pipeline stops at the first script that fails. Every script can also be run 
 | `data/processed/municipal_waste_decoupling.json` | Municipal waste and real GDP per person, and both indexed to 2011 = 100, per country and year, 2010–2024 |
 
 Raw and interim tables keep all geographies in the source (EU and non-EU countries, EU and euro area totals). Processed tables keep only the 27 EU Member States and the `EU27_2020` total, filtered with `keep_eu27()` from the `geo` package; `run_pipeline.py` checks this at the end. The dashboard can show names instead of codes with `data/lookups/geo_eu27.json`. See the method notes for the full list of decisions.
+
+## The dashboard
+
+A React app in `dashboard/`, built with [Vite](https://vite.dev/) and published on GitHub Pages. D3 does the maths (scales, line paths, axis ticks) and React renders the SVG. Use only D3's maths modules (`d3-array`, `d3-scale`, `d3-shape`), not `d3-selection`, which edits the page directly and conflicts with React.
+
+Requires Node.js (developed with Node 26). From the `dashboard/` folder:
+
+```
+npm install        # once, and after pulling new dependencies
+npm run dev        # local preview with live reload: open the address it prints
+npm run build      # build the site into dashboard/dist/ (what GitHub Pages serves)
+npm run preview    # preview the built site
+```
+
+**Structure.** The page is a sequence of sections, in this order, set in [dashboard/src/App.jsx](dashboard/src/App.jsx). Each section has its own folder in `dashboard/src/sections/`, with its chart next to it, so each can be worked on separately:
+
+| Section | Folder | Chart |
+|---|---|---|
+| Hero: title, subtitle, brief explanation | `hero/` | |
+| Municipal waste generation | `municipal_waste/` | `WastePerCapitaBarChart.jsx`: waste per person by country |
+| Decoupling | `decoupling/` | `DecouplingLineChart.jsx`: waste and GDP indexes, 2011 = 100 |
+| Distance to target | `distance_to_target/` | `DistanceToTargetScatter.jsx`: recycling rates against the 2025 targets |
+| Methodological note | `method_note/` | |
+| How I did this | `how_i_did_this/` | |
+
+Shared pieces are in `dashboard/src/components/` (`Section.jsx`: heading and anchor of each section). Folder names are lower case with `_`, as in the rest of the project; React component files use PascalCase (`DecouplingSection.jsx`), the React convention.
+
+**Data.** The dashboard reads the JSON files in `data/processed/` and `data/lookups/` directly, with no copy: [dashboard/src/data.js](dashboard/src/data.js) imports them (`@data` is an alias for `data/`, set in [dashboard/vite.config.js](dashboard/vite.config.js)), and Vite bundles them into the app when it builds. `data.js` is the only file that loads data; charts import from it. To update the data in the dashboard: run the pipeline, commit the JSON files and push.
+
+The processed files are the dashboard's data contract: renaming a column or a file breaks the dashboard, so change `data.js` and the charts at the same time.
+
+**Publishing.** Every push to `main` that changes `dashboard/`, `data/processed/` or `data/lookups/` runs [.github/workflows/deploy-dashboard.yml](.github/workflows/deploy-dashboard.yml), which builds the app and publishes it on GitHub Pages. It can also be started by hand from the Actions tab. The built files (`dashboard/dist/`) and `node_modules/` are not committed. One-time setup on GitHub: Settings → Pages → Source: **GitHub Actions**. The site is served at `https://<user>.github.io/EEA_interview/` (set as `base` in `vite.config.js`); GitHub Pages is public, whatever the visibility of the repository.
 
 ## Common tasks
 
