@@ -196,83 +196,6 @@
     "distance_to_target":-15.6
   },
   {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":31.7,
-    "distance_to_target":-23.3
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":41.7,
-    "distance_to_target":-13.3
-  },
-  {
-    "geo":"CH",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":52.0,
-    "distance_to_target":-3.0
-  },
-  {
-    "geo":"BA",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":1.0,
-    "distance_to_target":-54.0
-  },
-  {
-    "geo":"ME",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":3.7,
-    "distance_to_target":-51.3
-  },
-  {
-    "geo":"MK",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":0.0,
-    "distance_to_target":-55.0
-  },
-  {
-    "geo":"GE",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":null,
-    "distance_to_target":null
-  },
-  {
-    "geo":"AL",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":18.8,
-    "distance_to_target":-36.2
-  },
-  {
-    "geo":"RS",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":15.2,
-    "distance_to_target":-39.8
-  },
-  {
-    "geo":"TR",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":null,
-    "distance_to_target":null
-  },
-  {
-    "geo":"XK",
-    "time":"2023",
-    "waste_name":"Municipal waste",
-    "value":3.5,
-    "distance_to_target":-51.5
-  },
-  {
     "geo":"EU27_2020",
     "time":"2023",
     "waste_name":"Packaging",
@@ -467,27 +390,6 @@
     "waste_name":"Packaging",
     "value":68.5,
     "distance_to_target":3.5
-  },
-  {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Packaging",
-    "value":73.8,
-    "distance_to_target":8.8
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Packaging",
-    "value":71.4,
-    "distance_to_target":6.4
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Packaging",
-    "value":64.0,
-    "distance_to_target":-1.0
   },
   {
     "geo":"EU27_2020",
@@ -686,27 +588,6 @@
     "distance_to_target":5.9
   },
   {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Paper and cardboard packaging",
-    "value":100.0,
-    "distance_to_target":25.0
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Paper and cardboard packaging",
-    "value":85.0,
-    "distance_to_target":10.0
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Paper and cardboard packaging",
-    "value":85.1,
-    "distance_to_target":10.1
-  },
-  {
     "geo":"EU27_2020",
     "time":"2023",
     "waste_name":"Plastic packaging",
@@ -901,27 +782,6 @@
     "waste_name":"Plastic packaging",
     "value":28.6,
     "distance_to_target":-21.4
-  },
-  {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Plastic packaging",
-    "value":38.9,
-    "distance_to_target":-11.1
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Plastic packaging",
-    "value":39.7,
-    "distance_to_target":-10.3
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Plastic packaging",
-    "value":30.2,
-    "distance_to_target":-19.8
   },
   {
     "geo":"EU27_2020",
@@ -1120,27 +980,6 @@
     "distance_to_target":69.8
   },
   {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Wooden packaging",
-    "value":87.8,
-    "distance_to_target":62.8
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Wooden packaging",
-    "value":0.0,
-    "distance_to_target":-25.0
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Wooden packaging",
-    "value":45.4,
-    "distance_to_target":20.4
-  },
-  {
     "geo":"EU27_2020",
     "time":"2023",
     "waste_name":"Metallic packaging",
@@ -1334,27 +1173,6 @@
     "time":"2023",
     "waste_name":"Metallic packaging",
     "value":86.4,
-    "distance_to_target":null
-  },
-  {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Metallic packaging",
-    "value":63.6,
-    "distance_to_target":null
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Metallic packaging",
-    "value":100.0,
-    "distance_to_target":null
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Metallic packaging",
-    "value":91.9,
     "distance_to_target":null
   },
   {
@@ -1554,27 +1372,6 @@
     "distance_to_target":39.1
   },
   {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Aluminium packaging",
-    "value":63.7,
-    "distance_to_target":13.7
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Aluminium packaging",
-    "value":100.0,
-    "distance_to_target":50.0
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Aluminium packaging",
-    "value":94.2,
-    "distance_to_target":44.2
-  },
-  {
     "geo":"EU27_2020",
     "time":"2023",
     "waste_name":"Steel packaging",
@@ -1769,27 +1566,6 @@
     "waste_name":"Steel packaging",
     "value":83.3,
     "distance_to_target":13.3
-  },
-  {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Steel packaging",
-    "value":63.2,
-    "distance_to_target":-6.8
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Steel packaging",
-    "value":100.0,
-    "distance_to_target":30.0
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Steel packaging",
-    "value":87.8,
-    "distance_to_target":17.8
   },
   {
     "geo":"EU27_2020",
@@ -1988,27 +1764,6 @@
     "distance_to_target":14.7
   },
   {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Glass packaging",
-    "value":59.5,
-    "distance_to_target":-10.5
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Glass packaging",
-    "value":76.7,
-    "distance_to_target":6.7
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Glass packaging",
-    "value":80.4,
-    "distance_to_target":10.4
-  },
-  {
     "geo":"EU27_2020",
     "time":"2023",
     "waste_name":"Other packaging",
@@ -2202,27 +1957,6 @@
     "time":"2023",
     "waste_name":"Other packaging",
     "value":0.0,
-    "distance_to_target":null
-  },
-  {
-    "geo":"IS",
-    "time":"2023",
-    "waste_name":"Other packaging",
-    "value":null,
-    "distance_to_target":null
-  },
-  {
-    "geo":"LI",
-    "time":"2023",
-    "waste_name":"Other packaging",
-    "value":0.0,
-    "distance_to_target":null
-  },
-  {
-    "geo":"NO",
-    "time":"2023",
-    "waste_name":"Other packaging",
-    "value":null,
     "distance_to_target":null
   }
 ]

@@ -48,6 +48,7 @@ scripts/
   processed/            combine interim tables into dashboard tables
 src/
   paths/                all project paths (ROOT, DIR_RAW, DIR_INTERIM, ...)
+  geo/                  geographies of the processed data (keep_eu27)
   eurostat_api/         download and save Eurostat datasets
   cleaning/             helpers to profile and check raw tables (used in notebooks)
 notebooks/python/       exploration; each script was first developed in a notebook
@@ -65,9 +66,14 @@ The data moves through four layers: `raw` → `lookups` → `interim` → `proce
 | 2 | [scripts/raw/update_raw_catalog.py](scripts/raw/update_raw_catalog.py) | `data/raw/` | `data/catalog/raw_sources.csv` |
 | 3 | [scripts/lookups/create_geo_eu27.py](scripts/lookups/create_geo_eu27.py) | `data/raw/demo_gind/` | `data/lookups/geo_eu27.json` |
 | 4 | [scripts/lookups/create_recycling_targets.py](scripts/lookups/create_recycling_targets.py) | targets written in the script | `data/lookups/recycling_targets.json` |
-| 5 | [scripts/interim/env_wasmun.py](scripts/interim/env_wasmun.py) | `data/raw/env_wasmun/` | `data/interim/env_wasmun.parquet` |
-| 6 | [scripts/interim/env_waspacr.py](scripts/interim/env_waspacr.py) | `data/raw/env_waspacr/` | `data/interim/env_waspacr.parquet` |
-| 7 | [scripts/processed/recycling_distance_to_target.py](scripts/processed/recycling_distance_to_target.py) | interim files, `recycling_targets.json` | `data/processed/recycling_distance_to_target.json` |
+| 5 | [scripts/lookups/create_decoupling_notes.py](scripts/lookups/create_decoupling_notes.py) | notes written in the script | `data/lookups/decoupling_notes.json` |
+| 6 | [scripts/interim/env_wasmun.py](scripts/interim/env_wasmun.py) | `data/raw/env_wasmun/` | `data/interim/env_wasmun.parquet` |
+| 7 | [scripts/interim/env_waspacr.py](scripts/interim/env_waspacr.py) | `data/raw/env_waspacr/` | `data/interim/env_waspacr.parquet` |
+| 8 | [scripts/interim/nama_10_pc.py](scripts/interim/nama_10_pc.py) | `data/raw/nama_10_pc/` | `data/interim/nama_10_pc.parquet` |
+| 9 | [scripts/processed/recycling_distance_to_target.py](scripts/processed/recycling_distance_to_target.py) | interim files, `recycling_targets.json` | `data/processed/recycling_distance_to_target.json` |
+| 10 | [scripts/processed/municipal_waste.py](scripts/processed/municipal_waste.py) | `data/interim/env_wasmun.parquet` | `data/processed/municipal_waste.json` |
+| 11 | [scripts/processed/municipal_waste_decoupling.py](scripts/processed/municipal_waste_decoupling.py) | `env_wasmun.parquet`, `nama_10_pc.parquet` | `data/processed/municipal_waste.json` | Municipal waste generated per person (kg) and in total (thousand tonnes), per country and year, 2010–2024 |
+| `data/processed/municipal_waste_decoupling.json` |
 
 The pipeline stops at the first script that fails. Every script can also be run on its own, from any folder, e.g. `.venv/Scripts/python scripts/interim/env_wasmun.py`. Each script's docstring states its input, output and decisions.
 
@@ -79,13 +85,17 @@ The pipeline stops at the first script that fails. Every script can also be run 
 | `data/raw/<code>/lookup.json` | Code-to-label mapping for each dimension (e.g. `wst_oper`: `GEN` → `Waste generated`) |
 | `data/raw/<code>/metadata.json` | Dataset label, last Eurostat update and download time |
 | `data/catalog/raw_sources.csv` | One row per raw dataset: label, Eurostat release date, download time, dimensions |
-| `data/lookups/geo_eu27.json` | The 27 EU Member States, code → name (e.g. `"BE": "Belgium"`) |
+| `data/lookups/geo_eu27.json` | The geographies in the processed data: the 27 EU Member States and the EU27 total, code → display name (e.g. `"BE": "Belgium"`, `"EU27_2020": "EU27"`) |
 | `data/lookups/recycling_targets.json` | 2025 and 2030 recycling targets (%) per waste category, with legal basis |
+| `data/lookups/decoupling_notes.json` | Notes shown under the decoupling chart: a general note, and country notes with the year of a break in series |
 | `data/interim/env_wasmun.parquet` | Municipal waste generated (kg per person, tonnes), recycled (tonnes) and recycling rate, per country and year |
 | `data/interim/env_waspacr.parquet` | Packaging recycling rates (%) per country and packaging type, 2023 |
+| `data/interim/nama_10_pc.parquet` | Real GDP per person (euro, 2020 prices) per country and year, 2010–2025 |
 | `data/processed/recycling_distance_to_target.json` | Recycling rate (%) and distance to the 2025 target (percentage points) per country and waste category, 2023 |
+| `data/processed/municipal_waste.json` | Municipal waste generated per person (kg) and in total (thousand tonnes), per country and year, 2010–2024 |
+| `data/processed/municipal_waste_decoupling.json` | Municipal waste and real GDP per person, and both indexed to 2011 = 100, per country and year, 2010–2024 |
 
-Interim and processed tables keep all geographies (countries, non-EU countries and the `EU27_2020` total). Filter to EU27 countries with `data/lookups/geo_eu27.json`. See the method notes for the full list of decisions.
+Raw and interim tables keep all geographies in the source (EU and non-EU countries, EU and euro area totals). Processed tables keep only the 27 EU Member States and the `EU27_2020` total, filtered with `keep_eu27()` from the `geo` package; `run_pipeline.py` checks this at the end. The dashboard can show names instead of codes with `data/lookups/geo_eu27.json`. See the method notes for the full list of decisions.
 
 ## Common tasks
 
@@ -101,6 +111,18 @@ df_raw = pd.read_parquet(raw_dir("env_wasmun") / "df.parquet")
 ```
 
 The paths are absolute, so code works from any folder, including notebooks and the VS Code Interactive Window. To add a new folder, add it once in [src/paths/__init__.py](src/paths/__init__.py).
+
+### Keep only the EU27 in processed data
+
+Every processed script filters its data with the same rule:
+
+```python
+from geo import keep_eu27
+
+df = keep_eu27(df)   # the 27 Member States and EU27_2020; all other geographies dropped
+```
+
+The list of geographies comes from `data/lookups/geo_eu27.json` ([src/geo/__init__.py](src/geo/__init__.py)). To change it, edit [scripts/lookups/create_geo_eu27.py](scripts/lookups/create_geo_eu27.py), never the JSON file.
 
 ### Download or update Eurostat data
 

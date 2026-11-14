@@ -1,0 +1,40 @@
+{
+  "general_note": "Both lines show the change since 2011 (2011 = 100): an index of 110 means 10 % higher than in 2011. GDP is in real terms (2020 prices), so it shows the growth of the economy, not inflation. When the GDP line is above the waste line, the economy grew more than waste per person: waste is decoupled from economic growth.",
+  "country_notes": [
+    {
+      "geo": "EU27_2020",
+      "break_year": null,
+      "note": "In 2020 and 2021 the lines are affected by COVID-19: GDP fell while waste per person rose, likely because people spent more time at home. The EU27 waste figure also rises from 2020 because Austria, Belgium and Slovakia started to count municipal waste from businesses (see their notes)."
+    },
+    {
+      "geo": "CZ",
+      "break_year": 2017,
+      "note": "From 2017 Czechia also counts municipal-type waste from businesses and waste collected outside the municipal system. This raised waste per person by 44 % from 2016 to 2017: a change in definition, not more waste. Before the change, waste grew more slowly than GDP."
+    },
+    {
+      "geo": "BE",
+      "break_year": 2020,
+      "note": "From 2020 Belgium reports municipal waste as defined in EU law, including similar waste from businesses. This raised waste per person by 75 % from 2019 to 2020: a change in definition, not more waste. Before the change, waste per person fell while GDP grew."
+    },
+    {
+      "geo": "AT",
+      "break_year": 2020,
+      "note": "From 2020 Austria also counts municipal waste from businesses (commerce and industry). This raised waste per person by 42 % from 2019 to 2020: a change in definition, not more waste. Before the change, waste grew more slowly than GDP."
+    },
+    {
+      "geo": "SK",
+      "break_year": 2020,
+      "note": "From 2020 Slovakia uses a new definition of municipal waste that also covers waste from businesses, which raised waste per person by 14 %. Waste per person was already growing faster than GDP before the change (+35 % from 2011 to 2019, against +22 % for GDP)."
+    },
+    {
+      "geo": "LU",
+      "break_year": 2016,
+      "note": "Eurostat marks a break in the series of waste per person in 2016 (change in method). Before the break, waste per person fell while GDP grew."
+    },
+    {
+      "geo": "IE",
+      "break_year": null,
+      "note": "Irish GDP is inflated by the accounts of multinational companies (it rose by 23 % in 2015 alone), so the GDP line overstates the growth of the Irish economy, and decoupling looks stronger than it is."
+    }
+  ]
+}

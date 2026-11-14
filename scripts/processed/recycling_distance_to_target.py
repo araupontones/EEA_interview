@@ -12,7 +12,8 @@ Then it calculates the distance to the 2025 recycling target, in percentage poin
 (value - target), using data/lookups/recycling_targets.json.
 
 Output: data/processed/recycling_distance_to_target.json, one record per country (geo) and
-waste category (waste_name), 2023 (overwritten on each run). Columns:
+waste category (waste_name), 2023 (overwritten on each run). Only the 27 EU Member States and
+EU27_2020 are kept (src/geo, keep_eu27). Columns:
     geo, time, waste_name, value (recycling rate, %), distance_to_target (p.p.)
 
 Run from anywhere, after the interim scripts:
@@ -23,6 +24,7 @@ Run from anywhere, after the interim scripts:
 import pandas as pd
 from paths import interim_file
 from paths import DIR_LOOKUPS, DIR_PROCESSED
+from geo import keep_eu27
 
 OUTPUT = DIR_PROCESSED / "recycling_distance_to_target.json"
 
@@ -55,8 +57,9 @@ df_mun_2023 = (
 
 
 # %%
-# Append municipal and packaging recycling rates
-df_appended = pd.concat([df_mun_2023, df_waspacr], ignore_index=True)
+# Append municipal and packaging recycling rates.
+# Keep only the 27 EU Member States and EU27_2020 (drops non-EU countries).
+df_appended = pd.concat([df_mun_2023, df_waspacr], ignore_index=True).pipe(keep_eu27)
 
 df_appended.head()
 

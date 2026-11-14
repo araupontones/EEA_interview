@@ -10,7 +10,8 @@ Last updated: 14 November 2026.
 | Data is downloaded from the Eurostat Statistics API for countries plus the EU-level totals of each dataset (always `EU27_2020`; some datasets also have EU28, euro area or EFTA totals), for 2010 to 2026 only. | No regional data. The EU27 figure is Eurostat's own total, so it does not need to be calculated, but totals must be removed before summing or averaging countries, or they are counted twice. Years before 2010 are not available without changing the download defaults in `src/eurostat_api/download_eurostat.py`. |
 | Data is stored in layers: `data/raw` (downloads, never edited), `data/interim` (indicators from one source), `data/processed` (final country-year table for the dashboard, still to build). | Every figure in the dashboard can be traced back to one raw file. Each layer can be rebuilt by running its scripts. |
 | Each raw download overwrites the previous one. `data/catalog/raw_sources.csv` records the Eurostat release date (`source_updated`) and download time. | Figures can change after a new download, because Eurostat revises past years. Check the catalog to see which release the dashboard uses. |
-| Interim tables keep all geographies in the source: countries, including non-EU countries (e.g. IS, NO, CH, candidate countries), and the EU-level totals. | Filtering to EU27 countries is done later with `data/lookups/geo_eu27.json`, which contains only the 27 countries, not `EU27_2020`. |
+| Raw and interim tables keep all geographies in the source: countries, including non-EU countries (e.g. IS, NO, CH, candidate countries), and the EU-level and euro area totals. | Interim data can be reused for other comparisons (e.g. with non-EU countries) without downloading again. |
+| Processed tables keep only the 27 EU Member States and the EU27 total (`EU27_2020`), with the same rule in every processed script (`keep_eu27()` in `src/geo`, based on `data/lookups/geo_eu27.json`). `run_pipeline.py` fails if a processed file has any other geography. | The dashboard shows only EU countries. The EU total always has the same code, `EU27_2020`, in all processed files; its display name is "EU27" in `geo_eu27.json`. Non-EU countries (AL, BA, CH, GE, IS, ME, MK, NO, RS, TR, XK) are not in the dashboard. |
 | Missing values are kept as empty values, not filled or set to zero. | Gaps stay visible. Averages and totals must handle empty values explicitly. |
 | The year column is still called `time` and stored as text in the interim tables. | It must be renamed to `year` and converted to a whole number before merging the sources. |
 
@@ -188,11 +189,81 @@ Consequences for the dashboard:
 - For municipal waste, these 8 countries can also be compared with their minimum of 50 % for 2025.
 - For packaging, the material-level flag cannot be set until we know which materials each country postponed.
 
-## 5. Open points
+## 5. GDP per person (nama_10_pc)
+
+Script: `scripts/interim/nama_10_pc.py`. Output: `data/interim/nama_10_pc.parquet`, one row per country and year, 2010 to 2025.
+
+**Only real GDP per person is kept (`gdp_pc`).**
+- `na_item` B1GQ (GDP at market prices), `unit` CLV20_EUR_HAB (chain linked volumes, euro per person at 2020 prices).
+- Real GDP, not current prices: the change over time then shows growth of the economy, not inflation. In current prices, EU27 GDP per person rose by 60 % from 2010 to 2024; in real terms, by 19 %. Using current prices would overstate decoupling.
+- All geographies are kept, including `EU27_2020` and the euro area totals (EA12 to EA21).
+- The dataset was downloaded again on 14 November 2026. The earlier download had no EU-level totals.
+
+## 6. Municipal waste decoupling
+
+Script: `scripts/processed/municipal_waste_decoupling.py`. Output: `data/processed/municipal_waste_decoupling.json`, one record per country and year, 2010 to 2024.
+
+**Decoupling is measured in real terms: waste per person against real GDP per person.**
+- GDP is in chain linked volumes (euro at 2020 prices, section 5), so its change shows growth of the economy, not inflation. In current prices, GDP would grow much faster and decoupling would look stronger than it is.
+- Both series are per person, so population growth does not affect the comparison.
+
+### How decoupling is estimated
+
+1. For each country, both series are turned into an index with the base year 2011 = 100:
+   - `mw_pc_index = mw_pc / mw_pc in 2011 × 100`
+   - `gdp_pc_index = gdp_pc / gdp_pc in 2011 × 100`
+2. The two indices are compared in the same year (e.g. 2023). An index of 110 means 10 % higher than in 2011.
+3. The result is classified as:
+
+| Result | Condition | Meaning |
+|---|---|---|
+| Absolute decoupling | GDP index above 100 and waste index at or below 100 | The economy grew while waste per person stayed the same or fell. |
+| Relative decoupling | Waste index above 100, but below the GDP index | Waste per person grew, but more slowly than the economy. |
+| No decoupling | Waste index at or above the GDP index | Waste per person grew as fast as the economy, or faster. |
+
+Indexing puts both series on one axis (no chart with two y-axes) and shows the change, not the level. The classification is not stored in the data yet; it can be calculated from the two index columns.
+
+**The base year is 2011, not 2010.**
+2011 is the first year with municipal waste data for all 27 EU countries: Denmark has no figure for 2010. With 2010 as the base, Denmark would have no index. The base year is set once (`BASE_YEAR`) in the script.
+
+**Only country-years present in both sources are kept (inner join).**
+- All 27 Member States and `EU27_2020` have both waste and GDP data, so no EU country is lost in the join.
+- Non-EU countries are dropped (section 1).
+- Missing values within a kept country-year stay empty.
+
+### Breaks in series in waste per person
+
+Several countries changed the definition of municipal waste after 2011, mostly to include waste from businesses that is similar to household waste (the definition in Directive (EU) 2018/851). Their waste per person jumps in the year of the change, although the amount of waste did not change. Across a break, the waste index does not measure decoupling.
+
+The four EU countries with the largest rises since 2011:
+
+| Country | Year | What changed (Eurostat country notes) | Effect | Before the break |
+|---|---|---|---|---|
+| Czechia | 2017 | Until 2016 only waste collected by municipalities was reported; from 2017 also waste from LoW chapter 20 from enterprises and waste from citizens collected outside the municipal system. | +44 % from 2016 to 2017 (339 to 489 kg; +45 % in total amounts) | 2016: waste index 105.9, GDP index 109.1, relative decoupling |
+| Belgium | 2020 | Municipal waste reported as defined in Directive (EU) 2018/851 (household and similar waste from businesses). Not flagged as a break in the Eurostat data. | +75 % from 2019 to 2020 (416 to 729 kg) | 2019: waste index 91.4, GDP index 106.9, absolute decoupling |
+| Austria | 2020 | Municipal waste from all sources other than households (commerce and industry) added. | +42 % from 2019 to 2020 (588 to 834 kg) | 2019: waste index 102.6, GDP index 105.4, relative decoupling |
+| Slovakia | 2020 | New national definition of municipal waste, also covering waste from other sources (from the Waste Information System). Not flagged as a break in the Eurostat data. | +14 % from 2019 to 2020 | 2019: waste index 135.4, GDP index 121.9, no decoupling |
+
+- Belgium, Austria and Czechia show "no decoupling" only because of the change in definition: before it, all three were decoupled. Luxembourg (break in 2016) is in the same situation: absolute decoupling in 2015 (waste index 91.1, GDP index 100.4).
+- Slovakia's waste per person was already rising faster than GDP before 2020 (+35 % from 2011 to 2019, against +22 % for GDP). The country notes give no change in method for those years, so for Slovakia the lack of decoupling is real, and the 2020 change makes it look larger.
+- Other EU countries with a break flag after 2011: Estonia 2014, Ireland 2014 and 2020, Poland 2013 and 2014, Portugal 2015, Slovenia 2013, Greece 2020, Sweden 2020 and 2024, France 2024. Their effect on the index has not been checked yet.
+- The EU27 total includes these changes: its waste per person rose from 505 to 521 kg in 2020, partly because of them. The EU27 rise since 2011 (+2.8 %) therefore overstates the real rise in waste, and decoupling in the EU is probably stronger than the index shows.
+
+**These notes are shown in the dashboard.** `scripts/lookups/create_decoupling_notes.py` writes `data/lookups/decoupling_notes.json`: a general note on how to read the chart, and a note for the EU27, Czechia, Belgium, Austria, Slovakia, Luxembourg and Ireland, with the break year where there is one. The dashboard shows the note of the selected country under the chart and marks the break year. When this section changes, update the texts in that script.
+
+Sources: Eurostat metadata for env_wasmun (https://ec.europa.eu/eurostat/cache/metadata/en/env_wasmun_esms.htm) and its annex "Country specific notes on municipal waste"; break flags (`b`) from the Eurostat API. The flags are not kept in our raw download.
+
+**Results (2011 to 2023 unless stated).**
+- EU27: from 2011 to 2024, waste per person rose by 2.8 % and real GDP per person by 16.8 % (relative decoupling).
+- In 2023, 13 EU countries show absolute decoupling, 9 relative decoupling, and 5 no decoupling: Austria, Belgium, Czechia, Luxembourg and Slovakia. For all of these except Slovakia, the result comes from a change in definition (see above), so they should not be presented as not decoupled without a note.
+
+## 7. Open points
 
 - Check `municipal_waste_rcy_rate` against the official Eurostat municipal waste recycling rate for a few countries.
 - Confirm in the Eurostat metadata the break in series in 2020 for both sources.
 - Decide whether packaging should keep all years, or only the latest year.
+- Decide how the dashboard shows decoupling for countries with a break in series after 2011 (e.g. a note per country, starting their index after the break, or a `break_year` column in the data). Check the effect of the other breaks (Estonia, Ireland, Poland, Portugal, Slovenia, Greece, Sweden, France).
+- Consider keeping the Eurostat flags (`b` break, `e` estimate, `p` provisional) in the raw download, so breaks can be found in the data rather than in the metadata.
 - Find which packaging materials each of the 7 Member States postponed (Commission notifications or implementation plans).
 - Check in the legal texts the conditions for postponement (Waste Framework Directive Art. 11(3), Directive 94/62/EC Art. 6(6)) and whether postponements notified under Directive 94/62/EC carry over unchanged under Regulation (EU) 2025/40.
 - Confirm with the reporters the packaging rates above 100 % (Slovenia glass, aluminium, steel and metallic, Poland steel), and decide whether to flag them in the dashboard.

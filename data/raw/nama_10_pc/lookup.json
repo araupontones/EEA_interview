@@ -28,6 +28,12 @@
     "P41": "Actual individual consumption"
   },
   "geo": {
+    "EU27_2020": "European Union - 27 countries (from 2020)",
+    "EA": "Euro area (EA11-1999, EA12-2001, EA13-2007, EA15-2008, EA16-2009, EA17-2011, EA18-2014, EA19-2015, EA20-2023, EA21-2026)",
+    "EA21": "Euro area – 21 countries (from 2026)",
+    "EA20": "Euro area – 20 countries (2023-2025)",
+    "EA19": "Euro area - 19 countries  (2015-2022)",
+    "EA12": "Euro area - 12 countries (2001-2006)",
     "BE": "Belgium",
     "BG": "Bulgaria",
     "CZ": "Czechia",
@@ -59,7 +65,6 @@
     "LI": "Liechtenstein",
     "NO": "Norway",
     "CH": "Switzerland",
-    "UK": "United Kingdom",
     "BA": "Bosnia and Herzegovina",
     "ME": "Montenegro",
     "MD": "Moldova",
