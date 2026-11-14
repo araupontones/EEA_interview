@@ -12,15 +12,15 @@ If one dataset fails, the error is logged and the script continues with the next
 It ends with exit code 1 if any dataset failed.
 
 Run from anywhere:
-    .venv/Scripts/python scripts/raw/download_and_save_eurostat_raw_sources.py
+    .venv/Scripts/python scripts/raw/download_eurostat.py
 
 To add a dataset, add its Eurostat code to DATASET_CODES.
-The download logic is in src/apiEurostat/ (pipeline.process).
+The download logic is in src/eurostat_api/ (pipeline.process).
 """
 
 import logging
 import sys
-from apiEurostat.pipeline import process
+from eurostat_api.pipeline import process
 
 logging.basicConfig(level=logging.INFO, 
                     format="%(asctime)s %(levelname)s %(name)s: %(message)s"

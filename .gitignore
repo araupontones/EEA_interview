@@ -13,7 +13,10 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# raw data: re-downloadable via scripts/raw/download_and_save_eurostat_raw_sources.py
+# raw data: re-downloadable via scripts/raw/download_eurostat.py
 data/raw/**/*.parquet
 # private exam material, not shared
 exam/
+
+# build metadata from pip install -e .
+*.egg-info/

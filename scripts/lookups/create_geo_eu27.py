@@ -5,24 +5,24 @@ Takes the country list from the geo dimension of demo_gind and keeps only the EU
 codes listed in this script. Use the result to filter any dataset to EU27 countries.
 
 Input:  data/raw/demo_gind/lookup.json
-Output: data/lookups/geo_EU27.json, e.g. {"BE": "Belgium", ...} (overwritten on each run)
+Output: data/lookups/geo_eu27.json, e.g. {"BE": "Belgium", ...} (overwritten on each run)
 
 Run from anywhere:
-    .venv/Scripts/python scripts/lookups/create_eu27_lookup.py
+    .venv/Scripts/python scripts/lookups/create_geo_eu27.py
 
 Run it again only if the EU membership changes or demo_gind is downloaded again.
 """
 
 import json
 import logging
-from pathlib import Path
 import pandas as pd
+
+from paths import DIR_LOOKUPS, raw_dir
 
 #log = logging.getLogger(__name__)
 
-ROOT = Path(__file__).resolve().parents[2]  # scripts/lookups -> project root
-LOOKUP = ROOT / "data/raw/demo_gind/lookup.json"
-OUTPUT = ROOT / "data/lookups/geo_EU27.json"
+LOOKUP = raw_dir("demo_gind") / "lookup.json"
+OUTPUT = DIR_LOOKUPS / "geo_eu27.json"
 
 # Eurostat geo codes of the EU27 member states (note: Greece is EL, not GR)
 EU27 = {
@@ -40,3 +40,4 @@ EU27_geo = {k: v for k, v in geo.items() if k in EU27}
 #save in OUTPUT
 with open(OUTPUT, "w", encoding="utf-8") as f:
     json.dump(EU27_geo, f, indent=2, ensure_ascii=False)
+    f.write("\n")

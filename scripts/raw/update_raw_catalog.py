@@ -9,20 +9,20 @@ Input:  data/raw/<dataset code>/metadata.json and lookup.json
 Output: data/catalog/raw_sources.csv (overwritten on each run)
 
 Run from anywhere, after downloading new data:
-    .venv/Scripts/python scripts/raw/update_catalog_data_sources.py
+    .venv/Scripts/python scripts/raw/update_raw_catalog.py
 """
 
 import json
 import logging
-from pathlib import Path
 import pandas as pd
 import pyarrow.parquet as pq
 
+from paths import DIR_CATALOG, DIR_RAW
+
 log = logging.getLogger(__name__)
 
-ROOT = Path(__file__).resolve().parents[2]  # scripts/raw -> project root
-RAW = ROOT / "data/raw"
-CATALOG = ROOT / "data/catalog/raw_sources.csv"
+RAW = DIR_RAW
+CATALOG = DIR_CATALOG / "raw_sources.csv"
 
 def build_raw_catalog() -> pd.DataFrame:
     rows = []

@@ -1,0 +1,2228 @@
+[
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":47.9,
+    "distance_to_target":-7.1
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":55.8,
+    "distance_to_target":0.8
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":16.7,
+    "distance_to_target":-38.3
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":43.5,
+    "distance_to_target":-11.5
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":46.6,
+    "distance_to_target":-8.4
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":68.7,
+    "distance_to_target":13.7
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":37.9,
+    "distance_to_target":-17.1
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":41.9,
+    "distance_to_target":-13.1
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":17.4,
+    "distance_to_target":-37.6
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":43.3,
+    "distance_to_target":-11.7
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":40.3,
+    "distance_to_target":-14.7
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":36.0,
+    "distance_to_target":-19.0
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":50.8,
+    "distance_to_target":-4.2
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":15.8,
+    "distance_to_target":-39.2
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":50.6,
+    "distance_to_target":-4.4
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":49.3,
+    "distance_to_target":-5.7
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":56.5,
+    "distance_to_target":1.5
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":33.4,
+    "distance_to_target":-21.6
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":17.4,
+    "distance_to_target":-37.6
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":57.9,
+    "distance_to_target":2.9
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":62.8,
+    "distance_to_target":7.8
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":27.6,
+    "distance_to_target":-27.4
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":30.6,
+    "distance_to_target":-24.4
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":12.4,
+    "distance_to_target":-42.6
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":59.8,
+    "distance_to_target":4.8
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":50.3,
+    "distance_to_target":-4.7
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":44.8,
+    "distance_to_target":-10.2
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":39.4,
+    "distance_to_target":-15.6
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":31.7,
+    "distance_to_target":-23.3
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":41.7,
+    "distance_to_target":-13.3
+  },
+  {
+    "geo":"CH",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":52.0,
+    "distance_to_target":-3.0
+  },
+  {
+    "geo":"BA",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":1.0,
+    "distance_to_target":-54.0
+  },
+  {
+    "geo":"ME",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":3.7,
+    "distance_to_target":-51.3
+  },
+  {
+    "geo":"MK",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":0.0,
+    "distance_to_target":-55.0
+  },
+  {
+    "geo":"GE",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"AL",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":18.8,
+    "distance_to_target":-36.2
+  },
+  {
+    "geo":"RS",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":15.2,
+    "distance_to_target":-39.8
+  },
+  {
+    "geo":"TR",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"XK",
+    "time":"2023",
+    "waste_name":"Municipal waste",
+    "value":3.5,
+    "distance_to_target":-51.5
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":67.4,
+    "distance_to_target":2.4
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":79.7,
+    "distance_to_target":14.7
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":61.5,
+    "distance_to_target":-3.5
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":69.2,
+    "distance_to_target":4.2
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":68.5,
+    "distance_to_target":3.5
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":61.0,
+    "distance_to_target":-4.0
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":48.0,
+    "distance_to_target":-17.0
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":70.5,
+    "distance_to_target":5.5
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":69.0,
+    "distance_to_target":4.0
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":51.9,
+    "distance_to_target":-13.1
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":75.6,
+    "distance_to_target":10.6
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":60.0,
+    "distance_to_target":-5.0
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":63.1,
+    "distance_to_target":-1.9
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":60.7,
+    "distance_to_target":-4.3
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":61.3,
+    "distance_to_target":-3.7
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":43.4,
+    "distance_to_target":-21.6
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":75.8,
+    "distance_to_target":10.8
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":64.9,
+    "distance_to_target":-0.1
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":66.9,
+    "distance_to_target":1.9
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":61.8,
+    "distance_to_target":-3.2
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":41.0,
+    "distance_to_target":-24.0
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":73.6,
+    "distance_to_target":8.6
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":71.9,
+    "distance_to_target":6.9
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":59.4,
+    "distance_to_target":-5.6
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":68.5,
+    "distance_to_target":3.5
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":73.8,
+    "distance_to_target":8.8
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":71.4,
+    "distance_to_target":6.4
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Packaging",
+    "value":64.0,
+    "distance_to_target":-1.0
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":87.0,
+    "distance_to_target":12.0
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":84.8,
+    "distance_to_target":9.8
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":71.8,
+    "distance_to_target":-3.2
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":86.6,
+    "distance_to_target":11.6
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":90.6,
+    "distance_to_target":15.6
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":75.7,
+    "distance_to_target":0.7
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":76.7,
+    "distance_to_target":1.7
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":79.2,
+    "distance_to_target":4.2
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":94.8,
+    "distance_to_target":19.8
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":77.4,
+    "distance_to_target":2.4
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":92.6,
+    "distance_to_target":17.6
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":91.8,
+    "distance_to_target":16.8
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":74.9,
+    "distance_to_target":-0.1
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":83.4,
+    "distance_to_target":8.4
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":79.4,
+    "distance_to_target":4.4
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":53.6,
+    "distance_to_target":-21.4
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":89.4,
+    "distance_to_target":14.4
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":79.6,
+    "distance_to_target":4.6
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":98.9,
+    "distance_to_target":23.9
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":62.8,
+    "distance_to_target":-12.2
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":68.8,
+    "distance_to_target":-6.2
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":82.2,
+    "distance_to_target":7.2
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":81.6,
+    "distance_to_target":6.6
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":96.2,
+    "distance_to_target":21.2
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":80.9,
+    "distance_to_target":5.9
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":100.0,
+    "distance_to_target":25.0
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":85.0,
+    "distance_to_target":10.0
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Paper and cardboard packaging",
+    "value":85.1,
+    "distance_to_target":10.1
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":41.6,
+    "distance_to_target":-8.4
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":58.2,
+    "distance_to_target":8.2
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":22.7,
+    "distance_to_target":-27.3
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":51.3,
+    "distance_to_target":1.3
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":42.4,
+    "distance_to_target":-7.6
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":29.6,
+    "distance_to_target":-20.4
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":32.7,
+    "distance_to_target":-17.3
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":46.2,
+    "distance_to_target":-3.8
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":25.7,
+    "distance_to_target":-24.3
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":28.2,
+    "distance_to_target":-21.8
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":49.0,
+    "distance_to_target":-1.0
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":49.0,
+    "distance_to_target":-1.0
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":59.2,
+    "distance_to_target":9.2
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":42.9,
+    "distance_to_target":-7.1
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":42.9,
+    "distance_to_target":-7.1
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":31.9,
+    "distance_to_target":-18.1
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":49.1,
+    "distance_to_target":-0.9
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":26.9,
+    "distance_to_target":-23.1
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":44.2,
+    "distance_to_target":-5.8
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":39.5,
+    "distance_to_target":-10.5
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":32.0,
+    "distance_to_target":-18.0
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":51.5,
+    "distance_to_target":1.5
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":54.1,
+    "distance_to_target":4.1
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":29.3,
+    "distance_to_target":-20.7
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":28.6,
+    "distance_to_target":-21.4
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":38.9,
+    "distance_to_target":-11.1
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":39.7,
+    "distance_to_target":-10.3
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Plastic packaging",
+    "value":30.2,
+    "distance_to_target":-19.8
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":37.7,
+    "distance_to_target":12.7
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":69.2,
+    "distance_to_target":44.2
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":87.3,
+    "distance_to_target":62.3
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":30.2,
+    "distance_to_target":5.2
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":32.0,
+    "distance_to_target":7.0
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":69.6,
+    "distance_to_target":44.6
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":7.5,
+    "distance_to_target":-17.5
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":77.8,
+    "distance_to_target":52.8
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":37.1,
+    "distance_to_target":12.1
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":29.6,
+    "distance_to_target":4.6
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":64.9,
+    "distance_to_target":39.9
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":19.4,
+    "distance_to_target":-5.6
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":45.1,
+    "distance_to_target":20.1
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":7.6,
+    "distance_to_target":-17.4
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":19.7,
+    "distance_to_target":-5.3
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":0.0,
+    "distance_to_target":-25.0
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":57.0,
+    "distance_to_target":32.0
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":35.8,
+    "distance_to_target":10.8
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":30.7,
+    "distance_to_target":5.7
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":94.1,
+    "distance_to_target":69.1
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":18.7,
+    "distance_to_target":-6.3
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":40.0,
+    "distance_to_target":15.0
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":61.7,
+    "distance_to_target":36.7
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":22.6,
+    "distance_to_target":-2.4
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":94.8,
+    "distance_to_target":69.8
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":87.8,
+    "distance_to_target":62.8
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":0.0,
+    "distance_to_target":-25.0
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Wooden packaging",
+    "value":45.4,
+    "distance_to_target":20.4
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":77.4,
+    "distance_to_target":null
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":96.8,
+    "distance_to_target":null
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":68.4,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":83.3,
+    "distance_to_target":null
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":95.3,
+    "distance_to_target":null
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":54.4,
+    "distance_to_target":null
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":57.6,
+    "distance_to_target":null
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":76.5,
+    "distance_to_target":null
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":69.6,
+    "distance_to_target":null
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":17.9,
+    "distance_to_target":null
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":86.2,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":105.8,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":71.6,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":85.5,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":79.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":15.2,
+    "distance_to_target":null
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":88.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":83.3,
+    "distance_to_target":null
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":83.2,
+    "distance_to_target":null
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":50.2,
+    "distance_to_target":null
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":43.9,
+    "distance_to_target":null
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":100.7,
+    "distance_to_target":null
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":83.3,
+    "distance_to_target":null
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":80.2,
+    "distance_to_target":null
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":86.4,
+    "distance_to_target":null
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":63.6,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":100.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Metallic packaging",
+    "value":91.9,
+    "distance_to_target":null
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":56.0,
+    "distance_to_target":6.0
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":90.6,
+    "distance_to_target":40.6
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":78.0,
+    "distance_to_target":28.0
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":68.0,
+    "distance_to_target":18.0
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":86.8,
+    "distance_to_target":36.8
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":40.3,
+    "distance_to_target":-9.7
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":35.7,
+    "distance_to_target":-14.3
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":49.9,
+    "distance_to_target":-0.1
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":50.1,
+    "distance_to_target":0.1
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":28.3,
+    "distance_to_target":-21.7
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":70.3,
+    "distance_to_target":20.3
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":24.7,
+    "distance_to_target":-25.3
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":58.6,
+    "distance_to_target":8.6
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":80.1,
+    "distance_to_target":30.1
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":80.6,
+    "distance_to_target":30.6
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":22.6,
+    "distance_to_target":-27.4
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":69.4,
+    "distance_to_target":19.4
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":61.9,
+    "distance_to_target":11.9
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":52.2,
+    "distance_to_target":2.2
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":20.0,
+    "distance_to_target":-30.0
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":23.8,
+    "distance_to_target":-26.2
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":101.0,
+    "distance_to_target":51.0
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":64.3,
+    "distance_to_target":14.3
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":87.5,
+    "distance_to_target":37.5
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":89.1,
+    "distance_to_target":39.1
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":63.7,
+    "distance_to_target":13.7
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":100.0,
+    "distance_to_target":50.0
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Aluminium packaging",
+    "value":94.2,
+    "distance_to_target":44.2
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":84.9,
+    "distance_to_target":14.9
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":99.6,
+    "distance_to_target":29.6
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":61.7,
+    "distance_to_target":-8.3
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":86.7,
+    "distance_to_target":16.7
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":98.2,
+    "distance_to_target":28.2
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":66.3,
+    "distance_to_target":-3.7
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":63.9,
+    "distance_to_target":-6.1
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":97.1,
+    "distance_to_target":27.1
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":74.4,
+    "distance_to_target":4.4
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":7.6,
+    "distance_to_target":-62.4
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":89.0,
+    "distance_to_target":19.0
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":77.9,
+    "distance_to_target":7.9
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":88.3,
+    "distance_to_target":18.3
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":78.4,
+    "distance_to_target":8.4
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":6.1,
+    "distance_to_target":-63.9
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":95.0,
+    "distance_to_target":25.0
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":97.9,
+    "distance_to_target":27.9
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":101.7,
+    "distance_to_target":31.7
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":73.0,
+    "distance_to_target":3.0
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":53.3,
+    "distance_to_target":-16.7
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":100.6,
+    "distance_to_target":30.6
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":93.9,
+    "distance_to_target":23.9
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":73.0,
+    "distance_to_target":3.0
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":83.3,
+    "distance_to_target":13.3
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":63.2,
+    "distance_to_target":-6.8
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":100.0,
+    "distance_to_target":30.0
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Steel packaging",
+    "value":87.8,
+    "distance_to_target":17.8
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":74.9,
+    "distance_to_target":4.9
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":92.9,
+    "distance_to_target":22.9
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":68.9,
+    "distance_to_target":-1.1
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":80.6,
+    "distance_to_target":10.6
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":68.0,
+    "distance_to_target":-2.0
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":83.3,
+    "distance_to_target":13.3
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":25.9,
+    "distance_to_target":-44.1
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":69.8,
+    "distance_to_target":-0.2
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":83.7,
+    "distance_to_target":13.7
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":53.2,
+    "distance_to_target":-16.8
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":77.4,
+    "distance_to_target":7.4
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":32.6,
+    "distance_to_target":-37.4
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":69.3,
+    "distance_to_target":-0.7
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":74.8,
+    "distance_to_target":4.8
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":90.4,
+    "distance_to_target":20.4
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":65.2,
+    "distance_to_target":-4.8
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":80.6,
+    "distance_to_target":10.6
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":79.3,
+    "distance_to_target":9.3
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":67.5,
+    "distance_to_target":-2.5
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":55.9,
+    "distance_to_target":-14.1
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":36.9,
+    "distance_to_target":-33.1
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":112.0,
+    "distance_to_target":42.0
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":77.3,
+    "distance_to_target":7.3
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":91.7,
+    "distance_to_target":21.7
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":84.7,
+    "distance_to_target":14.7
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":59.5,
+    "distance_to_target":-10.5
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":76.7,
+    "distance_to_target":6.7
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Glass packaging",
+    "value":80.4,
+    "distance_to_target":10.4
+  },
+  {
+    "geo":"EU27_2020",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":62.2,
+    "distance_to_target":null
+  },
+  {
+    "geo":"BE",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":36.8,
+    "distance_to_target":null
+  },
+  {
+    "geo":"BG",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CZ",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DK",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"DE",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"EE",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"IE",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"EL",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"ES",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"FR",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"HR",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"IT",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"CY",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LV",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LT",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LU",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"HU",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"MT",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"NL",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"AT",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"PL",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"PT",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"RO",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"SI",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":5.4,
+    "distance_to_target":null
+  },
+  {
+    "geo":"SK",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.1,
+    "distance_to_target":null
+  },
+  {
+    "geo":"FI",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"SE",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"IS",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  },
+  {
+    "geo":"LI",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":0.0,
+    "distance_to_target":null
+  },
+  {
+    "geo":"NO",
+    "time":"2023",
+    "waste_name":"Other packaging",
+    "value":null,
+    "distance_to_target":null
+  }
+]

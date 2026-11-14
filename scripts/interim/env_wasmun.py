@@ -16,18 +16,17 @@ Output: data/interim/env_wasmun.parquet (overwritten on each run)
 Run from anywhere:
     .venv/Scripts/python scripts/interim/env_wasmun.py
 
-Developed in notebooks/python/4.create_mw_pc.ipynb.
+Developed in notebooks/python/04_create_mw_pc.ipynb.
 """
-
-from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[2]  # scripts/interim -> project root
+from paths import DIR_INTERIM, interim_file, raw_dir
+
 DATA_SOURCE = 'env_wasmun'
-DATA_RAW_DIR = ROOT / "data/raw" / DATA_SOURCE
-EXPORT_DIR = ROOT / "data/interim"
-EXPORT_FILE = EXPORT_DIR / f"{DATA_SOURCE}.parquet"
+DATA_RAW_DIR = raw_dir(DATA_SOURCE)
+EXPORT_DIR = DIR_INTERIM
+EXPORT_FILE = interim_file(DATA_SOURCE)
 
 
 def select_indicator(df, unit, wst_oper, name):

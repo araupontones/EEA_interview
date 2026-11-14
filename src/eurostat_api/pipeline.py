@@ -1,6 +1,6 @@
 import logging
-from apiEurostat.download_eurostat import download_eurostat
-from apiEurostat import transform_reponse as tr
+from eurostat_api.download_eurostat import download_eurostat
+from eurostat_api import transform_response as tr
 
 log = logging.getLogger(__name__)
 

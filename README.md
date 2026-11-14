@@ -1,39 +1,161 @@
-# EEA interview
-This project was created to explore data used in the Waste Data Reporting (WDR) cycle of the EEA. The objective is to understand the full data cycle of the WDR.
+# EEA waste data
 
-## Download the latest Eurostat data
+This project explores the data used in the EEA's Waste Data Reporting (WDR) cycle and covers the full data cycle: it downloads Eurostat waste datasets, builds indicators, checks them, and calculates each country's distance to the EU recycling targets. The outputs feed a dashboard.
 
-Raw data is downloaded from the [Eurostat Statistics API](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/api-statistics) and saved in `data/raw/<datasetCode>/`:
+- **Method notes**: what each indicator means, decisions taken and their consequences are in [dashboard_notes/method_notes.md](dashboard_notes/method_notes.md). Read it before using the data.
+- **Next tasks**: [todo.md](todo.md).
+
+## Quick start
+
+Requires Python 3.10 or later (developed with 3.14) and git. Commands are for Windows; on macOS or Linux, replace `.venv/Scripts/python` with `.venv/bin/python`.
+
+```
+# 1. Create the project environment (once)
+python -m venv .venv
+
+# 2. Install the dependencies and the project's own packages (once, and after pulling new packages)
+.venv/Scripts/python -m pip install -r requirements.txt
+.venv/Scripts/python -m pip install -e .
+
+# 3. Build all the data. The first time, download the raw data too (it is not in git).
+.venv/Scripts/python scripts/run_pipeline.py --download
+```
+
+After the first run, rebuild everything from the raw files already downloaded with:
+
+```
+.venv/Scripts/python scripts/run_pipeline.py
+```
+
+Only use `--download` when you want the latest Eurostat release. A new download can change the figures, because Eurostat revises past years.
+
+Always use the project environment (`.venv`). Install new packages with `.venv/Scripts/python -m pip install <package>` and add them to `requirements.txt`; never install them globally.
+
+## Project structure
+
+```
+data/
+  raw/<dataset code>/   Eurostat downloads, never edited (parquet files not in git)
+  catalog/              raw_sources.csv: which Eurostat release each raw dataset is
+  lookups/              reference tables: EU27 countries, recycling targets
+  interim/              indicators from one source, one file per Eurostat dataset
+  processed/            final tables for the dashboard
+scripts/
+  run_pipeline.py       runs every script below in the right order
+  raw/                  download data, update the catalog
+  lookups/              build the lookup tables
+  interim/              build indicators from one raw dataset
+  processed/            combine interim tables into dashboard tables
+src/
+  paths/                all project paths (ROOT, DIR_RAW, DIR_INTERIM, ...)
+  eurostat_api/         download and save Eurostat datasets
+  cleaning/             helpers to profile and check raw tables (used in notebooks)
+notebooks/python/       exploration; each script was first developed in a notebook
+dashboard_notes/        method notes
+background/             reference documents
+```
+
+## The pipeline
+
+The data moves through four layers: `raw` → `lookups` → `interim` → `processed`. Each script reads the outputs of the scripts before it, so `run_pipeline.py` runs them in this order:
+
+| Step | Script | Input | Output |
+|---|---|---|---|
+| 1 | [scripts/raw/download_eurostat.py](scripts/raw/download_eurostat.py) (only with `--download`) | Eurostat API | `data/raw/<code>/` |
+| 2 | [scripts/raw/update_raw_catalog.py](scripts/raw/update_raw_catalog.py) | `data/raw/` | `data/catalog/raw_sources.csv` |
+| 3 | [scripts/lookups/create_geo_eu27.py](scripts/lookups/create_geo_eu27.py) | `data/raw/demo_gind/` | `data/lookups/geo_eu27.json` |
+| 4 | [scripts/lookups/create_recycling_targets.py](scripts/lookups/create_recycling_targets.py) | targets written in the script | `data/lookups/recycling_targets.json` |
+| 5 | [scripts/interim/env_wasmun.py](scripts/interim/env_wasmun.py) | `data/raw/env_wasmun/` | `data/interim/env_wasmun.parquet` |
+| 6 | [scripts/interim/env_waspacr.py](scripts/interim/env_waspacr.py) | `data/raw/env_waspacr/` | `data/interim/env_waspacr.parquet` |
+| 7 | [scripts/processed/recycling_distance_to_target.py](scripts/processed/recycling_distance_to_target.py) | interim files, `recycling_targets.json` | `data/processed/recycling_distance_to_target.json` |
+
+The pipeline stops at the first script that fails. Every script can also be run on its own, from any folder, e.g. `.venv/Scripts/python scripts/interim/env_wasmun.py`. Each script's docstring states its input, output and decisions.
+
+### Outputs
 
 | File | Content |
-|------|---------|
-| `df.parquet` | The data, one row per observation |
-| `lookup.json` | Code-to-label mapping for each dimension (e.g. `wst_oper`: `GEN` → `Waste generated`) |
-| `metadata.json` | Dataset label, source, last Eurostat update and download time |
+|---|---|
+| `data/raw/<code>/df.parquet` | Eurostat data, one row per observation |
+| `data/raw/<code>/lookup.json` | Code-to-label mapping for each dimension (e.g. `wst_oper`: `GEN` → `Waste generated`) |
+| `data/raw/<code>/metadata.json` | Dataset label, last Eurostat update and download time |
+| `data/catalog/raw_sources.csv` | One row per raw dataset: label, Eurostat release date, download time, dimensions |
+| `data/lookups/geo_eu27.json` | The 27 EU Member States, code → name (e.g. `"BE": "Belgium"`) |
+| `data/lookups/recycling_targets.json` | 2025 and 2030 recycling targets (%) per waste category, with legal basis |
+| `data/interim/env_wasmun.parquet` | Municipal waste generated (kg per person, tonnes), recycled (tonnes) and recycling rate, per country and year |
+| `data/interim/env_waspacr.parquet` | Packaging recycling rates (%) per country and packaging type, 2023 |
+| `data/processed/recycling_distance_to_target.json` | Recycling rate (%) and distance to the 2025 target (percentage points) per country and waste category, 2023 |
 
-Each download overwrites the files that are already there.
+Interim and processed tables keep all geographies (countries, non-EU countries and the `EU27_2020` total). Filter to EU27 countries with `data/lookups/geo_eu27.json`. See the method notes for the full list of decisions.
 
-### Update all datasets
+## Common tasks
 
-From the project root:
+### Use project paths in a script or notebook
 
+Never write paths by hand or relative to the working directory. Import them:
+
+```python
+from paths import DIR_LOOKUPS, raw_dir, interim_file
+
+df = pd.read_parquet(interim_file("env_wasmun"))      # data/interim/env_wasmun.parquet
+df_raw = pd.read_parquet(raw_dir("env_wasmun") / "df.parquet")
 ```
-.venv/Scripts/python scripts/raw/download_and_save_eurostat_raw_sources.py
-```
 
-This downloads every dataset in `DATASET_CODES` in [scripts/raw/download_and_save_eurostat_raw_sources.py](scripts/raw/download_and_save_eurostat_raw_sources.py). If a dataset fails, the error is logged, the script continues with the next one, and it ends with exit code 1. To add a dataset, add its Eurostat code to that list.
+The paths are absolute, so code works from any folder, including notebooks and the VS Code Interactive Window. To add a new folder, add it once in [src/paths/__init__.py](src/paths/__init__.py).
 
-### Update one dataset
+### Download or update Eurostat data
 
-```
-.venv/Scripts/python -c "from apiEurostat.pipeline import process; process('env_wasmun')"
-```
+- All datasets: `.venv/Scripts/python scripts/raw/download_eurostat.py`, then `scripts/raw/update_raw_catalog.py` (or `run_pipeline.py --download`, which runs both and rebuilds everything).
+- One dataset: `.venv/Scripts/python -c "from eurostat_api.pipeline import process; process('env_wasmun')"`
+- To add a dataset, add its Eurostat code to `DATASET_CODES` in [scripts/raw/download_eurostat.py](scripts/raw/download_eurostat.py).
+- If one dataset fails, the error is logged, the script continues with the next one, and it ends with exit code 1.
+- Only years 2010 to 2026 are downloaded, for countries plus the EU-level totals Eurostat publishes for each dataset. To change this, edit the defaults of `download_eurostat()` in [src/eurostat_api/download_eurostat.py](src/eurostat_api/download_eurostat.py).
+- How the package is organised: `download_eurostat.py` calls the API, `transform_response.py` builds the dataframe and lookups and saves the files, `pipeline.py` runs both for one dataset.
 
-### Notes
+### Add a new indicator source
 
-- Only years 2010 to 2026 are downloaded, for countries plus the EU-level totals Eurostat publishes for each dataset (always `EU27_2020`; some datasets also have EU28, euro area or EFTA totals). To change this, edit the defaults of `download_eurostat()` in [src/apiEurostat/download_eurostat.py](src/apiEurostat/download_eurostat.py).
-- The `apiEurostat` package is installed into `.venv` in editable mode. If the import fails, reinstall it with `.venv/Scripts/python -m pip install -e .`
-- How the code is organised:
-  - `download_eurostat.py` calls the API.
-  - `transform_reponse.py` builds the dataframe and lookups and saves the files.
-  - `pipeline.py` runs both steps for one dataset.
+1. Download the dataset (add its code to `DATASET_CODES`).
+2. Explore it in a new notebook, `notebooks/python/NN_<topic>.ipynb`.
+3. Write `scripts/interim/<eurostat code>.py`, using an existing interim script as a template, and save to `interim_file("<eurostat code>")`.
+4. Add the script to `STEPS` in [scripts/run_pipeline.py](scripts/run_pipeline.py), in the right layer.
+5. Record the decisions in [dashboard_notes/method_notes.md](dashboard_notes/method_notes.md).
+
+### Change a recycling target
+
+Edit `TARGETS` in [scripts/lookups/create_recycling_targets.py](scripts/lookups/create_recycling_targets.py), run the pipeline, and update the targets table in the method notes.
+
+### Adjust a value in the source data
+
+Data validation is done at the end of each interim script, in a section marked `DATA VALIDATION` (see [scripts/interim/env_waspacr.py](scripts/interim/env_waspacr.py)). Each rule:
+- explains the issue in a comment,
+- only applies while the issue is still in the Eurostat data (e.g. a threshold, not a fixed country-year), so a revised figure is kept automatically,
+- prints a line every time it changes a value,
+- is documented in the method notes.
+
+Never edit files in `data/raw`.
+
+## Conventions
+
+| What | Convention | Example |
+|---|---|---|
+| File and folder names | lower case, words separated by `_` | `geo_eu27.json` |
+| Interim scripts and files | named after the Eurostat dataset code | `env_wasmun.py` → `env_wasmun.parquet` |
+| Other scripts | named after what they create; lookups start with `create_` | `create_recycling_targets.py` → `recycling_targets.json` |
+| Processed files | topic first, then the content | `recycling_distance_to_target.json` |
+| Notebooks | two-digit number, then the topic | `04_create_mw_pc.ipynb` |
+| Script docstring | what it does, input, output, how to run | see any script |
+| Paths | always from the `paths` package | `from paths import DIR_INTERIM` |
+| Formats | parquet for raw and interim data; JSON for lookups and dashboard files | |
+| Waste category labels | sentence case, as in Eurostat | `Municipal waste`, `Plastic packaging` |
+| Rates | % with one decimal; distances in percentage points | `68.1` |
+
+Notebooks are for exploration. Anything the dashboard uses must be produced by a script in `scripts/` and listed in `run_pipeline.py`.
+
+## Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| `ModuleNotFoundError: No module named 'paths'` (or `eurostat_api`) | Run `.venv/Scripts/python -m pip install -e .`. In the VS Code Interactive Window or a notebook, check the kernel is `.venv` and restart it. |
+| `FileNotFoundError` for a file in `data/raw` | The raw parquet files are not in git. Run `scripts/run_pipeline.py --download`. |
+| `FileNotFoundError` for an interim or lookup file | Run `scripts/run_pipeline.py`, which builds the files in the right order. |
+| `time` becomes a number when reading a JSON file | Read it with `pd.read_json(path, dtype={"time": str})`. |
+| Figures differ from a colleague's | Compare `source_updated` in `data/catalog/raw_sources.csv`: you may have different Eurostat releases. |

@@ -5,8 +5,7 @@ from pyjstat import pyjstat
 from pathlib import Path
 import json
 
-# data/raw at the project root (this file is src/apiEurostat/transform_reponse.py)
-RAW_DATA_DIR = Path(__file__).resolve().parents[2] / "data" / "raw"
+from paths import DIR_RAW as RAW_DATA_DIR
 
 
 

@@ -1,0 +1,72 @@
+[
+  {
+    "waste_name": "Municipal waste",
+    "target_2025": 55.0,
+    "target_2030": 60.0,
+    "legal_basis": "Waste Framework Directive 2008/98/EC (as amended by Directive (EU) 2018/851)",
+    "article": "Art. 11(2)"
+  },
+  {
+    "waste_name": "Packaging",
+    "target_2025": 65.0,
+    "target_2030": 70.0,
+    "legal_basis": "Packaging and Packaging Waste Regulation (EU) 2025/40",
+    "article": "Art. 52"
+  },
+  {
+    "waste_name": "Plastic packaging",
+    "target_2025": 50.0,
+    "target_2030": 55.0,
+    "legal_basis": "Packaging and Packaging Waste Regulation (EU) 2025/40",
+    "article": "Art. 52"
+  },
+  {
+    "waste_name": "Wooden packaging",
+    "target_2025": 25.0,
+    "target_2030": 30.0,
+    "legal_basis": "Packaging and Packaging Waste Regulation (EU) 2025/40",
+    "article": "Art. 52"
+  },
+  {
+    "waste_name": "Steel packaging",
+    "target_2025": 70.0,
+    "target_2030": 80.0,
+    "legal_basis": "Packaging and Packaging Waste Regulation (EU) 2025/40",
+    "article": "Art. 52"
+  },
+  {
+    "waste_name": "Aluminium packaging",
+    "target_2025": 50.0,
+    "target_2030": 60.0,
+    "legal_basis": "Packaging and Packaging Waste Regulation (EU) 2025/40",
+    "article": "Art. 52"
+  },
+  {
+    "waste_name": "Glass packaging",
+    "target_2025": 70.0,
+    "target_2030": 75.0,
+    "legal_basis": "Packaging and Packaging Waste Regulation (EU) 2025/40",
+    "article": "Art. 52"
+  },
+  {
+    "waste_name": "Paper and cardboard packaging",
+    "target_2025": 75.0,
+    "target_2030": 85.0,
+    "legal_basis": "Packaging and Packaging Waste Regulation (EU) 2025/40",
+    "article": "Art. 52"
+  },
+  {
+    "waste_name": "Metallic packaging",
+    "target_2025": null,
+    "target_2030": null,
+    "legal_basis": null,
+    "article": null
+  },
+  {
+    "waste_name": "Other packaging",
+    "target_2025": null,
+    "target_2030": null,
+    "legal_basis": null,
+    "article": null
+  }
+]
