@@ -68,7 +68,7 @@ def main():
 # From this point onwards, the indicators are checked, and values that cannot be shown in
 # the dashboard are adjusted. Each adjustment only applies while the value is still in the
 # source, so it stops having an effect if Eurostat revises the data.
-# See dashboard_notes/method_notes.md.
+# See docs/method_notes.md.
 # =====================================================================================
 
 # Cyprus (CY), steel packaging.

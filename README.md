@@ -2,8 +2,11 @@
 
 This project explores the data used in the EEA's Waste Data Reporting (WDR) cycle and covers the full data cycle: it downloads Eurostat waste datasets, builds indicators, checks them, and calculates each country's distance to the EU recycling targets. The outputs feed a dashboard.
 
-- **Method notes**: what each indicator means, decisions taken and their consequences are in [dashboard_notes/method_notes.md](dashboard_notes/method_notes.md). Read it before using the data.
-- **Next tasks**: [todo.md](todo.md).
+The project notebook is the [docs/](docs/) folder:
+- **Method notes**: what each indicator means, decisions taken and their consequences, and the open data questions are in [docs/method_notes.md](docs/method_notes.md). Read it before using the data.
+- **Decision log**: every decision taken on the way (data, dashboard, project organisation), dated, newest first, in [docs/decisions.md](docs/decisions.md).
+- **Findings**: the most relevant results of the analysis, in [docs/findings.md](docs/findings.md).
+- **Next tasks**: [docs/todo.md](docs/todo.md).
 
 ## Quick start
 
@@ -55,7 +58,7 @@ notebooks/python/       exploration; each script was first developed in a notebo
 dashboard/              React + D3 dashboard (Vite app), published on GitHub Pages
   src/data.js           the only file that loads data (from data/processed and data/lookups)
 .github/workflows/      deploy-dashboard.yml: builds and publishes the dashboard
-dashboard_notes/        method notes
+docs/                   project notebook: method notes, decision log, findings, to do
 background/             reference documents
 ```
 
@@ -75,8 +78,7 @@ The data moves through four layers: `raw` → `lookups` → `interim` → `proce
 | 8 | [scripts/interim/nama_10_pc.py](scripts/interim/nama_10_pc.py) | `data/raw/nama_10_pc/` | `data/interim/nama_10_pc.parquet` |
 | 9 | [scripts/processed/recycling_distance_to_target.py](scripts/processed/recycling_distance_to_target.py) | interim files, `recycling_targets.json` | `data/processed/recycling_distance_to_target.json` |
 | 10 | [scripts/processed/municipal_waste.py](scripts/processed/municipal_waste.py) | `data/interim/env_wasmun.parquet` | `data/processed/municipal_waste.json` |
-| 11 | [scripts/processed/municipal_waste_decoupling.py](scripts/processed/municipal_waste_decoupling.py) | `env_wasmun.parquet`, `nama_10_pc.parquet` | `data/processed/municipal_waste.json` | Municipal waste generated per person (kg) and in total (thousand tonnes), per country and year, 2010–2024 |
-| `data/processed/municipal_waste_decoupling.json` |
+| 11 | [scripts/processed/municipal_waste_decoupling.py](scripts/processed/municipal_waste_decoupling.py) | `env_wasmun.parquet`, `nama_10_pc.parquet` | `data/processed/municipal_waste_decoupling.json` |
 
 The pipeline stops at the first script that fails. Every script can also be run on its own, from any folder, e.g. `.venv/Scripts/python scripts/interim/env_wasmun.py`. Each script's docstring states its input, output and decisions.
 
@@ -174,7 +176,7 @@ The list of geographies comes from `data/lookups/geo_eu27.json` ([src/geo/__init
 2. Explore it in a new notebook, `notebooks/python/NN_<topic>.ipynb`.
 3. Write `scripts/interim/<eurostat code>.py`, using an existing interim script as a template, and save to `interim_file("<eurostat code>")`.
 4. Add the script to `STEPS` in [scripts/run_pipeline.py](scripts/run_pipeline.py), in the right layer.
-5. Record the decisions in [dashboard_notes/method_notes.md](dashboard_notes/method_notes.md).
+5. Record the decisions in [docs/method_notes.md](docs/method_notes.md), and log them in [docs/decisions.md](docs/decisions.md).
 
 ### Change a recycling target
 
@@ -203,7 +205,7 @@ Never edit files in `data/raw`.
 | Paths | always from the `paths` package | `from paths import DIR_INTERIM` |
 | Formats | parquet for raw and interim data; JSON for lookups and dashboard files | |
 | Waste category labels | sentence case, as in Eurostat | `Municipal waste`, `Plastic packaging` |
-| Rates | % with one decimal; distances in percentage points | `68.1` |
+| Rates | in raw and interim data, as in the source (share 0–1 or %, stated in the docstring); in the processed files and the dashboard, % with one decimal; distances in percentage points | `0.681` (interim) → `68.1` (processed) |
 
 Notebooks are for exploration. Anything the dashboard uses must be produced by a script in `scripts/` and listed in `run_pipeline.py`.
 

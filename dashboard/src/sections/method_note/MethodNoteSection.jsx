@@ -1,5 +1,5 @@
 // Methodological note: sources, definitions and caveats, summarised from
-// dashboard_notes/method_notes.md.
+// docs/method_notes.md.
 import Section from "../../components/Section.jsx";
 
 export default function MethodNoteSection() {

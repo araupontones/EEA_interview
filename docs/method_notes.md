@@ -1,14 +1,14 @@
 # Method notes
 
 Decisions taken when building the indicator tables, and what they mean for the analysis and the dashboard.
-Last updated: 14 November 2026.
+Last updated: 15 November 2026.
 
 ## 1. General decisions (all sources)
 
 | Decision | Consequence |
 |---|---|
 | Data is downloaded from the Eurostat Statistics API for countries plus the EU-level totals of each dataset (always `EU27_2020`; some datasets also have EU28, euro area or EFTA totals), for 2010 to 2026 only. | No regional data. The EU27 figure is Eurostat's own total, so it does not need to be calculated, but totals must be removed before summing or averaging countries, or they are counted twice. Years before 2010 are not available without changing the download defaults in `src/eurostat_api/download_eurostat.py`. |
-| Data is stored in layers: `data/raw` (downloads, never edited), `data/interim` (indicators from one source), `data/processed` (final country-year table for the dashboard, still to build). | Every figure in the dashboard can be traced back to one raw file. Each layer can be rebuilt by running its scripts. |
+| Data is stored in layers: `data/raw` (downloads, never edited), `data/interim` (indicators from one source), `data/processed` (final tables for the dashboard, one JSON file per topic: `recycling_distance_to_target.json`, `municipal_waste.json`, `municipal_waste_decoupling.json`). | Every figure in the dashboard can be traced back to one raw file. Each layer can be rebuilt by running its scripts. |
 | Each raw download overwrites the previous one. `data/catalog/raw_sources.csv` records the Eurostat release date (`source_updated`) and download time. | Figures can change after a new download, because Eurostat revises past years. Check the catalog to see which release the dashboard uses. |
 | Raw and interim tables keep all geographies in the source: countries, including non-EU countries (e.g. IS, NO, CH, candidate countries), and the EU-level and euro area totals. | Interim data can be reused for other comparisons (e.g. with non-EU countries) without downloading again. |
 | Processed tables keep only the 27 EU Member States and the EU27 total (`EU27_2020`), with the same rule in every processed script (`keep_eu27()` in `src/geo`, based on `data/lookups/geo_eu27.json`). `run_pipeline.py` fails if a processed file has any other geography. | The dashboard shows only EU countries. The EU total always has the same code, `EU27_2020`, in all processed files; its display name is "EU27" in `geo_eu27.json`. Non-EU countries (AL, BA, CH, GE, IS, ME, MK, NO, RS, TR, XK) are not in the dashboard. |
@@ -49,8 +49,8 @@ Country-years with waste generated but no recycling figure are kept, with an emp
 **Waste per person and total waste are joined with an inner join.**
 A country-year is dropped if one of the two is missing.
 
-**The rate is a share (0 to 1), not a percentage.**
-Multiply by 100 for display. The packaging rates (section 3) are already in %, so the two must be aligned before they appear side by side.
+**The rate is a share (0 to 1) in the interim data, and in % in the processed data.**
+The interim table keeps the share. The processed scripts multiply it by 100 and round to one decimal (as in `recycling_distance_to_target.json`), so the dashboard always shows rates in % with one decimal, the same unit as the packaging rates (section 3).
 
 **Possible break in series.**
 New calculation rules for the municipal waste targets apply from reference year 2020. Trends across 2020 should be read with care. Check the Eurostat metadata for countries with a break flag.
@@ -80,10 +80,10 @@ Script: `scripts/interim/env_waspacr.py`. Output: `data/interim/env_waspacr.parq
 It must be turned into one column per packaging type (e.g. `packaging_rcy_rate_plastic`) before it can be merged into the country-year table.
 
 **Missing rates are kept.**
-37 of 279 rows have no rate in 2023: 36 are empty in the source, and 1 (Cyprus, steel packaging) is set to empty by the data validation below. Bulgaria, Croatia, Hungary and Poland have no rates at all for 2023 under this method.
+37 of 279 rows have no rate in 2023: 36 are empty in the source, and 1 (Cyprus, steel packaging) is set to empty by the data validation below. Bulgaria, Czechia and Hungary have no rates at all for 2023 under this method.
 
 **Values are in %.**
-Unlike the municipal waste rate, which is a share (0 to 1).
+Unlike the interim municipal waste rate, which is a share (0 to 1) until the processed scripts convert it.
 
 ### Data validation
 
@@ -259,12 +259,23 @@ Sources: Eurostat metadata for env_wasmun (https://ec.europa.eu/eurostat/cache/m
 
 ## 7. Open points
 
-- Check `municipal_waste_rcy_rate` against the official Eurostat municipal waste recycling rate for a few countries.
-- Confirm in the Eurostat metadata the break in series in 2020 for both sources.
-- Decide whether packaging should keep all years, or only the latest year.
-- Decide how the dashboard shows decoupling for countries with a break in series after 2011 (e.g. a note per country, starting their index after the break, or a `break_year` column in the data). Check the effect of the other breaks (Estonia, Ireland, Poland, Portugal, Slovenia, Greece, Sweden, France).
-- Consider keeping the Eurostat flags (`b` break, `e` estimate, `p` provisional) in the raw download, so breaks can be found in the data rather than in the metadata.
-- Find which packaging materials each of the 7 Member States postponed (Commission notifications or implementation plans).
-- Check in the legal texts the conditions for postponement (Waste Framework Directive Art. 11(3), Directive 94/62/EC Art. 6(6)) and whether postponements notified under Directive 94/62/EC carry over unchanged under Regulation (EU) 2025/40.
-- Confirm with the reporters the packaging rates above 100 % (Slovenia glass, aluminium, steel and metallic, Poland steel), and decide whether to flag them in the dashboard.
-- Decide whether to add a `postponed_2025` flag per country to the lookups, so the dashboard can mark these countries automatically.
+The single list of open data questions. Each item points to the section that explains it. When a decision leads to work (a script, a flag, a chart change), add that task to [todo.md](todo.md), and remove the item here once it is decided and recorded in its section.
+
+Municipal waste (section 2, section 6):
+- [ ] Decide whether the municipal recycling rate uses RCY, RCY_M + RCY_C_D, or RCY_M + RCY_C_D + PRP_REU (section 2).
+- [ ] Check the municipal recycling rate against the official Eurostat rate for a few countries (section 2).
+- [ ] Confirm in the Eurostat metadata the break in series in 2020, for municipal waste and packaging (sections 2 and 3).
+- [ ] Decide how the dashboard shows decoupling for countries with a break in series after 2011: a note per country, an index that starts after the break, or a `break_year` column in the data (section 6).
+- [ ] Check the effect of the breaks not yet reviewed: Estonia, Ireland, Poland, Portugal, Slovenia, Greece, Sweden, France (section 6).
+
+Packaging (section 3):
+- [ ] Decide whether packaging keeps all years, or only the latest year.
+- [ ] Confirm with the reporters the rates above 100 % (Slovenia glass, aluminium, steel and metallic; Poland steel), and decide whether to flag them in the dashboard.
+
+Targets and postponements (section 4):
+- [ ] Find which packaging materials each of the 7 Member States postponed (Commission notifications or implementation plans).
+- [ ] Check in the legal texts the conditions for postponement (Waste Framework Directive Art. 11(3), Directive 94/62/EC Art. 6(6)), and whether postponements notified under Directive 94/62/EC carry over unchanged under Regulation (EU) 2025/40.
+- [ ] Decide whether to add a `postponed_2025` flag per country to the lookups, so the dashboard can mark these countries automatically.
+
+Data download (section 1):
+- [ ] Consider keeping the Eurostat flags (`b` break, `e` estimate, `p` provisional) in the raw download, so breaks can be found in the data rather than in the metadata.

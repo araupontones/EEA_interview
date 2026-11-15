@@ -19,10 +19,6 @@
 - [ ] Mark the Member States that postponed the 2025 targets ("deadline postponed") instead of showing them as failing.
 - [ ] Publish: on GitHub, Settings → Pages → Source: "GitHub Actions"; check the first deployment.
 
-## Open points (from dashboard_notes/method_notes.md)
+## Open data decisions
 
-- [ ] Decide whether the municipal recycling rate uses RCY, RCY_M + RCY_C_D, or RCY_M + RCY_C_D + PRP_REU.
-- [ ] Check the municipal recycling rate against the official Eurostat rate for a few countries.
-- [ ] Decide how to handle breaks in series in municipal waste per person (note, index from the break year, or a `break_year` column), and check the breaks not yet reviewed (Estonia, Ireland, Poland, Portugal, Slovenia, Greece, Sweden, France).
-- [ ] Confirm with the reporters the packaging rates above 100 % (Slovenia, Poland).
-- [ ] Find which packaging materials each of the 7 Member States postponed, and decide whether to add a `postponed_2025` flag to the lookups.
+Not listed here: see the open points in [method_notes.md](method_notes.md#7-open-points). When a decision there leads to work, add the task to this file.

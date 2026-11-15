@@ -5,7 +5,7 @@ The dashboard shows the general note for every country, and a country note when 
 selected country (or the EU27) needs care. Where a note has a break_year, the dashboard
 also marks that year on the chart.
 
-The texts summarise dashboard_notes/method_notes.md (sections 5 and 6). When the method
+The texts summarise docs/method_notes.md (sections 5 and 6). When the method
 notes change, update the texts here and run the pipeline. Do not edit the JSON by hand.
 
 Output columns:
