@@ -235,21 +235,36 @@ Indexing puts both series on one axis (no chart with two y-axes) and shows the c
 
 Several countries changed the definition of municipal waste after 2011, mostly to include waste from businesses that is similar to household waste (the definition in Directive (EU) 2018/851). Their waste per person jumps in the year of the change, although the amount of waste did not change. Across a break, the waste index does not measure decoupling.
 
-The four EU countries with the largest rises since 2011:
+The five EU countries whose definition widened to include waste from businesses:
 
 | Country | Year | What changed (Eurostat country notes) | Effect | Before the break |
 |---|---|---|---|---|
 | Czechia | 2017 | Until 2016 only waste collected by municipalities was reported; from 2017 also waste from LoW chapter 20 from enterprises and waste from citizens collected outside the municipal system. | +44 % from 2016 to 2017 (339 to 489 kg; +45 % in total amounts) | 2016: waste index 105.9, GDP index 109.1, relative decoupling |
 | Belgium | 2020 | Municipal waste reported as defined in Directive (EU) 2018/851 (household and similar waste from businesses). Not flagged as a break in the Eurostat data. | +75 % from 2019 to 2020 (416 to 729 kg) | 2019: waste index 91.4, GDP index 106.9, absolute decoupling |
 | Austria | 2020 | Municipal waste from all sources other than households (commerce and industry) added. | +42 % from 2019 to 2020 (588 to 834 kg) | 2019: waste index 102.6, GDP index 105.4, relative decoupling |
+| Luxembourg | 2016 | Definition newly based on LoW codes, so it includes more waste from non-household sources; before, municipal waste was the waste under the responsibility of the public sector. Eurostat gives +37 % in waste generated. | +34 % from 2015 to 2016 (607 to 815 kg) | 2015: waste index 91.1, GDP index 100.4, absolute decoupling |
 | Slovakia | 2020 | New national definition of municipal waste, also covering waste from other sources (from the Waste Information System). Not flagged as a break in the Eurostat data. | +14 % from 2019 to 2020 | 2019: waste index 135.4, GDP index 121.9, no decoupling |
 
-- Belgium, Austria and Czechia show "no decoupling" only because of the change in definition: before it, all three were decoupled. Luxembourg (break in 2016) is in the same situation: absolute decoupling in 2015 (waste index 91.1, GDP index 100.4).
+- Belgium, Austria, Czechia and Luxembourg show "no decoupling" only because of the change in definition: before it, all four were decoupled.
 - Slovakia's waste per person was already rising faster than GDP before 2020 (+35 % from 2011 to 2019, against +22 % for GDP). The country notes give no change in method for those years, so for Slovakia the lack of decoupling is real, and the 2020 change makes it look larger.
-- Other EU countries with a break flag after 2011: Estonia 2014, Ireland 2014 and 2020, Poland 2013 and 2014, Portugal 2015, Slovenia 2013, Greece 2020, Sweden 2020 and 2024, France 2024. Their effect on the index has not been checked yet.
+- Other breaks and jumps, reviewed on 15 November 2026 (year-on-year change in waste per person; causes from the Eurostat annex "Country specific notes on municipal waste", section "Municipal waste generated"):
+
+| Country | Year | Change | Cause (Eurostat annex) | Dashboard note |
+|---|---|---|---|---|
+| Estonia | 2014 | +22 % (293 to 357 kg) | Packaging waste included from 2014 (not until 2013); also more mixed municipal waste and more separate collection in bigger towns. Before the break (2013): waste index 97.3, GDP index 106.3. | Yes |
+| Slovenia | 2013 | +14 % (362 to 414 kg) | Waste from special waste collectors included from 2013, not in earlier years. | Yes |
+| Ireland | 2014 | no 2013 figure | Improved method to estimate unmanaged household waste. Ireland also has no figure for 2015. | Yes, in the Irish note |
+| Romania | 2011 | +17 % | Nothing documented for 2011 (the annex mentions a change in method from 2010). | No |
+| Finland | 2022, 2023 | +17 %, +10 % | Nothing documented. | No |
+| Latvia | 2015 | +11 % | Nothing documented for waste generated. | No |
+| Poland 2013 and 2014, Portugal 2015, Greece 2020, Sweden 2020 and 2024, France 2024, Ireland 2020 | | below 10 % (Poland -6 % and -8 %, Sweden 2024 +9 %, others under 5 %) | Break flags; small effect on the trend. | No |
+
+  Country notes are written only where the annex documents the cause. The jumps without a documented cause stay without a note (open point, section 7).
 - The EU27 total includes these changes: its waste per person rose from 505 to 521 kg in 2020, partly because of them. The EU27 rise since 2011 (+2.8 %) therefore overstates the real rise in waste, and decoupling in the EU is probably stronger than the index shows.
 
-**These notes are shown in the dashboard.** `scripts/lookups/create_decoupling_notes.py` writes `data/lookups/decoupling_notes.json`: a general note on how to read the chart, and a note for the EU27, Czechia, Belgium, Austria, Slovakia, Luxembourg and Ireland, with the break year where there is one. The dashboard shows the note of the selected country under the chart and marks the break year. When this section changes, update the texts in that script.
+**These notes are shown in the dashboard.** `scripts/lookups/create_decoupling_notes.py` writes `data/lookups/decoupling_notes.json`: a general note on how to read the chart, and a note for the EU27, Czechia, Belgium, Austria, Slovakia, Luxembourg, Estonia, Slovenia and Ireland, with the break year where there is one (all except the EU27). The dashboard shows the note of the selected country under the chart and marks the break year with a vertical line. When this section changes, update the texts in that script.
+
+**The breaks are explained under the decoupling chart, not under the municipal waste bar chart.** The decoupling chart compares years, so a break changes what it shows; the bar chart compares countries in one year (2023), so it has no note on breaks. `create_decoupling_notes.py` also writes a `break_note`, shown under the decoupling chart when the EU27 is selected (the EU27 total includes these changes; a selected country has its own note): Luxembourg (from 2016), Czechia (from 2017) and Belgium, Austria and Slovakia (from 2020) widened their definition, which raised their waste per person by 14 % to 75 % in the year of the change. The list of countries is `DEFINITION_CHANGES` in that script; their break years come from the country notes.
 
 Sources: Eurostat metadata for env_wasmun (https://ec.europa.eu/eurostat/cache/metadata/en/env_wasmun_esms.htm) and its annex "Country specific notes on municipal waste"; break flags (`b`) from the Eurostat API. The flags are not kept in our raw download.
 
@@ -265,8 +280,7 @@ Municipal waste (section 2, section 6):
 - [ ] Decide whether the municipal recycling rate uses RCY, RCY_M + RCY_C_D, or RCY_M + RCY_C_D + PRP_REU (section 2).
 - [ ] Check the municipal recycling rate against the official Eurostat rate for a few countries (section 2).
 - [ ] Confirm in the Eurostat metadata the break in series in 2020, for municipal waste and packaging (sections 2 and 3).
-- [ ] Decide how the dashboard shows decoupling for countries with a break in series after 2011: a note per country, an index that starts after the break, or a `break_year` column in the data (section 6).
-- [ ] Check the effect of the breaks not yet reviewed: Estonia, Ireland, Poland, Portugal, Slovenia, Greece, Sweden, France (section 6).
+- [ ] Ask the reporters about the jumps in waste per person without a documented cause: Romania 2011 (+17 %), Finland 2022 and 2023 (+17 %, +10 %), Latvia 2015 (+11 %) (section 6).
 
 Packaging (section 3):
 - [ ] Decide whether packaging keeps all years, or only the latest year.

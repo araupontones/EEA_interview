@@ -27,6 +27,7 @@ Explores the data of the EEA's Waste Data Reporting (WDR) cycle: downloads Euros
 - Data is loaded only in `dashboard/src/data.js`, by importing the JSON files from `data/processed/` and `data/lookups/` (`@data` alias). No copies of the data in `dashboard/`.
 - The processed JSON files are the dashboard's data contract: when renaming a column or file in a processed script, update `data.js` and the charts in the same change.
 - Texts shown in the dashboard (notes, captions) come from data files built by the pipeline (e.g. `data/lookups/decoupling_notes.json`), not from the React code.
+- Every chart ends with its source line (`<ChartSource chart="..." />`): add each new chart and its Eurostat datasets to `CHARTS` in `scripts/lookups/create_data_sources.py`.
 - Before committing dashboard changes, run `npm run build` and check it passes.
 
 ## Pipeline

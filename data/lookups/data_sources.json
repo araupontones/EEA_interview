@@ -1,0 +1,60 @@
+{
+  "municipal_waste": {
+    "prefix": "Source: Eurostat",
+    "datasets": [
+      {
+        "code": "env_wasmun",
+        "label": "Municipal waste by waste management operations",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/env_wasmun/default/table",
+        "text": "(env_wasmun), updated by Eurostat on 15 October 2026, downloaded on 13 November 2026"
+      }
+    ]
+  },
+  "decoupling": {
+    "prefix": "Source: Eurostat",
+    "datasets": [
+      {
+        "code": "env_wasmun",
+        "label": "Municipal waste by waste management operations",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/env_wasmun/default/table",
+        "text": "(env_wasmun), updated by Eurostat on 15 October 2026, downloaded on 13 November 2026"
+      },
+      {
+        "code": "nama_10_pc",
+        "label": "Gross domestic product (GDP) and main components per capita - annual data",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/nama_10_pc/default/table",
+        "text": "(nama_10_pc), updated by Eurostat on 11 November 2026, downloaded on 14 November 2026"
+      }
+    ]
+  },
+  "distance_to_target": {
+    "prefix": "Source: Eurostat",
+    "datasets": [
+      {
+        "code": "env_wasmun",
+        "label": "Municipal waste by waste management operations",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/env_wasmun/default/table",
+        "text": "(env_wasmun), updated by Eurostat on 15 October 2026, downloaded on 13 November 2026"
+      },
+      {
+        "code": "env_waspacr",
+        "label": "Recycling rates of packaging waste for monitoring compliance with policy targets, by type of packaging",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/env_waspacr/default/table",
+        "text": "(env_waspacr), updated by Eurostat on 10 November 2026, downloaded on 13 November 2026"
+      }
+    ],
+    "targets": {
+      "prefix": "Targets",
+      "acts": [
+        {
+          "label": "Waste Framework Directive 2008/98/EC (as amended by Directive (EU) 2018/851)",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008L0098-20240218"
+        },
+        {
+          "label": "Packaging and Packaging Waste Regulation (EU) 2025/40",
+          "url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng"
+        }
+      ]
+    }
+  }
+}

@@ -1,10 +1,21 @@
 {
+  "caption": "Municipal waste and real GDP per person, 2011 = 100: {name}",
+  "labels": {
+    "mw_pc_index": "Waste per person",
+    "gdp_pc_index": "GDP per person",
+    "reference": "EU27",
+    "reference_mw_pc_index": "EU27 waste per person",
+    "reference_gdp_pc_index": "EU27 GDP per person",
+    "base_year": "2011 = 100",
+    "break_year": "Break in series"
+  },
   "general_note": "Both lines show the change since 2011 (2011 = 100): an index of 110 means 10 % higher than in 2011. GDP is in real terms (2020 prices), so it shows the growth of the economy, not inflation. When the GDP line is above the waste line, the economy grew more than waste per person: waste is decoupled from economic growth.",
+  "break_note": "Change in definition: Luxembourg (from 2016), Czechia (from 2017) and Belgium, Austria and Slovakia (from 2020) started to include municipal waste from businesses. Their waste per person rose by 14 % to 75 % in the year of the change, without more waste being generated, so their figures cannot be compared with their earlier years. Select a country to see the year of its change on the chart.",
   "country_notes": [
     {
       "geo": "EU27_2020",
       "break_year": null,
-      "note": "In 2020 and 2021 the lines are affected by COVID-19: GDP fell while waste per person rose, likely because people spent more time at home. The EU27 waste figure also rises from 2020 because Austria, Belgium and Slovakia started to count municipal waste from businesses (see their notes)."
+      "note": "In 2020 and 2021 the lines are affected by COVID-19: GDP fell while waste per person rose, likely because people spent more time at home. The EU27 waste figure also includes the changes in definition of several Member States (see below), so the real rise in waste is smaller than the line shows."
     },
     {
       "geo": "CZ",
@@ -29,12 +40,22 @@
     {
       "geo": "LU",
       "break_year": 2016,
-      "note": "Eurostat marks a break in the series of waste per person in 2016 (change in method). Before the break, waste per person fell while GDP grew."
+      "note": "From 2016 Luxembourg defines municipal waste by waste codes, which includes more waste from sources other than households; before, it counted only the waste under the responsibility of the public sector. This raised waste per person by 34 % from 2015 to 2016: a change in definition, not more waste. Before the change, waste per person fell while GDP grew."
+    },
+    {
+      "geo": "EE",
+      "break_year": 2014,
+      "note": "From 2014 Estonia includes packaging waste in municipal waste (not included until 2013). Waste per person rose by 22 % from 2013 to 2014, mostly because of this change; Eurostat also mentions more mixed municipal waste and more separate collection in bigger towns. Before the change, waste per person fell while GDP grew."
+    },
+    {
+      "geo": "SI",
+      "break_year": 2013,
+      "note": "From 2013 Slovenia also counts waste from special waste collectors, which was not included before. Waste per person rose by 14 % from 2012 to 2013, partly because of this change."
     },
     {
       "geo": "IE",
-      "break_year": null,
-      "note": "Irish GDP is inflated by the accounts of multinational companies (it rose by 23 % in 2015 alone), so the GDP line overstates the growth of the Irish economy, and decoupling looks stronger than it is."
+      "break_year": 2014,
+      "note": "Irish GDP is inflated by the accounts of multinational companies (it rose by 23 % in 2015 alone), so the GDP line overstates the growth of the Irish economy, and decoupling looks stronger than it is. Eurostat marks a break in waste per person in 2014 (improved method to estimate household waste not collected by waste services); there are no figures for 2013 and 2015."
     }
   ]
 }

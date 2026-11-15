@@ -10,6 +10,9 @@ Last updated: 15 November 2026. Update this file when the data or the method cha
 - **Large differences between countries.** Austria (782 kg), Denmark (759 kg) and Luxembourg (718 kg) generate around 2.5 times as much per person as Romania (305 kg), Poland (367 kg) and Estonia (373 kg). The median Member State is at 489 kg; 12 Member States are above the EU figure.
 - **Since 2011, waste per person fell in 13 Member States and rose in 14.** The largest falls are in the Netherlands (-18 %), Sweden (-14 %) and Denmark (-12 %).
 - **The largest rises come from changes in definition, not from more waste.** Czechia (+68 %), Slovakia (+52 %), Belgium (+51 %) and Austria (+37 %) widened their definition of municipal waste (Czechia in 2017, the others in 2020) to include similar waste from businesses. Only Slovakia was already rising before the change. Comparisons over time for these countries need a note.
+- **Luxembourg also widened its definition, in 2016.** Its waste per person jumped by 34 % in one year (607 to 815 kg) when it started to define municipal waste by waste codes, including more waste from sources other than households. Its net rise since 2011 is only +7.8 %, because waste per person was falling before the change.
+- **Two more countries count more waste because of a change in what is included.** Estonia added packaging waste in 2014 (+22 % in one year) and Slovenia added waste from special waste collectors in 2013 (+14 %). Their rises since 2011 (+24 % and +25 %) are partly due to these changes.
+- **Three large jumps have no documented cause**: Romania 2011 (+17 %), Finland 2022 (+17 %, then +10 % in 2023) and Latvia 2015 (+11 %). They should be checked with the reporters before they are read as real changes.
 - **The EU figure includes the same changes.** EU waste per person rose from 505 to 521 kg in 2020 and peaked at 534 kg in 2021, partly because of the new definitions. The real rise since 2011 is probably smaller than the +2.2 % shown.
 
 ## 2. Decoupling from economic growth
@@ -46,7 +49,7 @@ Recycling rates in 2023, two years before the 2025 deadline, compared with the 2
 
 ## 4. Caveats for all findings
 
-- **Breaks in series** affect municipal waste per person and decoupling for at least Czechia, Belgium, Austria, Slovakia and Luxembourg, and the EU figure. The breaks in 8 more countries have not been checked yet (method notes, section 6).
+- **Breaks in series** affect municipal waste per person and decoupling for Czechia, Belgium, Austria, Slovakia, Luxembourg, Estonia and Slovenia, and the EU figure. The other flagged breaks have small effects (under 10 %). Jumps in Romania, Finland and Latvia have no documented cause (method notes, section 6).
 - **The municipal recycling rate** includes composting and, for some countries and years, preparing for reuse. It is close to, but not yet checked against, the official Eurostat rate (method notes, section 2).
 - **Some packaging rates are above 100 %** (Slovenia, Poland) and overstate the distance to target. The Cyprus steel rate (221.5 %) is left out of the assessment (method notes, section 3).
 - **2023 is a snapshot, not the 2025 result.** Countries below the target in 2023 still had two years to reach it, and postponements change what counts as a failure (method notes, section 4).

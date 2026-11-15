@@ -71,14 +71,17 @@ The data moves through four layers: `raw` → `lookups` → `interim` → `proce
 | 1 | [scripts/raw/download_eurostat.py](scripts/raw/download_eurostat.py) (only with `--download`) | Eurostat API | `data/raw/<code>/` |
 | 2 | [scripts/raw/update_raw_catalog.py](scripts/raw/update_raw_catalog.py) | `data/raw/` | `data/catalog/raw_sources.csv` |
 | 3 | [scripts/lookups/create_geo_eu27.py](scripts/lookups/create_geo_eu27.py) | `data/raw/demo_gind/` | `data/lookups/geo_eu27.json` |
-| 4 | [scripts/lookups/create_recycling_targets.py](scripts/lookups/create_recycling_targets.py) | targets written in the script | `data/lookups/recycling_targets.json` |
-| 5 | [scripts/lookups/create_decoupling_notes.py](scripts/lookups/create_decoupling_notes.py) | notes written in the script | `data/lookups/decoupling_notes.json` |
-| 6 | [scripts/interim/env_wasmun.py](scripts/interim/env_wasmun.py) | `data/raw/env_wasmun/` | `data/interim/env_wasmun.parquet` |
-| 7 | [scripts/interim/env_waspacr.py](scripts/interim/env_waspacr.py) | `data/raw/env_waspacr/` | `data/interim/env_waspacr.parquet` |
-| 8 | [scripts/interim/nama_10_pc.py](scripts/interim/nama_10_pc.py) | `data/raw/nama_10_pc/` | `data/interim/nama_10_pc.parquet` |
-| 9 | [scripts/processed/recycling_distance_to_target.py](scripts/processed/recycling_distance_to_target.py) | interim files, `recycling_targets.json` | `data/processed/recycling_distance_to_target.json` |
-| 10 | [scripts/processed/municipal_waste.py](scripts/processed/municipal_waste.py) | `data/interim/env_wasmun.parquet` | `data/processed/municipal_waste.json` |
-| 11 | [scripts/processed/municipal_waste_decoupling.py](scripts/processed/municipal_waste_decoupling.py) | `env_wasmun.parquet`, `nama_10_pc.parquet` | `data/processed/municipal_waste_decoupling.json` |
+| 4 | [scripts/lookups/create_geo_flags.py](scripts/lookups/create_geo_flags.py) | `geo_eu27.json` | `data/lookups/geo_flags.json` |
+| 5 | [scripts/lookups/create_recycling_targets.py](scripts/lookups/create_recycling_targets.py) | targets written in the script | `data/lookups/recycling_targets.json` |
+| 6 | [scripts/lookups/create_decoupling_notes.py](scripts/lookups/create_decoupling_notes.py) | notes written in the script, `geo_eu27.json` | `data/lookups/decoupling_notes.json` |
+| 7 | [scripts/lookups/create_municipal_waste_notes.py](scripts/lookups/create_municipal_waste_notes.py) | notes written in the script | `data/lookups/municipal_waste_notes.json` |
+| 8 | [scripts/lookups/create_data_sources.py](scripts/lookups/create_data_sources.py) | `data/catalog/raw_sources.csv`, `recycling_targets.json` | `data/lookups/data_sources.json` |
+| 9 | [scripts/interim/env_wasmun.py](scripts/interim/env_wasmun.py) | `data/raw/env_wasmun/` | `data/interim/env_wasmun.parquet` |
+| 10 | [scripts/interim/env_waspacr.py](scripts/interim/env_waspacr.py) | `data/raw/env_waspacr/` | `data/interim/env_waspacr.parquet` |
+| 11 | [scripts/interim/nama_10_pc.py](scripts/interim/nama_10_pc.py) | `data/raw/nama_10_pc/` | `data/interim/nama_10_pc.parquet` |
+| 12 | [scripts/processed/recycling_distance_to_target.py](scripts/processed/recycling_distance_to_target.py) | interim files, `recycling_targets.json` | `data/processed/recycling_distance_to_target.json` |
+| 13 | [scripts/processed/municipal_waste.py](scripts/processed/municipal_waste.py) | `data/interim/env_wasmun.parquet` | `data/processed/municipal_waste.json` |
+| 14 | [scripts/processed/municipal_waste_decoupling.py](scripts/processed/municipal_waste_decoupling.py) | `env_wasmun.parquet`, `nama_10_pc.parquet` | `data/processed/municipal_waste_decoupling.json` |
 
 The pipeline stops at the first script that fails. Every script can also be run on its own, from any folder, e.g. `.venv/Scripts/python scripts/interim/env_wasmun.py`. Each script's docstring states its input, output and decisions.
 
@@ -91,8 +94,11 @@ The pipeline stops at the first script that fails. Every script can also be run 
 | `data/raw/<code>/metadata.json` | Dataset label, last Eurostat update and download time |
 | `data/catalog/raw_sources.csv` | One row per raw dataset: label, Eurostat release date, download time, dimensions |
 | `data/lookups/geo_eu27.json` | The geographies in the processed data: the 27 EU Member States and the EU27 total, code → display name (e.g. `"BE": "Belgium"`, `"EU27_2020": "EU27"`) |
+| `data/lookups/geo_flags.json` | Flag code of each geography in the processed data, for the flags in the dashboard (`"AT": "at"`; Greece `EL` → `gr`, `EU27_2020` → `eu`) |
 | `data/lookups/recycling_targets.json` | 2025 and 2030 recycling targets (%) per waste category, with legal basis |
-| `data/lookups/decoupling_notes.json` | Notes shown under the decoupling chart: a general note, and country notes with the year of a break in series |
+| `data/lookups/decoupling_notes.json` | Texts of the decoupling chart: caption, legend labels, a general note, a note on the countries that changed their definition of municipal waste (shown with the EU27), and country notes with the year of a break in series |
+| `data/lookups/municipal_waste_notes.json` | Texts of the municipal waste bar chart: caption, labels of the hover card, general note |
+| `data/lookups/data_sources.json` | Source lines under each chart: the Eurostat datasets it uses, with link, Eurostat update date and download date; for the distance-to-target chart, also the legal acts that set the targets (from `recycling_targets.json`) |
 | `data/interim/env_wasmun.parquet` | Municipal waste generated (kg per person, tonnes), recycled (tonnes) and recycling rate, per country and year |
 | `data/interim/env_waspacr.parquet` | Packaging recycling rates (%) per country and packaging type, 2023 |
 | `data/interim/nama_10_pc.parquet` | Real GDP per person (euro, 2020 prices) per country and year, 2010–2025 |
@@ -127,6 +133,10 @@ npm run preview    # preview the built site
 | How I did this | `how_i_did_this/` | |
 
 Shared pieces are in `dashboard/src/components/` (`Section.jsx`: heading and anchor of each section). Folder names are lower case with `_`, as in the rest of the project; React component files use PascalCase (`DecouplingSection.jsx`), the React convention.
+
+**Data sources.** Every chart ends with a source line (`components/ChartSource.jsx`): the Eurostat datasets it uses, linked to the Eurostat data browser, with the date Eurostat last updated them and the date they were downloaded; charts that show the recycling targets also name the legal acts that set them, linked to EUR-Lex. The texts come from `data/lookups/data_sources.json`; the datasets of each chart are set in `CHARTS` in [scripts/lookups/create_data_sources.py](scripts/lookups/create_data_sources.py), and the dates come from the raw catalog, so they update after each download. A new chart needs an entry there.
+
+**Flags.** Country and EU flags come from the [flag-icons](https://github.com/lipis/flag-icons) npm package (MIT licence, version pinned in `package.json`), not from the web. [dashboard/src/lib/flags.js](dashboard/src/lib/flags.js) maps a geography code to its flag with `data/lookups/geo_flags.json` and bundles only the 28 flags used; `flagUrl("AT")` returns the image to show.
 
 **Data.** The dashboard reads the JSON files in `data/processed/` and `data/lookups/` directly, with no copy: [dashboard/src/data.js](dashboard/src/data.js) imports them (`@data` is an alias for `data/`, set in [dashboard/vite.config.js](dashboard/vite.config.js)), and Vite bundles them into the app when it builds. `data.js` is the only file that loads data; charts import from it. To update the data in the dashboard: run the pipeline, commit the JSON files and push.
 

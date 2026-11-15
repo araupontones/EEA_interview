@@ -1,0 +1,14 @@
+{
+  "caption": "Municipal waste generated per person (kg), {year}",
+  "card": {
+    "mw_pc": {
+      "label": "Waste per person",
+      "unit": "kg"
+    },
+    "mw_tt": {
+      "label": "Waste generated",
+      "unit": "thousand tonnes"
+    }
+  },
+  "general_note": "Municipal waste is waste collected from households and similar waste from businesses, such as shops, offices and public institutions. Differences between countries partly reflect what each country counts as municipal waste."
+}

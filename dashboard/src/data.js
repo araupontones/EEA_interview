@@ -15,17 +15,23 @@ import municipalWasteDecoupling from "@data/processed/municipal_waste_decoupling
 import recyclingDistanceToTarget from "@data/processed/recycling_distance_to_target.json";
 
 // lookups
+import dataSources from "@data/lookups/data_sources.json";
 import decouplingNotes from "@data/lookups/decoupling_notes.json";
 import geoNames from "@data/lookups/geo_eu27.json";
+import geoFlags from "@data/lookups/geo_flags.json";
+import municipalWasteNotes from "@data/lookups/municipal_waste_notes.json";
 import recyclingTargets from "@data/lookups/recycling_targets.json";
 
 export const EU27_TOTAL = "EU27_2020";
 
 export {
+  dataSources,
   decouplingNotes,
+  geoFlags,
   geoNames,
   municipalWaste,
   municipalWasteDecoupling,
+  municipalWasteNotes,
   recyclingDistanceToTarget,
   recyclingTargets,
 };

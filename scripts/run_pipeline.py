@@ -3,7 +3,9 @@ Rebuild all the data, running every script in the right order.
 
 Steps (each script reads the outputs of the steps before it):
     1. raw        download_eurostat.py (only with --download), update_raw_catalog.py
-    2. lookups    create_geo_eu27.py, create_recycling_targets.py, create_decoupling_notes.py
+    2. lookups    create_geo_eu27.py, create_geo_flags.py, create_recycling_targets.py,
+                  create_decoupling_notes.py, create_municipal_waste_notes.py,
+                  create_data_sources.py
     3. interim    env_wasmun.py, env_waspacr.py, nama_10_pc.py
     4. processed  recycling_distance_to_target.py, municipal_waste.py,
                   municipal_waste_decoupling.py
@@ -37,8 +39,11 @@ DOWNLOAD = "raw/download_eurostat.py"
 STEPS = [
     "raw/update_raw_catalog.py",
     "lookups/create_geo_eu27.py",
+    "lookups/create_geo_flags.py",
     "lookups/create_recycling_targets.py",
     "lookups/create_decoupling_notes.py",
+    "lookups/create_municipal_waste_notes.py",
+    "lookups/create_data_sources.py",
     "interim/env_wasmun.py",
     "interim/env_waspacr.py",
     "interim/nama_10_pc.py",
