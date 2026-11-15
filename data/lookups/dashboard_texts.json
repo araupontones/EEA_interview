@@ -19,7 +19,13 @@
         "text": " of the EU's municipal waste still goes to landfill, down from {landfill_2011} % in 2011."
       }
     ],
-    "cta": "Start at the top"
+    "byline": {
+      "author": "Andrés Arau",
+      "url": "https://www.linkedin.com/in/andr%C3%A9s-arau-017b1127/",
+      "date": "15 November 2026",
+      "data_note": "Data downloaded from Eurostat on {download_date}"
+    },
+    "cta": "Follow your waste"
   },
   "hierarchy": {
     "title": "The waste hierarchy: where the EU's municipal waste goes ({year})",
@@ -96,7 +102,7 @@
       "title": "Are we recycling enough?",
       "key_message": "The EU already beats its 2025 target for packaging, but is still short for municipal waste and plastic.",
       "lede": "Each dot is a country in {target_year}, two years before the deadline. Blue dots have reached the 2025 target; red and orange dots are still below it.",
-      "try": "Find your country: is it past the dark line, the 2025 target, for each type of waste?",
+      "try": "Find your country: has your country met the 2025 target for each type of waste?",
       "step": "recycling"
     },
     "method-note": {
@@ -143,7 +149,7 @@
     "eyebrow": "Back to the waste hierarchy",
     "title": "Recycling is only halfway up the waste hierarchy",
     "text": "The EU recycles almost half of its municipal waste. It beats its packaging target but is still short for municipal waste and plastic. And the top of the waste hierarchy is generating less waste in the first place, and there the EU has hardly moved: about {eu_kg} kg per person, much as in 2011.",
-    "cta": "Back to the top: pick another country"
+    "cta": "Back to the top"
   },
   "method_note": [
     {

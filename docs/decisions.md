@@ -6,6 +6,20 @@ For data decisions, the full explanation and its consequences are in [method_not
 
 ## 15 November 2026
 
+**Recycling hint: "has your country met the 2025 target".**
+- Decision: the "try this" hint of "Are we recycling enough?" reads "Find your country: has your country met the 2025 target for each type of waste?" instead of "…is it past the dark line, the 2025 target, …".
+- Why: with the new look the target marks no longer read as "the dark line"; the question is about the target, not the mark.
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`SECTIONS["distance-to-target"]["try"]`).
+
+**Hero button: "Follow your waste"; closing button: "Back to the top".**
+- Decision: the hero button reads "Follow your waste ↓" instead of "Start at the top ↓"; the closing panel button reads "Back to the top ↑" instead of "Back to the top: pick another country ↑".
+- Why: "Start at the top" referred to the top of the pyramid when it was in the hero; the button now leads to the new "The waste hierarchy" section, and the new text echoes the lede ("Follow it down the waste hierarchy").
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`HERO["cta"]`, `CLOSING["cta"]`).
+
+**Byline and data date in the hero.**
+- Decision: under the hero lede, "By Andrés Arau · 15 November 2026" (name links to the user's LinkedIn; the date is the publication date, fixed in the lookup until the page is republished), and below it "Data downloaded from Eurostat on {download_date}", the latest download date among the datasets, read from the source lines so it follows every new download. "Downloaded" is kept over Eurostat's "extracted": plainer, and the same word as in the source lines under the charts.
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`HERO["byline"]`), `lib/keyFigures.js` (`{download_date}`), `sections/hero/Hero.jsx`, `index.css` (`.byline`).
+
 **The waste hierarchy gets its own section; no country comparison in "How much waste do we generate?".**
 - Decision: the pyramid leaves the hero and becomes the first section, "The waste hierarchy": the pyramid with the EU figures, each level's explanation next to it (visible, not on hover), a link to the section of each covered level, and under it the share burnt without energy recovery and the share "not in the figures" with its explanation visible (this settles the open "Not in the figures ⓘ" task). The hero keeps label, title, lede and button, in one column; the button leads to the new section. The closing panel keeps its pyramid. The key message of "How much waste do we generate?" drops the Denmark/Romania comparison: "In {year}, the EU generated about {eu_mt} million tonnes of municipal waste, about {eu_kg} kg per person." (findings §1 bullet 1; new placeholder `{eu_mt}` in `lib/keyFigures.js`, from `mw_tt`).
 - Why: the hero felt overcrowded, and the level explanations were hidden in hover tooltips that most people miss and phones do not show. The comparison needed an explanation (it leaves out countries with a change in definition, so it does not name the country with the longest bar); the user preferred to avoid it altogether.

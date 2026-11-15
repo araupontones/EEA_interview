@@ -14,6 +14,7 @@ facts come only from docs/findings.md. "How I did this" describes the project it
 (dashboard/src/lib/keyFigures.js), so they follow every new download. Placeholders:
     {year}              latest year with waste per person for all 27 Member States
     {eu_kg}             EU27 municipal waste generated per person, kg ({year})
+    {download_date}     latest date a Eurostat dataset was downloaded (data_sources.json)
     {eu_mt}             EU27 municipal waste generated, million tonnes ({year}; findings §1 bullet 1)
     {max_country}, {min_country}, {ratio}
                         Member States with the most and least waste per person among those
@@ -58,7 +59,15 @@ HERO = {
         {"text": " of the EU's municipal waste still goes to landfill, down from {landfill_2011} % "
                  "in 2011."},
     ],
-    "cta": "Start at the top",
+    # byline under the lede: author (link to LinkedIn) · publication date (fixed, change it when
+    # republishing), and below it the date of the latest Eurostat download (from the data)
+    "byline": {
+        "author": "Andrés Arau",
+        "url": "https://www.linkedin.com/in/andr%C3%A9s-arau-017b1127/",
+        "date": "15 November 2026",
+        "data_note": "Data downloaded from Eurostat on {download_date}",
+    },
+    "cta": "Follow your waste",
 }
 
 # Waste hierarchy (Waste Framework Directive, Art. 4), best to worst.
@@ -140,8 +149,7 @@ SECTIONS = {
                        "for municipal waste and plastic.",
         "lede": "Each dot is a country in {target_year}, two years before the deadline. Blue dots have "
                 "reached the 2025 target; red and orange dots are still below it.",
-        "try": "Find your country: is it past the dark line, the 2025 target, for each type of "
-               "waste?",
+        "try": "Find your country: has your country met the 2025 target for each type of waste?",
         "step": "recycling",
     },
     "method-note": {
@@ -202,7 +210,7 @@ CLOSING = {
     "text": "The EU recycles almost half of its municipal waste. It beats its packaging target "
             "but is still short for municipal waste and plastic. And the top of the waste hierarchy is generating less waste in the first place, and there the EU "
             "has hardly moved: about {eu_kg} kg per person, much as in 2011.",
-    "cta": "Back to the top: pick another country",
+    "cta": "Back to the top",
 }
 
 # methodological note: (bold lead, text), plain language, facts from docs/findings.md

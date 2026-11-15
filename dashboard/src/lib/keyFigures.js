@@ -7,6 +7,7 @@ import { greatest, least, max } from "d3-array";
 
 import {
   EU27_TOTAL,
+  dataSources,
   decouplingNotes,
   geoNames,
   municipalWaste,
@@ -63,7 +64,16 @@ const plastic = recyclingDistanceToTarget.filter(
 );
 const targetYear = max(recyclingDistanceToTarget, (d) => Number(d.time));
 
+// latest date on which a Eurostat dataset was downloaded, read from the source lines
+// (data/lookups/data_sources.json: "... downloaded on 14 November 2026")
+const downloadDates = Object.values(dataSources)
+  .flatMap((chart) => chart.datasets ?? [])
+  .map((d) => d.text?.match(/downloaded on (\d{1,2} \w+ \d{4})/)?.[1])
+  .filter(Boolean);
+const lastDownload = greatest(downloadDates, (d) => Date.parse(d));
+
 export const KEY_FIGURES = {
+  download_date: lastDownload ?? "–",
   year: String(YEAR),
   eu_kg: whole(euKg),
   eu_mt: whole(euMt == null ? null : euMt / 1000),

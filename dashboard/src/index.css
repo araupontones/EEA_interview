@@ -211,11 +211,33 @@ h2 {
   outline-offset: 3px;
 }
 
-/* key figures in the hero lede: a little larger, bold, in the sans */
-.hero-figure {
+/* byline under the hero lede: author and date, then the date of the data */
+.byline {
+  margin: 0 0 var(--space-6);
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  color: var(--color-ink-muted);
+}
+
+.byline p {
+  margin: 0;
+}
+
+.byline a {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+
+.byline-data {
+  font-size: var(--text-source);
+}
+
+/* key figures in the hero lede: a little larger, bold, in the sans
+   (".lede .hero-figure", not ".hero-figure", so it wins over ".lede strong" above) */
+.lede .hero-figure {
   font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 1.38em; /*size of the hero key figure text */
+  font-size: 1.18em; /*size of the hero key figure text */
   white-space: nowrap;
 }
 
