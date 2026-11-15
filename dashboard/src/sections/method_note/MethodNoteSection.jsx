@@ -6,11 +6,13 @@ import { dashboardTexts } from "../../data.js";
 export default function MethodNoteSection() {
   return (
     <Section id="method-note" className="section-end">
-      {dashboardTexts.method_note.map((p) => (
-        <p key={p.lead} className="end-paragraph">
-          <strong>{p.lead}</strong> {p.text}
-        </p>
-      ))}
+      <div className="end-body">
+        {dashboardTexts.method_note.map((p) => (
+          <p key={p.lead} className="end-paragraph">
+            <strong>{p.lead}</strong> {p.text}
+          </p>
+        ))}
+      </div>
     </Section>
   );
 }

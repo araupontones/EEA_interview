@@ -12,7 +12,7 @@ export default function MunicipalWasteSection() {
 
   return (
     <Section id="municipal-waste">
-      <div className="chart-card" ref={ref}>{width > 0 && <WastePerCapitaBarChart width={width} />}</div>
+      <div className="chart-panel" ref={ref}>{width > 0 && <WastePerCapitaBarChart width={width} />}</div>
       <ChartSource chart="municipal_waste" />
     </Section>
   );

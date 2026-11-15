@@ -41,7 +41,7 @@ For design work this means: mock-ups, wireframes and example labels use placehol
 ## Constraints of this project
 
 - Charts are D3 maths + React rendering (SVG in JSX); no `d3-selection`, no direct DOM edits. Styles live in `dashboard/src/index.css` (currently temporary classes) and in the chart components' constants (colours, sizes).
-- Current colours already chosen by the user: bar chart countries `#5d92f5`, EU27 bar `#003494`; decoupling waste line `#e07b39`, GDP line `#003494`, EU27 reference grey `#bdbdbd`; the distance-to-target chart uses the RdYlBu palette (red below target, blue target met). Propose changes where the new identity needs them, and say what each change replaces.
+- The current identity ("Le Journal": colours, fonts, shapes) is in `docs/communication.md` section 5 and in the tokens of `dashboard/src/index.css`; build on it. The recycling targets chart (`DistanceToTargetScatter.jsx`) keeps its design: do not propose changes to it unless asked. Propose changes where needed, and say what each change replaces.
 - Flags come from the `flag-icons` package (circular crops in hover cards).
 - Texts are written by the ux-copywriter and come from data files; do not write final copy, but you may give placeholder lengths.
 

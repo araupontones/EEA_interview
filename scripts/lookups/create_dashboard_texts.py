@@ -14,6 +14,7 @@ facts come only from docs/findings.md. "How I did this" describes the project it
 (dashboard/src/lib/keyFigures.js), so they follow every new download. Placeholders:
     {year}              latest year with waste per person for all 27 Member States
     {eu_kg}             EU27 municipal waste generated per person, kg ({year})
+    {eu_mt}             EU27 municipal waste generated, million tonnes ({year}; findings §1 bullet 1)
     {max_country}, {min_country}, {ratio}
                         Member States with the most and least waste per person among those
                         without a change in definition, and the ratio (findings §1 bullet 12)
@@ -47,30 +48,17 @@ OUTPUT = DIR_LOOKUPS / "dashboard_texts.json"
 HERO = {
     "eyebrow": "Waste in the EU, from best to worst",
     "title": "Where does our waste go?",
-    "lede": (
-        "On average, each of us in the EU generates {eu_kg} kg of municipal waste a year. Follow "
-        "it down the waste hierarchy, from best to worst for the environment, and find your "
-        "country."
-    ),
-    "cta": "Start at the top",
-    # key-number cards: value and label
-    "cards": [
-        {
-            "value": "{eu_kg} kg",
-            "label": "of municipal waste generated per person in the EU in {year}, about the "
-                     "same as in 2011",
-        },
-        {
-            "value": "{ratio} ×",
-            "label": "Waste generation per person in {max_country} is {ratio} times that of "
-                     "{min_country} ({year})",
-        },
-        {
-            "value": "{landfill} %",
-            "label": "of the EU's municipal waste still goes to landfill, down from "
-                     "{landfill_2011} % in 2011",
-        },
+    # lede as parts in reading order: text, and figures set in bold (lib/keyFigures.js fills them)
+    "lede": [
+        {"text": "On average, each of us in the EU generates "},
+        {"figure": "{eu_kg} kg"},
+        {"text": " of municipal waste a year. Follow it down the waste hierarchy, from best to worst "
+                 "for the environment, and find your country. And "},
+        {"figure": "{landfill} %"},
+        {"text": " of the EU's municipal waste still goes to landfill, down from {landfill_2011} % "
+                 "in 2011."},
     ],
+    "cta": "Start at the top",
 }
 
 # Waste hierarchy (Waste Framework Directive, Art. 4), best to worst.
@@ -109,14 +97,27 @@ HIERARCHY = {
 
 # section id -> texts (ids are the anchors used in the dashboard sections)
 SECTIONS = {
+    # introduction to the waste hierarchy: the pyramid with the EU figures, and an explanation
+    # next to each level (dashboard/src/sections/waste_hierarchy/WasteHierarchySection.jsx)
+    "waste-hierarchy": {
+        "step": None,
+        "eyebrow": None,
+        "title": "The waste hierarchy",
+        "key_message": None,
+        "lede": "The waste hierarchy is how the EU ranks what to do with waste, from best to worst "
+                "for the environment. Here is where the EU's municipal waste went in {year}.",
+        "try": None,
+        # link under a level that has its own section: "→ " + that section's title
+        "see_also": "See: {title}",
+    },
     "municipal-waste": {
         "eyebrow": None,
         "title": "How much waste do we generate?",
-        "key_message": "Where you live makes a big difference: waste generation per person in "
-                       "{max_country} is {ratio} times that of {min_country}.",
+        "key_message": "In {year}, the EU generated about {eu_mt} million tonnes of municipal "
+                       "waste, about {eu_kg} kg per person.",
         "lede": "Municipal waste is the waste from our homes, plus similar waste from shops and "
-                "offices. In {year} the EU generated about {eu_kg} kg of it per person.",
-        "try": "Find your country: is its bar longer or shorter than the dark EU27 bar? "
+                "offices.",
+        "try": "Find your country: is its bar longer or shorter than the EU27 bar? "
                "{n_above} countries are above it.",
         "step": None,
     },

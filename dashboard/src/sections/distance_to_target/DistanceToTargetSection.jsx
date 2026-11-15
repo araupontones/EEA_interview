@@ -11,7 +11,7 @@ export default function DistanceToTargetSection() {
 
   return (
     <Section id="distance-to-target">
-      <div className="chart-card" ref={ref}>{width > 0 && <DistanceToTargetScatter width={width} />}</div>
+      <div className="chart-panel" ref={ref}>{width > 0 && <DistanceToTargetScatter width={width} />}</div>
       <ChartSource chart="distance_to_target" />
     </Section>
   );

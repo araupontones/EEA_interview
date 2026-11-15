@@ -7,11 +7,13 @@ import Hero from "./sections/hero/Hero.jsx";
 import HowIDidThisSection from "./sections/how_i_did_this/HowIDidThisSection.jsx";
 import MethodNoteSection from "./sections/method_note/MethodNoteSection.jsx";
 import MunicipalWasteSection from "./sections/municipal_waste/MunicipalWasteSection.jsx";
+import WasteHierarchySection from "./sections/waste_hierarchy/WasteHierarchySection.jsx";
 
 export default function App() {
   return (
     <main>
       <Hero />
+      <WasteHierarchySection />
       <MunicipalWasteSection />
       <DecouplingSection />
       <DistanceToTargetSection />

@@ -8,6 +8,7 @@ const links = dashboardTexts.how_i_did_this_links;
 export default function HowIDidThisSection() {
   return (
     <Section id="how-i-did-this" className="section-end">
+      <div className="end-body">
       {dashboardTexts.how_i_did_this.map((p) => (
         <p key={p.lead} className="end-paragraph">
           <strong>{p.lead}</strong> {p.text}
@@ -23,6 +24,7 @@ export default function HowIDidThisSection() {
           </span>
         ))}
       </p>
+      </div>
     </Section>
   );
 }

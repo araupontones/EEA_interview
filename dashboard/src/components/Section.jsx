@@ -18,7 +18,7 @@ export default function Section({ id, className = "", children }) {
         <h2>{texts.title}</h2>
         {texts.key_message && <p className="key-message">{fill(texts.key_message)}</p>}
         {texts.lede && <p className="lede">{fill(texts.lede)}</p>}
-        {texts.try && <p className="try-chip">{fill(texts.try)}</p>}
+        {texts.try && <p className="try-hint">{fill(texts.try)}</p>}
       </header>
       {children}
     </section>

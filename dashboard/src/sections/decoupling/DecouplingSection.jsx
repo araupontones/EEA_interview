@@ -12,7 +12,7 @@ export default function DecouplingSection() {
 
   return (
     <Section id="decoupling">
-      <div className="chart-card" ref={ref}>{width > 0 && <DecouplingLineChart width={width} />}</div>
+      <div className="chart-panel" ref={ref}>{width > 0 && <DecouplingLineChart width={width} />}</div>
       <ChartSource chart="decoupling" />
     </Section>
   );

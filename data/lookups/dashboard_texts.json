@@ -2,22 +2,24 @@
   "hero": {
     "eyebrow": "Waste in the EU, from best to worst",
     "title": "Where does our waste go?",
-    "lede": "On average, each of us in the EU generates {eu_kg} kg of municipal waste a year. Follow it down the waste hierarchy, from best to worst for the environment, and find your country.",
-    "cta": "Start at the top",
-    "cards": [
+    "lede": [
       {
-        "value": "{eu_kg} kg",
-        "label": "of municipal waste generated per person in the EU in {year}, about the same as in 2011"
+        "text": "On average, each of us in the EU generates "
       },
       {
-        "value": "{ratio} ×",
-        "label": "Waste generation per person in {max_country} is {ratio} times that of {min_country} ({year})"
+        "figure": "{eu_kg} kg"
       },
       {
-        "value": "{landfill} %",
-        "label": "of the EU's municipal waste still goes to landfill, down from {landfill_2011} % in 2011"
+        "text": " of municipal waste a year. Follow it down the waste hierarchy, from best to worst for the environment, and find your country. And "
+      },
+      {
+        "figure": "{landfill} %"
+      },
+      {
+        "text": " of the EU's municipal waste still goes to landfill, down from {landfill_2011} % in 2011."
       }
-    ]
+    ],
+    "cta": "Start at the top"
   },
   "hierarchy": {
     "title": "The waste hierarchy: where the EU's municipal waste goes ({year})",
@@ -64,12 +66,21 @@
     ]
   },
   "sections": {
+    "waste-hierarchy": {
+      "step": null,
+      "eyebrow": null,
+      "title": "The waste hierarchy",
+      "key_message": null,
+      "lede": "The waste hierarchy is how the EU ranks what to do with waste, from best to worst for the environment. Here is where the EU's municipal waste went in {year}.",
+      "try": null,
+      "see_also": "See: {title}"
+    },
     "municipal-waste": {
       "eyebrow": null,
       "title": "How much waste do we generate?",
-      "key_message": "Where you live makes a big difference: waste generation per person in {max_country} is {ratio} times that of {min_country}.",
-      "lede": "Municipal waste is the waste from our homes, plus similar waste from shops and offices. In {year} the EU generated about {eu_kg} kg of it per person.",
-      "try": "Find your country: is its bar longer or shorter than the dark EU27 bar? {n_above} countries are above it.",
+      "key_message": "In {year}, the EU generated about {eu_mt} million tonnes of municipal waste, about {eu_kg} kg per person.",
+      "lede": "Municipal waste is the waste from our homes, plus similar waste from shops and offices.",
+      "try": "Find your country: is its bar longer or shorter than the EU27 bar? {n_above} countries are above it.",
       "step": null
     },
     "decoupling": {

@@ -33,6 +33,8 @@ const row = (rows, geo, year) => rows.find((d) => d.geo === geo && d.year === ye
 // waste per person
 const wasteYear = municipalWaste.filter((d) => d.year === YEAR && d.mw_pc != null);
 const euKg = row(municipalWaste, EU27_TOTAL, YEAR)?.mw_pc;
+// EU total generated, from thousand tonnes (mw_tt) to million tonnes, whole number
+const euMt = row(municipalWaste, EU27_TOTAL, YEAR)?.mw_tt;
 const countries = wasteYear.filter((d) => d.geo !== EU27_TOTAL);
 // Ratio of the most to the least waste per person, among Member States without a change in
 // definition or a break in waste per person (the geographies with a break_year in
@@ -64,6 +66,7 @@ const targetYear = max(recyclingDistanceToTarget, (d) => Number(d.time));
 export const KEY_FIGURES = {
   year: String(YEAR),
   eu_kg: whole(euKg),
+  eu_mt: whole(euMt == null ? null : euMt / 1000),
   max_country: geoNames[most?.geo],
   min_country: geoNames[least_?.geo],
   ratio: pct(most && least_ ? most.mw_pc / least_.mw_pc : null),

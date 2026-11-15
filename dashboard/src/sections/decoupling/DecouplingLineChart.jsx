@@ -26,7 +26,7 @@ import {
   municipalWasteDecoupling,
 } from "../../data.js";
 
-const MARGIN = { top: 28, right: 160, bottom: 30, left: 44 };
+const MARGIN = { top: 28, right: 180, bottom: 30, left: 44 };
 const HEIGHT = 420;
 const NARROW = 560; // px: below this width, no line-end labels and a shorter chart
 const MARGIN_NARROW = { top: 28, right: 16, bottom: 30, left: 36 };
@@ -37,13 +37,14 @@ const LABEL_GAP = 14; // px, minimum vertical distance between two line-end labe
 
 const SERIES = [
   // color: line; textColor: line-end label (darker where the line colour is too light for text)
-  { key: "mw_pc_index", color: "#d96a2b", textColor: "#b2511a" }, // waste
-  { key: "gdp_pc_index", color: "#3b5bdb", textColor: "#3b5bdb" }, // economy
+  { key: "mw_pc_index", color: "#e36f25", textColor: "#b2511a" }, // waste
+  { key: "gdp_pc_index", color: "#2563a8", textColor: "#2563a8" }, // economy
 ];
-const REFERENCE_COLOR = "#838b88"; // EU27 reference lines (grey, 3.4:1 on the page)
-const GRID = "#e6e1d8";
-const BASE_LINE = { stroke: "#55625f", strokeWidth: 1, strokeDasharray: "4 4" };
-const BREAK_COLOR = "#55625f"; // dashed "2 3", so it reads differently from the 100 line
+const REFERENCE_COLOR = "#8a8a8a"; // EU27 reference lines (grey, 3.5:1 on white)
+const GRID = "#e5e5e5";
+const BASE_LINE = { stroke: "#5c5c5c", strokeWidth: 1, strokeDasharray: "4 4" };
+const BASE_LABEL_Y = 117; // index value where the "2011 level (100)" label sits, above the lines
+const BREAK_COLOR = "#5c5c5c"; // dashed "2 3", so it reads differently from the 100 line
 
 const { labels } = decouplingNotes;
 
@@ -175,7 +176,7 @@ export default function DecouplingLineChart({ width }) {
           ))}
         </datalist>
 
-        <Legend showReference={!isEU} />
+        {narrow && <Legend showReference={!isEU} />}
       </div>
 
       <figcaption className="chart-caption">{decouplingNotes.caption.replace("{name}", name)}</figcaption>
@@ -201,6 +202,11 @@ export default function DecouplingLineChart({ width }) {
 
           {/* 2011 = 100 */}
           <line x1={0} x2={boundsWidth} y1={yScale(100)} y2={yScale(100)} {...BASE_LINE} />
+          {!narrow && (
+            <text x={4} y={yScale(BASE_LABEL_Y)} className="chart-axis chart-label-halo">
+              {labels.base_year}
+            </text>
+          )}
 
           {/* break in series of the chosen geography */}
           {note?.break_year != null && (
@@ -241,7 +247,7 @@ export default function DecouplingLineChart({ width }) {
                 fill="none"
                 stroke={color}
                 strokeWidth={3}
-                strokeLinecap="round"
+                strokeLinecap="butt"
                 strokeLinejoin="round"
               />
               {rows

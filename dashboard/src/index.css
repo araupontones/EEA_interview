@@ -1,41 +1,59 @@
-/* Visual identity "Loop" (docs/communication.md, section 5): warm paper background, deep
-   green-black ink, one sunny highlight, rounded shapes. Chart constants in the components use
-   the same hex values as these tokens. */
+/* Visual identity "Le Journal" (docs/communication.md, section 5): white page, ink rules,
+   Barlow Semi Condensed for headlines, labels and charts, Literata for reading text, square
+   corners (buttons excepted), one colour family per meaning. Chart constants in the components
+   use the same hex values as these tokens. */
 
-/* fonts (Google Fonts): Bricolage Grotesque for headlines, Inter for text and charts */
-@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400&display=swap");
 
 :root {
-  /* colours */
-  --color-bg: #fbf8f3;
+  /* colours: page */
+  --color-bg: #ffffff;
   --color-surface: #ffffff;
-  --color-tint: #eef4f0;
-  --color-ink: #1d2b2a;
-  --color-ink-muted: #55625f;
-  --color-line: #e6e1d8;
-  --color-border: #7d8582;
-  --color-highlight: #dcefe3; /* pale mint (was #ffd84d, too bright) */
-  --color-waste: #d96a2b;
-  --color-waste-text: #b2511a;
-  --color-economy: #3b5bdb;
-  --color-eu: #1d2b2a;
-  --color-reference: #838b88;
+  --color-ink: #1a1a1a; /* 17.4:1 */
+  --color-ink-muted: #5c5c5c; /* 6.7:1; 6.0:1 on --color-muted-fill */
+  --color-border: #767676; /* inputs, 4.5:1 */
+  --color-rule: #1a1a1a; /* section rules */
+  --color-rule-soft: #d9d9d9; /* hairlines, decorative */
+  --color-grid: #e5e5e5; /* chart grid, decorative */
+  --color-muted-fill: #f2f2f2; /* hierarchy levels without a section */
+  --color-focus: #1a1a1a;
+  --color-button-hover: #333333; /* white text 12.6:1 */
+
+  /* colours: meaning (one meaning each) */
+  --color-waste-light: #fa9f5c; /* bar fill only, always with a --color-waste-text end cap */
+  --color-waste: #e36f25; /* lines and small marks, 3.2:1 */
+  --color-waste-text: #b2511a; /* waste text, bar end caps, 5.1:1 */
+  --color-economy: #2563a8; /* GDP line and label, 6.1:1 */
+  --color-eu: #4f6d8a; /* EU27 bar and label, neutral slate, 5.4:1 */
+  --color-reference: #8a8a8a; /* EU27 reference lines, 3.5:1 */
 
   /* older names, still used by some chart classes */
+  --color-line: var(--color-grid);
   --text-primary: var(--color-ink);
   --text-secondary: var(--color-ink-muted);
-  --grid: var(--color-line);
+  --grid: var(--color-grid);
 
   /* type */
-  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --text-hero: clamp(2.25rem, 5vw + 1rem, 4rem);
-  --text-h2: clamp(1.6rem, 2.5vw + 1rem, 2.5rem);
-  --text-lede: 1.0625rem;
-  --text-note: 0.8125rem;
-  --text-source: 12px;
+  --font-sans: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-serif: "Literata", Georgia, "Times New Roman", serif;
+  --text-hero: clamp(2.5rem, 3.2vw + 1.5rem, 4rem); /* 40 to 64 px */
+  --text-h2: clamp(1.875rem, 1.8vw + 1.4rem, 2.75rem); /* 30 to 44 px */
+  --text-h2-end: 1.875rem; /* method note, How I did this */
+  --text-key: 1.5rem; /* 24 px */
+  --text-label: 0.875rem; /* 14 px, capitals */
+  --text-lede: 1.1875rem; /* 19 px */
+  --text-body: 1.0625rem; /* 17 px */
+  --text-try: 1.0625rem; /* 17 px */
+  --text-caption: 1.1875rem; /* 19 px */
+  --text-note: 0.875rem; /* 14 px */
+  --text-source: 0.8125rem; /* 13 px */
+  --leading-tight: 1.05;
+  --leading-heading: 1.25;
+  --leading-body: 1.6;
+  --tracking-caps: 0.1em;
+  --tracking-display: -0.01em;
 
-  /* space, shapes, motion */
+  /* space */
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
@@ -43,16 +61,19 @@
   --space-8: 32px;
   --space-12: 48px;
   --space-16: 64px;
-  --radius-card: 16px;
-  --radius-hover: 12px;
-  --radius-pill: 999px;
-  --shadow-card: 0 1px 2px rgb(29 43 42 / 6%);
-  --shadow-hover: 0 6px 24px rgb(29 43 42 / 10%);
-  --duration-fast: 150ms;
-  --duration-base: 250ms;
+  --space-24: 96px;
+  --measure: 62ch;
   --content-width: 1100px;
 
-  font-family: var(--font-body);
+  /* shapes and motion */
+  --radius-button: 999px; /* buttons only; everything else is square */
+  --rule-heavy: 3px solid var(--color-rule);
+  --rule-section: 1px solid var(--color-rule);
+  --rule-soft: 1px solid var(--color-rule-soft);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+
+  font-family: var(--font-sans);
   font-variant-numeric: tabular-nums;
   color: var(--color-ink);
   background: var(--color-bg);
@@ -72,133 +93,144 @@ main {
 
 a {
   color: var(--color-ink);
+  text-underline-offset: 2px;
 }
 
 h1,
-h2,
-.chart-caption,
-.hover-card-title,
-.hero-motif-title {
-  font-family: var(--font-display);
+h2 {
+  font-family: var(--font-sans);
+  font-weight: 700;
   color: var(--color-ink);
 }
 
 h1 {
   font-size: var(--text-hero);
-  font-weight: 800;
-  line-height: 1.05;
-  margin: var(--space-2) 0 var(--space-4);
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+  margin: var(--space-3) 0 var(--space-6);
 }
 
 h2 {
   font-size: var(--text-h2);
-  font-weight: 700;
-  line-height: 1.15;
-  margin: var(--space-2) 0 var(--space-3);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.005em;
+  margin: var(--space-2) 0 var(--space-4);
 }
 
-.eyebrow {
-  font-size: 0.8125rem;
+/* reading text in the serif */
+.lede,
+.end-paragraph,
+.chart-note,
+.hero-motif-intro,
+.hierarchy-not-accounted {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+}
+
+/* bold run-in leads inside serif text are set in the sans */
+.lede strong,
+.end-paragraph strong,
+.chart-note strong {
+  font-family: var(--font-sans);
   font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 1.05em;
+  letter-spacing: 0.01em;
+}
+
+/* section label, in capitals */
+.eyebrow {
+  font-size: var(--text-label);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
-  color: var(--color-ink-muted);
+  color: var(--color-ink);
 }
 
 .lede {
   font-size: var(--text-lede);
-  line-height: 1.55;
-  max-width: 60ch;
+  line-height: var(--leading-body);
+  max-width: var(--measure);
   color: var(--color-ink);
   margin: 0 0 var(--space-4);
 }
 
 /* key message of a section: the sentence a reader keeps */
 .key-message {
-  font-family: var(--font-display);
-  font-size: clamp(1.15rem, 1vw + 0.9rem, 1.5rem);
-  font-weight: 700;
-  line-height: 1.3;
-  max-width: 48ch;
-  margin: 0 0 var(--space-3);
+  font-size: var(--text-key);
+  font-weight: 500;
+  line-height: var(--leading-heading);
+  max-width: 30em;
+  margin: 0 0 var(--space-4);
 }
 
 /* paragraphs of the methodological note and "How I did this" */
 .end-paragraph {
-  max-width: 75ch;
-  margin: 0 0 var(--space-3);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  max-width: var(--measure);
+  margin: 0 0 var(--space-4);
+}
+
+.end-links {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
 }
 
 /* --- hero ------------------------------------------------------------------------------ */
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: var(--space-8);
-  align-items: center;
-  padding: var(--space-12) var(--space-8);
-  margin-bottom: var(--space-8);
-  background: var(--color-tint);
-  border-radius: var(--radius-card);
+  padding: var(--space-12) 0 var(--space-8);
+  border-top: var(--rule-heavy);
+}
+
+.hero-text {
+  max-width: 46rem;
 }
 
 .cta {
   display: inline-block;
-  padding: 10px 20px;
-  border-radius: var(--radius-pill);
+  padding: 12px 22px;
+  border-radius: var(--radius-button);
   background: var(--color-ink);
   color: #ffffff;
+  font-size: 1rem;
   font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1;
   text-decoration: none;
 }
 
-.cta:hover,
+.cta:hover {
+  background: var(--color-button-hover);
+}
+
 .cta:focus-visible {
-  background: #33423f;
+  background: var(--color-button-hover);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
 }
 
-/* key-number cards in the hero */
-.hero-cards {
-  list-style: none;
-  padding: 0;
-  margin: var(--space-8) 0 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-3);
-}
-
-.hero-card {
-  background: var(--color-surface);
-  border-radius: var(--radius-card);
-  padding: var(--space-4);
-  box-shadow: var(--shadow-card);
-}
-
-.hero-card-value {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.75rem;
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-.hero-card-label {
-  display: block;
-  margin-top: var(--space-2);
-  font-size: 0.8125rem;
-  color: var(--color-ink-muted);
-}
-
-.hero-motif-intro {
-  font-size: 0.875rem;
-  color: var(--color-ink-muted);
-  margin: 0 0 var(--space-3);
+/* key figures in the hero lede: a little larger, bold, in the sans */
+.hero-figure {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.38em; /*size of the hero key figure text */
+  white-space: nowrap;
 }
 
 .hero-motif-title {
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 var(--space-3);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: var(--leading-heading);
+  margin: 0 0 var(--space-2);
+}
+
+.hero-motif-intro {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--color-ink-muted);
+  margin: 0 0 var(--space-4);
 }
 
 /* --- waste hierarchy motif --------------------------------------------------------------- */
@@ -210,34 +242,42 @@ h2 {
 }
 
 .hierarchy-name {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
+  fill: var(--color-ink);
 }
 
 .hierarchy-value {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 700;
+  fill: var(--color-ink);
+}
+
+.hierarchy-step-uncovered text {
+  fill: var(--color-ink-muted);
 }
 
 .hierarchy-not-accounted {
-  font-size: 0.8125rem;
+  font-size: var(--text-note);
+  line-height: 1.5;
   color: var(--color-ink-muted);
   margin: var(--space-3) 0 0;
   cursor: help;
 }
 
-.hierarchy-tag {
-  font-size: 10px;
-  fill: var(--color-ink-muted);
-}
-
-.hierarchy-step-covered path {
+.hierarchy-step-covered path,
+.hierarchy-step-covered text {
   transition: fill var(--duration-fast);
 }
 
 .hierarchy-step-covered:hover path,
 a:focus-visible .hierarchy-step-covered path {
-  fill: var(--color-highlight);
+  fill: var(--color-ink);
+}
+
+.hierarchy-step-covered:hover text,
+a:focus-visible .hierarchy-step-covered text {
+  fill: #ffffff;
 }
 
 .hierarchy-icon {
@@ -245,72 +285,140 @@ a:focus-visible .hierarchy-step-covered path {
   flex: none;
 }
 
+/* waste-hierarchy section: the pyramid, and beside each level its explanation */
+.hierarchy-explained {
+  display: flex;
+  gap: var(--space-8);
+  align-items: flex-start;
+}
+
+.hierarchy-explained .hierarchy-large {
+  flex: none;
+}
+
+.hierarchy-levels {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-rows: var(--level-height);
+  row-gap: var(--level-gap);
+}
+
+.level {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  border-left: 1px solid var(--color-rule-soft);
+  padding-left: var(--space-4);
+}
+
+.level-covered {
+  border-left: 3px solid var(--color-ink);
+}
+
+.level-name {
+  display: none; /* the pyramid shows the names on wide screens */
+  font-weight: 600;
+}
+
+.level-explanation {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.level-link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.hierarchy-notes {
+  margin-top: var(--space-6);
+}
+
 /* --- sections ---------------------------------------------------------------------------- */
 
 .section {
-  padding: var(--space-12) 0 var(--space-8);
+  padding: var(--space-24) 0 0;
 }
 
 .section-header {
-  margin-bottom: var(--space-6);
-}
-
-/* texts of a section header: about 85 % of the chart width, so lines don't break too early */
-.section-header .key-message,
-.section-header .lede,
-.section-end .end-paragraph {
-  max-width: 85%;
+  border-top: var(--rule-section);
+  padding-top: var(--space-4);
+  margin-bottom: var(--space-8);
 }
 
 .eyebrow-row {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: 10px;
+  margin-bottom: var(--space-3);
 }
 
-.try-chip {
-  display: inline-block;
+/* texts of a section header: 85 % of the chart width, so lines don't break too early */
+.section-header .key-message,
+.section-header .lede,
+.section-header .try-hint {
+  max-width: 85%;
+}
+
+/* "try this" hint, marked by a short ink rule */
+.try-hint {
   margin: 0;
-  padding: 4px 12px;
-  border-radius: var(--radius-pill);
-  background: var(--color-highlight);
-  color: var(--color-ink);
-  font-size: 0.875rem;
+  max-width: 40em;
+  padding: 2px 0 2px var(--space-3);
+  border-left: 3px solid var(--color-ink);
+  font-size: var(--text-try);
   font-weight: 500;
+  line-height: 1.35;
+  color: var(--color-ink);
 }
 
-/* white card around a chart */
-.chart-card {
-  background: var(--color-surface);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
-  padding: var(--space-6);
-}
-
-/* quieter end matter */
-.section-end {
-  background: var(--color-tint);
-  border-radius: var(--radius-card);
-  padding: var(--space-8);
+/* the chart sits on the page, without a box */
+.chart-panel {
   margin-top: var(--space-8);
+  padding: 0;
+}
+
+/* end matter: heading on the left, text on the right */
+.section-end {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  gap: 0 var(--space-12);
+  padding-top: var(--space-16);
+}
+
+.section-end .section-header {
+  margin-bottom: 0;
+}
+
+.section-end .end-body {
+  border-top: var(--rule-section);
+  padding-top: var(--space-4);
+}
+
+.section-end h2 {
+  font-size: var(--text-h2-end);
 }
 
 /* closing panel: back to the waste hierarchy */
 .closing {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: var(--space-8);
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: var(--space-12);
   align-items: center;
-  padding: var(--space-12) var(--space-8);
-  margin-top: var(--space-8);
-  border: 2px solid var(--color-ink);
-  border-radius: var(--radius-card);
+  padding: var(--space-16) 0;
+  margin-top: var(--space-24);
+  border-top: var(--rule-heavy);
+  border-bottom: var(--rule-section);
 }
 
 /* --- charts ------------------------------------------------------------------------------ */
 
 svg text {
-  font-family: inherit;
+  font-family: var(--font-sans);
   fill: var(--color-ink);
 }
 
@@ -344,6 +452,24 @@ svg text {
   font-weight: 600;
 }
 
+/* bar and line charts: one size up (the recycling targets chart keeps its own sizes) */
+.bar-chart .chart-axis,
+.line-chart .chart-axis {
+  font-size: 13px;
+}
+
+.bar-chart .chart-row-label {
+  font-size: 14px;
+}
+
+.bar-chart .chart-label {
+  font-size: 13px;
+}
+
+.line-chart .chart-label-strong {
+  font-size: 15px;
+}
+
 /* white halo behind chart labels that sit on top of marks */
 .chart-label-halo {
   paint-order: stroke;
@@ -354,9 +480,12 @@ svg text {
 
 /* chart title above a chart */
 .chart-caption {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  line-height: var(--leading-heading);
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
 }
 
 figure.bar-chart,
@@ -367,19 +496,33 @@ figure.line-chart {
 /* notes under a chart, folded under "About this chart" */
 .chart-details {
   margin-top: var(--space-4);
-  border-top: 1px solid var(--color-line);
+  border-top: var(--rule-soft);
   padding-top: var(--space-3);
 }
 
 .chart-details summary {
   cursor: pointer;
+  list-style: none;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-ink);
 }
 
+.chart-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.chart-details summary::before {
+  content: "+ ";
+}
+
+.chart-details[open] summary::before {
+  content: "− ";
+}
+
 .chart-note {
   font-size: var(--text-note);
+  line-height: 1.55;
   color: var(--color-ink-muted);
   margin: var(--space-2) 0 0;
 }
@@ -387,8 +530,10 @@ figure.line-chart {
 /* data source under a chart */
 .chart-source {
   font-size: var(--text-source);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
   color: var(--color-ink-muted);
-  margin: var(--space-3) var(--space-2) 0;
+  margin: var(--space-3) 0 0;
 }
 
 .chart-source p {
@@ -411,32 +556,33 @@ figure.line-chart {
 
 .chart-controls input {
   font: inherit;
+  font-size: 1rem;
   height: 44px;
   box-sizing: border-box;
-  padding: 0 16px;
+  padding: 0 12px;
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-pill);
+  border-radius: 0;
   background: var(--color-surface);
   color: var(--color-ink);
   width: 240px;
 }
 
 .chart-controls input:focus-visible {
-  outline: none;
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
   border-color: var(--color-ink);
-  box-shadow: 0 0 0 3px var(--color-highlight);
 }
 
 .chart-legend {
   display: block;
 }
 
-/* legend of a line chart: one short line and a label per item, in a row */
+/* legend of a line chart (small screens only): one short line and a label per item */
 .line-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 6px 16px;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--color-ink-muted);
 }
 
@@ -468,15 +614,15 @@ figure.line-chart {
 
 .hover-card {
   position: absolute;
-  width: 360px; /* CARD_WIDTH in WastePerCapitaBarChart.jsx */
+  width: 320px; /* CARD_WIDTH in WastePerCapitaBarChart.jsx */
   max-width: calc(100vw - 32px); /* small screens */
   box-sizing: border-box;
-  padding: 12px 14px;
+  padding: 12px 14px 14px;
   background: var(--color-surface);
-  border-radius: var(--radius-hover);
-  box-shadow: var(--shadow-hover);
+  border: 1px solid var(--color-ink);
   pointer-events: none; /* the card never takes the hover from the marks */
-  font-size: 13px;
+  font-size: 15px;
+  line-height: 1.35;
   z-index: 1;
 }
 
@@ -492,16 +638,19 @@ figure.line-chart {
 }
 
 .flag-circle {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 0 1px rgb(29 43 42 / 15%); /* keeps white parts of flags visible */
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 15%); /* keeps white parts of flags visible */
 }
 
 .hover-card-title {
+  font-family: var(--font-sans);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 1.2;
+  color: var(--color-ink);
 }
 
 .hover-card-values {
@@ -518,19 +667,31 @@ figure.line-chart {
 
 .hover-card-values dd {
   margin: 0;
+  font-weight: 500;
   text-align: right;
   white-space: nowrap;
 }
 
 .hover-card-sub {
   color: var(--color-ink-muted);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .hover-card-main {
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 2px;
+}
+
+/* Recycling targets chart: only its font changes (decision 15 Nov 2026); its search box, hover
+   card and caption follow the page. Its label colours and sans notes stay as they were. */
+.beeswarm {
+  --color-ink: #1d2b2a;
+  --color-ink-muted: #55625f;
+}
+
+.beeswarm .chart-note {
+  font-family: var(--font-sans);
 }
 
 /* temporary: marks where a chart will go */
@@ -548,32 +709,63 @@ figure.line-chart {
 /* --- small screens ----------------------------------------------------------------------- */
 
 @media (max-width: 760px) {
+  :root {
+    --text-key: 1.25rem; /* 20 px */
+    --text-label: 0.8125rem; /* 13 px */
+    --text-lede: 1.0625rem; /* 17 px */
+    --text-body: 1rem; /* 16 px */
+    --text-try: 1rem;
+    --text-caption: 1.0625rem; /* 17 px */
+    --text-source: 0.75rem; /* 12 px */
+  }
+
   .hero,
   .closing {
     grid-template-columns: 1fr;
-    padding: var(--space-8) var(--space-4);
+    padding: var(--space-8) 0;
   }
 
-  .chart-card {
-    padding: var(--space-3);
+  /* waste-hierarchy section: the pyramid is too wide beside the texts; list the levels below */
+  .hierarchy-explained {
+    display: block;
   }
 
-  .chart-controls input {
+  .hierarchy-explained .hierarchy-motif {
     width: 100%;
+    height: auto;
   }
 
-  .hero-cards {
+  .hierarchy-levels {
+    grid-auto-rows: auto;
+    row-gap: var(--space-4);
+    margin-top: var(--space-6);
+  }
+
+  .level-name {
+    display: block;
+  }
+
+  .section {
+    padding-top: var(--space-16);
+  }
+
+  .section-end {
     grid-template-columns: 1fr;
   }
 
   .section-header .key-message,
   .section-header .lede,
-  .section-end .end-paragraph {
+  .section-header .try-hint {
     max-width: none;
   }
 
-  .section-end {
-    padding: var(--space-6) var(--space-4);
+  .section-end .end-body {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .chart-controls input {
+    width: 100%;
   }
 }
 
@@ -582,4 +774,11 @@ figure.line-chart {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* arrows on buttons and covered hierarchy levels: Barlow has no arrow glyphs, so use a font that
+   does (otherwise the browser falls back to a colour emoji font) */
+.arrow {
+  font-family: Arial, "Segoe UI Symbol", sans-serif;
+  font-variant-emoji: text;
 }

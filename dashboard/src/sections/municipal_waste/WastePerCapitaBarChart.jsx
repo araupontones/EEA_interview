@@ -25,37 +25,24 @@ import {
 } from "../../data.js";
 import { flagUrl } from "../../lib/flags.js";
 
-const MARGIN = { top: 24, right: 48, bottom: 8, left: 120 };
+const MARGIN = { top: 24, right: 48, bottom: 8, left: 124 };
 const ROW_HEIGHT = 24;
 const NARROW = 500; // px: below this width, a narrower label column
-const MARGIN_NARROW = { top: 24, right: 36, bottom: 8, left: 92 };
+const MARGIN_NARROW = { top: 24, right: 36, bottom: 8, left: 96 };
 const TICK_COUNT = 5;
 
-// Colours of the dashboard identity (docs/communication.md, section 5): waste = orange,
-// economy (GDP) = blue, EU27 = ink; all pass WCAG 3:1 for graphics on the page background.
-const COUNTRY_COLOR = "#d96a2b"; // waste
-const EU_COLOR = "#1d2b2a"; // EU27 = ink
-const GRID = "#e6e1d8";
-const CARD_WIDTH = 360; // px, also set in index.css (.hover-card)
+// Colours of the dashboard identity "Le Journal" (docs/communication.md, section 5): waste =
+// orange, EU27 = slate blue-grey. The light orange fill (2.1:1 on white) always has a dark orange
+// end cap (5.1:1), so every bar keeps WCAG 3:1 at the value end.
+const COUNTRY_COLOR = "#fa9f5c"; // waste, light (bar fill)
+const COUNTRY_EDGE = "#b2511a"; // waste, dark (end cap)
+const EDGE_WIDTH = 2; // px
+const EU_COLOR = "#4f6d8a"; // EU27, neutral slate (5.4:1 on white)
+const GRID = "#e5e5e5";
+const CARD_WIDTH = 320; // px, also set in index.css (.hover-card)
 const CARD_OFFSET = 14; // px between the pointer and the card
 const DIMMED_OPACITY = 0.35; // other bars while a row is hovered
-const BASELINE = { stroke: "#1d2b2a", strokeWidth: 1.5 }; // grid line at x = 0 (ink)
-const BAR_RADIUS = 5; // px, radius of the rounded right end of the bars
-
-// Bar from x = 0 to x = width, at y with height h, with only the right-hand corners rounded
-// (the left end sits on the baseline). The radius shrinks for bars too short or thin for it.
-function barPath(width, y, h, radius) {
-  const r = Math.max(0, Math.min(radius, h / 2, width));
-  return [
-    `M0,${y}`,
-    `H${width - r}`,
-    `A${r},${r} 0 0 1 ${width},${y + r}`,
-    `V${y + h - r}`,
-    `A${r},${r} 0 0 1 ${width - r},${y + h}`,
-    "H0",
-    "Z",
-  ].join(" ");
-}
+const BASELINE = { stroke: "#1a1a1a", strokeWidth: 1.5 }; // grid line at x = 0 (ink)
 
 // --- data preparation (runs once) -------------------------------------------------------
 
@@ -191,10 +178,22 @@ export default function WastePerCapitaBarChart({ width }) {
                   >
                     {d.name}
                   </text>
-                  <path
-                    d={barPath(barEnd, y, yScale.bandwidth(), BAR_RADIUS)}
+                  <rect
+                    x={0}
+                    y={y}
+                    width={Math.max(0, barEnd)}
+                    height={yScale.bandwidth()}
                     fill={d.isEU ? EU_COLOR : COUNTRY_COLOR}
                   />
+                  {!d.isEU && barEnd > EDGE_WIDTH && (
+                    <rect
+                      x={barEnd - EDGE_WIDTH}
+                      y={y}
+                      width={EDGE_WIDTH}
+                      height={yScale.bandwidth()}
+                      fill={COUNTRY_EDGE}
+                    />
+                  )}
                   <text
                     x={barEnd + 4}
                     y={yMid}

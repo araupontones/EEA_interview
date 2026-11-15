@@ -10,7 +10,7 @@
 // without energy recovery (also disposal) and the share "not in the figures". Hovering a step
 // shows its explanation.
 // size="small" (section headings): a 40 px icon without labels; the step of the section
-// (highlight) is filled in the highlight colour.
+// (highlight) is filled in ink.
 //
 // Steps without data in the dashboard are never highlighted (communication.md, section 5).
 import { dashboardTexts } from "../data.js";
@@ -25,18 +25,17 @@ const {
 const TITLE = fill(dashboardTexts.hierarchy.title);
 
 const COLORS = {
-  ink: "#1d2b2a",
-  muted: "#55625f",
+  ink: "#1a1a1a",
   covered: "#ffffff",
-  uncovered: "#ece8e1",
-  highlight: "#dcefe3",
-  iconCovered: "#d8d3ca",
+  uncovered: "#f2f2f2",
+  iconCovered: "#d9d9d9",
+  iconUncovered: "#ececec",
 };
 
 const NARROWING = 0.12; // each step is this share of the top width narrower than the one above
 
 // Trapezoid of step i in a pyramid of the given width: top edge, bottom edge, height.
-// Returns an SVG path with slightly rounded corners (stroke-linejoin round in the caller).
+// Returns an SVG path with square corners.
 function trapezoid(i, width, stepHeight, gap) {
   const top = width * (1 - i * NARROWING);
   const bottom = width * (1 - (i + 1) * NARROWING);
@@ -50,14 +49,16 @@ function trapezoid(i, width, stepHeight, gap) {
   };
 }
 
-export default function HierarchyMotif({ size = "large", highlight = null }) {
-  return size === "small" ? <SmallMotif highlight={highlight} /> : <LargeMotif />;
+export default function HierarchyMotif({ size = "large", highlight = null, ...options }) {
+  return size === "small" ? <SmallMotif highlight={highlight} /> : <LargeMotif {...options} />;
 }
 
-function LargeMotif() {
-  const width = 360;
-  const stepHeight = 58;
-  const gap = 4;
+// LARGE: level height and gap in the hero-sized pyramid; the waste-hierarchy section passes
+// taller levels so its explanations fit next to each level (fixed = drawn at 1:1, not scaled).
+export const LARGE = { width: 360, stepHeight: 58, gap: 4 };
+
+function LargeMotif({ stepHeight = LARGE.stepHeight, gap = LARGE.gap, notes = true, fixed = false }) {
+  const width = LARGE.width;
   const height = steps.length * (stepHeight + gap) - gap;
 
   return (
@@ -65,7 +66,8 @@ function LargeMotif() {
       <svg
         className="hierarchy-motif"
         viewBox={`0 0 ${width} ${height}`}
-        width="100%"
+        width={fixed ? width : "100%"}
+        height={fixed ? height : undefined}
         role="list"
         aria-label={TITLE}
       >
@@ -74,29 +76,33 @@ function LargeMotif() {
           const covered = step.section != null;
           const value = fill(step.value);
           const content = (
-            <g className={covered ? "hierarchy-step hierarchy-step-covered" : "hierarchy-step"}>
+            <g className={covered ? "hierarchy-step hierarchy-step-covered" : "hierarchy-step hierarchy-step-uncovered"}>
               <title>{step.explanation}</title>
               <path
                 d={d}
                 fill={covered ? COLORS.covered : COLORS.uncovered}
                 stroke={covered ? COLORS.ink : "none"}
                 strokeWidth={1.5}
-                strokeLinejoin="round"
+                strokeLinejoin="miter"
               />
               <text
                 x={mid}
-                y={y + (value ? 22 : stepHeight / 2)}
+                y={y + (value ? stepHeight / 2 - 9 : stepHeight / 2)}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="hierarchy-name"
-                style={{ fill: covered ? COLORS.ink : COLORS.muted }}
               >
                 {step.name}
+                {covered && (
+                  <tspan className="arrow" aria-hidden="true" dx="4">
+                    {"↓︎"}
+                  </tspan>
+                )}
               </text>
               {value && (
                 <text
                   x={mid}
-                  y={y + 41}
+                  y={y + stepHeight / 2 + 13}
                   textAnchor="middle"
                   dominantBaseline="middle"
                   className="hierarchy-value"
@@ -119,10 +125,12 @@ function LargeMotif() {
           );
         })}
       </svg>
-      {BURNT && <p className="hierarchy-not-accounted">{fill(BURNT)}</p>}
-      <p className="hierarchy-not-accounted" title={NOT_ACCOUNTED_NOTE}>
-        {fill(NOT_ACCOUNTED)} <span className="hierarchy-info">ⓘ</span>
-      </p>
+      {notes && BURNT && <p className="hierarchy-not-accounted">{fill(BURNT)}</p>}
+      {notes && (
+        <p className="hierarchy-not-accounted" title={NOT_ACCOUNTED_NOTE}>
+          {fill(NOT_ACCOUNTED)} <span className="hierarchy-info">ⓘ</span>
+        </p>
+      )}
     </div>
   );
 }
@@ -148,10 +156,7 @@ function SmallMotif({ highlight }) {
           <path
             key={step.key}
             d={trapezoid(i, width, stepHeight, gap).d}
-            fill={isHighlight ? COLORS.highlight : step.section ? COLORS.iconCovered : COLORS.uncovered}
-            stroke={isHighlight ? COLORS.ink : "none"}
-            strokeWidth={1}
-            strokeLinejoin="round"
+            fill={isHighlight ? COLORS.ink : step.section ? COLORS.iconCovered : COLORS.iconUncovered}
           />
         );
       })}

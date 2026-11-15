@@ -14,7 +14,7 @@ export default function ClosingPanel() {
         <h2>{closing.title}</h2>
         <p className="lede">{fill(closing.text)}</p>
         <a className="cta" href="#top">
-          {closing.cta} <span aria-hidden="true">↑</span>
+          {closing.cta} <span className="arrow" aria-hidden="true">{"↑︎"}</span>
         </a>
       </div>
       <div className="closing-motif">
