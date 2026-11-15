@@ -11,9 +11,8 @@ export default function DecouplingSection() {
   const [ref, width] = useContainerWidth();
 
   return (
-    <Section id="decoupling" title="Decoupling">
-      <p>To do: text.</p>
-      <div ref={ref}>{width > 0 && <DecouplingLineChart width={width} />}</div>
+    <Section id="decoupling">
+      <div className="chart-card" ref={ref}>{width > 0 && <DecouplingLineChart width={width} />}</div>
       <ChartSource chart="decoupling" />
     </Section>
   );

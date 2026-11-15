@@ -45,69 +45,65 @@ from paths import DIR_LOOKUPS
 INPUT_NAMES = DIR_LOOKUPS / "geo_eu27.json"
 OUTPUT = DIR_LOOKUPS / "decoupling_notes.json"
 
-CAPTION = "Municipal waste and real GDP per person, 2011 = 100: {name}"
+CAPTION = "{name}: waste per person and the economy, compared with 2011"
 
 LABELS = {
     "mw_pc_index": "Waste per person",
-    "gdp_pc_index": "GDP per person",
+    "gdp_pc_index": "Economy (GDP per person)",
     "reference": "EU27",
-    "reference_mw_pc_index": "EU27 waste per person",
-    "reference_gdp_pc_index": "EU27 GDP per person",
-    "base_year": "2011 = 100",
-    "break_year": "Break in series",
+    "reference_mw_pc_index": "EU27 waste",
+    "reference_gdp_pc_index": "EU27 economy",
+    "base_year": "2011 level (100)",
+    "break_year": "Counting changed",
 }
 
 GENERAL_NOTE = (
-    "Both lines show the change since 2011 (2011 = 100): an index of 110 means 10 % higher "
-    "than in 2011. GDP is in real terms (2020 prices), so it shows the growth of the economy, "
-    "not inflation. When the GDP line is above the waste line, the economy grew more than "
-    "waste per person: waste is decoupled from economic growth."
+    "Both lines start at 100 in 2011, so you can compare how fast each one grew: 110 means "
+    "10 % more than in 2011. The economy is GDP per person, adjusted for inflation (2020 prices). "
+    "When the blue line is above the orange one, the economy grew faster than waste. This is "
+    "called decoupling."
 )
 
-# geo, break_year, note
+# geo, break_year, note (plain wording by the ux-copywriter; figures from docs/findings.md
+# §1 bullets 4-6, 10-11 and §2 bullets 4-6)
 COUNTRY_NOTES = [
     ("EU27_2020", None,
-     "In 2020 and 2021 the lines are affected by COVID-19: GDP fell while waste per person "
-     "rose, likely because people spent more time at home. The EU27 waste figure also includes "
-     "the changes in definition of several Member States (see below), so the real rise in "
-     "waste is smaller than the line shows."),
+     "The EU figure includes the countries that changed what they count, so the real rise in "
+     "waste is probably smaller than the line shows."),
     ("CZ", 2017,
-     "From 2017 Czechia also counts municipal-type waste from businesses and waste collected "
-     "outside the municipal system. This raised waste per person by 44 % from 2016 to 2017: "
-     "a change in definition, not more waste. Before the change, waste grew more slowly than GDP."),
+     "From 2017 Czechia also counts similar waste from businesses. Its waste per person jumped "
+     "by 44 % in one year: a change in counting, not more waste generated. Before the change, "
+     "waste grew more slowly than the economy."),
     ("BE", 2020,
-     "From 2020 Belgium reports municipal waste as defined in EU law, including similar waste "
-     "from businesses. This raised waste per person by 75 % from 2019 to 2020: a change in "
-     "definition, not more waste. Before the change, waste per person fell while GDP grew."),
+     "From 2020 Belgium also counts similar waste from businesses. Its waste per person jumped "
+     "by 75 % in one year: a change in counting, not more waste generated. Before the change, "
+     "waste per person fell while the economy grew."),
     ("AT", 2020,
-     "From 2020 Austria also counts municipal waste from businesses (commerce and industry). "
-     "This raised waste per person by 42 % from 2019 to 2020: a change in definition, not "
-     "more waste. Before the change, waste grew more slowly than GDP."),
+     "From 2020 Austria also counts waste from shops and businesses. Its waste per person "
+     "jumped by 42 % in one year: a change in counting, not more waste generated. Before the "
+     "change, waste grew more slowly than the economy."),
     ("SK", 2020,
-     "From 2020 Slovakia uses a new definition of municipal waste that also covers waste from "
-     "businesses, which raised waste per person by 14 %. Waste per person was already growing "
-     "faster than GDP before the change (+35 % from 2011 to 2019, against +22 % for GDP)."),
+     "From 2020 Slovakia also counts waste from businesses, which raised its waste per person "
+     "by 14 % in one year. But its waste was already growing faster than its economy before "
+     "that: +35 % against +22 % from 2011 to 2019."),
     ("LU", 2016,
-     "From 2016 Luxembourg defines municipal waste by waste codes, which includes more waste "
-     "from sources other than households; before, it counted only the waste under the "
-     "responsibility of the public sector. This raised waste per person by 34 % from 2015 to "
-     "2016: a change in definition, not more waste. Before the change, waste per person fell "
-     "while GDP grew."),
+     "From 2016 Luxembourg counts more waste from sources other than homes. Its waste per "
+     "person jumped by 34 % in one year: a change in counting, not more waste generated. "
+     "Before the change, waste per person fell while the economy stayed about the same."),
     ("EE", 2014,
-     "From 2014 Estonia includes packaging waste in municipal waste (not included until 2013). "
-     "Waste per person rose by 22 % from 2013 to 2014, mostly because of this change; Eurostat "
-     "also mentions more mixed municipal waste and more separate collection in bigger towns. "
-     "Before the change, waste per person fell while GDP grew."),
+     "From 2014 Estonia also counts packaging waste. Its waste per person rose by 22 % in one "
+     "year, when it started counting packaging waste. Before the change, waste per person fell while the "
+     "economy grew."),
     ("SI", 2013,
-     "From 2013 Slovenia also counts waste from special waste collectors, which was not "
-     "included before. Waste per person rose by 14 % from 2012 to 2013, partly because of "
-     "this change."),
+     "From 2013 Slovenia also counts waste from special waste collectors. Its waste per person "
+     "rose by 14 % in one year, partly because of this change."),
     ("IE", 2014,
-     "Irish GDP is inflated by the accounts of multinational companies (it rose by 23 % in "
-     "2015 alone), so the GDP line overstates the growth of the Irish economy, and decoupling "
-     "looks stronger than it is. Eurostat marks a break in waste per person in 2014 (improved "
-     "method to estimate household waste not collected by waste services); there are no "
-     "figures for 2013 and 2015."),
+     "Ireland's GDP per person jumped by 23.5 % in 2015 alone, mostly because multinational "
+     "companies moved assets such as intellectual property to Ireland (Irish Central "
+     "Statistics Office). So the economy looks bigger than it is, and decoupling looks "
+     "stronger than it is; the fall in waste per person is not affected. Ireland also changed how "
+     "it estimates household waste in 2014, and there are no waste figures for 2013 and "
+     "2015."),
 ]
 
 # Countries whose waste per person jumped because they widened their definition of municipal
@@ -138,11 +134,10 @@ def build_break_note(names):
     ]
     rises = DEFINITION_CHANGES.values()
     return (
-        f"Change in definition: {join_names(groups)} started to include municipal waste from "
-        f"businesses. Their waste per person rose by {min(rises)} % to {max(rises)} % in the "
-        f"year of the change, without more waste being generated, so their figures cannot be "
-        f"compared with their earlier years. Select a country to see the year of its change "
-        f"on the chart."
+        f"Some countries changed what they count: {join_names(groups)} started counting "
+        f"waste from businesses, so their waste per person jumped by {min(rises)} % to "
+        f"{max(rises)} % in one year without more waste being generated. The EU figure "
+        f"includes these jumps. Pick one of these countries to see the year of its change."
     )
 
 

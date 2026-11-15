@@ -12,9 +12,11 @@
 // processed data: the 27 EU Member States and EU27_2020 only
 import municipalWaste from "@data/processed/municipal_waste.json";
 import municipalWasteDecoupling from "@data/processed/municipal_waste_decoupling.json";
+import municipalWasteTreatment from "@data/processed/municipal_waste_treatment.json";
 import recyclingDistanceToTarget from "@data/processed/recycling_distance_to_target.json";
 
 // lookups
+import dashboardTexts from "@data/lookups/dashboard_texts.json";
 import dataSources from "@data/lookups/data_sources.json";
 import decouplingNotes from "@data/lookups/decoupling_notes.json";
 import geoNames from "@data/lookups/geo_eu27.json";
@@ -25,6 +27,7 @@ import recyclingTargets from "@data/lookups/recycling_targets.json";
 export const EU27_TOTAL = "EU27_2020";
 
 export {
+  dashboardTexts,
   dataSources,
   decouplingNotes,
   geoFlags,
@@ -32,6 +35,7 @@ export {
   municipalWaste,
   municipalWasteDecoupling,
   municipalWasteNotes,
+  municipalWasteTreatment,
   recyclingDistanceToTarget,
   recyclingTargets,
 };

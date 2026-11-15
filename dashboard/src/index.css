@@ -1,55 +1,332 @@
+/* Visual identity "Loop" (docs/communication.md, section 5): warm paper background, deep
+   green-black ink, one sunny highlight, rounded shapes. Chart constants in the components use
+   the same hex values as these tokens. */
+
+/* fonts (Google Fonts): Bricolage Grotesque for headlines, Inter for text and charts */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap");
+
 :root {
-  --surface: #fcfcfb;
-  --text-primary: #0b0b0b;
-  --text-secondary: #52514e;
-  --grid: #e5e5e5;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: var(--text-primary);
-  background: var(--surface);
+  /* colours */
+  --color-bg: #fbf8f3;
+  --color-surface: #ffffff;
+  --color-tint: #eef4f0;
+  --color-ink: #1d2b2a;
+  --color-ink-muted: #55625f;
+  --color-line: #e6e1d8;
+  --color-border: #7d8582;
+  --color-highlight: #dcefe3; /* pale mint (was #ffd84d, too bright) */
+  --color-waste: #d96a2b;
+  --color-waste-text: #b2511a;
+  --color-economy: #3b5bdb;
+  --color-eu: #1d2b2a;
+  --color-reference: #838b88;
+
+  /* older names, still used by some chart classes */
+  --text-primary: var(--color-ink);
+  --text-secondary: var(--color-ink-muted);
+  --grid: var(--color-line);
+
+  /* type */
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-hero: clamp(2.25rem, 5vw + 1rem, 4rem);
+  --text-h2: clamp(1.6rem, 2.5vw + 1rem, 2.5rem);
+  --text-lede: 1.0625rem;
+  --text-note: 0.8125rem;
+  --text-source: 12px;
+
+  /* space, shapes, motion */
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --radius-card: 16px;
+  --radius-hover: 12px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 2px rgb(29 43 42 / 6%);
+  --shadow-hover: 0 6px 24px rgb(29 43 42 / 10%);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --content-width: 1100px;
+
+  font-family: var(--font-body);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink);
+  background: var(--color-bg);
 }
 
 body {
   margin: 0;
-  background: var(--surface);
+  background: var(--color-bg);
+  line-height: 1.5;
 }
 
 main {
-  max-width: 1100px;
+  max-width: var(--content-width);
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: var(--space-6) var(--space-4) var(--space-16);
 }
+
+a {
+  color: var(--color-ink);
+}
+
+h1,
+h2,
+.chart-caption,
+.hover-card-title,
+.hero-motif-title {
+  font-family: var(--font-display);
+  color: var(--color-ink);
+}
+
+h1 {
+  font-size: var(--text-hero);
+  font-weight: 800;
+  line-height: 1.05;
+  margin: var(--space-2) 0 var(--space-4);
+}
+
+h2 {
+  font-size: var(--text-h2);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: var(--space-2) 0 var(--space-3);
+}
+
+.eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.lede {
+  font-size: var(--text-lede);
+  line-height: 1.55;
+  max-width: 60ch;
+  color: var(--color-ink);
+  margin: 0 0 var(--space-4);
+}
+
+/* key message of a section: the sentence a reader keeps */
+.key-message {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1vw + 0.9rem, 1.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  max-width: 48ch;
+  margin: 0 0 var(--space-3);
+}
+
+/* paragraphs of the methodological note and "How I did this" */
+.end-paragraph {
+  max-width: 75ch;
+  margin: 0 0 var(--space-3);
+}
+
+/* --- hero ------------------------------------------------------------------------------ */
 
 .hero {
-  padding: 32px 0 16px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+  padding: var(--space-12) var(--space-8);
+  margin-bottom: var(--space-8);
+  background: var(--color-tint);
+  border-radius: var(--radius-card);
 }
 
-.subtitle {
-  color: var(--text-secondary);
+.cta {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-ink);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
 }
+
+.cta:hover,
+.cta:focus-visible {
+  background: #33423f;
+}
+
+/* key-number cards in the hero */
+.hero-cards {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-8) 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.hero-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.hero-card-value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.hero-card-label {
+  display: block;
+  margin-top: var(--space-2);
+  font-size: 0.8125rem;
+  color: var(--color-ink-muted);
+}
+
+.hero-motif-intro {
+  font-size: 0.875rem;
+  color: var(--color-ink-muted);
+  margin: 0 0 var(--space-3);
+}
+
+.hero-motif-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 var(--space-3);
+}
+
+/* --- waste hierarchy motif --------------------------------------------------------------- */
+
+.hierarchy-motif {
+  display: block;
+  max-width: 420px;
+  overflow: visible;
+}
+
+.hierarchy-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.hierarchy-value {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.hierarchy-not-accounted {
+  font-size: 0.8125rem;
+  color: var(--color-ink-muted);
+  margin: var(--space-3) 0 0;
+  cursor: help;
+}
+
+.hierarchy-tag {
+  font-size: 10px;
+  fill: var(--color-ink-muted);
+}
+
+.hierarchy-step-covered path {
+  transition: fill var(--duration-fast);
+}
+
+.hierarchy-step-covered:hover path,
+a:focus-visible .hierarchy-step-covered path {
+  fill: var(--color-highlight);
+}
+
+.hierarchy-icon {
+  display: block;
+  flex: none;
+}
+
+/* --- sections ---------------------------------------------------------------------------- */
 
 .section {
-  padding: 24px 0;
-  border-top: 1px solid var(--grid);
+  padding: var(--space-12) 0 var(--space-8);
 }
 
-/* charts: text uses the app font; sizes to be defined later for all charts */
+.section-header {
+  margin-bottom: var(--space-6);
+}
+
+/* texts of a section header: about 85 % of the chart width, so lines don't break too early */
+.section-header .key-message,
+.section-header .lede,
+.section-end .end-paragraph {
+  max-width: 85%;
+}
+
+.eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.try-chip {
+  display: inline-block;
+  margin: 0;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--color-highlight);
+  color: var(--color-ink);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* white card around a chart */
+.chart-card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-6);
+}
+
+/* quieter end matter */
+.section-end {
+  background: var(--color-tint);
+  border-radius: var(--radius-card);
+  padding: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+/* closing panel: back to the waste hierarchy */
+.closing {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+  padding: var(--space-12) var(--space-8);
+  margin-top: var(--space-8);
+  border: 2px solid var(--color-ink);
+  border-radius: var(--radius-card);
+}
+
+/* --- charts ------------------------------------------------------------------------------ */
+
 svg text {
   font-family: inherit;
-  fill: var(--text-primary);
+  fill: var(--color-ink);
 }
 
 .chart-axis {
   font-size: 12px;
-  fill: var(--text-secondary);
+  fill: var(--color-ink-muted);
 }
 
 .chart-row-label {
   font-size: 13px;
+  font-weight: 500;
 }
 
 .chart-label {
-  font-size: 11px;
-  fill: var(--text-secondary);
+  font-size: 12px;
+  fill: var(--color-ink-muted);
 }
 
 .chart-label-extreme {
@@ -59,26 +336,59 @@ svg text {
 
 .chart-label-eu {
   font-weight: 700;
+  fill: var(--color-eu);
 }
 
-/* chart title above a chart, notes below it */
-.chart-caption {
-  font-size: 14px;
+.chart-label-strong {
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 8px;
+}
+
+/* white halo behind chart labels that sit on top of marks */
+.chart-label-halo {
+  paint-order: stroke;
+  stroke: #ffffff;
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+/* chart title above a chart */
+.chart-caption {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: var(--space-2);
+}
+
+figure.bar-chart,
+figure.line-chart {
+  margin: 0;
+}
+
+/* notes under a chart, folded under "About this chart" */
+.chart-details {
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-3);
+}
+
+.chart-details summary {
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
 }
 
 .chart-note {
-  font-size: 12px;
-  color: var(--text-secondary);
-  margin: 8px 0 0;
+  font-size: var(--text-note);
+  color: var(--color-ink-muted);
+  margin: var(--space-2) 0 0;
 }
 
 /* data source under a chart */
 .chart-source {
-  font-size: 11px;
-  color: var(--text-secondary);
-  margin: 12px 0 0;
+  font-size: var(--text-source);
+  color: var(--color-ink-muted);
+  margin: var(--space-3) var(--space-2) 0;
 }
 
 .chart-source p {
@@ -89,9 +399,36 @@ svg text {
   color: inherit;
 }
 
-figure.bar-chart,
-figure.line-chart {
-  margin: 0;
+/* row above a chart: search box on the left, legend on the right */
+.chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3) var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+.chart-controls input {
+  font: inherit;
+  height: 44px;
+  box-sizing: border-box;
+  padding: 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  width: 240px;
+}
+
+.chart-controls input:focus-visible {
+  outline: none;
+  border-color: var(--color-ink);
+  box-shadow: 0 0 0 3px var(--color-highlight);
+}
+
+.chart-legend {
+  display: block;
 }
 
 /* legend of a line chart: one short line and a label per item, in a row */
@@ -100,7 +437,7 @@ figure.line-chart {
   flex-wrap: wrap;
   gap: 6px 16px;
   font-size: 12px;
-  color: var(--text-secondary);
+  color: var(--color-ink-muted);
 }
 
 .line-legend-item {
@@ -109,23 +446,42 @@ figure.line-chart {
   gap: 6px;
 }
 
-/* hover card: positioned inside .chart-hover-area, next to the pointer */
+/* fade-in when the selected country of a chart changes */
+.fade-in {
+  animation: fade-in var(--duration-base) ease-out;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* --- hover cards ------------------------------------------------------------------------- */
+
 .chart-hover-area {
   position: relative;
 }
 
 .hover-card {
   position: absolute;
-  width: 280px; /* CARD_WIDTH in the chart */
+  width: 360px; /* CARD_WIDTH in WastePerCapitaBarChart.jsx */
+  max-width: calc(100vw - 32px); /* small screens */
   box-sizing: border-box;
-  padding: 10px 12px;
-  background: #ffffff;
-  border: 1px solid #d9d9d9;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
-  pointer-events: none; /* the card never takes the hover from the bars */
+  padding: 12px 14px;
+  background: var(--color-surface);
+  border-radius: var(--radius-hover);
+  box-shadow: var(--shadow-hover);
+  pointer-events: none; /* the card never takes the hover from the marks */
   font-size: 13px;
   z-index: 1;
+}
+
+.hover-card-small {
+  width: 220px; /* CARD_WIDTH in DistanceToTargetScatter.jsx */
 }
 
 .hover-card-header {
@@ -136,16 +492,16 @@ figure.line-chart {
 }
 
 .flag-circle {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 0 0 1px rgb(0 0 0 / 15%); /* keeps white parts of flags visible */
+  box-shadow: 0 0 0 1px rgb(29 43 42 / 15%); /* keeps white parts of flags visible */
 }
 
 .hover-card-title {
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .hover-card-values {
@@ -156,42 +512,25 @@ figure.line-chart {
 }
 
 .hover-card-values dt {
-  color: var(--text-secondary);
+  color: var(--color-ink-muted);
+  white-space: nowrap;
 }
 
 .hover-card-values dd {
   margin: 0;
   text-align: right;
   white-space: nowrap;
-  font-variant-numeric: tabular-nums;
 }
 
-.chart-label-strong {
-  font-size: 13px;
+.hover-card-sub {
+  color: var(--color-ink-muted);
+  font-size: 12px;
+}
+
+.hover-card-main {
   font-weight: 600;
-}
-
-/* row above a chart: search box on the left, legend on the right, vertically centred;
-   on narrow screens the legend wraps below the search box */
-.chart-controls {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px 24px;
-  margin-bottom: 16px;
-}
-
-.chart-controls input {
-  font: inherit;
-  padding: 6px 10px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  width: 220px;
-}
-
-.chart-legend {
-  display: block;
+  font-size: 15px;
+  margin-top: 2px;
 }
 
 /* temporary: marks where a chart will go */
@@ -200,8 +539,47 @@ figure.line-chart {
   align-items: center;
   justify-content: center;
   min-height: 240px;
-  padding: 16px;
-  border: 1px dashed var(--text-secondary);
-  color: var(--text-secondary);
+  padding: var(--space-4);
+  border: 1px dashed var(--color-ink-muted);
+  color: var(--color-ink-muted);
   text-align: center;
+}
+
+/* --- small screens ----------------------------------------------------------------------- */
+
+@media (max-width: 760px) {
+  .hero,
+  .closing {
+    grid-template-columns: 1fr;
+    padding: var(--space-8) var(--space-4);
+  }
+
+  .chart-card {
+    padding: var(--space-3);
+  }
+
+  .chart-controls input {
+    width: 100%;
+  }
+
+  .hero-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header .key-message,
+  .section-header .lede,
+  .section-end .end-paragraph {
+    max-width: none;
+  }
+
+  .section-end {
+    padding: var(--space-6) var(--space-4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }

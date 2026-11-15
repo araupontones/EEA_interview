@@ -15,6 +15,8 @@ Output: data/processed/municipal_waste.json, one record per country (geo) and ye
     year    year (whole number), 2010-2024
     mw_pc   municipal waste generated, kg per person
     mw_tt   municipal waste generated, thousand tonnes
+    mw_pc_day  municipal waste generated, kg per person per day: mw_pc / 365 (also in leap
+            years), two decimals; for a human-scale figure (EU27 2023: 510 kg = 1.40 kg a day)
 Missing values are empty (null).
 
 Run cell by cell (# %%) in the VS Code Interactive Window, or from anywhere:
@@ -29,6 +31,7 @@ from paths import DIR_PROCESSED, interim_file
 
 FILE_WASMUN = interim_file("env_wasmun")
 OUTPUT = DIR_PROCESSED / "municipal_waste.json"
+DAYS_PER_YEAR = 365  # also in leap years: a rounded human-scale figure, not an exact daily rate
 
 # import the interim municipal waste data
 df_wasmun = pd.read_parquet(FILE_WASMUN)
@@ -41,12 +44,14 @@ df_wasmun.head()
 #   mw_pc  municipal waste generated, kg per person
 #   mw_tt  municipal waste generated, thousand tonnes
 #   year   year as a whole number (time in the interim data is text)
+#   mw_pc_day  kg per person per day = mw_pc / 365, two decimals
 # Keep only the 27 EU Member States and EU27_2020 (drops non-EU countries).
 df_mw = (
     df_wasmun[["geo", "time", "municipal_waste_gen_pc", "municipal_waste_gen_total"]]
     .rename(columns={"municipal_waste_gen_pc": "mw_pc", "municipal_waste_gen_total": "mw_tt"})
-    .assign(year=lambda d: d["time"].astype(int))
-    [["geo", "year", "mw_pc", "mw_tt"]]
+    .assign(year=lambda d: d["time"].astype(int),
+            mw_pc_day=lambda d: (d["mw_pc"] / DAYS_PER_YEAR).round(2))
+    [["geo", "year", "mw_pc", "mw_tt", "mw_pc_day"]]
     .pipe(keep_eu27)
     .sort_values(["geo", "year"])
     .reset_index(drop=True)

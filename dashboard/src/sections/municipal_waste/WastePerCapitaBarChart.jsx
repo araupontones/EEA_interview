@@ -2,8 +2,8 @@
 //
 // One bar per Member State, sorted from the highest to the lowest value, for the latest year
 // with data for all 27 Member States (computed from the data, so it moves on when Eurostat
-// publishes a complete new year). The EU27 is one more bar, in its ranked position, in dark
-// grey (the same colour as the EU27 marker in the distance-to-target chart). Each bar ends with
+// publishes a complete new year). The EU27 is one more bar, in its ranked position, in ink
+// (the same colour as the EU27 marker in the distance-to-target chart). Each bar ends with
 // its value. Caption, note and the labels of the hover card come from
 // data/lookups/municipal_waste_notes.json. The chart compares countries in one year, so the
 // breaks in series are explained under the decoupling chart, not here.
@@ -18,6 +18,7 @@ import { useMemo, useRef, useState } from "react";
 
 import {
   EU27_TOTAL,
+  dashboardTexts,
   geoNames,
   municipalWaste,
   municipalWasteNotes,
@@ -25,16 +26,20 @@ import {
 import { flagUrl } from "../../lib/flags.js";
 
 const MARGIN = { top: 24, right: 48, bottom: 8, left: 120 };
-const ROW_HEIGHT = 22;
+const ROW_HEIGHT = 24;
+const NARROW = 500; // px: below this width, a narrower label column
+const MARGIN_NARROW = { top: 24, right: 36, bottom: 8, left: 92 };
 const TICK_COUNT = 5;
 
-const COUNTRY_COLOR = "#5d92f5";
-const EU_COLOR = "#003494";
-const GRID = "#e5e5e5";
-const CARD_WIDTH = 280; // px, also set in index.css (.hover-card)
+// Colours of the dashboard identity (docs/communication.md, section 5): waste = orange,
+// economy (GDP) = blue, EU27 = ink; all pass WCAG 3:1 for graphics on the page background.
+const COUNTRY_COLOR = "#d96a2b"; // waste
+const EU_COLOR = "#1d2b2a"; // EU27 = ink
+const GRID = "#e6e1d8";
+const CARD_WIDTH = 360; // px, also set in index.css (.hover-card)
 const CARD_OFFSET = 14; // px between the pointer and the card
 const DIMMED_OPACITY = 0.35; // other bars while a row is hovered
-const BASELINE = { stroke: "#000000", strokeWidth: 2 }; // grid line at x = 0
+const BASELINE = { stroke: "#1d2b2a", strokeWidth: 1.5 }; // grid line at x = 0 (ink)
 const BAR_RADIUS = 5; // px, radius of the rounded right end of the bars
 
 // Bar from x = 0 to x = width, at y with height h, with only the right-hand corners rounded
@@ -77,6 +82,7 @@ const BARS = municipalWaste
     name: geoNames[d.geo] ?? d.geo,
     value: d.mw_pc,
     total: d.mw_tt,
+    perDay: d.mw_pc_day,
     isEU: d.geo === EU27_TOTAL,
   }))
   .sort((a, b) => b.value - a.value);
@@ -92,9 +98,10 @@ const formatNumber = (v) =>
 export default function WastePerCapitaBarChart({ width }) {
   const containerRef = useRef(null);
   const [hovered, setHovered] = useState(null); // { bar, x, y }: x, y = pointer in the container
-  const height = MARGIN.top + BARS.length * ROW_HEIGHT + MARGIN.bottom;
-  const boundsWidth = width - MARGIN.left - MARGIN.right;
-  const boundsHeight = height - MARGIN.top - MARGIN.bottom;
+  const margin = width < NARROW ? MARGIN_NARROW : MARGIN;
+  const height = margin.top + BARS.length * ROW_HEIGHT + margin.bottom;
+  const boundsWidth = width - margin.left - margin.right;
+  const boundsHeight = height - margin.top - margin.bottom;
 
   const xScale = useMemo(
     () =>
@@ -125,7 +132,7 @@ export default function WastePerCapitaBarChart({ width }) {
 
       <div ref={containerRef} className="chart-hover-area">
         <svg width={width} height={height} role="img" aria-label={CAPTION}>
-          <g transform={`translate(${MARGIN.left},${MARGIN.top})`}>
+          <g transform={`translate(${margin.left},${margin.top})`}>
             {/* vertical grid with kg labels */}
             {xScale.ticks(TICK_COUNT).map((v) => (
               <g key={`grid-${v}`}>
@@ -165,7 +172,7 @@ export default function WastePerCapitaBarChart({ width }) {
                 >
                   {/* invisible rectangle over the whole row, so the row is easy to hover */}
                   <rect
-                    x={-MARGIN.left}
+                    x={-margin.left}
                     y={y - (yScale.step() - yScale.bandwidth()) / 2}
                     width={width}
                     height={yScale.step()}
@@ -216,7 +223,10 @@ export default function WastePerCapitaBarChart({ width }) {
         {hovered && <HoverCard {...hovered} containerWidth={width} />}
       </div>
 
-      <p className="chart-note">{municipalWasteNotes.general_note}</p>
+      <details className="chart-details">
+        <summary>{dashboardTexts.ui.about_chart}</summary>
+        <p className="chart-note">{municipalWasteNotes.general_note}</p>
+      </details>
     </figure>
   );
 }
@@ -245,6 +255,10 @@ function HoverCard({ bar, x, y, containerWidth }) {
         <dt>{card.mw_pc.label}</dt>
         <dd>
           {formatNumber(bar.value)} {card.mw_pc.unit}
+        </dd>
+        <dt>{card.mw_pc_day.label}</dt>
+        <dd>
+          {bar.perDay == null ? "–" : bar.perDay.toFixed(1)} {card.mw_pc_day.unit}
         </dd>
         <dt>{card.mw_tt.label}</dt>
         <dd>

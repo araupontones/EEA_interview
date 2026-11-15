@@ -26,18 +26,20 @@ from paths import DIR_LOOKUPS
 
 OUTPUT = DIR_LOOKUPS / "municipal_waste_notes.json"
 
-CAPTION = "Municipal waste generated per person (kg), {year}"
+CAPTION = "Waste per person, in kg per year, {year}"
 
 # Hover card: one entry per column of data/processed/municipal_waste.json shown in the card
 CARD = {
-    "mw_pc": {"label": "Waste per person", "unit": "kg"},
-    "mw_tt": {"label": "Waste generated", "unit": "thousand tonnes"},
+    "mw_pc": {"label": "Per person, per year", "unit": "kg"},
+    "mw_pc_day": {"label": "Per person, per day", "unit": "kg"},
+    "mw_tt": {"label": "Whole country, per year", "unit": "thousand tonnes"},
 }
 
 GENERAL_NOTE = (
-    "Municipal waste is waste collected from households and similar waste from businesses, "
-    "such as shops, offices and public institutions. Differences between countries partly "
-    "reflect what each country counts as municipal waste."
+    "Municipal waste is the waste from homes, plus similar waste from shops, offices and public "
+    "buildings. Countries don't all count the same things: Austria, Belgium, Czechia, Luxembourg "
+    "and Slovakia started counting more waste from businesses, so part of the gap between "
+    "countries is about counting, not about bins."
 )
 
 def main():

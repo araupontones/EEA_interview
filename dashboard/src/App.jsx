@@ -1,5 +1,6 @@
 // The dashboard page: the sections in reading order. Each section lives in its own folder
 // in src/sections/, with its chart next to it.
+import ClosingPanel from "./sections/closing/ClosingPanel.jsx";
 import DecouplingSection from "./sections/decoupling/DecouplingSection.jsx";
 import DistanceToTargetSection from "./sections/distance_to_target/DistanceToTargetSection.jsx";
 import Hero from "./sections/hero/Hero.jsx";
@@ -14,6 +15,7 @@ export default function App() {
       <MunicipalWasteSection />
       <DecouplingSection />
       <DistanceToTargetSection />
+      <ClosingPanel />
       <MethodNoteSection />
       <HowIDidThisSection />
     </main>

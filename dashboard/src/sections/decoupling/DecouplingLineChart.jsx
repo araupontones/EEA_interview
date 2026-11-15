@@ -18,22 +18,32 @@ import { scaleLinear } from "d3-scale";
 import { line } from "d3-shape";
 import { useMemo, useState } from "react";
 
-import { EU27_TOTAL, decouplingNotes, geoNames, municipalWasteDecoupling } from "../../data.js";
+import {
+  EU27_TOTAL,
+  dashboardTexts,
+  decouplingNotes,
+  geoNames,
+  municipalWasteDecoupling,
+} from "../../data.js";
 
 const MARGIN = { top: 28, right: 160, bottom: 30, left: 44 };
 const HEIGHT = 420;
+const NARROW = 560; // px: below this width, no line-end labels and a shorter chart
+const MARGIN_NARROW = { top: 28, right: 16, bottom: 30, left: 36 };
+const HEIGHT_NARROW = 340;
 const Y_STEP = 10; // the y axis is rounded out to a multiple of this
 const MIN_PX_PER_YEAR_LABEL = 44; // below this, label every second year
 const LABEL_GAP = 14; // px, minimum vertical distance between two line-end labels
 
 const SERIES = [
-  { key: "mw_pc_index", color: "#e07b39" },
-  { key: "gdp_pc_index", color: "#003494" },
+  // color: line; textColor: line-end label (darker where the line colour is too light for text)
+  { key: "mw_pc_index", color: "#d96a2b", textColor: "#b2511a" }, // waste
+  { key: "gdp_pc_index", color: "#3b5bdb", textColor: "#3b5bdb" }, // economy
 ];
-const REFERENCE_COLOR = "#bdbdbd";
-const GRID = "#e5e5e5";
-const BASE_LINE = { stroke: "#333333", strokeWidth: 1, strokeDasharray: "4 4" };
-const BREAK_COLOR = "#757575";
+const REFERENCE_COLOR = "#838b88"; // EU27 reference lines (grey, 3.4:1 on the page)
+const GRID = "#e6e1d8";
+const BASE_LINE = { stroke: "#55625f", strokeWidth: 1, strokeDasharray: "4 4" };
+const BREAK_COLOR = "#55625f"; // dashed "2 3", so it reads differently from the 100 line
 
 const { labels } = decouplingNotes;
 
@@ -86,8 +96,11 @@ export default function DecouplingLineChart({ width }) {
   const [selected, setSelected] = useState(EU27_TOTAL);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const boundsWidth = width - MARGIN.left - MARGIN.right;
-  const boundsHeight = HEIGHT - MARGIN.top - MARGIN.bottom;
+  const narrow = width < NARROW;
+  const margin = narrow ? MARGIN_NARROW : MARGIN;
+  const height = narrow ? HEIGHT_NARROW : HEIGHT;
+  const boundsWidth = width - margin.left - margin.right;
+  const boundsHeight = height - margin.top - margin.bottom;
 
   const xScale = useMemo(
     () => scaleLinear().domain(YEARS).range([0, boundsWidth]),
@@ -126,9 +139,9 @@ export default function DecouplingLineChart({ width }) {
 
   // line-end labels: the chosen geography, plus the EU27 reference when a country is chosen
   const endLabels = spreadLabels([
-    ...SERIES.map(({ key, color }) => {
+    ...SERIES.map(({ key, textColor }) => {
       const d = lastPoint(rows, key);
-      return { key, text: labels[key], color, y: yScale(d[key]), x: xScale(d.year), bold: true };
+      return { key, text: labels[key], color: textColor, y: yScale(d[key]), x: xScale(d.year), bold: true };
     }),
     ...(isEU
       ? []
@@ -151,10 +164,10 @@ export default function DecouplingLineChart({ width }) {
         <input
           type="search"
           list="decoupling-countries"
-          placeholder="Search a country..."
+          placeholder={dashboardTexts.ui.search_placeholder}
           value={searchQuery}
           onChange={(e) => onSearch(e.target.value)}
-          aria-label="Search a country"
+          aria-label={dashboardTexts.ui.search_aria}
         />
         <datalist id="decoupling-countries">
           {OPTIONS.map((o) => (
@@ -167,8 +180,8 @@ export default function DecouplingLineChart({ width }) {
 
       <figcaption className="chart-caption">{decouplingNotes.caption.replace("{name}", name)}</figcaption>
 
-      <svg width={width} height={HEIGHT} role="img" aria-label={decouplingNotes.caption.replace("{name}", name)}>
-        <g transform={`translate(${MARGIN.left},${MARGIN.top})`}>
+      <svg width={width} height={height} role="img" aria-label={decouplingNotes.caption.replace("{name}", name)}>
+        <g transform={`translate(${margin.left},${margin.top})`}>
           {/* horizontal grid with index labels */}
           {yScale.ticks(Y_DOMAIN[1] - Y_DOMAIN[0] > 100 ? 7 : 10).map((v) => (
             <g key={`y-${v}`}>
@@ -199,6 +212,7 @@ export default function DecouplingLineChart({ width }) {
                 y2={boundsHeight}
                 stroke={BREAK_COLOR}
                 strokeWidth={1.5}
+                strokeDasharray="2 3"
               />
               <text x={xScale(note.break_year)} y={-10} textAnchor="middle" className="chart-axis">
                 {labels.break_year} ({note.break_year})
@@ -214,25 +228,32 @@ export default function DecouplingLineChart({ width }) {
                 d={pathOf(ROWS_BY_GEO[EU27_TOTAL], key)}
                 fill="none"
                 stroke={REFERENCE_COLOR}
-                strokeWidth={2}
+                strokeWidth={1.5}
               />
             ))}
 
           {/* lines of the chosen geography; a point with no value on either side (e.g. Ireland
               2014) cannot be joined by a line, so it is drawn as a dot */}
           {SERIES.map(({ key, color }) => (
-            <g key={key}>
-              <path d={pathOf(rows, key)} fill="none" stroke={color} strokeWidth={2.5} />
+            <g key={`${selected}-${key}`} className="fade-in">
+              <path
+                d={pathOf(rows, key)}
+                fill="none"
+                stroke={color}
+                strokeWidth={3}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
               {rows
                 .filter((d, i) => d[key] != null && rows[i - 1]?.[key] == null && rows[i + 1]?.[key] == null)
                 .map((d) => (
-                  <circle key={d.year} cx={xScale(d.year)} cy={yScale(d[key])} r={3.5} fill={color} />
+                  <circle key={d.year} cx={xScale(d.year)} cy={yScale(d[key])} r={4} fill={color} />
                 ))}
             </g>
           ))}
 
           {/* line-end labels */}
-          {endLabels.map((l) => (
+          {!narrow && endLabels.map((l) => (
             <text
               key={`label-${l.key}`}
               x={l.x + 8}
@@ -247,13 +268,17 @@ export default function DecouplingLineChart({ width }) {
         </g>
       </svg>
 
-      <p className="chart-note">{decouplingNotes.general_note}</p>
+      {/* the note of the selected geography stays visible; the general notes are folded */}
       {note && (
         <p className="chart-note">
           <strong>{name}:</strong> {note.note}
         </p>
       )}
-      {isEU && <p className="chart-note">{decouplingNotes.break_note}</p>}
+      <details className="chart-details">
+        <summary>{dashboardTexts.ui.about_chart}</summary>
+        <p className="chart-note">{decouplingNotes.general_note}</p>
+        {isEU && <p className="chart-note">{decouplingNotes.break_note}</p>}
+      </details>
     </figure>
   );
 }

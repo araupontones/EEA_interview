@@ -11,9 +11,8 @@ export default function MunicipalWasteSection() {
   const [ref, width] = useContainerWidth();
 
   return (
-    <Section id="municipal-waste" title="Municipal waste generation">
-      <p>To do: text.</p>
-      <div ref={ref}>{width > 0 && <WastePerCapitaBarChart width={width} />}</div>
+    <Section id="municipal-waste">
+      <div className="chart-card" ref={ref}>{width > 0 && <WastePerCapitaBarChart width={width} />}</div>
       <ChartSource chart="municipal_waste" />
     </Section>
   );

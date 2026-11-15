@@ -10,9 +10,8 @@ export default function DistanceToTargetSection() {
   const [ref, width] = useContainerWidth();
 
   return (
-    <Section id="distance-to-target" title="Distance to target">
-      <p>To do: text.</p>
-      <div ref={ref}>{width > 0 && <DistanceToTargetScatter width={width} />}</div>
+    <Section id="distance-to-target">
+      <div className="chart-card" ref={ref}>{width > 0 && <DistanceToTargetScatter width={width} />}</div>
       <ChartSource chart="distance_to_target" />
     </Section>
   );

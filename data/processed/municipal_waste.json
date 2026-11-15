@@ -3,2520 +3,2940 @@
     "geo":"AT",
     "year":2010,
     "mw_pc":562.0,
-    "mw_tt":4701.0
+    "mw_tt":4701.0,
+    "mw_pc_day":1.54
   },
   {
     "geo":"AT",
     "year":2011,
     "mw_pc":573.0,
-    "mw_tt":4807.0
+    "mw_tt":4807.0,
+    "mw_pc_day":1.57
   },
   {
     "geo":"AT",
     "year":2012,
     "mw_pc":579.0,
-    "mw_tt":4883.0
+    "mw_tt":4883.0,
+    "mw_pc_day":1.59
   },
   {
     "geo":"AT",
     "year":2013,
     "mw_pc":578.0,
-    "mw_tt":4905.0
+    "mw_tt":4905.0,
+    "mw_pc_day":1.58
   },
   {
     "geo":"AT",
     "year":2014,
     "mw_pc":565.0,
-    "mw_tt":4833.0
+    "mw_tt":4833.0,
+    "mw_pc_day":1.55
   },
   {
     "geo":"AT",
     "year":2015,
     "mw_pc":560.0,
-    "mw_tt":4836.0
+    "mw_tt":4836.0,
+    "mw_pc_day":1.53
   },
   {
     "geo":"AT",
     "year":2016,
     "mw_pc":564.0,
-    "mw_tt":4928.0
+    "mw_tt":4928.0,
+    "mw_pc_day":1.55
   },
   {
     "geo":"AT",
     "year":2017,
     "mw_pc":570.0,
-    "mw_tt":5018.0
+    "mw_tt":5018.0,
+    "mw_pc_day":1.56
   },
   {
     "geo":"AT",
     "year":2018,
     "mw_pc":579.0,
-    "mw_tt":5119.0
+    "mw_tt":5119.0,
+    "mw_pc_day":1.59
   },
   {
     "geo":"AT",
     "year":2019,
     "mw_pc":588.0,
-    "mw_tt":5220.0
+    "mw_tt":5220.0,
+    "mw_pc_day":1.61
   },
   {
     "geo":"AT",
     "year":2020,
     "mw_pc":834.0,
-    "mw_tt":7438.0
+    "mw_tt":7438.0,
+    "mw_pc_day":2.28
   },
   {
     "geo":"AT",
     "year":2021,
     "mw_pc":835.0,
-    "mw_tt":7476.0
+    "mw_tt":7476.0,
+    "mw_pc_day":2.29
   },
   {
     "geo":"AT",
     "year":2022,
     "mw_pc":803.0,
-    "mw_tt":7261.0
+    "mw_tt":7261.0,
+    "mw_pc_day":2.2
   },
   {
     "geo":"AT",
     "year":2023,
     "mw_pc":782.0,
-    "mw_tt":7142.0
+    "mw_tt":7142.0,
+    "mw_pc_day":2.14
   },
   {
     "geo":"AT",
     "year":2024,
     "mw_pc":775.0,
-    "mw_tt":7116.0
+    "mw_tt":7116.0,
+    "mw_pc_day":2.12
   },
   {
     "geo":"BE",
     "year":2010,
     "mw_pc":456.0,
-    "mw_tt":4972.0
+    "mw_tt":4972.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"BE",
     "year":2011,
     "mw_pc":455.0,
-    "mw_tt":5023.0
+    "mw_tt":5023.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"BE",
     "year":2012,
     "mw_pc":445.0,
-    "mw_tt":4944.0
+    "mw_tt":4944.0,
+    "mw_pc_day":1.22
   },
   {
     "geo":"BE",
     "year":2013,
     "mw_pc":436.0,
-    "mw_tt":4867.0
+    "mw_tt":4867.0,
+    "mw_pc_day":1.19
   },
   {
     "geo":"BE",
     "year":2014,
     "mw_pc":425.0,
-    "mw_tt":4762.0
+    "mw_tt":4762.0,
+    "mw_pc_day":1.16
   },
   {
     "geo":"BE",
     "year":2015,
     "mw_pc":412.0,
-    "mw_tt":4643.0
+    "mw_tt":4643.0,
+    "mw_pc_day":1.13
   },
   {
     "geo":"BE",
     "year":2016,
     "mw_pc":419.0,
-    "mw_tt":4746.0
+    "mw_tt":4746.0,
+    "mw_pc_day":1.15
   },
   {
     "geo":"BE",
     "year":2017,
     "mw_pc":411.0,
-    "mw_tt":4672.0
+    "mw_tt":4672.0,
+    "mw_pc_day":1.13
   },
   {
     "geo":"BE",
     "year":2018,
     "mw_pc":409.0,
-    "mw_tt":4677.0
+    "mw_tt":4677.0,
+    "mw_pc_day":1.12
   },
   {
     "geo":"BE",
     "year":2019,
     "mw_pc":416.0,
-    "mw_tt":4779.0
+    "mw_tt":4779.0,
+    "mw_pc_day":1.14
   },
   {
     "geo":"BE",
     "year":2020,
     "mw_pc":729.0,
-    "mw_tt":8408.0
+    "mw_tt":8408.0,
+    "mw_pc_day":2.0
   },
   {
     "geo":"BE",
     "year":2021,
     "mw_pc":755.0,
-    "mw_tt":8753.0
+    "mw_tt":8753.0,
+    "mw_pc_day":2.07
   },
   {
     "geo":"BE",
     "year":2022,
     "mw_pc":690.0,
-    "mw_tt":8055.0
+    "mw_tt":8055.0,
+    "mw_pc_day":1.89
   },
   {
     "geo":"BE",
     "year":2023,
     "mw_pc":688.0,
-    "mw_tt":8104.0
+    "mw_tt":8104.0,
+    "mw_pc_day":1.88
   },
   {
     "geo":"BE",
     "year":2024,
     "mw_pc":699.0,
-    "mw_tt":8282.0
+    "mw_tt":8282.0,
+    "mw_pc_day":1.92
   },
   {
     "geo":"BG",
     "year":2010,
     "mw_pc":554.0,
-    "mw_tt":4094.0
+    "mw_tt":4094.0,
+    "mw_pc_day":1.52
   },
   {
     "geo":"BG",
     "year":2011,
     "mw_pc":508.0,
-    "mw_tt":3732.0
+    "mw_tt":3732.0,
+    "mw_pc_day":1.39
   },
   {
     "geo":"BG",
     "year":2012,
     "mw_pc":460.0,
-    "mw_tt":3364.0
+    "mw_tt":3364.0,
+    "mw_pc_day":1.26
   },
   {
     "geo":"BG",
     "year":2013,
     "mw_pc":438.0,
-    "mw_tt":3135.0
+    "mw_tt":3135.0,
+    "mw_pc_day":1.2
   },
   {
     "geo":"BG",
     "year":2014,
     "mw_pc":451.0,
-    "mw_tt":3192.0
+    "mw_tt":3192.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"BG",
     "year":2015,
     "mw_pc":431.0,
-    "mw_tt":3011.0
+    "mw_tt":3011.0,
+    "mw_pc_day":1.18
   },
   {
     "geo":"BG",
     "year":2016,
     "mw_pc":418.0,
-    "mw_tt":2881.0
+    "mw_tt":2881.0,
+    "mw_pc_day":1.15
   },
   {
     "geo":"BG",
     "year":2017,
     "mw_pc":453.0,
-    "mw_tt":3080.0
+    "mw_tt":3080.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"BG",
     "year":2018,
     "mw_pc":426.0,
-    "mw_tt":2862.0
+    "mw_tt":2862.0,
+    "mw_pc_day":1.17
   },
   {
     "geo":"BG",
     "year":2019,
     "mw_pc":465.0,
-    "mw_tt":3080.0
+    "mw_tt":3080.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"BG",
     "year":2020,
     "mw_pc":432.0,
-    "mw_tt":2829.0
+    "mw_tt":2829.0,
+    "mw_pc_day":1.18
   },
   {
     "geo":"BG",
     "year":2021,
     "mw_pc":470.0,
-    "mw_tt":3058.0
+    "mw_tt":3058.0,
+    "mw_pc_day":1.29
   },
   {
     "geo":"BG",
     "year":2022,
     "mw_pc":488.0,
-    "mw_tt":3157.0
+    "mw_tt":3157.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"BG",
     "year":2023,
     "mw_pc":490.0,
-    "mw_tt":3156.0
+    "mw_tt":3156.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"BG",
     "year":2024,
     "mw_pc":496.0,
-    "mw_tt":3192.0
+    "mw_tt":3192.0,
+    "mw_pc_day":1.36
   },
   {
     "geo":"CY",
     "year":2010,
     "mw_pc":711.0,
-    "mw_tt":590.0
+    "mw_tt":590.0,
+    "mw_pc_day":1.95
   },
   {
     "geo":"CY",
     "year":2011,
     "mw_pc":692.0,
-    "mw_tt":589.0
+    "mw_tt":589.0,
+    "mw_pc_day":1.9
   },
   {
     "geo":"CY",
     "year":2012,
     "mw_pc":681.0,
-    "mw_tt":588.0
+    "mw_tt":588.0,
+    "mw_pc_day":1.87
   },
   {
     "geo":"CY",
     "year":2013,
     "mw_pc":635.0,
-    "mw_tt":547.0
+    "mw_tt":547.0,
+    "mw_pc_day":1.74
   },
   {
     "geo":"CY",
     "year":2014,
     "mw_pc":613.0,
-    "mw_tt":527.0
+    "mw_tt":527.0,
+    "mw_pc_day":1.68
   },
   {
     "geo":"CY",
     "year":2015,
     "mw_pc":626.0,
-    "mw_tt":540.0
+    "mw_tt":540.0,
+    "mw_pc_day":1.72
   },
   {
     "geo":"CY",
     "year":2016,
     "mw_pc":638.0,
-    "mw_tt":553.0
+    "mw_tt":553.0,
+    "mw_pc_day":1.75
   },
   {
     "geo":"CY",
     "year":2017,
     "mw_pc":631.0,
-    "mw_tt":551.0
+    "mw_tt":551.0,
+    "mw_pc_day":1.73
   },
   {
     "geo":"CY",
     "year":2018,
     "mw_pc":651.0,
-    "mw_tt":576.0
+    "mw_tt":576.0,
+    "mw_pc_day":1.78
   },
   {
     "geo":"CY",
     "year":2019,
     "mw_pc":653.0,
-    "mw_tt":586.0
+    "mw_tt":586.0,
+    "mw_pc_day":1.79
   },
   {
     "geo":"CY",
     "year":2020,
     "mw_pc":614.0,
-    "mw_tt":558.0
+    "mw_tt":558.0,
+    "mw_pc_day":1.68
   },
   {
     "geo":"CY",
     "year":2021,
     "mw_pc":635.0,
-    "mw_tt":585.0
+    "mw_tt":585.0,
+    "mw_pc_day":1.74
   },
   {
     "geo":"CY",
     "year":2022,
     "mw_pc":654.0,
-    "mw_tt":615.0
+    "mw_tt":615.0,
+    "mw_pc_day":1.79
   },
   {
     "geo":"CY",
     "year":2023,
     "mw_pc":661.0,
-    "mw_tt":633.0
+    "mw_tt":633.0,
+    "mw_pc_day":1.81
   },
   {
     "geo":"CY",
     "year":2024,
     "mw_pc":686.0,
-    "mw_tt":669.0
+    "mw_tt":669.0,
+    "mw_pc_day":1.88
   },
   {
     "geo":"CZ",
     "year":2010,
     "mw_pc":318.0,
-    "mw_tt":3334.0
+    "mw_tt":3334.0,
+    "mw_pc_day":0.87
   },
   {
     "geo":"CZ",
     "year":2011,
     "mw_pc":320.0,
-    "mw_tt":3358.0
+    "mw_tt":3358.0,
+    "mw_pc_day":0.88
   },
   {
     "geo":"CZ",
     "year":2012,
     "mw_pc":308.0,
-    "mw_tt":3233.0
+    "mw_tt":3233.0,
+    "mw_pc_day":0.84
   },
   {
     "geo":"CZ",
     "year":2013,
     "mw_pc":307.0,
-    "mw_tt":3228.0
+    "mw_tt":3228.0,
+    "mw_pc_day":0.84
   },
   {
     "geo":"CZ",
     "year":2014,
     "mw_pc":310.0,
-    "mw_tt":3261.0
+    "mw_tt":3261.0,
+    "mw_pc_day":0.85
   },
   {
     "geo":"CZ",
     "year":2015,
     "mw_pc":316.0,
-    "mw_tt":3337.0
+    "mw_tt":3337.0,
+    "mw_pc_day":0.87
   },
   {
     "geo":"CZ",
     "year":2016,
     "mw_pc":339.0,
-    "mw_tt":3580.0
+    "mw_tt":3580.0,
+    "mw_pc_day":0.93
   },
   {
     "geo":"CZ",
     "year":2017,
     "mw_pc":489.0,
-    "mw_tt":5177.0
+    "mw_tt":5177.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"CZ",
     "year":2018,
     "mw_pc":494.0,
-    "mw_tt":5248.0
+    "mw_tt":5248.0,
+    "mw_pc_day":1.35
   },
   {
     "geo":"CZ",
     "year":2019,
     "mw_pc":500.0,
-    "mw_tt":5338.0
+    "mw_tt":5338.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"CZ",
     "year":2020,
     "mw_pc":543.0,
-    "mw_tt":5814.0
+    "mw_tt":5814.0,
+    "mw_pc_day":1.49
   },
   {
     "geo":"CZ",
     "year":2021,
     "mw_pc":570.0,
-    "mw_tt":5991.0
+    "mw_tt":5991.0,
+    "mw_pc_day":1.56
   },
   {
     "geo":"CZ",
     "year":2022,
     "mw_pc":549.0,
-    "mw_tt":5854.0
+    "mw_tt":5854.0,
+    "mw_pc_day":1.5
   },
   {
     "geo":"CZ",
     "year":2023,
     "mw_pc":538.0,
-    "mw_tt":5840.0
+    "mw_tt":5840.0,
+    "mw_pc_day":1.47
   },
   {
     "geo":"CZ",
     "year":2024,
     "mw_pc":584.0,
-    "mw_tt":6365.0
+    "mw_tt":6365.0,
+    "mw_pc_day":1.6
   },
   {
     "geo":"DE",
     "year":2010,
     "mw_pc":602.0,
-    "mw_tt":49237.0
+    "mw_tt":49237.0,
+    "mw_pc_day":1.65
   },
   {
     "geo":"DE",
     "year":2011,
     "mw_pc":626.0,
-    "mw_tt":50237.0
+    "mw_tt":50237.0,
+    "mw_pc_day":1.72
   },
   {
     "geo":"DE",
     "year":2012,
     "mw_pc":619.0,
-    "mw_tt":49759.0
+    "mw_tt":49759.0,
+    "mw_pc_day":1.7
   },
   {
     "geo":"DE",
     "year":2013,
     "mw_pc":615.0,
-    "mw_tt":49570.0
+    "mw_tt":49570.0,
+    "mw_pc_day":1.68
   },
   {
     "geo":"DE",
     "year":2014,
     "mw_pc":631.0,
-    "mw_tt":51102.0
+    "mw_tt":51102.0,
+    "mw_pc_day":1.73
   },
   {
     "geo":"DE",
     "year":2015,
     "mw_pc":632.0,
-    "mw_tt":51625.0
+    "mw_tt":51625.0,
+    "mw_pc_day":1.73
   },
   {
     "geo":"DE",
     "year":2016,
     "mw_pc":633.0,
-    "mw_tt":52133.0
+    "mw_tt":52133.0,
+    "mw_pc_day":1.73
   },
   {
     "geo":"DE",
     "year":2017,
     "mw_pc":627.0,
-    "mw_tt":51790.0
+    "mw_tt":51790.0,
+    "mw_pc_day":1.72
   },
   {
     "geo":"DE",
     "year":2018,
     "mw_pc":606.0,
-    "mw_tt":50260.0
+    "mw_tt":50260.0,
+    "mw_pc_day":1.66
   },
   {
     "geo":"DE",
     "year":2019,
     "mw_pc":609.0,
-    "mw_tt":50612.0
+    "mw_tt":50612.0,
+    "mw_pc_day":1.67
   },
   {
     "geo":"DE",
     "year":2020,
     "mw_pc":641.0,
-    "mw_tt":53322.0
+    "mw_tt":53322.0,
+    "mw_pc_day":1.76
   },
   {
     "geo":"DE",
     "year":2021,
     "mw_pc":648.0,
-    "mw_tt":53871.0
+    "mw_tt":53871.0,
+    "mw_pc_day":1.78
   },
   {
     "geo":"DE",
     "year":2022,
     "mw_pc":608.0,
-    "mw_tt":50606.0
+    "mw_tt":50606.0,
+    "mw_pc_day":1.67
   },
   {
     "geo":"DE",
     "year":2023,
     "mw_pc":613.0,
-    "mw_tt":51045.0
+    "mw_tt":51045.0,
+    "mw_pc_day":1.68
   },
   {
     "geo":"DE",
     "year":2024,
     "mw_pc":616.0,
-    "mw_tt":51449.0
+    "mw_tt":51449.0,
+    "mw_pc_day":1.69
   },
   {
     "geo":"DK",
     "year":2010,
     "mw_pc":null,
-    "mw_tt":null
+    "mw_tt":null,
+    "mw_pc_day":null
   },
   {
     "geo":"DK",
     "year":2011,
     "mw_pc":862.0,
-    "mw_tt":4803.0
+    "mw_tt":4803.0,
+    "mw_pc_day":2.36
   },
   {
     "geo":"DK",
     "year":2012,
     "mw_pc":806.0,
-    "mw_tt":4508.0
+    "mw_tt":4508.0,
+    "mw_pc_day":2.21
   },
   {
     "geo":"DK",
     "year":2013,
     "mw_pc":813.0,
-    "mw_tt":4564.0
+    "mw_tt":4564.0,
+    "mw_pc_day":2.23
   },
   {
     "geo":"DK",
     "year":2014,
     "mw_pc":808.0,
-    "mw_tt":4558.0
+    "mw_tt":4558.0,
+    "mw_pc_day":2.21
   },
   {
     "geo":"DK",
     "year":2015,
     "mw_pc":822.0,
-    "mw_tt":4671.0
+    "mw_tt":4671.0,
+    "mw_pc_day":2.25
   },
   {
     "geo":"DK",
     "year":2016,
     "mw_pc":830.0,
-    "mw_tt":4757.0
+    "mw_tt":4757.0,
+    "mw_pc_day":2.27
   },
   {
     "geo":"DK",
     "year":2017,
     "mw_pc":820.0,
-    "mw_tt":4728.0
+    "mw_tt":4728.0,
+    "mw_pc_day":2.25
   },
   {
     "geo":"DK",
     "year":2018,
     "mw_pc":814.0,
-    "mw_tt":4715.0
+    "mw_tt":4715.0,
+    "mw_pc_day":2.23
   },
   {
     "geo":"DK",
     "year":2019,
     "mw_pc":844.0,
-    "mw_tt":4907.0
+    "mw_tt":4907.0,
+    "mw_pc_day":2.31
   },
   {
     "geo":"DK",
     "year":2020,
     "mw_pc":814.0,
-    "mw_tt":4744.0
+    "mw_tt":4744.0,
+    "mw_pc_day":2.23
   },
   {
     "geo":"DK",
     "year":2021,
     "mw_pc":800.0,
-    "mw_tt":4688.0
+    "mw_tt":4688.0,
+    "mw_pc_day":2.19
   },
   {
     "geo":"DK",
     "year":2022,
     "mw_pc":759.0,
-    "mw_tt":4478.0
+    "mw_tt":4478.0,
+    "mw_pc_day":2.08
   },
   {
     "geo":"DK",
     "year":2023,
     "mw_pc":759.0,
-    "mw_tt":4513.0
+    "mw_tt":4513.0,
+    "mw_pc_day":2.08
   },
   {
     "geo":"DK",
     "year":2024,
     "mw_pc":758.0,
-    "mw_tt":4533.0
+    "mw_tt":4533.0,
+    "mw_pc_day":2.08
   },
   {
     "geo":"EE",
     "year":2010,
     "mw_pc":305.0,
-    "mw_tt":406.0
+    "mw_tt":406.0,
+    "mw_pc_day":0.84
   },
   {
     "geo":"EE",
     "year":2011,
     "mw_pc":301.0,
-    "mw_tt":399.0
+    "mw_tt":399.0,
+    "mw_pc_day":0.82
   },
   {
     "geo":"EE",
     "year":2012,
     "mw_pc":280.0,
-    "mw_tt":371.0
+    "mw_tt":371.0,
+    "mw_pc_day":0.77
   },
   {
     "geo":"EE",
     "year":2013,
     "mw_pc":293.0,
-    "mw_tt":386.0
+    "mw_tt":386.0,
+    "mw_pc_day":0.8
   },
   {
     "geo":"EE",
     "year":2014,
     "mw_pc":357.0,
-    "mw_tt":470.0
+    "mw_tt":470.0,
+    "mw_pc_day":0.98
   },
   {
     "geo":"EE",
     "year":2015,
     "mw_pc":359.0,
-    "mw_tt":473.0
+    "mw_tt":473.0,
+    "mw_pc_day":0.98
   },
   {
     "geo":"EE",
     "year":2016,
     "mw_pc":376.0,
-    "mw_tt":494.0
+    "mw_tt":494.0,
+    "mw_pc_day":1.03
   },
   {
     "geo":"EE",
     "year":2017,
     "mw_pc":390.0,
-    "mw_tt":514.0
+    "mw_tt":514.0,
+    "mw_pc_day":1.07
   },
   {
     "geo":"EE",
     "year":2018,
     "mw_pc":405.0,
-    "mw_tt":535.0
+    "mw_tt":535.0,
+    "mw_pc_day":1.11
   },
   {
     "geo":"EE",
     "year":2019,
     "mw_pc":369.0,
-    "mw_tt":490.0
+    "mw_tt":490.0,
+    "mw_pc_day":1.01
   },
   {
     "geo":"EE",
     "year":2020,
     "mw_pc":383.0,
-    "mw_tt":509.0
+    "mw_tt":509.0,
+    "mw_pc_day":1.05
   },
   {
     "geo":"EE",
     "year":2021,
     "mw_pc":395.0,
-    "mw_tt":525.0
+    "mw_tt":525.0,
+    "mw_pc_day":1.08
   },
   {
     "geo":"EE",
     "year":2022,
     "mw_pc":373.0,
-    "mw_tt":503.0
+    "mw_tt":503.0,
+    "mw_pc_day":1.02
   },
   {
     "geo":"EE",
     "year":2023,
     "mw_pc":373.0,
-    "mw_tt":512.0
+    "mw_tt":512.0,
+    "mw_pc_day":1.02
   },
   {
     "geo":"EE",
     "year":2024,
     "mw_pc":375.0,
-    "mw_tt":514.0
+    "mw_tt":514.0,
+    "mw_pc_day":1.03
   },
   {
     "geo":"EL",
     "year":2010,
     "mw_pc":532.0,
-    "mw_tt":5917.0
+    "mw_tt":5917.0,
+    "mw_pc_day":1.46
   },
   {
     "geo":"EL",
     "year":2011,
     "mw_pc":503.0,
-    "mw_tt":5586.0
+    "mw_tt":5586.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"EL",
     "year":2012,
     "mw_pc":495.0,
-    "mw_tt":5463.0
+    "mw_tt":5463.0,
+    "mw_pc_day":1.36
   },
   {
     "geo":"EL",
     "year":2013,
     "mw_pc":483.0,
-    "mw_tt":5284.0
+    "mw_tt":5284.0,
+    "mw_pc_day":1.32
   },
   {
     "geo":"EL",
     "year":2014,
     "mw_pc":490.0,
-    "mw_tt":5315.0
+    "mw_tt":5315.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"EL",
     "year":2015,
     "mw_pc":490.0,
-    "mw_tt":5277.0
+    "mw_tt":5277.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"EL",
     "year":2016,
     "mw_pc":501.0,
-    "mw_tt":5367.0
+    "mw_tt":5367.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"EL",
     "year":2017,
     "mw_pc":507.0,
-    "mw_tt":5415.0
+    "mw_tt":5415.0,
+    "mw_pc_day":1.39
   },
   {
     "geo":"EL",
     "year":2018,
     "mw_pc":519.0,
-    "mw_tt":5523.0
+    "mw_tt":5523.0,
+    "mw_pc_day":1.42
   },
   {
     "geo":"EL",
     "year":2019,
     "mw_pc":528.0,
-    "mw_tt":5613.0
+    "mw_tt":5613.0,
+    "mw_pc_day":1.45
   },
   {
     "geo":"EL",
     "year":2020,
     "mw_pc":504.0,
-    "mw_tt":5335.0
+    "mw_tt":5335.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"EL",
     "year":2021,
     "mw_pc":512.0,
-    "mw_tt":5381.0
+    "mw_tt":5381.0,
+    "mw_pc_day":1.4
   },
   {
     "geo":"EL",
     "year":2022,
     "mw_pc":520.0,
-    "mw_tt":5420.0
+    "mw_tt":5420.0,
+    "mw_pc_day":1.42
   },
   {
     "geo":"EL",
     "year":2023,
     "mw_pc":524.0,
-    "mw_tt":5440.0
+    "mw_tt":5440.0,
+    "mw_pc_day":1.44
   },
   {
     "geo":"EL",
     "year":2024,
     "mw_pc":533.0,
-    "mw_tt":5532.0
+    "mw_tt":5532.0,
+    "mw_pc_day":1.46
   },
   {
     "geo":"ES",
     "year":2010,
     "mw_pc":510.0,
-    "mw_tt":23774.0
+    "mw_tt":23774.0,
+    "mw_pc_day":1.4
   },
   {
     "geo":"ES",
     "year":2011,
     "mw_pc":485.0,
-    "mw_tt":22672.0
+    "mw_tt":22672.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"ES",
     "year":2012,
     "mw_pc":468.0,
-    "mw_tt":21896.0
+    "mw_tt":21896.0,
+    "mw_pc_day":1.28
   },
   {
     "geo":"ES",
     "year":2013,
     "mw_pc":455.0,
-    "mw_tt":21184.0
+    "mw_tt":21184.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"ES",
     "year":2014,
     "mw_pc":448.0,
-    "mw_tt":20836.0
+    "mw_tt":20836.0,
+    "mw_pc_day":1.23
   },
   {
     "geo":"ES",
     "year":2015,
     "mw_pc":456.0,
-    "mw_tt":21158.0
+    "mw_tt":21158.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"ES",
     "year":2016,
     "mw_pc":464.0,
-    "mw_tt":21542.0
+    "mw_tt":21542.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"ES",
     "year":2017,
     "mw_pc":473.0,
-    "mw_tt":22018.0
+    "mw_tt":22018.0,
+    "mw_pc_day":1.3
   },
   {
     "geo":"ES",
     "year":2018,
     "mw_pc":475.0,
-    "mw_tt":22223.0
+    "mw_tt":22223.0,
+    "mw_pc_day":1.3
   },
   {
     "geo":"ES",
     "year":2019,
     "mw_pc":472.0,
-    "mw_tt":22240.0
+    "mw_tt":22240.0,
+    "mw_pc_day":1.29
   },
   {
     "geo":"ES",
     "year":2020,
     "mw_pc":463.0,
-    "mw_tt":21928.0
+    "mw_tt":21928.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"ES",
     "year":2021,
     "mw_pc":482.0,
-    "mw_tt":22853.0
+    "mw_tt":22853.0,
+    "mw_pc_day":1.32
   },
   {
     "geo":"ES",
     "year":2022,
     "mw_pc":485.0,
-    "mw_tt":23153.0
+    "mw_tt":23153.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"ES",
     "year":2023,
     "mw_pc":464.0,
-    "mw_tt":22433.0
+    "mw_tt":22433.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"ES",
     "year":2024,
     "mw_pc":456.0,
-    "mw_tt":22292.0
+    "mw_tt":22292.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"EU27_2020",
     "year":2010,
     "mw_pc":503.0,
-    "mw_tt":222023.0
+    "mw_tt":222023.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"EU27_2020",
     "year":2011,
     "mw_pc":499.0,
-    "mw_tt":219853.0
+    "mw_tt":219853.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"EU27_2020",
     "year":2012,
     "mw_pc":487.0,
-    "mw_tt":214989.0
+    "mw_tt":214989.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"EU27_2020",
     "year":2013,
     "mw_pc":479.0,
-    "mw_tt":211501.0
+    "mw_tt":211501.0,
+    "mw_pc_day":1.31
   },
   {
     "geo":"EU27_2020",
     "year":2014,
     "mw_pc":479.0,
-    "mw_tt":211876.0
+    "mw_tt":211876.0,
+    "mw_pc_day":1.31
   },
   {
     "geo":"EU27_2020",
     "year":2015,
     "mw_pc":481.0,
-    "mw_tt":213424.0
+    "mw_tt":213424.0,
+    "mw_pc_day":1.32
   },
   {
     "geo":"EU27_2020",
     "year":2016,
     "mw_pc":494.0,
-    "mw_tt":219577.0
+    "mw_tt":219577.0,
+    "mw_pc_day":1.35
   },
   {
     "geo":"EU27_2020",
     "year":2017,
     "mw_pc":500.0,
-    "mw_tt":222511.0
+    "mw_tt":222511.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"EU27_2020",
     "year":2018,
     "mw_pc":501.0,
-    "mw_tt":223113.0
+    "mw_tt":223113.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"EU27_2020",
     "year":2019,
     "mw_pc":505.0,
-    "mw_tt":225329.0
+    "mw_tt":225329.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"EU27_2020",
     "year":2020,
     "mw_pc":521.0,
-    "mw_tt":232627.0
+    "mw_tt":232627.0,
+    "mw_pc_day":1.43
   },
   {
     "geo":"EU27_2020",
     "year":2021,
     "mw_pc":534.0,
-    "mw_tt":238108.0
+    "mw_tt":238108.0,
+    "mw_pc_day":1.46
   },
   {
     "geo":"EU27_2020",
     "year":2022,
     "mw_pc":514.0,
-    "mw_tt":229690.0
+    "mw_tt":229690.0,
+    "mw_pc_day":1.41
   },
   {
     "geo":"EU27_2020",
     "year":2023,
     "mw_pc":510.0,
-    "mw_tt":229021.0
+    "mw_tt":229021.0,
+    "mw_pc_day":1.4
   },
   {
     "geo":"EU27_2020",
     "year":2024,
     "mw_pc":513.0,
-    "mw_tt":230800.0
+    "mw_tt":230800.0,
+    "mw_pc_day":1.41
   },
   {
     "geo":"FI",
     "year":2010,
     "mw_pc":470.0,
-    "mw_tt":2519.0
+    "mw_tt":2519.0,
+    "mw_pc_day":1.29
   },
   {
     "geo":"FI",
     "year":2011,
     "mw_pc":505.0,
-    "mw_tt":2719.0
+    "mw_tt":2719.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"FI",
     "year":2012,
     "mw_pc":506.0,
-    "mw_tt":2738.0
+    "mw_tt":2738.0,
+    "mw_pc_day":1.39
   },
   {
     "geo":"FI",
     "year":2013,
     "mw_pc":493.0,
-    "mw_tt":2682.0
+    "mw_tt":2682.0,
+    "mw_pc_day":1.35
   },
   {
     "geo":"FI",
     "year":2014,
     "mw_pc":482.0,
-    "mw_tt":2630.0
+    "mw_tt":2630.0,
+    "mw_pc_day":1.32
   },
   {
     "geo":"FI",
     "year":2015,
     "mw_pc":500.0,
-    "mw_tt":2738.0
+    "mw_tt":2738.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"FI",
     "year":2016,
     "mw_pc":504.0,
-    "mw_tt":2768.0
+    "mw_tt":2768.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"FI",
     "year":2017,
     "mw_pc":510.0,
-    "mw_tt":2812.0
+    "mw_tt":2812.0,
+    "mw_pc_day":1.4
   },
   {
     "geo":"FI",
     "year":2018,
     "mw_pc":551.0,
-    "mw_tt":3041.0
+    "mw_tt":3041.0,
+    "mw_pc_day":1.51
   },
   {
     "geo":"FI",
     "year":2019,
     "mw_pc":566.0,
-    "mw_tt":3123.0
+    "mw_tt":3123.0,
+    "mw_pc_day":1.55
   },
   {
     "geo":"FI",
     "year":2020,
     "mw_pc":609.0,
-    "mw_tt":3370.0
+    "mw_tt":3370.0,
+    "mw_pc_day":1.67
   },
   {
     "geo":"FI",
     "year":2021,
     "mw_pc":630.0,
-    "mw_tt":3491.0
+    "mw_tt":3491.0,
+    "mw_pc_day":1.73
   },
   {
     "geo":"FI",
     "year":2022,
     "mw_pc":522.0,
-    "mw_tt":2898.0
+    "mw_tt":2898.0,
+    "mw_pc_day":1.43
   },
   {
     "geo":"FI",
     "year":2023,
     "mw_pc":468.0,
-    "mw_tt":2612.0
+    "mw_tt":2612.0,
+    "mw_pc_day":1.28
   },
   {
     "geo":"FI",
     "year":2024,
     "mw_pc":457.0,
-    "mw_tt":2570.0
+    "mw_tt":2570.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"FR",
     "year":2010,
     "mw_pc":534.0,
-    "mw_tt":34609.0
+    "mw_tt":34609.0,
+    "mw_pc_day":1.46
   },
   {
     "geo":"FR",
     "year":2011,
     "mw_pc":534.0,
-    "mw_tt":34790.0
+    "mw_tt":34790.0,
+    "mw_pc_day":1.46
   },
   {
     "geo":"FR",
     "year":2012,
     "mw_pc":527.0,
-    "mw_tt":34484.0
+    "mw_tt":34484.0,
+    "mw_pc_day":1.44
   },
   {
     "geo":"FR",
     "year":2013,
     "mw_pc":520.0,
-    "mw_tt":34176.0
+    "mw_tt":34176.0,
+    "mw_pc_day":1.42
   },
   {
     "geo":"FR",
     "year":2014,
     "mw_pc":517.0,
-    "mw_tt":34260.0
+    "mw_tt":34260.0,
+    "mw_pc_day":1.42
   },
   {
     "geo":"FR",
     "year":2015,
     "mw_pc":516.0,
-    "mw_tt":34344.0
+    "mw_tt":34344.0,
+    "mw_pc_day":1.41
   },
   {
     "geo":"FR",
     "year":2016,
     "mw_pc":553.0,
-    "mw_tt":36891.0
+    "mw_tt":36891.0,
+    "mw_pc_day":1.52
   },
   {
     "geo":"FR",
     "year":2017,
     "mw_pc":558.0,
-    "mw_tt":37357.0
+    "mw_tt":37357.0,
+    "mw_pc_day":1.53
   },
   {
     "geo":"FR",
     "year":2018,
     "mw_pc":557.0,
-    "mw_tt":37380.0
+    "mw_tt":37380.0,
+    "mw_pc_day":1.53
   },
   {
     "geo":"FR",
     "year":2019,
     "mw_pc":555.0,
-    "mw_tt":37407.0
+    "mw_tt":37407.0,
+    "mw_pc_day":1.52
   },
   {
     "geo":"FR",
     "year":2020,
     "mw_pc":534.0,
-    "mw_tt":36096.0
+    "mw_tt":36096.0,
+    "mw_pc_day":1.46
   },
   {
     "geo":"FR",
     "year":2021,
     "mw_pc":564.0,
-    "mw_tt":38272.0
+    "mw_tt":38272.0,
+    "mw_pc_day":1.55
   },
   {
     "geo":"FR",
     "year":2022,
     "mw_pc":534.0,
-    "mw_tt":36421.0
+    "mw_tt":36421.0,
+    "mw_pc_day":1.46
   },
   {
     "geo":"FR",
     "year":2023,
     "mw_pc":526.0,
-    "mw_tt":36035.0
+    "mw_tt":36035.0,
+    "mw_pc_day":1.44
   },
   {
     "geo":"FR",
     "year":2024,
     "mw_pc":501.0,
-    "mw_tt":34484.0
+    "mw_tt":34484.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"HR",
     "year":2010,
     "mw_pc":379.0,
-    "mw_tt":1630.0
+    "mw_tt":1630.0,
+    "mw_pc_day":1.04
   },
   {
     "geo":"HR",
     "year":2011,
     "mw_pc":384.0,
-    "mw_tt":1645.0
+    "mw_tt":1645.0,
+    "mw_pc_day":1.05
   },
   {
     "geo":"HR",
     "year":2012,
     "mw_pc":391.0,
-    "mw_tt":1670.0
+    "mw_tt":1670.0,
+    "mw_pc_day":1.07
   },
   {
     "geo":"HR",
     "year":2013,
     "mw_pc":407.0,
-    "mw_tt":1721.0
+    "mw_tt":1721.0,
+    "mw_pc_day":1.12
   },
   {
     "geo":"HR",
     "year":2014,
     "mw_pc":390.0,
-    "mw_tt":1637.0
+    "mw_tt":1637.0,
+    "mw_pc_day":1.07
   },
   {
     "geo":"HR",
     "year":2015,
     "mw_pc":398.0,
-    "mw_tt":1654.0
+    "mw_tt":1654.0,
+    "mw_pc_day":1.09
   },
   {
     "geo":"HR",
     "year":2016,
     "mw_pc":409.0,
-    "mw_tt":1680.0
+    "mw_tt":1680.0,
+    "mw_pc_day":1.12
   },
   {
     "geo":"HR",
     "year":2017,
     "mw_pc":424.0,
-    "mw_tt":1716.0
+    "mw_tt":1716.0,
+    "mw_pc_day":1.16
   },
   {
     "geo":"HR",
     "year":2018,
     "mw_pc":443.0,
-    "mw_tt":1768.0
+    "mw_tt":1768.0,
+    "mw_pc_day":1.21
   },
   {
     "geo":"HR",
     "year":2019,
     "mw_pc":459.0,
-    "mw_tt":1812.0
+    "mw_tt":1812.0,
+    "mw_pc_day":1.26
   },
   {
     "geo":"HR",
     "year":2020,
     "mw_pc":433.0,
-    "mw_tt":1693.0
+    "mw_tt":1693.0,
+    "mw_pc_day":1.19
   },
   {
     "geo":"HR",
     "year":2021,
     "mw_pc":456.0,
-    "mw_tt":1767.0
+    "mw_tt":1767.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"HR",
     "year":2022,
     "mw_pc":478.0,
-    "mw_tt":1844.0
+    "mw_tt":1844.0,
+    "mw_pc_day":1.31
   },
   {
     "geo":"HR",
     "year":2023,
     "mw_pc":475.0,
-    "mw_tt":1833.0
+    "mw_tt":1833.0,
+    "mw_pc_day":1.3
   },
   {
     "geo":"HR",
     "year":2024,
     "mw_pc":486.0,
-    "mw_tt":1879.0
+    "mw_tt":1879.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"HU",
     "year":2010,
     "mw_pc":403.0,
-    "mw_tt":4033.0
+    "mw_tt":4033.0,
+    "mw_pc_day":1.1
   },
   {
     "geo":"HU",
     "year":2011,
     "mw_pc":382.0,
-    "mw_tt":3809.0
+    "mw_tt":3809.0,
+    "mw_pc_day":1.05
   },
   {
     "geo":"HU",
     "year":2012,
     "mw_pc":402.0,
-    "mw_tt":3988.0
+    "mw_tt":3988.0,
+    "mw_pc_day":1.1
   },
   {
     "geo":"HU",
     "year":2013,
     "mw_pc":379.0,
-    "mw_tt":3738.0
+    "mw_tt":3738.0,
+    "mw_pc_day":1.04
   },
   {
     "geo":"HU",
     "year":2014,
     "mw_pc":386.0,
-    "mw_tt":3795.0
+    "mw_tt":3795.0,
+    "mw_pc_day":1.06
   },
   {
     "geo":"HU",
     "year":2015,
     "mw_pc":379.0,
-    "mw_tt":3712.0
+    "mw_tt":3712.0,
+    "mw_pc_day":1.04
   },
   {
     "geo":"HU",
     "year":2016,
     "mw_pc":381.0,
-    "mw_tt":3721.0
+    "mw_tt":3721.0,
+    "mw_pc_day":1.04
   },
   {
     "geo":"HU",
     "year":2017,
     "mw_pc":387.0,
-    "mw_tt":3768.0
+    "mw_tt":3768.0,
+    "mw_pc_day":1.06
   },
   {
     "geo":"HU",
     "year":2018,
     "mw_pc":384.0,
-    "mw_tt":3729.0
+    "mw_tt":3729.0,
+    "mw_pc_day":1.05
   },
   {
     "geo":"HU",
     "year":2019,
     "mw_pc":390.0,
-    "mw_tt":3780.0
+    "mw_tt":3780.0,
+    "mw_pc_day":1.07
   },
   {
     "geo":"HU",
     "year":2020,
     "mw_pc":406.0,
-    "mw_tt":3931.0
+    "mw_tt":3931.0,
+    "mw_pc_day":1.11
   },
   {
     "geo":"HU",
     "year":2021,
     "mw_pc":420.0,
-    "mw_tt":4042.0
+    "mw_tt":4042.0,
+    "mw_pc_day":1.15
   },
   {
     "geo":"HU",
     "year":2022,
     "mw_pc":406.0,
-    "mw_tt":3911.0
+    "mw_tt":3911.0,
+    "mw_pc_day":1.11
   },
   {
     "geo":"HU",
     "year":2023,
     "mw_pc":429.0,
-    "mw_tt":4115.0
+    "mw_tt":4115.0,
+    "mw_pc_day":1.18
   },
   {
     "geo":"HU",
     "year":2024,
     "mw_pc":414.0,
-    "mw_tt":3957.0
+    "mw_tt":3957.0,
+    "mw_pc_day":1.13
   },
   {
     "geo":"IE",
     "year":2010,
     "mw_pc":624.0,
-    "mw_tt":2846.0
+    "mw_tt":2846.0,
+    "mw_pc_day":1.71
   },
   {
     "geo":"IE",
     "year":2011,
     "mw_pc":616.0,
-    "mw_tt":2823.0
+    "mw_tt":2823.0,
+    "mw_pc_day":1.69
   },
   {
     "geo":"IE",
     "year":2012,
     "mw_pc":585.0,
-    "mw_tt":2693.0
+    "mw_tt":2693.0,
+    "mw_pc_day":1.6
   },
   {
     "geo":"IE",
     "year":2013,
     "mw_pc":null,
-    "mw_tt":null
+    "mw_tt":null,
+    "mw_pc_day":null
   },
   {
     "geo":"IE",
     "year":2014,
     "mw_pc":562.0,
-    "mw_tt":2619.0
+    "mw_tt":2619.0,
+    "mw_pc_day":1.54
   },
   {
     "geo":"IE",
     "year":2015,
     "mw_pc":null,
-    "mw_tt":null
+    "mw_tt":null,
+    "mw_pc_day":null
   },
   {
     "geo":"IE",
     "year":2016,
     "mw_pc":580.0,
-    "mw_tt":2763.0
+    "mw_tt":2763.0,
+    "mw_pc_day":1.59
   },
   {
     "geo":"IE",
     "year":2017,
     "mw_pc":573.0,
-    "mw_tt":2768.0
+    "mw_tt":2768.0,
+    "mw_pc_day":1.57
   },
   {
     "geo":"IE",
     "year":2018,
     "mw_pc":595.0,
-    "mw_tt":2912.0
+    "mw_tt":2912.0,
+    "mw_pc_day":1.63
   },
   {
     "geo":"IE",
     "year":2019,
     "mw_pc":620.0,
-    "mw_tt":3086.0
+    "mw_tt":3086.0,
+    "mw_pc_day":1.7
   },
   {
     "geo":"IE",
     "year":2020,
     "mw_pc":637.0,
-    "mw_tt":3210.0
+    "mw_tt":3210.0,
+    "mw_pc_day":1.75
   },
   {
     "geo":"IE",
     "year":2021,
     "mw_pc":619.0,
-    "mw_tt":3164.0
+    "mw_tt":3164.0,
+    "mw_pc_day":1.7
   },
   {
     "geo":"IE",
     "year":2022,
     "mw_pc":612.0,
-    "mw_tt":3191.0
+    "mw_tt":3191.0,
+    "mw_pc_day":1.68
   },
   {
     "geo":"IE",
     "year":2023,
     "mw_pc":590.0,
-    "mw_tt":3135.0
+    "mw_tt":3135.0,
+    "mw_pc_day":1.62
   },
   {
     "geo":"IE",
     "year":2024,
     "mw_pc":576.0,
-    "mw_tt":3109.0
+    "mw_tt":3109.0,
+    "mw_pc_day":1.58
   },
   {
     "geo":"IT",
     "year":2010,
     "mw_pc":542.0,
-    "mw_tt":32440.0
+    "mw_tt":32440.0,
+    "mw_pc_day":1.48
   },
   {
     "geo":"IT",
     "year":2011,
     "mw_pc":523.0,
-    "mw_tt":31386.0
+    "mw_tt":31386.0,
+    "mw_pc_day":1.43
   },
   {
     "geo":"IT",
     "year":2012,
     "mw_pc":498.0,
-    "mw_tt":29994.0
+    "mw_tt":29994.0,
+    "mw_pc_day":1.36
   },
   {
     "geo":"IT",
     "year":2013,
     "mw_pc":490.0,
-    "mw_tt":29573.0
+    "mw_tt":29573.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"IT",
     "year":2014,
     "mw_pc":492.0,
-    "mw_tt":29652.0
+    "mw_tt":29652.0,
+    "mw_pc_day":1.35
   },
   {
     "geo":"IT",
     "year":2015,
     "mw_pc":490.0,
-    "mw_tt":29524.0
+    "mw_tt":29524.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"IT",
     "year":2016,
     "mw_pc":501.0,
-    "mw_tt":30112.0
+    "mw_tt":30112.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"IT",
     "year":2017,
     "mw_pc":493.0,
-    "mw_tt":29572.0
+    "mw_tt":29572.0,
+    "mw_pc_day":1.35
   },
   {
     "geo":"IT",
     "year":2018,
     "mw_pc":504.0,
-    "mw_tt":30165.0
+    "mw_tt":30165.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"IT",
     "year":2019,
     "mw_pc":503.0,
-    "mw_tt":30023.0
+    "mw_tt":30023.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"IT",
     "year":2020,
     "mw_pc":487.0,
-    "mw_tt":28945.0
+    "mw_tt":28945.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"IT",
     "year":2021,
     "mw_pc":495.0,
-    "mw_tt":29254.0
+    "mw_tt":29254.0,
+    "mw_pc_day":1.36
   },
   {
     "geo":"IT",
     "year":2022,
     "mw_pc":486.0,
-    "mw_tt":28692.0
+    "mw_tt":28692.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"IT",
     "year":2023,
     "mw_pc":489.0,
-    "mw_tt":28840.0
+    "mw_tt":28840.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"IT",
     "year":2024,
     "mw_pc":500.0,
-    "mw_tt":29496.0
+    "mw_tt":29496.0,
+    "mw_pc_day":1.37
   },
   {
     "geo":"LT",
     "year":2010,
     "mw_pc":404.0,
-    "mw_tt":1253.0
+    "mw_tt":1253.0,
+    "mw_pc_day":1.11
   },
   {
     "geo":"LT",
     "year":2011,
     "mw_pc":442.0,
-    "mw_tt":1339.0
+    "mw_tt":1339.0,
+    "mw_pc_day":1.21
   },
   {
     "geo":"LT",
     "year":2012,
     "mw_pc":445.0,
-    "mw_tt":1330.0
+    "mw_tt":1330.0,
+    "mw_pc_day":1.22
   },
   {
     "geo":"LT",
     "year":2013,
     "mw_pc":432.0,
-    "mw_tt":1280.0
+    "mw_tt":1280.0,
+    "mw_pc_day":1.18
   },
   {
     "geo":"LT",
     "year":2014,
     "mw_pc":432.0,
-    "mw_tt":1270.0
+    "mw_tt":1270.0,
+    "mw_pc_day":1.18
   },
   {
     "geo":"LT",
     "year":2015,
     "mw_pc":447.0,
-    "mw_tt":1300.0
+    "mw_tt":1300.0,
+    "mw_pc_day":1.22
   },
   {
     "geo":"LT",
     "year":2016,
     "mw_pc":442.0,
-    "mw_tt":1272.0
+    "mw_tt":1272.0,
+    "mw_pc_day":1.21
   },
   {
     "geo":"LT",
     "year":2017,
     "mw_pc":453.0,
-    "mw_tt":1286.0
+    "mw_tt":1286.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"LT",
     "year":2018,
     "mw_pc":461.0,
-    "mw_tt":1301.0
+    "mw_tt":1301.0,
+    "mw_pc_day":1.26
   },
   {
     "geo":"LT",
     "year":2019,
     "mw_pc":469.0,
-    "mw_tt":1319.0
+    "mw_tt":1319.0,
+    "mw_pc_day":1.28
   },
   {
     "geo":"LT",
     "year":2020,
     "mw_pc":480.0,
-    "mw_tt":1350.0
+    "mw_tt":1350.0,
+    "mw_pc_day":1.32
   },
   {
     "geo":"LT",
     "year":2021,
     "mw_pc":479.0,
-    "mw_tt":1345.0
+    "mw_tt":1345.0,
+    "mw_pc_day":1.31
   },
   {
     "geo":"LT",
     "year":2022,
     "mw_pc":465.0,
-    "mw_tt":1317.0
+    "mw_tt":1317.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"LT",
     "year":2023,
     "mw_pc":446.0,
-    "mw_tt":1282.0
+    "mw_tt":1282.0,
+    "mw_pc_day":1.22
   },
   {
     "geo":"LT",
     "year":2024,
     "mw_pc":462.0,
-    "mw_tt":1333.0
+    "mw_tt":1333.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"LU",
     "year":2010,
     "mw_pc":679.0,
-    "mw_tt":344.0
+    "mw_tt":344.0,
+    "mw_pc_day":1.86
   },
   {
     "geo":"LU",
     "year":2011,
     "mw_pc":666.0,
-    "mw_tt":345.0
+    "mw_tt":345.0,
+    "mw_pc_day":1.82
   },
   {
     "geo":"LU",
     "year":2012,
     "mw_pc":652.0,
-    "mw_tt":346.0
+    "mw_tt":346.0,
+    "mw_pc_day":1.79
   },
   {
     "geo":"LU",
     "year":2013,
     "mw_pc":616.0,
-    "mw_tt":335.0
+    "mw_tt":335.0,
+    "mw_pc_day":1.69
   },
   {
     "geo":"LU",
     "year":2014,
     "mw_pc":626.0,
-    "mw_tt":348.0
+    "mw_tt":348.0,
+    "mw_pc_day":1.72
   },
   {
     "geo":"LU",
     "year":2015,
     "mw_pc":607.0,
-    "mw_tt":346.0
+    "mw_tt":346.0,
+    "mw_pc_day":1.66
   },
   {
     "geo":"LU",
     "year":2016,
     "mw_pc":815.0,
-    "mw_tt":474.0
+    "mw_tt":474.0,
+    "mw_pc_day":2.23
   },
   {
     "geo":"LU",
     "year":2017,
     "mw_pc":798.0,
-    "mw_tt":476.0
+    "mw_tt":476.0,
+    "mw_pc_day":2.19
   },
   {
     "geo":"LU",
     "year":2018,
     "mw_pc":803.0,
-    "mw_tt":488.0
+    "mw_tt":488.0,
+    "mw_pc_day":2.2
   },
   {
     "geo":"LU",
     "year":2019,
     "mw_pc":791.0,
-    "mw_tt":491.0
+    "mw_tt":491.0,
+    "mw_pc_day":2.17
   },
   {
     "geo":"LU",
     "year":2020,
     "mw_pc":790.0,
-    "mw_tt":498.0
+    "mw_tt":498.0,
+    "mw_pc_day":2.16
   },
   {
     "geo":"LU",
     "year":2021,
     "mw_pc":793.0,
-    "mw_tt":508.0
+    "mw_tt":508.0,
+    "mw_pc_day":2.17
   },
   {
     "geo":"LU",
     "year":2022,
     "mw_pc":721.0,
-    "mw_tt":471.0
+    "mw_tt":471.0,
+    "mw_pc_day":1.98
   },
   {
     "geo":"LU",
     "year":2023,
     "mw_pc":718.0,
-    "mw_tt":478.0
+    "mw_tt":478.0,
+    "mw_pc_day":1.97
   },
   {
     "geo":"LU",
     "year":2024,
     "mw_pc":730.0,
-    "mw_tt":494.0
+    "mw_tt":494.0,
+    "mw_pc_day":2.0
   },
   {
     "geo":"LV",
     "year":2010,
     "mw_pc":324.0,
-    "mw_tt":680.0
+    "mw_tt":680.0,
+    "mw_pc_day":0.89
   },
   {
     "geo":"LV",
     "year":2011,
     "mw_pc":350.0,
-    "mw_tt":721.0
+    "mw_tt":721.0,
+    "mw_pc_day":0.96
   },
   {
     "geo":"LV",
     "year":2012,
     "mw_pc":323.0,
-    "mw_tt":658.0
+    "mw_tt":658.0,
+    "mw_pc_day":0.88
   },
   {
     "geo":"LV",
     "year":2013,
     "mw_pc":350.0,
-    "mw_tt":704.0
+    "mw_tt":704.0,
+    "mw_pc_day":0.96
   },
   {
     "geo":"LV",
     "year":2014,
     "mw_pc":364.0,
-    "mw_tt":726.0
+    "mw_tt":726.0,
+    "mw_pc_day":1.0
   },
   {
     "geo":"LV",
     "year":2015,
     "mw_pc":404.0,
-    "mw_tt":798.0
+    "mw_tt":798.0,
+    "mw_pc_day":1.11
   },
   {
     "geo":"LV",
     "year":2016,
     "mw_pc":410.0,
-    "mw_tt":802.0
+    "mw_tt":802.0,
+    "mw_pc_day":1.12
   },
   {
     "geo":"LV",
     "year":2017,
     "mw_pc":411.0,
-    "mw_tt":798.0
+    "mw_tt":798.0,
+    "mw_pc_day":1.13
   },
   {
     "geo":"LV",
     "year":2018,
     "mw_pc":407.0,
-    "mw_tt":785.0
+    "mw_tt":785.0,
+    "mw_pc_day":1.12
   },
   {
     "geo":"LV",
     "year":2019,
     "mw_pc":439.0,
-    "mw_tt":840.0
+    "mw_tt":840.0,
+    "mw_pc_day":1.2
   },
   {
     "geo":"LV",
     "year":2020,
     "mw_pc":478.0,
-    "mw_tt":909.0
+    "mw_tt":909.0,
+    "mw_pc_day":1.31
   },
   {
     "geo":"LV",
     "year":2021,
     "mw_pc":461.0,
-    "mw_tt":869.0
+    "mw_tt":869.0,
+    "mw_pc_day":1.26
   },
   {
     "geo":"LV",
     "year":2022,
     "mw_pc":463.0,
-    "mw_tt":872.0
+    "mw_tt":872.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"LV",
     "year":2023,
     "mw_pc":437.0,
-    "mw_tt":824.0
+    "mw_tt":824.0,
+    "mw_pc_day":1.2
   },
   {
     "geo":"LV",
     "year":2024,
     "mw_pc":462.0,
-    "mw_tt":863.0
+    "mw_tt":863.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"MT",
     "year":2010,
     "mw_pc":623.0,
-    "mw_tt":258.0
+    "mw_tt":258.0,
+    "mw_pc_day":1.71
   },
   {
     "geo":"MT",
     "year":2011,
     "mw_pc":622.0,
-    "mw_tt":259.0
+    "mw_tt":259.0,
+    "mw_pc_day":1.7
   },
   {
     "geo":"MT",
     "year":2012,
     "mw_pc":612.0,
-    "mw_tt":257.0
+    "mw_tt":257.0,
+    "mw_pc_day":1.68
   },
   {
     "geo":"MT",
     "year":2013,
     "mw_pc":604.0,
-    "mw_tt":257.0
+    "mw_tt":257.0,
+    "mw_pc_day":1.65
   },
   {
     "geo":"MT",
     "year":2014,
     "mw_pc":629.0,
-    "mw_tt":273.0
+    "mw_tt":273.0,
+    "mw_pc_day":1.72
   },
   {
     "geo":"MT",
     "year":2015,
     "mw_pc":643.0,
-    "mw_tt":285.0
+    "mw_tt":285.0,
+    "mw_pc_day":1.76
   },
   {
     "geo":"MT",
     "year":2016,
     "mw_pc":643.0,
-    "mw_tt":292.0
+    "mw_tt":292.0,
+    "mw_pc_day":1.76
   },
   {
     "geo":"MT",
     "year":2017,
     "mw_pc":667.0,
-    "mw_tt":312.0
+    "mw_tt":312.0,
+    "mw_pc_day":1.83
   },
   {
     "geo":"MT",
     "year":2018,
     "mw_pc":673.0,
-    "mw_tt":326.0
+    "mw_tt":326.0,
+    "mw_pc_day":1.84
   },
   {
     "geo":"MT",
     "year":2019,
     "mw_pc":697.0,
-    "mw_tt":351.0
+    "mw_tt":351.0,
+    "mw_pc_day":1.91
   },
   {
     "geo":"MT",
     "year":2020,
     "mw_pc":642.0,
-    "mw_tt":331.0
+    "mw_tt":331.0,
+    "mw_pc_day":1.76
   },
   {
     "geo":"MT",
     "year":2021,
     "mw_pc":611.0,
-    "mw_tt":317.0
+    "mw_tt":317.0,
+    "mw_pc_day":1.67
   },
   {
     "geo":"MT",
     "year":2022,
     "mw_pc":618.0,
-    "mw_tt":328.0
+    "mw_tt":328.0,
+    "mw_pc_day":1.69
   },
   {
     "geo":"MT",
     "year":2023,
     "mw_pc":603.0,
-    "mw_tt":333.0
+    "mw_tt":333.0,
+    "mw_pc_day":1.65
   },
   {
     "geo":"MT",
     "year":2024,
     "mw_pc":622.0,
-    "mw_tt":354.0
+    "mw_tt":354.0,
+    "mw_pc_day":1.7
   },
   {
     "geo":"NL",
     "year":2010,
     "mw_pc":571.0,
-    "mw_tt":9484.0
+    "mw_tt":9484.0,
+    "mw_pc_day":1.56
   },
   {
     "geo":"NL",
     "year":2011,
     "mw_pc":568.0,
-    "mw_tt":9479.0
+    "mw_tt":9479.0,
+    "mw_pc_day":1.56
   },
   {
     "geo":"NL",
     "year":2012,
     "mw_pc":549.0,
-    "mw_tt":9203.0
+    "mw_tt":9203.0,
+    "mw_pc_day":1.5
   },
   {
     "geo":"NL",
     "year":2013,
     "mw_pc":526.0,
-    "mw_tt":8840.0
+    "mw_tt":8840.0,
+    "mw_pc_day":1.44
   },
   {
     "geo":"NL",
     "year":2014,
     "mw_pc":527.0,
-    "mw_tt":8894.0
+    "mw_tt":8894.0,
+    "mw_pc_day":1.44
   },
   {
     "geo":"NL",
     "year":2015,
     "mw_pc":523.0,
-    "mw_tt":8866.0
+    "mw_tt":8866.0,
+    "mw_pc_day":1.43
   },
   {
     "geo":"NL",
     "year":2016,
     "mw_pc":520.0,
-    "mw_tt":8861.0
+    "mw_tt":8861.0,
+    "mw_pc_day":1.42
   },
   {
     "geo":"NL",
     "year":2017,
     "mw_pc":513.0,
-    "mw_tt":8792.0
+    "mw_tt":8792.0,
+    "mw_pc_day":1.41
   },
   {
     "geo":"NL",
     "year":2018,
     "mw_pc":511.0,
-    "mw_tt":8806.0
+    "mw_tt":8806.0,
+    "mw_pc_day":1.4
   },
   {
     "geo":"NL",
     "year":2019,
     "mw_pc":508.0,
-    "mw_tt":8806.0
+    "mw_tt":8806.0,
+    "mw_pc_day":1.39
   },
   {
     "geo":"NL",
     "year":2020,
     "mw_pc":533.0,
-    "mw_tt":9300.0
+    "mw_tt":9300.0,
+    "mw_pc_day":1.46
   },
   {
     "geo":"NL",
     "year":2021,
     "mw_pc":513.0,
-    "mw_tt":9003.0
+    "mw_tt":9003.0,
+    "mw_pc_day":1.41
   },
   {
     "geo":"NL",
     "year":2022,
     "mw_pc":473.0,
-    "mw_tt":8365.0
+    "mw_tt":8365.0,
+    "mw_pc_day":1.3
   },
   {
     "geo":"NL",
     "year":2023,
     "mw_pc":465.0,
-    "mw_tt":8316.0
+    "mw_tt":8316.0,
+    "mw_pc_day":1.27
   },
   {
     "geo":"NL",
     "year":2024,
     "mw_pc":473.0,
-    "mw_tt":8504.0
+    "mw_tt":8504.0,
+    "mw_pc_day":1.3
   },
   {
     "geo":"PL",
     "year":2010,
     "mw_pc":316.0,
-    "mw_tt":12032.0
+    "mw_tt":12032.0,
+    "mw_pc_day":0.87
   },
   {
     "geo":"PL",
     "year":2011,
     "mw_pc":319.0,
-    "mw_tt":12129.0
+    "mw_tt":12129.0,
+    "mw_pc_day":0.87
   },
   {
     "geo":"PL",
     "year":2012,
     "mw_pc":317.0,
-    "mw_tt":12084.0
+    "mw_tt":12084.0,
+    "mw_pc_day":0.87
   },
   {
     "geo":"PL",
     "year":2013,
     "mw_pc":297.0,
-    "mw_tt":11295.0
+    "mw_tt":11295.0,
+    "mw_pc_day":0.81
   },
   {
     "geo":"PL",
     "year":2014,
     "mw_pc":272.0,
-    "mw_tt":10330.0
+    "mw_tt":10330.0,
+    "mw_pc_day":0.75
   },
   {
     "geo":"PL",
     "year":2015,
     "mw_pc":286.0,
-    "mw_tt":10863.0
+    "mw_tt":10863.0,
+    "mw_pc_day":0.78
   },
   {
     "geo":"PL",
     "year":2016,
     "mw_pc":307.0,
-    "mw_tt":11654.0
+    "mw_tt":11654.0,
+    "mw_pc_day":0.84
   },
   {
     "geo":"PL",
     "year":2017,
     "mw_pc":315.0,
-    "mw_tt":11969.0
+    "mw_tt":11969.0,
+    "mw_pc_day":0.86
   },
   {
     "geo":"PL",
     "year":2018,
     "mw_pc":329.0,
-    "mw_tt":12485.0
+    "mw_tt":12485.0,
+    "mw_pc_day":0.9
   },
   {
     "geo":"PL",
     "year":2019,
     "mw_pc":336.0,
-    "mw_tt":12753.0
+    "mw_tt":12753.0,
+    "mw_pc_day":0.92
   },
   {
     "geo":"PL",
     "year":2020,
     "mw_pc":350.0,
-    "mw_tt":13117.0
+    "mw_tt":13117.0,
+    "mw_pc_day":0.96
   },
   {
     "geo":"PL",
     "year":2021,
     "mw_pc":370.0,
-    "mw_tt":13674.0
+    "mw_tt":13674.0,
+    "mw_pc_day":1.01
   },
   {
     "geo":"PL",
     "year":2022,
     "mw_pc":364.0,
-    "mw_tt":13420.0
+    "mw_tt":13420.0,
+    "mw_pc_day":1.0
   },
   {
     "geo":"PL",
     "year":2023,
     "mw_pc":367.0,
-    "mw_tt":13448.0
+    "mw_tt":13448.0,
+    "mw_pc_day":1.01
   },
   {
     "geo":"PL",
     "year":2024,
     "mw_pc":387.0,
-    "mw_tt":14158.0
+    "mw_tt":14158.0,
+    "mw_pc_day":1.06
   },
   {
     "geo":"PT",
     "year":2010,
     "mw_pc":516.0,
-    "mw_tt":5457.0
+    "mw_tt":5457.0,
+    "mw_pc_day":1.41
   },
   {
     "geo":"PT",
     "year":2011,
     "mw_pc":490.0,
-    "mw_tt":5178.0
+    "mw_tt":5178.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"PT",
     "year":2012,
     "mw_pc":453.0,
-    "mw_tt":4766.0
+    "mw_tt":4766.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"PT",
     "year":2013,
     "mw_pc":439.0,
-    "mw_tt":4598.0
+    "mw_tt":4598.0,
+    "mw_pc_day":1.2
   },
   {
     "geo":"PT",
     "year":2014,
     "mw_pc":452.0,
-    "mw_tt":4710.0
+    "mw_tt":4710.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"PT",
     "year":2015,
     "mw_pc":459.0,
-    "mw_tt":4769.0
+    "mw_tt":4769.0,
+    "mw_pc_day":1.26
   },
   {
     "geo":"PT",
     "year":2016,
     "mw_pc":472.0,
-    "mw_tt":4891.0
+    "mw_tt":4891.0,
+    "mw_pc_day":1.29
   },
   {
     "geo":"PT",
     "year":2017,
     "mw_pc":484.0,
-    "mw_tt":5007.0
+    "mw_tt":5007.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"PT",
     "year":2018,
     "mw_pc":504.0,
-    "mw_tt":5213.0
+    "mw_tt":5213.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"PT",
     "year":2019,
     "mw_pc":510.0,
-    "mw_tt":5281.0
+    "mw_tt":5281.0,
+    "mw_pc_day":1.4
   },
   {
     "geo":"PT",
     "year":2020,
     "mw_pc":509.0,
-    "mw_tt":5279.0
+    "mw_tt":5279.0,
+    "mw_pc_day":1.39
   },
   {
     "geo":"PT",
     "year":2021,
     "mw_pc":510.0,
-    "mw_tt":5311.0
+    "mw_tt":5311.0,
+    "mw_pc_day":1.4
   },
   {
     "geo":"PT",
     "year":2022,
     "mw_pc":495.0,
-    "mw_tt":5323.0
+    "mw_tt":5323.0,
+    "mw_pc_day":1.36
   },
   {
     "geo":"PT",
     "year":2023,
     "mw_pc":482.0,
-    "mw_tt":5338.0
+    "mw_tt":5338.0,
+    "mw_pc_day":1.32
   },
   {
     "geo":"PT",
     "year":2024,
     "mw_pc":492.0,
-    "mw_tt":5552.0
+    "mw_tt":5552.0,
+    "mw_pc_day":1.35
   },
   {
     "geo":"RO",
     "year":2010,
     "mw_pc":313.0,
-    "mw_tt":6343.0
+    "mw_tt":6343.0,
+    "mw_pc_day":0.86
   },
   {
     "geo":"RO",
     "year":2011,
     "mw_pc":259.0,
-    "mw_tt":5216.0
+    "mw_tt":5216.0,
+    "mw_pc_day":0.71
   },
   {
     "geo":"RO",
     "year":2012,
     "mw_pc":251.0,
-    "mw_tt":5044.0
+    "mw_tt":5044.0,
+    "mw_pc_day":0.69
   },
   {
     "geo":"RO",
     "year":2013,
     "mw_pc":254.0,
-    "mw_tt":5071.0
+    "mw_tt":5071.0,
+    "mw_pc_day":0.7
   },
   {
     "geo":"RO",
     "year":2014,
     "mw_pc":249.0,
-    "mw_tt":4956.0
+    "mw_tt":4956.0,
+    "mw_pc_day":0.68
   },
   {
     "geo":"RO",
     "year":2015,
     "mw_pc":247.0,
-    "mw_tt":4904.0
+    "mw_tt":4904.0,
+    "mw_pc_day":0.68
   },
   {
     "geo":"RO",
     "year":2016,
     "mw_pc":261.0,
-    "mw_tt":5143.0
+    "mw_tt":5143.0,
+    "mw_pc_day":0.72
   },
   {
     "geo":"RO",
     "year":2017,
     "mw_pc":272.0,
-    "mw_tt":5333.0
+    "mw_tt":5333.0,
+    "mw_pc_day":0.75
   },
   {
     "geo":"RO",
     "year":2018,
     "mw_pc":272.0,
-    "mw_tt":5296.0
+    "mw_tt":5296.0,
+    "mw_pc_day":0.75
   },
   {
     "geo":"RO",
     "year":2019,
     "mw_pc":280.0,
-    "mw_tt":5430.0
+    "mw_tt":5430.0,
+    "mw_pc_day":0.77
   },
   {
     "geo":"RO",
     "year":2020,
     "mw_pc":292.0,
-    "mw_tt":5619.0
+    "mw_tt":5619.0,
+    "mw_pc_day":0.8
   },
   {
     "geo":"RO",
     "year":2021,
     "mw_pc":302.0,
-    "mw_tt":5777.0
+    "mw_tt":5777.0,
+    "mw_pc_day":0.83
   },
   {
     "geo":"RO",
     "year":2022,
     "mw_pc":303.0,
-    "mw_tt":5767.0
+    "mw_tt":5767.0,
+    "mw_pc_day":0.83
   },
   {
     "geo":"RO",
     "year":2023,
     "mw_pc":305.0,
-    "mw_tt":5822.0
+    "mw_tt":5822.0,
+    "mw_pc_day":0.84
   },
   {
     "geo":"RO",
     "year":2024,
     "mw_pc":null,
-    "mw_tt":null
+    "mw_tt":null,
+    "mw_pc_day":null
   },
   {
     "geo":"SE",
     "year":2010,
     "mw_pc":441.0,
-    "mw_tt":4140.0
+    "mw_tt":4140.0,
+    "mw_pc_day":1.21
   },
   {
     "geo":"SE",
     "year":2011,
     "mw_pc":453.0,
-    "mw_tt":4278.0
+    "mw_tt":4278.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"SE",
     "year":2012,
     "mw_pc":454.0,
-    "mw_tt":4324.0
+    "mw_tt":4324.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"SE",
     "year":2013,
     "mw_pc":455.0,
-    "mw_tt":4371.0
+    "mw_tt":4371.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"SE",
     "year":2014,
     "mw_pc":443.0,
-    "mw_tt":4295.0
+    "mw_tt":4295.0,
+    "mw_pc_day":1.21
   },
   {
     "geo":"SE",
     "year":2015,
     "mw_pc":451.0,
-    "mw_tt":4422.0
+    "mw_tt":4422.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"SE",
     "year":2016,
     "mw_pc":447.0,
-    "mw_tt":4439.0
+    "mw_tt":4439.0,
+    "mw_pc_day":1.22
   },
   {
     "geo":"SE",
     "year":2017,
     "mw_pc":452.0,
-    "mw_tt":4551.0
+    "mw_tt":4551.0,
+    "mw_pc_day":1.24
   },
   {
     "geo":"SE",
     "year":2018,
     "mw_pc":434.0,
-    "mw_tt":4416.0
+    "mw_tt":4416.0,
+    "mw_pc_day":1.19
   },
   {
     "geo":"SE",
     "year":2019,
     "mw_pc":449.0,
-    "mw_tt":4611.0
+    "mw_tt":4611.0,
+    "mw_pc_day":1.23
   },
   {
     "geo":"SE",
     "year":2020,
     "mw_pc":431.0,
-    "mw_tt":4460.0
+    "mw_tt":4460.0,
+    "mw_pc_day":1.18
   },
   {
     "geo":"SE",
     "year":2021,
     "mw_pc":418.0,
-    "mw_tt":4352.0
+    "mw_tt":4352.0,
+    "mw_pc_day":1.15
   },
   {
     "geo":"SE",
     "year":2022,
     "mw_pc":395.0,
-    "mw_tt":4139.0
+    "mw_tt":4139.0,
+    "mw_pc_day":1.08
   },
   {
     "geo":"SE",
     "year":2023,
     "mw_pc":392.0,
-    "mw_tt":4134.0
+    "mw_tt":4134.0,
+    "mw_pc_day":1.07
   },
   {
     "geo":"SE",
     "year":2024,
     "mw_pc":427.0,
-    "mw_tt":4513.0
+    "mw_tt":4513.0,
+    "mw_pc_day":1.17
   },
   {
     "geo":"SI",
     "year":2010,
     "mw_pc":490.0,
-    "mw_tt":1004.0
+    "mw_tt":1004.0,
+    "mw_pc_day":1.34
   },
   {
     "geo":"SI",
     "year":2011,
     "mw_pc":415.0,
-    "mw_tt":852.0
+    "mw_tt":852.0,
+    "mw_pc_day":1.14
   },
   {
     "geo":"SI",
     "year":2012,
     "mw_pc":362.0,
-    "mw_tt":744.0
+    "mw_tt":744.0,
+    "mw_pc_day":0.99
   },
   {
     "geo":"SI",
     "year":2013,
     "mw_pc":414.0,
-    "mw_tt":853.0
+    "mw_tt":853.0,
+    "mw_pc_day":1.13
   },
   {
     "geo":"SI",
     "year":2014,
     "mw_pc":432.0,
-    "mw_tt":892.0
+    "mw_tt":892.0,
+    "mw_pc_day":1.18
   },
   {
     "geo":"SI",
     "year":2015,
     "mw_pc":449.0,
-    "mw_tt":926.0
+    "mw_tt":926.0,
+    "mw_pc_day":1.23
   },
   {
     "geo":"SI",
     "year":2016,
     "mw_pc":457.0,
-    "mw_tt":943.0
+    "mw_tt":943.0,
+    "mw_pc_day":1.25
   },
   {
     "geo":"SI",
     "year":2017,
     "mw_pc":471.0,
-    "mw_tt":974.0
+    "mw_tt":974.0,
+    "mw_pc_day":1.29
   },
   {
     "geo":"SI",
     "year":2018,
     "mw_pc":486.0,
-    "mw_tt":1009.0
+    "mw_tt":1009.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"SI",
     "year":2019,
     "mw_pc":504.0,
-    "mw_tt":1052.0
+    "mw_tt":1052.0,
+    "mw_pc_day":1.38
   },
   {
     "geo":"SI",
     "year":2020,
     "mw_pc":487.0,
-    "mw_tt":1024.0
+    "mw_tt":1024.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"SI",
     "year":2021,
     "mw_pc":511.0,
-    "mw_tt":1077.0
+    "mw_tt":1077.0,
+    "mw_pc_day":1.4
   },
   {
     "geo":"SI",
     "year":2022,
     "mw_pc":487.0,
-    "mw_tt":1029.0
+    "mw_tt":1029.0,
+    "mw_pc_day":1.33
   },
   {
     "geo":"SI",
     "year":2023,
     "mw_pc":517.0,
-    "mw_tt":1097.0
+    "mw_tt":1097.0,
+    "mw_pc_day":1.42
   },
   {
     "geo":"SI",
     "year":2024,
     "mw_pc":526.0,
-    "mw_tt":1118.0
+    "mw_tt":1118.0,
+    "mw_pc_day":1.44
   },
   {
     "geo":"SK",
     "year":2010,
     "mw_pc":319.0,
-    "mw_tt":1719.0
+    "mw_tt":1719.0,
+    "mw_pc_day":0.87
   },
   {
     "geo":"SK",
     "year":2011,
     "mw_pc":311.0,
-    "mw_tt":1679.0
+    "mw_tt":1679.0,
+    "mw_pc_day":0.85
   },
   {
     "geo":"SK",
     "year":2012,
     "mw_pc":306.0,
-    "mw_tt":1657.0
+    "mw_tt":1657.0,
+    "mw_pc_day":0.84
   },
   {
     "geo":"SK",
     "year":2013,
     "mw_pc":304.0,
-    "mw_tt":1645.0
+    "mw_tt":1645.0,
+    "mw_pc_day":0.83
   },
   {
     "geo":"SK",
     "year":2014,
     "mw_pc":320.0,
-    "mw_tt":1733.0
+    "mw_tt":1733.0,
+    "mw_pc_day":0.88
   },
   {
     "geo":"SK",
     "year":2015,
     "mw_pc":329.0,
-    "mw_tt":1784.0
+    "mw_tt":1784.0,
+    "mw_pc_day":0.9
   },
   {
     "geo":"SK",
     "year":2016,
     "mw_pc":348.0,
-    "mw_tt":1890.0
+    "mw_tt":1890.0,
+    "mw_pc_day":0.95
   },
   {
     "geo":"SK",
     "year":2017,
     "mw_pc":378.0,
-    "mw_tt":2058.0
+    "mw_tt":2058.0,
+    "mw_pc_day":1.04
   },
   {
     "geo":"SK",
     "year":2018,
     "mw_pc":414.0,
-    "mw_tt":2254.0
+    "mw_tt":2254.0,
+    "mw_pc_day":1.13
   },
   {
     "geo":"SK",
     "year":2019,
     "mw_pc":421.0,
-    "mw_tt":2299.0
+    "mw_tt":2299.0,
+    "mw_pc_day":1.15
   },
   {
     "geo":"SK",
     "year":2020,
     "mw_pc":478.0,
-    "mw_tt":2612.0
+    "mw_tt":2612.0,
+    "mw_pc_day":1.31
   },
   {
     "geo":"SK",
     "year":2021,
     "mw_pc":497.0,
-    "mw_tt":2705.0
+    "mw_tt":2705.0,
+    "mw_pc_day":1.36
   },
   {
     "geo":"SK",
     "year":2022,
     "mw_pc":478.0,
-    "mw_tt":2597.0
+    "mw_tt":2597.0,
+    "mw_pc_day":1.31
   },
   {
     "geo":"SK",
     "year":2023,
     "mw_pc":472.0,
-    "mw_tt":2561.0
+    "mw_tt":2561.0,
+    "mw_pc_day":1.29
   },
   {
     "geo":"SK",
     "year":2024,
     "mw_pc":489.0,
-    "mw_tt":2649.0
+    "mw_tt":2649.0,
+    "mw_pc_day":1.34
   }
 ]

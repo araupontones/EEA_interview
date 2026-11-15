@@ -5,7 +5,6 @@
 - [ ] Texts: hero (title, subtitle, brief explanation), the text of each section, the methodological note and "How I did this".
 - [ ] Fonts and text sizes for all charts (now temporary classes in `dashboard/src/index.css`).
 - [ ] Distance-to-target chart: add a note for Cyprus steel packaging, which is empty in the data (published rate 221.5 %).
-- [ ] Mark the Member States that postponed the 2025 targets ("deadline postponed") instead of showing them as failing.
 - [ ] Publish: on GitHub, Settings → Pages → Source: "GitHub Actions"; check the first deployment.
 
 ## Open data decisions

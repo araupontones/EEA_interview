@@ -20,14 +20,20 @@ import { symbol, symbolDiamond2 } from "d3-shape";
 import { useMemo, useState } from "react";
 
 import {
+  dashboardTexts,
   EU27_TOTAL,
   geoNames,
   recyclingDistanceToTarget,
   recyclingTargets,
 } from "../../data.js";
+import { flagUrl } from "../../lib/flags.js";
+import { fill } from "../../lib/keyFigures.js";
 
 const MARGIN = { top: 30, right: 30, bottom: 20, left: 210 };
 const ROW_HEIGHT = 64;
+const NARROW = 560; // px: below this width, row labels go above the rows
+const MARGIN_NARROW = { top: 30, right: 16, bottom: 20, left: 12 };
+const ROW_HEIGHT_NARROW = 80;
 const RADIUS = 6;
 const X_MAX = 115; // recycling rates above 100 % exist (e.g. Slovenia, glass: 112 %)
 const GRID_VALUES = [0, 25, 50, 75, 100];
@@ -44,8 +50,8 @@ const COLOR_CAP = 25;
 const BELOW_TARGET_RANGE = [0, 0.42]; // far below -> just below: dark red -> light yellow-orange
 const TARGET_MET_RANGE = [0.62, 1]; // just above -> far above: light blue -> dark blue
 
-const EU_COLOR = "#333333";
-const GRID = "#e5e5e5";
+const EU_COLOR = "#1d2b2a"; // EU27 = ink (dashboard identity)
+const GRID = "#e6e1d8";
 
 // Colour of a country from its distance to the target (percentage points).
 const sliceOf = ([from, to]) => (t) => interpolateRdYlBu(from + (to - from) * t);
@@ -119,7 +125,12 @@ const COUNTRY_NAMES = [
   ...new Set(CIRCLES.filter((d) => !d.isEU).map((d) => d.name)),
 ].sort();
 
-const formatDistance = (v) => `${v > 0 ? "+" : ""}${v.toFixed(1)} pp`;
+const CARD_WIDTH = 220; // px, hover card (also .hover-card-small in index.css)
+const CARD_GAP = 12; // px between the circle and the card
+
+// texts of this chart (data/lookups/dashboard_texts.json)
+const TEXTS = dashboardTexts.distance_to_target;
+
 
 // --- chart -------------------------------------------------------------------------------
 
@@ -127,9 +138,12 @@ export default function DistanceToTargetScatter({ width }) {
   const [hovered, setHovered] = useState(null); // { geo, waste_name }
   const [searchQuery, setSearchQuery] = useState("");
 
-  const height = MARGIN.top + ROWS.length * ROW_HEIGHT + MARGIN.bottom;
-  const boundsWidth = width - MARGIN.left - MARGIN.right;
-  const boundsHeight = height - MARGIN.top - MARGIN.bottom;
+  const narrow = width < NARROW;
+  const margin = narrow ? MARGIN_NARROW : MARGIN;
+  const rowHeight = narrow ? ROW_HEIGHT_NARROW : ROW_HEIGHT;
+  const height = margin.top + ROWS.length * rowHeight + margin.bottom;
+  const boundsWidth = width - margin.left - margin.right;
+  const boundsHeight = height - margin.top - margin.bottom;
 
   const xScale = useMemo(
     () => scaleLinear().domain([0, X_MAX]).range([0, boundsWidth]),
@@ -162,8 +176,8 @@ export default function DistanceToTargetScatter({ width }) {
     const x = xScale(d.value);
     const y = cy(d);
     const outline = highlight
-      ? { stroke: "#333", strokeWidth: 1.5 }
-      : { stroke: "white", strokeWidth: 0.5 };
+      ? { stroke: "#1d2b2a", strokeWidth: 2 }
+      : { stroke: "#1d2b2a", strokeOpacity: 0.6, strokeWidth: 1 }; // ink outline: light colours keep a 3:1 edge
     return d.isEU ? (
       <path d={EU_DIAMOND} transform={`translate(${x},${y})`} fill={EU_COLOR} {...outline} {...props} />
     ) : (
@@ -182,22 +196,16 @@ export default function DistanceToTargetScatter({ width }) {
     </g>
   ));
 
+  // the hovered record (for the hover card)
+  const hoveredRecord = hovered
+    ? CIRCLES.find((d) => d.geo === hovered.geo && d.waste_name === hovered.waste_name)
+    : null;
+
   // Layer 2: the hovered country in every row, with a label on the hovered circle
   const highlightedCircles = hovered
     ? CIRCLES.filter((d) => d.geo === hovered.geo).map((d) => (
         <g key={`hovered-${d.waste_name}`} style={{ pointerEvents: "none" }}>
           {mark(d, { highlight: true })}
-          {d.waste_name === hovered.waste_name && (
-            <text
-              x={xScale(d.value)}
-              y={cy(d) - 12}
-              textAnchor="middle"
-              className="chart-label-strong"
-            >
-              {d.name}: {d.value.toFixed(1)} % (
-              {formatDistance(d.distance_to_target)})
-            </text>
-          )}
         </g>
       ))
     : null;
@@ -230,10 +238,10 @@ export default function DistanceToTargetScatter({ width }) {
         <input
           type="search"
           list="distance-to-target-countries"
-          placeholder="Search a country..."
+          placeholder={dashboardTexts.ui.search_placeholder}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          aria-label="Search a country"
+          aria-label={dashboardTexts.ui.search_aria}
         />
         <datalist id="distance-to-target-countries">
           {COUNTRY_NAMES.map((name) => (
@@ -245,114 +253,168 @@ export default function DistanceToTargetScatter({ width }) {
         <Legend cap={COLOR_CAP} />
       </div>
 
-      <svg
-        width={width}
-        height={height}
-        role="img"
-        aria-label="Recycling rates by waste category and country"
-      >
-        <g transform={`translate(${MARGIN.left},${MARGIN.top})`}>
-          {/* vertical grid with % labels */}
-          {GRID_VALUES.map((v) => (
-            <g key={`grid-${v}`}>
-              <line
-                x1={xScale(v)}
-                x2={xScale(v)}
-                y1={0}
-                y2={boundsHeight}
-                stroke={GRID}
-              />
-              <text
-                x={xScale(v)}
-                y={-10}
-                textAnchor="middle"
-                className="chart-axis"
-              >
-                {v}%
-              </text>
-            </g>
-          ))}
-
-          {/* per row: line from lowest to highest rate, 2025 target tick, row label */}
-          {ROWS.map((row) => {
-            const values = CIRCLES.filter((d) => d.waste_name === row).map(
-              (d) => d.value,
-            );
-            const y = rowCenter(row);
-            const target = TARGETS[row].target_2025;
-            const half = (yScale.bandwidth() * TARGET_TICK_SHARE) / 2;
-            return (
-              <g key={`row-${row}`}>
+      <p className="chart-caption">{fill(TEXTS.caption)}</p>
+      <div className="chart-hover-area">
+        <svg
+          width={width}
+          height={height}
+          role="img"
+          aria-label={fill(TEXTS.aria_label)}
+        >
+          <g transform={`translate(${margin.left},${margin.top})`}>
+            {/* vertical grid with % labels */}
+            {GRID_VALUES.map((v) => (
+              <g key={`grid-${v}`}>
                 <line
-                  x1={xScale(Math.min(...values))}
-                  x2={xScale(Math.max(...values))}
-                  y1={y}
-                  y2={y}
-                  stroke="#bbbbbb"
-                />
-                <line
-                  x1={xScale(target)}
-                  x2={xScale(target)}
-                  y1={y - half}
-                  y2={y + half}
-                  stroke="#333"
-                  strokeWidth={2}
+                  x1={xScale(v)}
+                  x2={xScale(v)}
+                  y1={0}
+                  y2={boundsHeight}
+                  stroke={GRID}
                 />
                 <text
-                  x={-10}
-                  y={y}
-                  textAnchor="end"
-                  dominantBaseline="middle"
-                  className="chart-row-label"
+                  x={xScale(v)}
+                  y={-10}
+                  textAnchor="middle"
+                  className="chart-axis"
                 >
-                  {row}
+                  {v}%
                 </text>
               </g>
-            );
-          })}
+            ))}
 
-          {/* Layer 1 */}
-          <g
-            style={{
-              opacity: isInteracting ? 0.3 : 1,
-              filter: isInteracting ? "saturate(0.3)" : "none",
-            }}
-          >
-            {allCircles}
-          </g>
-
-          {/* lowest and highest rate per row (only when not interacting) */}
-          {!isInteracting &&
-            EXTREMES.map((d) => {
-              const x = xScale(d.value);
-              // lowest: label left of the circle, or above it if it would run into the row labels
-              const above = d.side === "min" && x < MIN_LABEL_SPACE;
+            {/* per row: line from lowest to highest rate, 2025 target tick, row label */}
+            {ROWS.map((row) => {
+              const values = CIRCLES.filter((d) => d.waste_name === row).map(
+                (d) => d.value,
+              );
+              const y = rowCenter(row);
+              const target = TARGETS[row].target_2025;
+              const half = (yScale.bandwidth() * TARGET_TICK_SHARE) / 2;
               return (
-                <text
-                  key={`extreme-${d.waste_name}-${d.side}`}
-                  x={
-                    above
-                      ? x
-                      : x + (d.side === "min" ? -RADIUS - 4 : RADIUS + 4)
-                  }
-                  y={above ? cy(d) - RADIUS - 4 : cy(d)}
-                  textAnchor={
-                    above ? "start" : d.side === "min" ? "end" : "start"
-                  }
-                  dominantBaseline={above ? "auto" : "middle"}
-                  className="chart-label-extreme"
-                  style={{ pointerEvents: "none" }}
-                >
-                  {d.geo}
-                </text>
+                <g key={`row-${row}`}>
+                  <line
+                    x1={xScale(Math.min(...values))}
+                    x2={xScale(Math.max(...values))}
+                    y1={y}
+                    y2={y}
+                    stroke="#e6e1d8"
+                    strokeWidth={4}
+                    strokeLinecap="round"
+                  />
+                  <line
+                    x1={xScale(target)}
+                    x2={xScale(target)}
+                    y1={y - half}
+                    y2={y + half}
+                    stroke="#1d2b2a"
+                    strokeWidth={2.5}
+                  />
+                  <text
+                    x={narrow ? 0 : -10}
+                    y={narrow ? (yScale(row) ?? 0) - 6 : y}
+                    textAnchor={narrow ? "start" : "end"}
+                    dominantBaseline={narrow ? "auto" : "middle"}
+                    className="chart-row-label"
+                  >
+                    {row}
+                  </text>
+                </g>
               );
             })}
 
-          {/* Layer 2 and 3 */}
-          {highlightedCircles}
-          {searchedCircles}
-        </g>
-      </svg>
+            {/* Layer 1 */}
+            <g
+              style={{
+                opacity: isInteracting ? 0.3 : 1,
+                filter: isInteracting ? "saturate(0.3)" : "none",
+              }}
+            >
+              {allCircles}
+            </g>
+
+            {/* lowest and highest rate per row (only when not interacting) */}
+            {!isInteracting &&
+              EXTREMES.map((d) => {
+                const x = xScale(d.value);
+                // lowest: label left of the circle, or above it if it would run into the row labels
+                const above = d.side === "min" && x < MIN_LABEL_SPACE;
+                return (
+                  <text
+                    key={`extreme-${d.waste_name}-${d.side}`}
+                    x={
+                      above
+                        ? x
+                        : x + (d.side === "min" ? -RADIUS - 4 : RADIUS + 4)
+                    }
+                    y={above ? cy(d) - RADIUS - 4 : cy(d)}
+                    textAnchor={
+                      above ? "start" : d.side === "min" ? "end" : "start"
+                    }
+                    dominantBaseline={above ? "auto" : "middle"}
+                    className="chart-label-extreme chart-label-halo"
+                    style={{ pointerEvents: "none" }}
+                  >
+                    {d.geo}
+                  </text>
+                );
+              })}
+
+            {/* Layer 2 and 3 */}
+            {highlightedCircles}
+            {searchedCircles}
+          </g>
+        </svg>
+
+        {/* hover card: next to the hovered circle, above it (below it in the first row) */}
+        {hoveredRecord && (
+          <HoverCard
+            d={hoveredRecord}
+            x={margin.left + xScale(hoveredRecord.value)}
+            y={margin.top + cy(hoveredRecord)}
+            below={hoveredRecord.waste_name === ROWS[0]}
+            containerWidth={width}
+          />
+        )}
+      </div>
+
+      <details className="chart-details">
+        <summary>{dashboardTexts.ui.about_chart}</summary>
+        {TEXTS.notes.map((note) => (
+          <p key={note} className="chart-note">
+            {note}
+          </p>
+        ))}
+      </details>
+    </div>
+  );
+}
+
+// Plain wording of the distance to the target, e.g. "42.6 points below the 2025 target of 55 %".
+function distanceText(d) {
+  const target = TARGETS[d.waste_name]?.target_2025;
+  const values = { distance: Math.abs(d.distance_to_target).toFixed(1), target: target ?? "" };
+  if (d.distance_to_target > 0) return fill(TEXTS.hover.above, values);
+  if (d.distance_to_target < 0) return fill(TEXTS.hover.below, values);
+  return fill(TEXTS.hover.on, values);
+}
+
+// Card with the flag, country name, waste category, recycling rate and distance to target.
+function HoverCard({ d, x, y, below, containerWidth }) {
+  const flag = flagUrl(d.geo);
+  const left = Math.min(Math.max(x - CARD_WIDTH / 2, 0), containerWidth - CARD_WIDTH);
+  const style = below
+    ? { left, top: y + RADIUS + CARD_GAP }
+    : { left, top: y - RADIUS - CARD_GAP, transform: "translateY(-100%)" };
+  return (
+    <div className="hover-card hover-card-small" style={style} role="tooltip">
+      <div className="hover-card-header">
+        {flag && <img className="flag-circle" src={flag} alt="" />}
+        <span className="hover-card-title">{d.name}</span>
+      </div>
+      <div className="hover-card-sub">{d.waste_name}</div>
+      <div className="hover-card-main">{fill(TEXTS.hover.rate, { value: d.value.toFixed(1) })}</div>
+      <div className="hover-card-sub">{distanceText(d)}</div>
     </div>
   );
 }
@@ -360,12 +422,19 @@ export default function DistanceToTargetScatter({ width }) {
 // Legend: the two colour scales (below target, target met), the target tick and the EU27 symbol.
 function Legend({ cap }) {
   const stops = [0, 0.25, 0.5, 0.75, 1];
-  const barWidth = 120; // width of each of the two bars
+  const barWidth = 140; // width of each of the two bars
   const gap = 6; // gap between the bars: the break at the target
   const metX = barWidth + gap;
   const otherX = 2 * barWidth + gap + 40; // start of the target and EU27 entries
   return (
-    <svg width={otherX + 160} height={64} className="chart-legend" role="img" aria-label="Legend">
+    <svg
+      viewBox={`0 0 ${otherX + 160} 64`}
+      width={otherX + 160}
+      style={{ maxWidth: "100%", height: "auto" }}
+      className="chart-legend"
+      role="img"
+      aria-label="Legend"
+    >
       <defs>
         <linearGradient id="below-target-gradient">
           {stops.map((t) => (
@@ -380,10 +449,10 @@ function Legend({ cap }) {
       </defs>
 
       <text x={0} y={12} className="chart-axis">
-        Below target
+        {TEXTS.legend.below}
       </text>
-      <text x={metX} y={12} className="chart-axis">
-        Target met
+      <text x={metX + barWidth} y={12} textAnchor="end" className="chart-axis">
+        {TEXTS.legend.met}
       </text>
       <rect x={0} y={20} width={barWidth} height={10} fill="url(#below-target-gradient)" />
       <rect x={metX} y={20} width={barWidth} height={10} fill="url(#target-met-gradient)" />
@@ -397,17 +466,17 @@ function Legend({ cap }) {
         ≥ +{cap}
       </text>
       <text x={0} y={60} className="chart-axis">
-        Distance to the 2025 target (percentage points)
+        {TEXTS.legend.axis}
       </text>
 
-      <line x1={otherX} x2={otherX} y1={18} y2={34} stroke="#333" strokeWidth={2} />
+      <line x1={otherX} x2={otherX} y1={18} y2={34} stroke="#1d2b2a" strokeWidth={2.5} />
       <text x={otherX + 8} y={30} className="chart-axis">
-        2025 target
+        {TEXTS.legend.target}
       </text>
 
       <path d={EU_DIAMOND} transform={`translate(${otherX + 110},26)`} fill={EU_COLOR} />
       <text x={otherX + 122} y={30} className="chart-axis">
-        EU27
+        {TEXTS.legend.eu}
       </text>
     </svg>
   );

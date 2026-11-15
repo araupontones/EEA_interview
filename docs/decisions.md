@@ -6,6 +6,132 @@ For data decisions, the full explanation and its consequences are in [method_not
 
 ## 15 November 2026
 
+**Back to the Denmark / Romania ratio, worded about waste generation, not people.** (Replaces the range decided just before.)
+- Decision: the hero card and the key message compare waste generation per person, not people: "Waste generation per person in {max_country} is {ratio} times that of {min_country}" (2023: Denmark / Romania = 2.5, among Member States without a change in definition). The texts do not say that "countries count it differently".
+- Why: the user found that saying "countries count it differently" in the headline undermines the credibility of the whole dashboard; comparing generation rather than people keeps it neutral. The caveat on definitions stays in the notes under the charts and in the method note.
+- Applied in: `scripts/lookups/create_dashboard_texts.py`, `dashboard/src/lib/keyFigures.js`; [communication.md](communication.md) section 3; [findings.md](findings.md) §1 bullet 12.
+
+**Differences between countries shown as a range, not a ratio.** (Replaces the Denmark / Romania ratio decided earlier today.)
+- Decision: the key message of "How much waste do we generate?" and the second hero card show the range of waste per person from the lowest to the highest Member State, naming both (2023: 305 kg in Romania to 782 kg in Austria), "partly because countries count it differently". Option A of the storyteller and copywriter.
+- Why: "people in Denmark generate 2.5 times as much as people in Romania" read as a reproach to one country's people; a range describes the spread without a verdict, and gives the reason in the same sentence (findings §1 bullets 2, 13–14).
+- Applied in: `scripts/lookups/create_dashboard_texts.py`, `dashboard/src/lib/keyFigures.js` (new placeholders `{low_kg}`, `{high_kg}`, `{low_country}`, `{high_country}`; the ratio placeholders are removed); [communication.md](communication.md) section 3; [findings.md](findings.md) §1 bullet 12.
+
+**Section eyebrows without step numbers.**
+- Decision: "Step 1 · Prevention, over time" and "Step 3 · Recycling" become "Prevention, over time" and "Recycling".
+- Why: the levels of the waste hierarchy are a ranking of options, not steps in a sequence. The same applies to the other texts: hero eyebrow "Waste in the EU, from best to worst", closing title "Recycling is only halfway up the waste hierarchy", and "level" instead of "step" in the method notes.
+- Applied in: `scripts/lookups/create_dashboard_texts.py`; [communication.md](communication.md) sections 2–4 (new wording rule).
+
+**Highlight colour: pale mint instead of yellow.**
+- Decision: the highlight `#ffd84d` (yellow) becomes `#dcefe3` (pale mint) for the "Try this" hints, the hover on the hierarchy steps, the step highlighted in the section icon and the search focus ring. Ink text on it: 12.2:1.
+- Why: the yellow was too aggressive; mint is calmer and ties in with the green tint of the hero.
+- Applied in: `dashboard/src/index.css` (`--color-highlight`), `components/HierarchyMotif.jsx`; [communication.md](communication.md) section 5.
+
+**"How much waste do we generate?" is an introduction, not the Prevention step.**
+- Decision: the section has no eyebrow, no hierarchy icon and no prevention sentence; its lede is the definition of municipal waste and the EU figure. The Prevention step of the hero's waste hierarchy now links to the decoupling section, which keeps "Step 1 · Prevention, over time". The hero button leads to the first section of the page.
+- Why: levels between countries are not a ranking of prevention effort (findings §1 bullet 14); the section introduces how much waste we generate.
+- Applied in: `scripts/lookups/create_dashboard_texts.py`, `sections/hero/Hero.jsx`; [communication.md](communication.md) section 2.
+
+**Waste hierarchy drawn as an inverted pyramid; disposal shows only landfill.**
+- Decision: the steps are stacked trapezoids (each one narrower than the one above), not rounded pills, and the orange loop arrow is removed, so the shape reads as an inverted pyramid (hero, closing panel and the small section icon). The disposal step shows only "{landfill} % landfill"; the share burnt without energy recovery moves under the pyramid ("Also disposal: …"), next to "Not in the figures".
+- Applied in: `components/HierarchyMotif.jsx`, `scripts/lookups/create_dashboard_texts.py` (`hierarchy.burnt`); [communication.md](communication.md) section 5.
+
+**Prevention stays linked to waste per person and decoupling, with framing.**
+- Decision: the fact-checker confirmed that waste generated per person is the indicator used to track prevention (WFD Art. 9(3); Eurostat cei_pc031; EEA 2025) and that decoupling is the aim of prevention programmes (WFD Art. 29), but that waste generated is the result of prevention, not prevention itself, and that levels between countries are not a ranking of prevention effort. Both sections keep the "Prevention" eyebrow; the waste-per-person section's lede now says "Waste we avoid can't be counted, so we look at how much we generate: if prevention works, this falls over time."
+- Applied in: [findings.md](findings.md) §1 bullet 14 and §2 bullet 7; [method_notes.md](method_notes.md) §2 (hierarchy mapping); `scripts/lookups/create_dashboard_texts.py`.
+
+**"Waste hierarchy", not "waste ladder"; a simpler hierarchy in the hero.**
+- Decision: the Waste Framework Directive's name is used everywhere, explained as "how the EU ranks what to do with waste, from best to worst for the environment" (copywriter). In the hero, Prevention shows only its name, Preparing for re-use is greyed with no figure (no EU total: 8 Member States, including some of the largest, do not report it, so any EU figure would be incomplete), and no step shows "Chart coming soon". The hero lede starts "On average".
+- Applied in: `scripts/lookups/create_dashboard_texts.py`, `components/HierarchyMotif.jsx`; [communication.md](communication.md) sections 2–4.
+
+**Ratio between countries: only Member States without a change in definition (data-scientist, option A).**
+- Decision: the hero card and the key message compare the Member States with the most and least waste per person among those without a break year in `decoupling_notes.json` (2023: Denmark / Romania = 2.5), not Austria / Romania (2.6), because Austria's level includes its 2020 change in definition. Findings §1 bullet 2 was wrong ("around 2.5 times" between groups of three countries; the group averages give 2.2) and was corrected. New findings: §1 bullet 12 (the ratio) and bullet 13 (comparing countries in one year needs care); the definition of municipal waste is in method notes §2.
+- Applied in: `dashboard/src/lib/keyFigures.js`; [findings.md](findings.md) §1; [method_notes.md](method_notes.md) §2.
+
+**Fact-check fixes applied.**
+- Closing panel no longer says the EU "is close to its targets" (it beats the packaging target but is short for municipal waste and plastic); Irish and Estonian notes corrected; method notes separate the five countries that widened their definition from Estonia and Slovenia; "adjusted for inflation"; decoupling lede "has grown more than waste since 2011"; "burnt without energy"; "every row where it has data"; "How I did this" describes the agents accurately; distance-to-target texts use the year of the targets data.
+
+**Dashboard texts applied (ux-copywriter, approved with changes).**
+- Decision: hero "Where does our waste go?", with the yearly figure per person in the lede (not the daily one); question titles; plain-language notes and hover cards ("points below the target", not "pp"); "generate" instead of "make" everywhere (as in the early warning reports). The ladder shows the EU27 figure of every step from the data, with "Chart coming soon" on the steps without a chart. Figures in the texts are placeholders filled from the processed data (`lib/keyFigures.js`), so they follow new downloads. "How I did this" describes the project (API, Python pipeline, D3 and React, Claude Code and agents), not findings. The data-scientist added the decoupling jumps as findings (§1 bullets 10–11, §2 bullet 6), so the country notes keep their figures; Luxembourg's note now says GDP "stayed about the same" before its change.
+- Applied in: `scripts/lookups/create_dashboard_texts.py`, `create_decoupling_notes.py`, `create_municipal_waste_notes.py`, `dashboard/src/lib/keyFigures.js`, the section components; [communication.md](communication.md) sections 2–4.
+
+**Visual identity "Loop" built for review.**
+- Decision: the brand-designer's identity is applied in full for the user to review: CSS tokens, warm page, hero with the hierarchy pyramid, section headers with a small pyramid icon, chart cards, notes folded under "About this chart", closing panel, restyled charts and hover cards, small-screen layouts. Page texts (hero, ladder, section headings, labels) now come from a new lookup, `dashboard_texts.json`, with the current titles until the copywriter's texts are approved.
+- Applied in: `dashboard/src/index.css`, `components/HierarchyMotif.jsx`, `components/Section.jsx`, `sections/hero/Hero.jsx`, `sections/closing/ClosingPanel.jsx`, the three charts; `scripts/lookups/create_dashboard_texts.py`; [communication.md](communication.md) section 5.
+
+**Poland 2023 is a documented break in method (data-scientist).**
+- Decision: from 2023 Poland's treatment data are reported directly by companies instead of partly estimated (Eurostat country notes; flag `b` on treatment, recycling and landfill). Poland's 2023 rates are not compared with earlier years.
+- Applied in: [findings.md](findings.md) sections 3–5, [method_notes.md](method_notes.md) sections 2 and 7. The count in method notes section 2 was also corrected (40 of 550 country-years without a recycling rate, all outside the EU).
+
+**Distance-to-target chart: hover text in a card.**
+- Decision: hovering a circle shows a small card (flag, country, waste category, recycling rate and distance to the 2025 target) instead of a text label on the chart; it opens above the circle (below it in the first row) and stays inside the chart.
+- Why: the label clashed with circles, lines and row labels and was hard to read; the card matches the bar chart's hover card.
+- Applied in: `DistanceToTargetScatter.jsx` (`HoverCard`), `dashboard/src/index.css` (`.hover-card-small`).
+
+**Irish GDP: claim confirmed, real GDP per person kept for all countries.**
+- Decision: the data-scientist confirmed that Irish GDP per person overstates the growth of the Irish economy (our data: +23.5 % in 2015, EU27 +2.2 %; cause from the Irish Central Statistics Office and the Central Bank of Ireland, cited in findings §2). Real GDP per person stays the measure for all countries, Ireland included; modified GNI (GNI*) exists only for Ireland, so it cannot be compared across Member States. The Irish note under the decoupling chart now uses the checked figure (23.5 %, not "23 %") and names the source.
+- Applied in: [findings.md](findings.md) section 2, [method_notes.md](method_notes.md) section 6, `scripts/lookups/create_decoupling_notes.py`.
+
+**Distance-to-target chart: back to all 8 rows; postponed countries not marked.** (Replaces the two-row trial and the hollow circles decided earlier today.)
+- Decision: the chart shows all 8 rows, with no "show all" button. The countries that postponed a target are drawn like all others; no `postponed_2025` flag.
+- Consequence: texts must not call countries below the target "failing" where they postponed the deadline (method notes §4).
+- Applied in: `DistanceToTargetScatter.jsx`, [method_notes.md](method_notes.md) section 4, [communication.md](communication.md) section 2.
+
+**No single country search for the whole page; fonts from Google Fonts.**
+- Decision: each chart keeps its own search. Fonts: Bricolage Grotesque for headlines, Inter for text and charts, loaded from Google Fonts.
+- Applied in: `dashboard/src/index.css`; [communication.md](communication.md) section 5.
+
+**Decoupling class per country on hold; Irish GDP to be confirmed by the data-scientist.**
+- Applied in: [communication.md](communication.md) section 6.
+
+**Treatment of municipal waste across the hierarchy, and waste per person per day (data-scientist).**
+- Decisions: shares are of waste **generated**, not treated (as the recycling rate, the WFD Art. 11 target and the landfill target), with the remainder kept visible as `unaccounted_pct`. Hierarchy mapping: preparing for re-use = `PRP_REU`; recycling = `RCY_M` + `RCY_C_D` (composting and digestion count as recycling; preparing for re-use kept apart, so it is never counted twice); other recovery = `RCV_E`; disposal = `DSP_I` + `DSP_L_OTH`; prevention has no share. The EU27 preparing-for-re-use share stays empty (8 Member States do not report it). Missing EU27 2023 disposal totals (Latvia has no figure) are estimated with Eurostat's previous-year method, flagged `estimated`, and the rule stops once Eurostat publishes them. Waste per person per day = kg per year / 365, stored as `mw_pc_day` (two decimals) in `municipal_waste.json`.
+- Why: comparable with the targets; nothing double counted; the dashboard reads the figures from files.
+- Applied in: `scripts/interim/env_wasmun.py`, `scripts/processed/municipal_waste_treatment.py` → `data/processed/municipal_waste_treatment.json`, `scripts/processed/municipal_waste.py`; [findings.md](findings.md) sections 1 and 4 (caveats are now section 5); [method_notes.md](method_notes.md) section 2.
+
+**Dashboard colours: waste orange, GDP blue, EU27 ink.**
+- Decision: country bars and the waste line `#d96a2b` (labels `#b2511a`), GDP line `#3b5bdb`, EU27 ink `#1d2b2a` in all charts (bar, diamond), EU27 reference lines `#838b88`. Replaces the blue bars `#5d92f5`, the EU27 navy `#003494` and the earlier dark grey `#333333`, the waste line `#e07b39` and the reference grey `#bdbdbd`.
+- Why: one meaning per colour across the dashboard, a less institutional look, and three of the old colours failed the WCAG 3:1 contrast for graphics (`#e07b39` 2.97, `#5d92f5` 3.05 on white and 2.97 on the page, `#bdbdbd` 1.88).
+- Applied in: `WastePerCapitaBarChart.jsx`, `DecouplingLineChart.jsx`, `DistanceToTargetScatter.jsx`; [communication.md](communication.md) section 5.
+
+**Distance-to-target chart: trial with two rows by default.** (Replaces "all 8 rows" taken earlier today.)
+- Decision: municipal waste and plastic packaging are shown first; a "Show all materials" button opens the other six. If the trial does not work, back to all 8 rows.
+- Applied in: `DistanceToTargetScatter.jsx` (`DEFAULT_ROWS`). The button labels are in the component for now and move to a lookup with the copywriter's texts.
+
+**No COVID-19 explanation in the dashboard.**
+- Decision: the EU27 note under the decoupling chart no longer mentions COVID-19 or its cause.
+- Why: not supported by the findings.
+- Applied in: `scripts/lookups/create_decoupling_notes.py`.
+
+**A data-scientist agent owns the analytical pipeline.**
+- Decision: `.claude/agents/data-scientist.md` is responsible for download, raw, lookups, interim and processed data, and turns "Needs a finding" requests into findings and method notes. First tasks: treatment of municipal waste across the hierarchy, and waste per person per day. The trend of the recycling rate is on hold.
+- Applied in: `.claude/agents/data-scientist.md`, [communication.md](communication.md) section 6.
+
+**Distance-to-target chart: all 8 rows, postponed countries as hollow circles.**
+- Decision: the chart keeps all 8 rows at once. In the municipal waste row, the 8 Member States that postponed the 2025 target are hollow circles, with a legend entry "Deadline postponed" and a hover label (at least 50 % by 2025). The flag comes from a new pipeline lookup. Packaging is not marked until we know which materials each country postponed.
+- Why: a postponed deadline is legal, so missing 55 % in 2023 must not read as a failure.
+- Applied in: [communication.md](communication.md) section 2; to do in [todo.md](todo.md).
+
+**Storyline: the dashboard follows the waste hierarchy.**
+- Decision: hero with a five-step hierarchy ladder; steps without data greyed ("not in this dashboard yet"), not hidden; then waste per person and decoupling (prevention), distance to target (recycling), a closing panel back to the ladder. Section titles are questions.
+- Treatment data across the hierarchy will be added as findings by a data scientist agent, to fill the greyed steps. "Needs a finding" requests from the storyteller and copywriter must say the question, figure, scope, likely source, use and caveats.
+- Why: teaches the hierarchy first and is honest about what the data covers; question titles invite the reader in.
+- Applied in: [communication.md](communication.md) sections 2 and 6; `.claude/agents/data-storyteller.md`, `ux-copywriter.md`.
+
+**Communication has its own document, separate from the findings.**
+- Decision: `docs/communication.md` holds how the dashboard communicates, as it stands now (audience, storyline, key messages, voice and glossary, visual identity, "Needs a finding" requests). `findings.md` stays the only source of facts; key messages point to findings and never restate figures; final texts stay in the lookups; this log records when and why.
+- Why: keeps facts and communication apart, so a figure is changed in one place only, and gives the storyteller, copywriter and designer one shared brief.
+- Applied in: [communication.md](communication.md), the four agents, `CLAUDE.md`, `README.md`.
+
+**Findings-only rule for every dashboard text.**
+- Decision: all agents (and the main session when writing dashboard texts) use only facts in `docs/findings.md`: no general knowledge, no outside sources, no assumed causes, no new figures. A missing figure is a "Needs a finding" request: calculated and added to the findings first, if agreed. The fact-checker marks claims that are true in the data but not in the findings as "not in findings". Only exception: the order and names of the waste hierarchy. The fact-checker may use outside sources to verify the data and the findings (cited with URLs); corrections go into the findings first.
+- Why: the dashboard simplifies for the public; every message must still be traceable to a checked finding.
+- Applied in: the four files in `.claude/agents/`, `CLAUDE.md`.
+
+**Four agents for the dashboard's content and design.**
+- Decision: `.claude/agents/` holds `data-storyteller`, `ux-copywriter`, `brand-designer` and `fact-checker`. They only propose; changes are applied after approval. The dashboard gets its own visual identity (not an institutional brand), and its texts are in English only.
+- Why: the dashboard is for a general public that reads little; it should explain the waste hierarchy and the circular economy through key messages and charts people can play with, without losing accuracy (hence the fact-checker).
+- Applied in: `.claude/agents/`, `CLAUDE.md`.
+
 **Every chart shows its data source and download date.**
 - Decision: a source line under each chart names the Eurostat datasets it uses (linked to the Eurostat data browser), the date Eurostat last updated each one and the date we downloaded it. Built by `scripts/lookups/create_data_sources.py` from the raw catalog, so the dates follow each new download.
 - Why: readers can trace every figure to its source and see how recent it is; figures change when Eurostat revises past years.
