@@ -6,6 +6,25 @@ For data decisions, the full explanation and its consequences are in [method_not
 
 ## 15 November 2026
 
+**Two recycling figures, both kept: the hierarchy follows the EEA, the targets chart follows Eurostat's cei_wm011.**
+- Decision: the pyramid keeps recycling on its own (`RCY_M` + `RCY_C_D`, EU 2023 47.7 %), as the EEA indicator "Waste recycling in Europe" defines and reports it; the recycling-targets chart keeps the recycling rate including preparing for re-use where countries report it (`RCY` / `GEN`, 47.9 %), which equals Eurostat's official cei_wm011 and is the closest published measure to the target (preparing for re-use and recycling together, as the EEA does for targets). The method note already explains the 0.2-point gap ("Recycling, two ways"). This closes the open points on the RCY code and on checking the rate against Eurostat.
+- Why: the user wants the dashboard to be consistent with the EEA; the fact-checker found that it already is.
+- Applied in: [findings.md](findings.md) §4 (new bullet) and §5 (recycling rate bullet); [method_notes.md](method_notes.md#2-municipal-waste-env_wasmun) section 2 and section 7.
+
+**Hero lede: figures first, instruction last.**
+- Decision: "On average, each of us in the EU generates {eu_kg} kg of municipal waste a year, and {landfill} % of the EU's municipal waste still goes to landfill, down from {landfill_2011} % in 2011. Follow your waste down the waste hierarchy, from best to worst for the environment, and find your country."
+- Why: the instruction sat between two figures; ending with it leads into the "Follow your waste" button.
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`HERO["lede"]`).
+
+**"The waste hierarchy" section keeps its texts.**
+- Decision: the section stays a plain explainer, titled "The waste hierarchy", with no question title or key message (copywriter option B); its lede, the "See: …" links, the level explanations and the notes under the pyramid stay as they are.
+- Why: the user preferred the current texts; the section explains the hierarchy rather than answering a question.
+
+**Hero label "Waste in the EU, country by country"; method note updated.**
+- Decision: the hero label "Waste in the EU, from best to worst" becomes "Waste in the EU, country by country" (copywriter option A): "from best to worst" described the pyramid, which has left the hero, and repeated the lede. The method note now refers to "the waste hierarchy section" (not "the top of the page") and to "the line chart" (one line chart). The unused `HIERARCHY["intro"]` is removed. "Municipal waste" stays undefined until "How much waste do we generate?" (user: fine to wait).
+- Open: the two EU recycling figures (47.7 % in the pyramid, 47.9 % in the targets chart): the fact-checker checks how the EEA reports municipal waste recycling (with or without preparing for re-use), and the dashboard will follow the EEA.
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`HERO["eyebrow"]`, `METHOD_NOTE`, `HIERARCHY`); [communication.md](communication.md) section 2.
+
 **Recycling hint: "has your country met the 2025 target".**
 - Decision: the "try this" hint of "Are we recycling enough?" reads "Find your country: has your country met the 2025 target for each type of waste?" instead of "…is it past the dark line, the 2025 target, …".
 - Why: with the new look the target marks no longer read as "the dark line"; the question is about the target, not the mark.

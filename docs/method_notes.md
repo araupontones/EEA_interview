@@ -108,6 +108,8 @@ Composting and digestion count as recycling, as in the Waste Framework Directive
 - Recycling is built from `RCY_M` + `RCY_C_D`, never from `RCY`, because `RCY` includes `PRP_REU` for some countries and years (see "Recycling is measured with the RCY code" above). Preparing for re-use is its own column.
 - Consequence: `recycling_pct` is up to 2.5 points lower than the recycling rate in `recycling_distance_to_target.json` for the countries whose `RCY` includes preparing for re-use (EU27 2023: 47.7 % against 47.9 %). `prep_reuse_pct` + `recycling_pct` is the closest to the municipal target measure (preparing for re-use and recycling).
 - Where `PRP_REU` is reported but `RCY` = `RCY_M` + `RCY_C_D` (e.g. Cyprus, Malta, Slovenia in 2023), the data cannot show whether preparing for re-use is inside `RCY_M`. The amounts are at most 2 thousand tonnes, so the effect is negligible.
+- How the official sources define it: Eurostat's cei_wm011 uses `RCY`, and its metadata says that since Implementing Decision (EU) 2019/1004 "preparing for re-use is also included in recycling" (cei_wm011 metadata, section 4.1); the dataset description still lists only material recycling, composting and anaerobic digestion. The EEA's indicator "Waste recycling in Europe" defines municipal recycling as "material recycling and composting/anaerobic digestion" (source env_wasmun), with no mention of preparing for re-use. The municipal target (WFD Art. 11(2)(c)) covers preparing for re-use and recycling together.
+- Decision (15 November 2026): the hierarchy chart follows the EEA definition (`recycling_pct` = `RCY_M` + `RCY_C_D`, EU 2023 47.7 %, the EEA's published figure). The targets chart follows cei_wm011 (`municipal_waste_rcy_rate` = `RCY` / `GEN`, EU 2023 47.9 %, checked against the Eurostat values), the closest published measure to the target. Consequence: the gap between the two charts is preparing for re-use only (0.2 points for the EU in 2023); the 5.0 % "not in the figures" share includes the small amount prepared for re-use, as it has no EU figure.
 
 **Preparing for re-use is missing for the EU27 and for 8 Member States.**
 - The category was added in 2019; before, it was part of recycling (env_wasmun metadata, section 3.4). Most countries report it from 2020; France from 2016.
@@ -372,8 +374,6 @@ Sources: Eurostat metadata for env_wasmun (https://ec.europa.eu/eurostat/cache/m
 The single list of open data questions. Each item points to the section that explains it. When a decision leads to work (a script, a flag, a chart change), add that task to [todo.md](todo.md), and remove the item here once it is decided and recorded in its section.
 
 Municipal waste (section 2, section 6):
-- [ ] Decide whether the municipal recycling rate uses RCY, RCY_M + RCY_C_D, or RCY_M + RCY_C_D + PRP_REU (section 2).
-- [ ] Check the municipal recycling rate against the official Eurostat rate for a few countries (section 2).
 - [ ] Confirm in the Eurostat metadata the break in series in 2020, for municipal waste and packaging (sections 2 and 3).
 - [ ] Ask the reporters about the jumps in waste per person without a documented cause: Romania 2011 (+17 %), Finland 2022 and 2023 (+17 %, +10 %), Latvia 2015 (+11 %) (section 6).
 - [ ] Ask about the gaps between waste generated and waste treated above 10 % in 2023 (Bulgaria, Cyprus, Estonia, Slovenia, Italy, Croatia; Poland's gap is explained by the 2023 change in method) and Bulgaria's unstable treatment series since 2020 (section 2, treatment).

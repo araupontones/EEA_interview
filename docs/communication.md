@@ -24,7 +24,7 @@ The dashboard follows the waste hierarchy from top to bottom: the reader learns 
 
 1. **Hero and "The waste hierarchy".** The hero asks the question and gives the EU kg per person and the landfill share. The first section shows the waste hierarchy as an inverted pyramid of its five levels (prevention, preparing for re-use, recycling, other recovery, disposal), with the EU27 figure where there is one (findings §4) and each level's explanation beside it; levels with a section link to it, the others are greyed. Prevention shows no figure; preparing for re-use is greyed with no figure (no EU total: 8 Member States do not report it). The share burnt without energy recovery and the share "not in the figures" (with its explanation) are under the pyramid. The pyramid comes back in the closing panel.
 2. **How much waste do we generate?** Waste per person by country: an introduction, not linked to a level of the waste hierarchy (levels between countries are not a ranking of prevention, findings §1 bullet 14).
-3. **Can the economy grow without more waste? (prevention over time).** Decoupling; the Prevention level of the hero's waste hierarchy links here.
+3. **Can the economy grow without more waste? (prevention over time).** Decoupling; the Prevention level of the waste hierarchy section links here.
 4. **Are we recycling enough? (recycling).** Recycling rates against the 2025 targets.
 5. **Back to the waste hierarchy.** A short closing panel: recycling is only halfway up the waste hierarchy, prevention comes first. No new facts.
 6. **Methodological note** and **How I did this**, at the end.

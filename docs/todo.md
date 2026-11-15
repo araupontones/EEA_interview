@@ -2,7 +2,8 @@
 
 ## Next: finish the rebrand
 
-- [ ] "Le Journal" identity merged into `main` (15 November 2026). Still open: texts of the new "The waste hierarchy" section (title, lede and "See:" links are placeholders for the copywriter), choose a name for the dashboard (wordmark slot above the hero), and possibly test a dark hero and closing panel.
+- [ ] Choose a name for the dashboard (wordmark slot above the hero).
+- [ ] Optional: test a dark hero and closing panel.
 
 ## Open data decisions
 

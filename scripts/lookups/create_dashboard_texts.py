@@ -47,17 +47,17 @@ from paths import DIR_LOOKUPS
 OUTPUT = DIR_LOOKUPS / "dashboard_texts.json"
 
 HERO = {
-    "eyebrow": "Waste in the EU, from best to worst",
+    "eyebrow": "Waste in the EU, country by country",
     "title": "Where does our waste go?",
     # lede as parts in reading order: text, and figures set in bold (lib/keyFigures.js fills them)
     "lede": [
         {"text": "On average, each of us in the EU generates "},
         {"figure": "{eu_kg} kg"},
-        {"text": " of municipal waste a year. Follow it down the waste hierarchy, from best to worst "
-                 "for the environment, and find your country. And "},
+        {"text": " of municipal waste a year, and "},
         {"figure": "{landfill} %"},
         {"text": " of the EU's municipal waste still goes to landfill, down from {landfill_2011} % "
-                 "in 2011."},
+                 "in 2011. Follow your waste down the waste hierarchy, from best to worst for the "
+                 "environment, and find your country."},
     ],
     # byline under the lede: author (link to LinkedIn) · publication date (fixed, change it when
     # republishing), and below it the date of the latest Eurostat download (from the data)
@@ -93,8 +93,6 @@ HIERARCHY_STEPS = [
 
 HIERARCHY = {
     "title": "The waste hierarchy: where the EU's municipal waste goes ({year})",
-    "intro": "The waste hierarchy is how the EU ranks what to do with waste, from best to worst "
-             "for the environment.",
     "burnt": "Also disposal: {incineration} % burnt without energy recovery",
     "not_accounted": "Not in the figures: {unaccounted} %",
     "not_accounted_note": (
@@ -219,7 +217,7 @@ METHOD_NOTE = [
      "All figures come from Eurostat, the EU's statistics office: municipal waste (env_wasmun), "
      "packaging recycling (env_waspacr) and GDP per person (nama_10_pc). Each chart names its "
      "sources and the date we downloaded them. Figures in the texts are for 2023, the latest "
-     "year with data for all 27 countries; the line charts go up to 2024."),
+     "year with data for all 27 countries; the line chart goes up to 2024."),
     ("Countries count waste differently.",
      "Czechia, Belgium, Austria, Slovakia and Luxembourg widened their definition to include "
      "similar waste from businesses: their waste per person jumped in one year without more "
@@ -230,8 +228,8 @@ METHOD_NOTE = [
      "they should be checked with the countries."),
     ("Recycling, two ways.",
      "The recycling rate (47.9 % for the EU) also counts some preparing for re-use, as the "
-     "target does. The waste hierarchy at the top of the page shows recycling on its own (47.7 %), with re-use as its own "
-     "level, so nothing is counted twice."),
+     "target does. The waste hierarchy section shows recycling on its own (47.7 %), with "
+     "re-use as its own level, so nothing is counted twice."),
     ("The waste hierarchy figures don't always add up to 100 %.",
      "Each level is a share of the waste generated, like the recycling targets. Some waste "
      "generated shows up in no treatment figure: 5.0 % for the EU, and more than a tenth in "
