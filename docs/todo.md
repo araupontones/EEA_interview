@@ -1,11 +1,15 @@
 # To do
 
-## Next: finish the dashboard (the three charts are built)
+## Next: rebrand the dashboard (with the brand-designer agent)
 
-- [ ] Texts: hero (title, subtitle, brief explanation), the text of each section, the methodological note and "How I did this".
-- [ ] Fonts and text sizes for all charts (now temporary classes in `dashboard/src/index.css`).
-- [ ] Distance-to-target chart: add a note for Cyprus steel packaging, which is empty in the data (published rate 221.5 %).
-- [ ] Publish: on GitHub, Settings → Pages → Source: "GitHub Actions"; check the first deployment.
+- [ ] **Rebrand the dashboard.** Three reviewers said the current look resembles Claude's default style (fonts, colours). Work with the brand-designer agent on a new, distinctive identity: typography, palette, page background, hero and section layout, the waste-hierarchy pyramid, cards, hover cards, buttons and search boxes, the bar chart and the decoupling chart.
+  - **Do not change the recycling rates against targets chart** (`dashboard/src/sections/distance_to_target/DistanceToTargetScatter.jsx`): it works well as it is. Keep its colours (red-yellow-blue scale), marks and layout; at most adapt the font if the new typography requires it.
+  - Keep the rules that still apply: one meaning per colour across the charts, WCAG AA contrast and colour-blind safety, fonts from Google Fonts or system fonts, D3 maths + React rendering, texts from the lookups.
+  - Record the new identity in `docs/communication.md` section 5 and the decision in `docs/decisions.md`.
+
+## Other dashboard tasks
+
+- [ ] Hero, "Not in the figures: 5.0 % ⓘ": decide how to explain it (a short visible line, a pop-up on click, or only in the method note); the ⓘ tooltip is easy to miss and does not work on phones.
 
 ## Open data decisions
 

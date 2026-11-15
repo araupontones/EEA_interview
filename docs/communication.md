@@ -20,17 +20,17 @@ Last updated: 15 November 2026.
 
 ## 2. Storyline
 
-The dashboard follows the waste hierarchy from top to bottom: the reader learns the hierarchy first, then sees the steps the data covers, in the hierarchy's order. Approved on 15 November 2026.
+The dashboard follows the waste hierarchy from top to bottom: the reader learns the hierarchy first, then sees the levels the data covers, in the hierarchy's order. Approved on 15 November 2026.
 
-1. **Hero: the waste hierarchy.** A five-step ladder (prevention, preparing for re-use, recycling, other recovery, disposal) frames the whole dashboard. Each step shows the EU27 figure from the data where there is one (findings §4); steps with a section are links, the others are greyed. Prevention shows no figure; preparing for re-use is greyed with no figure (no EU total: 8 Member States do not report it). "Not in the figures" (waste in no treatment figure) is shown under the waste hierarchy.
-2. **How much waste do we generate?** Waste per person by country: an introduction, not linked to a step of the waste hierarchy (levels between countries are not a ranking of prevention, findings §1 bullet 14).
-3. **Can the economy grow without more waste? (prevention over time).** Decoupling; the Prevention step of the hero's waste hierarchy links here.
+1. **Hero: the waste hierarchy.** An inverted pyramid of its five levels (prevention, preparing for re-use, recycling, other recovery, disposal) frames the whole dashboard. Each level shows the EU27 figure from the data where there is one (findings §4); levels with a section are links, the others are greyed. Prevention shows no figure; preparing for re-use is greyed with no figure (no EU total: 8 Member States do not report it). "Not in the figures" (waste in no treatment figure) is shown under the waste hierarchy.
+2. **How much waste do we generate?** Waste per person by country: an introduction, not linked to a level of the waste hierarchy (levels between countries are not a ranking of prevention, findings §1 bullet 14).
+3. **Can the economy grow without more waste? (prevention over time).** Decoupling; the Prevention level of the hero's waste hierarchy links here.
 4. **Are we recycling enough? (recycling).** Recycling rates against the 2025 targets.
 5. **Back to the waste hierarchy.** A short closing panel: recycling is only halfway up the waste hierarchy, prevention comes first. No new facts.
 6. **Methodological note** and **How I did this**, at the end.
 
 - **Section titles are questions** (e.g. "How much do we throw away?"), worded by the ux-copywriter.
-- **Treatment data will fill the greyed steps.** How municipal waste is treated across the hierarchy (recycling, composting, preparing for re-use, energy recovery, landfill) will be added as findings by a data scientist agent; until then those steps stay greyed. See section 6.
+- **Treatment data across the waste hierarchy** comes from findings §4 (data-scientist): each level of the pyramid shows its EU27 figure where there is one.
 - Every chart invites the reader to find their own country and compare it with the EU27.
 - **Distance to target shows all 8 rows** at once (a trial with two rows and a "show all" button was rejected).
 - **Postponed deadlines are not marked in the chart.** Texts about the chart must not call the countries below the target "failing": where relevant, say that some postponed the deadline (findings §3; method notes §4).
@@ -42,7 +42,7 @@ Approved on 15 November 2026 (ux-copywriter's wording; figures are filled from t
 
 | Section | Key message | From findings | Caveat to keep | What to notice or try |
 |---|---|---|---|---|
-| Hero | On average, each of us in the EU generates {eu_kg} kg of municipal waste a year; follow it down the waste hierarchy | §1 bullet 1; §4 bullets 1–2 and 7 | "Not in the figures" shown on its own; re-use greyed, no figure | The ladder steps, then find your country |
+| Hero | On average, each of us in the EU generates {eu_kg} kg of municipal waste a year; follow it down the waste hierarchy | §1 bullet 1; §4 bullets 1–2 and 7 | "Not in the figures" shown on its own; re-use greyed, no figure | The levels of the waste hierarchy, then find your country |
 | How much waste do we generate? | Where you live makes a big difference: waste generation per person in {max_country} is {ratio} times that of {min_country} (among Member States without a change in definition) | §1 bullets 1, 2 and 12 | Countries count differently, also in the same year (§1 bullets 4–5 and 13) | Is your country above or below the EU27 bar? |
 | Can the economy grow without more waste? | Mostly yes: the EU economy grew much faster than its waste; in {n_absolute} countries waste fell while the economy grew | §2 bullets 1–2 | Counting changes (§1 bullets 4–6, 10–11; §2 bullet 6); Irish GDP (§2 bullet 5) | Search for the Netherlands; a country against the grey EU27 lines |
 | Are we recycling enough? | Ahead on packaging, still short on municipal waste and plastic | §3 municipal bullet 1, packaging bullets 1–2 | Not "failing": two years left, postponements (§3; §5); Poland's change in method (§4) | Your country across 8 rows; the plastic row |
@@ -86,12 +86,12 @@ Proposed by the brand-designer ("Loop": warm paper background, deep green-black 
   - Economy (GDP): blue `#3b5bdb`.
   - EU27: ink `#1d2b2a` (bar, diamond, bold label); EU27 reference lines behind a country: grey `#838b88`.
   - Distance to target: d3 RdYlBu kept (red–orange below target, blue target met).
-- **Hierarchy steps without data** are shown in grey.
+- **Levels of the waste hierarchy without a section** are shown in grey.
 - **Fonts (Google Fonts)**: Bricolage Grotesque (700, 800) for headlines; Inter (400–600, tabular numbers) for text, interface and charts.
 - **Rest of the identity, built for review (15 November 2026)**, as proposed by the brand-designer:
   - Page: warm paper background `#fbf8f3`, ink `#1d2b2a`, muted ink `#55625f`, tint `#eef4f0` (hero and end matter), highlight `#dcefe3`; CSS tokens on `:root` in `dashboard/src/index.css`.
-  - Hero on a tint panel: eyebrow, headline, lede, "start exploring" button, and the waste hierarchy as a large inverted pyramid of stacked trapezoids, each step narrower than the one above (steps with a section are white links that turn mint on hover; the others are greyed; no arrow). Under it: the share burnt without energy recovery (also disposal) and the share "not in the figures". Key-number cards wait for the copywriter's texts.
-  - Sections: small pyramid icon with the section's step in mint, eyebrow, title, lede and "try this" chip (pale mint) (from `dashboard_texts.json`); the chart in a white card; notes folded under "About this chart" (the decoupling note of the selected country stays visible); sources under the card.
+  - Hero on a tint panel: eyebrow, headline, lede, "start exploring" button, and the waste hierarchy as a large inverted pyramid of stacked trapezoids, each level narrower than the one above (levels with a section are white links that turn mint on hover; the others are greyed; no arrow). Under it: the share burnt without energy recovery (also disposal) and the share "not in the figures". Key-number cards wait for the copywriter's texts.
+  - Sections: small pyramid icon with the section's level in mint, eyebrow, title, lede and "try this" chip (pale mint) (from `dashboard_texts.json`); the chart in a white card; notes folded under "About this chart" (the decoupling note of the selected country stays visible); sources under the card.
   - Closing panel with the pyramid; methodological note and "how I did this" on tint panels.
   - Charts: warm grid `#e6e1d8`; ink baseline and target ticks; 3 px rounded lines with a short fade when the country changes; beeswarm circles with a thin ink outline, a soft track per row and white halos on labels; rounder hover cards with 32 px flags; pill search boxes with a mint focus ring.
   - Small screens: one column; the beeswarm puts row labels above the rows, the decoupling chart drops line-end labels, the bar chart narrows its label column.
@@ -112,7 +112,7 @@ Figures or facts the communication would need that are not in `findings.md` yet.
 
 | Requested by | What is needed | Status |
 |---|---|---|
-| data-storyteller | **Treatment of municipal waste across the hierarchy.** Question: what happens to the EU's municipal waste? Figure: shares of municipal waste generated that are prepared for re-use, recycled (material), composted and digested, incinerated with energy recovery, incinerated without, and landfilled, in % (each / generated). Scope: EU27 and each Member State, 2023, and the EU27 trend since 2011. Likely source: `env_wasmun` (`wst_oper` codes such as `PRP_REU`, `RCY_M`, `RCY_C_D`, `RCV_E`, `DSP_I`, `DSP_L_OTH`). Used for: the greyed steps of the hero ladder. Caveats: RCY sometimes includes PRP_REU (method notes §2); breaks in series; treatment can differ from generation (temporary storage). | Done: findings §4 (treatment) |
+| data-storyteller | **Treatment of municipal waste across the hierarchy.** Question: what happens to the EU's municipal waste? Figure: shares of municipal waste generated that are prepared for re-use, recycled (material), composted and digested, incinerated with energy recovery, incinerated without, and landfilled, in % (each / generated). Scope: EU27 and each Member State, 2023, and the EU27 trend since 2011. Likely source: `env_wasmun` (`wst_oper` codes such as `PRP_REU`, `RCY_M`, `RCY_C_D`, `RCV_E`, `DSP_I`, `DSP_L_OTH`). Used for: the greyed levels of the waste hierarchy in the hero. Caveats: RCY sometimes includes PRP_REU (method notes §2); breaks in series; treatment can differ from generation (temporary storage). | Done: findings §4 (treatment) |
 | data-storyteller | **Waste per person per day.** EU27 and each Member State, 2023, = kg per person per year / 365, for a human-scale headline. Source: findings §1 (kg per person). | Done: findings §1, last bullet |
 | data-storyteller | **Trend of the EU27 municipal recycling rate** since 2011 (or 2020, given the break). | On hold |
 | data-storyteller | **Decoupling class per Member State** (absolute, relative, none), 2023. | On hold |
