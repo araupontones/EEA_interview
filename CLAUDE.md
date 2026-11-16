@@ -1,4 +1,4 @@
-# Project: EEA waste data
+# Project: Waste in the EU
 
 Explores the data of the EEA's Waste Data Reporting (WDR) cycle: downloads Eurostat waste datasets, builds indicators, checks them, and calculates each country's distance to the EU recycling targets. The processed data feeds a dashboard to be built with D3 and React.
 

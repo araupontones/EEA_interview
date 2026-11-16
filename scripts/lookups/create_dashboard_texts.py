@@ -395,7 +395,7 @@ HOW_I_DID_THIS = [
 # links at the end of "How I did this"
 HOW_I_DID_THIS_LINKS = [
     {"text": "See the code and the project notes",
-     "url": "https://github.com/araupontones/EEA_interview"},
+     "url": "https://github.com/araupontones/waste_management"},
     {"text": "Connect with me on LinkedIn",
      "url": "https://www.linkedin.com/in/andr%C3%A9s-arau-017b1127/"},
 ]

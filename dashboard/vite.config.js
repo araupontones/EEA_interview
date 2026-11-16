@@ -8,8 +8,8 @@ const DATA_DIR = fileURLToPath(new URL("../data", import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
-  // GitHub Pages serves the site under the repository name: https://<user>.github.io/EEA_interview/
-  base: "/EEA_interview/",
+  // GitHub Pages serves the site under the repository name: https://<user>.github.io/waste_management/
+  base: "/waste_management/",
   resolve: {
     // import data with "@data/processed/<file>.json" or "@data/lookups/<file>.json"
     alias: { "@data": DATA_DIR },

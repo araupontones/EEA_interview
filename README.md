@@ -1,4 +1,4 @@
-# EEA waste data
+# Waste in the EU
 
 This project explores the data used in the EEA's Waste Data Reporting (WDR) cycle and replicates part of the data cycle from Eurostat's published data: it downloads Eurostat waste datasets, builds indicators, checks them, and calculates each country's distance to the 2025 recycling target levels. The outputs feed a dashboard. It does not use reporters' submissions and is not a compliance check: the rates are Eurostat's published rates, not the figures used to assess the targets.
 
@@ -151,7 +151,7 @@ Shared pieces are in `dashboard/src/components/`: `Section.jsx` (anchor and head
 
 The processed files are the dashboard's data contract: renaming a column or a file breaks the dashboard, so change `data.js` and the charts at the same time.
 
-**Publishing.** Every push to `main` that changes `dashboard/`, `data/processed/` or `data/lookups/` runs [.github/workflows/deploy-dashboard.yml](.github/workflows/deploy-dashboard.yml), which builds the app and publishes it on GitHub Pages. It can also be started by hand from the Actions tab. The built files (`dashboard/dist/`) and `node_modules/` are not committed. One-time setup on GitHub: Settings → Pages → Source: **GitHub Actions**. The site is served at `https://<user>.github.io/EEA_interview/` (set as `base` in `vite.config.js`); GitHub Pages is public, whatever the visibility of the repository.
+**Publishing.** Every push to `main` that changes `dashboard/`, `data/processed/` or `data/lookups/` runs [.github/workflows/deploy-dashboard.yml](.github/workflows/deploy-dashboard.yml), which builds the app and publishes it on GitHub Pages. It can also be started by hand from the Actions tab. The built files (`dashboard/dist/`) and `node_modules/` are not committed. One-time setup on GitHub: Settings → Pages → Source: **GitHub Actions**. The site is served at `https://<user>.github.io/waste_management/` (set as `base` in `vite.config.js`); GitHub Pages is public, whatever the visibility of the repository.
 
 ## Common tasks
 
