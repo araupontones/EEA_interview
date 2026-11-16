@@ -71,6 +71,9 @@ HERO = {
         "url": "https://www.linkedin.com/in/andr%C3%A9s-arau-017b1127/",
         "date": "15 November 2026",
         "data_note": "Data downloaded from Eurostat on {download_date}",
+        # reviewer feedback, 16 November 2026: say plainly what the page is not
+        "disclaimer": "An independent learning exercise built from Eurostat data. Not an EEA "
+                      "or European Commission product.",
     },
     "cta": "Follow your waste",
 }
@@ -148,11 +151,15 @@ SECTIONS = {
     "distance-to-target": {
         "eyebrow": "Recycling",
         "title": "Are we recycling enough?",
-        "key_message": "The EU already beats its 2025 target for packaging, but is still short "
-                       "for municipal waste and plastic.",
-        "lede": "Each dot is a country in {target_year}, two years before the deadline. Blue dots have "
-                "reached the 2025 target; red and orange dots are still below it.",
-        "try": "Find your country: has your country met the 2025 target for each type of waste?",
+        # reviewer feedback, 16 November 2026: no compliance wording ("reached", "beats");
+        # targets bind Member States, not the EU; Eurostat rates are not compliance figures
+        "key_message": "The EU-wide packaging rate is already above the 2025 target level, but "
+                       "the rates for municipal waste and plastic are still below it.",
+        "lede": "Each dot is a country's Eurostat recycling rate in {target_year}, two years before "
+                "the deadline. Blue dots are at or above the 2025 target level; red and orange dots "
+                "are below it.",
+        "try": "Find your country: is it at or above the 2025 target level for each type of "
+               "waste?",
         "step": "recycling",
     },
     # sankey of where the waste generated per person goes (sections/waste_treatment/)
@@ -194,7 +201,7 @@ DISTANCE_TO_TARGET = {
                   "2025 targets",
     "legend": {
         "below": "Below the 2025 target",
-        "met": "Target reached",
+        "met": "Target reached",  # kept short (user, 16 November 2026); the lede gives the caveat
         "axis": "Points below or above the target",
         "target": "2025 target",
         "eu": "EU27",
@@ -208,7 +215,9 @@ DISTANCE_TO_TARGET = {
     "notes": [
         "Below the target in 2023 doesn't mean failing. Countries still had two years to go, "
         "and 8 countries postponed the municipal waste deadline (they must reach at least 50% "
-        "by 2025). 7 postponed some packaging materials; which ones is not known yet.",
+        "by 2025). 8 countries postponed some packaging materials: Czechia (aluminium), "
+        "Greece, Croatia and Hungary (plastic and glass), Luxembourg (plastic), Portugal "
+        "(aluminium and glass), Sweden (glass) and Malta.",
         "Poland changed how it measures in 2023: its treatment figures are now reported "
         "directly by companies instead of being partly estimated. Its recycling rate fell from "
         "40.9% to 27.6% while its waste stayed the same, so 2023 cannot be compared with "
@@ -314,8 +323,9 @@ WASTE_TREATMENT = {
 CLOSING = {
     "eyebrow": "Back to the waste hierarchy",
     "title": "Recycling is only halfway up the waste hierarchy",
-    "text": "The EU recycles almost half of its municipal waste. It beats its packaging target "
-            "but is still short for municipal waste and plastic. And the top of the waste hierarchy is generating less waste in the first place, and there the EU "
+    "text": "The EU recycles almost half of its municipal waste. Its EU-wide packaging rate is "
+            "above the 2025 target level, but the rates for municipal waste and plastic are still "
+            "below it. And the top of the waste hierarchy is generating less waste in the first place, and there the EU "
             "has hardly moved: about {eu_kg} kg per person, much as in 2011.",
     "cta": "Back to the top",
 }
@@ -333,8 +343,9 @@ METHOD_NOTE = [
      "waste being generated. Estonia and Slovenia added other waste, which partly explains "
      "their jumps. The EU figure includes these jumps."),
     ("Some jumps have no known cause.",
-     "Romania (2011), Finland (2022) and Latvia (2015) show large jumps that are not explained; "
-     "they should be checked with the countries."),
+     "Waste per person fell sharply in Romania (2011) and Finland (2022 and 2023), and rose "
+     "sharply in Latvia (2015). These changes are not explained; they should be checked with "
+     "the countries."),
     ("Recycling, two ways.",
      "The recycling rate (47.9% for the EU) also counts some preparing for re-use, as the "
      "target does. The waste hierarchy, and the chart of where each person's waste ends "
@@ -349,7 +360,7 @@ METHOD_NOTE = [
     ("Targets.",
      "The 2025 recycling targets are set by EU law: 55% for municipal waste (Waste Framework "
      "Directive) and 65% for all packaging, with separate targets per material (Packaging and "
-     "Packaging Waste Regulation). 2023 is a snapshot two years before the deadline, and some "
+     "Packaging Waste Directive, now carried over by the new Packaging Regulation). 2023 is a snapshot two years before the deadline, and some "
      "countries legally postponed it."),
     ("The economy.",
      "GDP per person is adjusted for inflation (2020 prices). Ireland's GDP is pushed up by multinational "

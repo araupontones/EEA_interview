@@ -34,6 +34,7 @@ export default function Hero() {
               · {hero.byline.date}
             </p>
             <p className="byline-data">{fill(hero.byline.data_note)}</p>
+            {hero.byline.disclaimer && <p className="byline-data">{hero.byline.disclaimer}</p>}
           </div>
         )}
         {FIRST_SECTION && (

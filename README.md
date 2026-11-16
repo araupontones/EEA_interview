@@ -1,6 +1,8 @@
 # EEA waste data
 
-This project explores the data used in the EEA's Waste Data Reporting (WDR) cycle and covers the full data cycle: it downloads Eurostat waste datasets, builds indicators, checks them, and calculates each country's distance to the EU recycling targets. The outputs feed a dashboard.
+This project explores the data used in the EEA's Waste Data Reporting (WDR) cycle and replicates part of the data cycle from Eurostat's published data: it downloads Eurostat waste datasets, builds indicators, checks them, and calculates each country's distance to the 2025 recycling target levels. The outputs feed a dashboard. It does not use reporters' submissions and is not a compliance check: the rates are Eurostat's published rates, not the figures used to assess the targets.
+
+> An independent learning exercise built from Eurostat data. Not an EEA or European Commission product.
 
 The project notebook is the [docs/](docs/) folder:
 - **Method notes**: what each indicator means, decisions taken and their consequences, and the open data questions are in [docs/method_notes.md](docs/method_notes.md). Read it before using the data.

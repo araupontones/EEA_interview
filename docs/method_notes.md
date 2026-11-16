@@ -34,7 +34,7 @@ Eurostat env_wasmun metadata (https://ec.europa.eu/eurostat/cache/metadata/en/en
 
 Consequence: the metadata does not state that all Member States now apply the definition in the same way, so levels in one year are not fully comparable between countries (findings, section 1). The countries that widened their definition after 2011 are listed in section 6 ("Breaks in series in waste per person").
 
-**Ratio between the highest and lowest waste per person.** Computed for 2023 among the Member States with no `break_year` in `data/lookups/decoupling_notes.json` (19 of 27; leaves out CZ, BE, AT, SK, LU, EE, SI, IE): Denmark 759 kg / Romania 305 kg = 2.5. Across all 27 the ratio is 2.6 (Austria / Romania), but Austria's level includes its 2020 widening of the definition. Romania (undocumented +17 % jump in 2011, no break year) stays in. The dashboard computes the ratio the same way from the data.
+**Ratio between the highest and lowest waste per person.** Computed for 2023 among the Member States with no `break_year` in `data/lookups/decoupling_notes.json` (19 of 27; leaves out CZ, BE, AT, SK, LU, EE, SI, IE): Denmark 759 kg / Romania 305 kg = 2.5. Across all 27 the ratio is 2.6 (Austria / Romania), but Austria's level includes its 2020 widening of the definition. Romania (undocumented −17 % fall in 2011, no break year) stays in. The dashboard computes the ratio the same way from the data.
 
 ### Indicators
 
@@ -223,18 +223,21 @@ Targets are recycling rates in %, in the same format as the data. Values checked
 | Waste category | 2025 | 2030 | Source |
 |---|---|---|---|
 | Municipal waste | 55 | 60 | Waste Framework Directive 2008/98/EC, Art. 11(2)(c) and (d), as amended by Directive (EU) 2018/851 (preparing for re-use and recycling) |
-| Packaging (all) | 65 | 70 | Packaging and Packaging Waste Regulation (EU) 2025/40, Art. 52 |
-| Plastic packaging | 50 | 55 | Regulation (EU) 2025/40, Art. 52 |
-| Wooden packaging | 25 | 30 | Regulation (EU) 2025/40, Art. 52 |
-| Steel packaging | 70 | 80 | Regulation (EU) 2025/40, Art. 52 (target for ferrous metals) |
-| Aluminium packaging | 50 | 60 | Regulation (EU) 2025/40, Art. 52 |
-| Glass packaging | 70 | 75 | Regulation (EU) 2025/40, Art. 52 |
-| Paper and cardboard packaging | 75 | 85 | Regulation (EU) 2025/40, Art. 52 |
+| Packaging (all) | 65 | 70 | Packaging and Packaging Waste Directive 94/62/EC, Art. 6(1)(f) and (h), as amended by Directive (EU) 2018/852 |
+| Plastic packaging | 50 | 55 | Directive 94/62/EC, Art. 6(1)(g) and (i) |
+| Wooden packaging | 25 | 30 | Directive 94/62/EC, Art. 6(1)(g) and (i) |
+| Steel packaging | 70 | 80 | Directive 94/62/EC, Art. 6(1)(g) and (i) (target for ferrous metals) |
+| Aluminium packaging | 50 | 60 | Directive 94/62/EC, Art. 6(1)(g) and (i) |
+| Glass packaging | 70 | 75 | Directive 94/62/EC, Art. 6(1)(g) and (i) |
+| Paper and cardboard packaging | 75 | 85 | Directive 94/62/EC, Art. 6(1)(g) and (i) |
 | Metallic packaging | none | none | No EU target (only ferrous metals and aluminium have targets) |
 | Other packaging | none | none | No EU target |
 
+The 2025 packaging targets were set by Directive 94/62/EC as amended by Directive (EU) 2018/852 (Art. 1(5)(a)), and are cited from it. Regulation (EU) 2025/40 (PPWR) carries the same 2025 and 2030 targets over in Art. 52(1) and repeals the Directive from 12 August 2026 (Art. 70(1)). Articles checked on 16 November 2026 against the Publications Office texts (CELEX 32018L0852, 32025R0040), after reviewer feedback that the PPWR citation was a weak reference for 2025.
+
 Legal texts:
 - Waste Framework Directive, consolidated text: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008L0098-20240218
+- Directive (EU) 2018/852, amending Directive 94/62/EC: https://eur-lex.europa.eu/eli/dir/2018/852/oj/eng
 - Regulation (EU) 2025/40: https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng
 
 ### Decisions and consequences
@@ -266,30 +269,34 @@ Only Member States that prepared for re-use and recycled less than 20 %, or land
 | RO | Romania |
 | SK | Slovakia |
 
-**Packaging, material-specific targets (Directive 94/62/EC, Art. 6(6); continued in Regulation (EU) 2025/40).**
-All 27 Member States could postpone. The deviation is limited to 15 percentage points from one target, or split between two targets. 7 Member States notified a postponement of the 2025 material-specific targets:
+**Packaging, material-specific targets (Directive 94/62/EC, Art. 6(1a), inserted by Directive (EU) 2018/852; continued in Regulation (EU) 2025/40, Art. 52(2)).**
+All 27 Member States could postpone the deadlines of the material-specific targets by up to five years. The deviation is limited to 15 percentage points from one target, or split between two targets, and needs an implementation plan (Annex IV of the Directive; Annex XI of the Regulation). The postponement does not apply to the target for all packaging (65 %). 8 Member States notified a postponement of the 2025 material-specific targets:
 
-| Code | Country |
-|---|---|
-| CZ | Czechia |
-| EL | Greece |
-| HR | Croatia |
-| LU | Luxembourg |
-| MT | Malta |
-| PT | Portugal |
-| SE | Sweden |
+| Code | Country | Materials postponed | New deadline |
+|---|---|---|---|
+| CZ | Czechia | Aluminium (also the 2030 aluminium target) | 2030 (2035 for the 2030 target) |
+| EL | Greece | Plastic, glass | 2030 |
+| HR | Croatia | Plastic, glass | 2030 |
+| HU | Hungary | Plastic, glass | 2030 |
+| LU | Luxembourg | Plastic | 2028 |
+| MT | Malta | Not known | Not known |
+| PT | Portugal | Aluminium, glass | 2030 |
+| SE | Sweden | Glass | 2028 |
 
-The postponement applies to material-specific targets only, not to the target for all packaging (65 %). The source does not say which materials each Member State postponed.
+No source gives the number of percentage points each country deviates by.
 
-In total 12 Member States postponed at least one target; Greece, Croatia and Malta postponed both.
+In total 12 Member States postponed at least one target; Greece, Croatia, Hungary and Malta postponed both the municipal and some packaging targets.
 
-Source for the lists: European Court of Auditors, Special Report 23/2025 "Municipal waste management", paragraph 31 and footnotes 11 and 12 (https://www.eca.europa.eu/ECAPublications/SR-2025-23/SR-2025-23_EN.pdf). The Commission's 2023 early warning report (COM(2023) 304) found 23 Member States at risk of missing at least one 2025 target, so not every Member State at risk used the option to postpone.
+Sources:
+- Municipal waste list, and packaging list without Hungary: European Court of Auditors, Special Report 23/2025 "Municipal waste management", paragraph 31 and footnotes 11 and 12 (https://www.eca.europa.eu/ECAPublications/SR-2025-23/SR-2025-23_EN.pdf).
+- Materials and new deadlines, and Hungary: EEA, "Municipal and packaging waste management country profiles 2025", one PDF per country (https://www.eea.europa.eu/en/topics/in-depth/waste-and-recycling/municipal-and-packaging-waste-management-country-profiles-2025), e.g. Hungary p. 7: "Hungary has decided to postpone the deadlines for meeting the 2025 targets for municipal waste, glass packaging and plastic packaging by 5 years". The profiles cite "EC, 2024, Postponement of the recycling targets of Directive 2008/98/EC and 94/62/EC as notified by EU Member States", information sent by the Commission to the EEA on 16 May 2024. Added on 16 November 2026 after reviewer feedback that the profiles name the materials and that Hungary was missing.
+- The two sources differ: the ECA lists Hungary only for municipal waste, and lists Malta for packaging; the EEA profiles name packaging materials for Hungary and none for Malta, and have no postponement sentence for Lithuania. We follow the EEA profiles for the materials and keep both lists. The Commission's 2023 early warning report (COM(2023) 304) and its country staff working documents do not name any country's postponement. The early warning report found 23 Member States at risk of missing at least one 2025 target, so not every Member State at risk used the option to postpone.
 
 Consequences for the dashboard:
 - **Decision (15 November 2026): the distance-to-target chart does not mark the countries that postponed a target.** All countries are drawn the same way against the 2025 target, and there is no `postponed_2025` flag in the lookups. Hollow circles for the 8 Member States that postponed the municipal waste target were considered and rejected by the user.
 - Consequence: in the chart, these countries look as if they miss the 2025 target, although a postponed deadline is legal. Texts about the chart must not call them failing: where a text speaks of countries below the 2025 target, it should say that some postponed the deadline (findings, section 3).
 - For municipal waste, these 8 countries must still reach at least 50 % by 2025.
-- For packaging, we do not know which materials each country postponed.
+- For packaging, the postponed materials are known for 7 of the 8 countries (not Malta). Of those with 2023 data, all are below the 2025 target level for the materials they postponed, except Sweden for glass (findings, section 3).
 
 ## 5. GDP per person (nama_10_pc)
 
@@ -356,8 +363,8 @@ The five EU countries whose definition widened to include waste from businesses:
 | Estonia | 2014 | +22 % (293 to 357 kg) | Packaging waste included from 2014 (not until 2013); also more mixed municipal waste and more separate collection in bigger towns. Before the break (2013): waste index 97.3, GDP index 106.3. | Yes |
 | Slovenia | 2013 | +14 % (362 to 414 kg) | Waste from special waste collectors included from 2013, not in earlier years. Before the break (2012): waste index 87.2, GDP index 96.9 (both fell, so no decoupling class applies). | Yes |
 | Ireland | 2014 | no 2013 figure | "The break in time series for 2014 (Generation) data is because of an improved methodology for estimating unmanaged household waste." Ireland also has no figure for 2015; the annex does not explain the missing years. 2012: 585 kg, 2014: 562 kg. | Yes, in the Irish note |
-| Romania | 2011 | +17 % | Nothing documented for 2011 (the annex mentions a change in method from 2010). | No |
-| Finland | 2022, 2023 | +17 %, +10 % | Nothing documented. | No |
+| Romania | 2011 | −17 % (313 to 259 kg) | Nothing documented for 2011 (the annex mentions a change in method from 2010). | No |
+| Finland | 2022, 2023 | −17 %, −10 % (630 to 522 to 468 kg) | Nothing documented. | No |
 | Latvia | 2015 | +11 % | Nothing documented for waste generated. | No |
 | Poland 2013 and 2014, Portugal 2015, Greece 2020, Sweden 2020 and 2024, France 2024, Ireland 2020 | | below 10 % (Poland -6 % and -8 %, Sweden 2024 +9 %, others under 5 %) | Break flags; small effect on the trend. | No |
 
@@ -382,7 +389,7 @@ The single list of open data questions. Each item points to the section that exp
 
 Municipal waste (section 2, section 6):
 - [ ] Confirm in the Eurostat metadata the break in series in 2020, for municipal waste and packaging (sections 2 and 3).
-- [ ] Ask the reporters about the jumps in waste per person without a documented cause: Romania 2011 (+17 %), Finland 2022 and 2023 (+17 %, +10 %), Latvia 2015 (+11 %) (section 6).
+- [ ] Ask the reporters about the jumps in waste per person without a documented cause: Romania 2011 (−17 %), Finland 2022 and 2023 (−17 %, −10 %), Latvia 2015 (+11 %) (section 6).
 - [ ] Ask about the gaps between waste generated and waste treated above 10 % in 2023 (Bulgaria, Cyprus, Estonia, Slovenia, Italy, Croatia; Poland's gap is explained by the 2023 change in method) and Bulgaria's unstable treatment series since 2020 (section 2, treatment).
 
 Packaging (section 3):
@@ -390,8 +397,8 @@ Packaging (section 3):
 - [ ] Confirm with the reporters the rates above 100 % (Slovenia glass, aluminium, steel and metallic; Poland steel), and decide whether to flag them in the dashboard.
 
 Targets and postponements (section 4):
-- [ ] Find which packaging materials each of the 7 Member States postponed (Commission notifications or implementation plans).
-- [ ] Check in the legal texts the conditions for postponement (Waste Framework Directive Art. 11(3), Directive 94/62/EC Art. 6(6)), and whether postponements notified under Directive 94/62/EC carry over unchanged under Regulation (EU) 2025/40.
+- [ ] Find which packaging materials Malta postponed, and confirm whether Hungary postponed packaging targets (the ECA and the EEA profiles disagree) (section 4).
+- [ ] Check in the legal texts the conditions for postponement (Waste Framework Directive Art. 11(3), Directive 94/62/EC Art. 6(1a)), and whether postponements notified under Directive 94/62/EC carry over unchanged under Regulation (EU) 2025/40.
 
 Data download (section 1):
 - [ ] Consider keeping the Eurostat flags (`b` break, `e` estimate, `p` provisional) in the raw download, so breaks can be found in the data rather than in the metadata.

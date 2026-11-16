@@ -6,6 +6,13 @@ For data decisions, the full explanation and its consequences are in [method_not
 
 ## 16 November 2026
 
+**Reviewer feedback before Thursday: no compliance wording, a disclaimer, postponed materials, sign errors.**
+- Decision (user, from a reviewer's feedback): the rates are Eurostat's published rates, not compliance figures, so texts say "at or above the 2025 target level", never "beats"; the chart legend keeps the short "Target reached" (user), and the lede says the dots are Eurostat rates (a sentence saying it is "not an official check" was dropped as redundant, user); for the EU, "the EU-wide rate", since the targets bind Member States. The hero and README say "An independent learning exercise built from Eurostat data. Not an EEA or European Commission product." The README says the project "replicates part of the data cycle from Eurostat's published data", not "the full data cycle".
+- Packaging postponements: 8 Member States, not 7 (Hungary added, plastic and glass), with the materials named for 7 of them (Malta not known), from the EEA country profiles 2025; the ECA list is kept as a second source, as the two disagree on Hungary. New finding: every postponed material with 2023 data is below its 2025 level, except Sweden's glass.
+- Packaging targets are cited from Directive 94/62/EC Art. 6(1)(f)–(g) as amended by Directive (EU) 2018/852, which set the 2025 targets; Regulation (EU) 2025/40 Art. 52 is named as carrying them over. The postponement clause is Art. 6(1a), not 6(6).
+- Sign errors fixed: Finland 2022 and 2023 (−17 %, −10 %) and Romania 2011 (−17 %) are falls, not rises.
+- Applied in: `create_dashboard_texts.py` (hero byline, `distance-to-target` texts, legend, chart note, closing, method note), `Hero.jsx`, `create_recycling_targets.py`, `create_data_sources.py`, README; [findings.md](findings.md) §1, §3; [method_notes.md](method_notes.md#4-recycling-targets) sections 4, 6, 7; [communication.md](communication.md) sections 3–4.
+
 **No space between a number and %.**
 - Decision (user): every percentage on the page is written "47.9%", not "47.9 %". Applied to all texts in the lookups; the chart code already wrote "%" without a space. The UK number style rule in communication.md now says so.
 - Applied in: `scripts/lookups/create_dashboard_texts.py`, `create_decoupling_notes.py`; [communication.md](communication.md) section 4.

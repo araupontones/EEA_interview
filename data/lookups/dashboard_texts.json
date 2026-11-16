@@ -23,7 +23,8 @@
       "author": "Andrés Arau",
       "url": "https://www.linkedin.com/in/andr%C3%A9s-arau-017b1127/",
       "date": "15 November 2026",
-      "data_note": "Data downloaded from Eurostat on {download_date}"
+      "data_note": "Data downloaded from Eurostat on {download_date}",
+      "disclaimer": "An independent learning exercise built from Eurostat data. Not an EEA or European Commission product."
     },
     "cta": "Follow your waste"
   },
@@ -99,9 +100,9 @@
     "distance-to-target": {
       "eyebrow": "Recycling",
       "title": "Are we recycling enough?",
-      "key_message": "The EU already beats its 2025 target for packaging, but is still short for municipal waste and plastic.",
-      "lede": "Each dot is a country in {target_year}, two years before the deadline. Blue dots have reached the 2025 target; red and orange dots are still below it.",
-      "try": "Find your country: has your country met the 2025 target for each type of waste?",
+      "key_message": "The EU-wide packaging rate is already above the 2025 target level, but the rates for municipal waste and plastic are still below it.",
+      "lede": "Each dot is a country's Eurostat recycling rate in {target_year}, two years before the deadline. Blue dots are at or above the 2025 target level; red and orange dots are below it.",
+      "try": "Find your country: is it at or above the 2025 target level for each type of waste?",
       "step": "recycling"
     },
     "waste-treatment": {
@@ -149,7 +150,7 @@
       "on": "Right on the 2025 target of {target}%"
     },
     "notes": [
-      "Below the target in 2023 doesn't mean failing. Countries still had two years to go, and 8 countries postponed the municipal waste deadline (they must reach at least 50% by 2025). 7 postponed some packaging materials; which ones is not known yet.",
+      "Below the target in 2023 doesn't mean failing. Countries still had two years to go, and 8 countries postponed the municipal waste deadline (they must reach at least 50% by 2025). 8 countries postponed some packaging materials: Czechia (aluminium), Greece, Croatia and Hungary (plastic and glass), Luxembourg (plastic), Portugal (aluminium and glass), Sweden (glass) and Malta.",
       "Poland changed how it measures in 2023: its treatment figures are now reported directly by companies instead of being partly estimated. Its recycling rate fell from 40.9% to 27.6% while its waste stayed the same, so 2023 cannot be compared with earlier years.",
       "The municipal waste rate includes composting and, for some countries, preparing things for re-use.",
       "Some packaging rates are above 100% (Slovenia, Poland), which makes them look further above the target than they are. Cyprus's steel rate (221.5%) is left out. Bulgaria, Czechia and Hungary have no packaging rates for 2023."
@@ -221,7 +222,7 @@
   "closing": {
     "eyebrow": "Back to the waste hierarchy",
     "title": "Recycling is only halfway up the waste hierarchy",
-    "text": "The EU recycles almost half of its municipal waste. It beats its packaging target but is still short for municipal waste and plastic. And the top of the waste hierarchy is generating less waste in the first place, and there the EU has hardly moved: about {eu_kg} kg per person, much as in 2011.",
+    "text": "The EU recycles almost half of its municipal waste. Its EU-wide packaging rate is above the 2025 target level, but the rates for municipal waste and plastic are still below it. And the top of the waste hierarchy is generating less waste in the first place, and there the EU has hardly moved: about {eu_kg} kg per person, much as in 2011.",
     "cta": "Back to the top"
   },
   "method_note": [
@@ -235,7 +236,7 @@
     },
     {
       "lead": "Some jumps have no known cause.",
-      "text": "Romania (2011), Finland (2022) and Latvia (2015) show large jumps that are not explained; they should be checked with the countries."
+      "text": "Waste per person fell sharply in Romania (2011) and Finland (2022 and 2023), and rose sharply in Latvia (2015). These changes are not explained; they should be checked with the countries."
     },
     {
       "lead": "Recycling, two ways.",
@@ -247,7 +248,7 @@
     },
     {
       "lead": "Targets.",
-      "text": "The 2025 recycling targets are set by EU law: 55% for municipal waste (Waste Framework Directive) and 65% for all packaging, with separate targets per material (Packaging and Packaging Waste Regulation). 2023 is a snapshot two years before the deadline, and some countries legally postponed it."
+      "text": "The 2025 recycling targets are set by EU law: 55% for municipal waste (Waste Framework Directive) and 65% for all packaging, with separate targets per material (Packaging and Packaging Waste Directive, now carried over by the new Packaging Regulation). 2023 is a snapshot two years before the deadline, and some countries legally postponed it."
     },
     {
       "lead": "The economy.",

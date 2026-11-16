@@ -60,8 +60,9 @@ TARGETS_PREFIX = "Targets"
 LEGAL_ACT_URLS = {
     "Waste Framework Directive 2008/98/EC (as amended by Directive (EU) 2018/851)":
         "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02008L0098-20240218",
-    "Packaging and Packaging Waste Regulation (EU) 2025/40":
-        "https://eur-lex.europa.eu/eli/reg/2025/40/oj/eng",
+    # the amending directive, which inserted the 2025 and 2030 targets in Art. 6(1)
+    "Packaging and Packaging Waste Directive 94/62/EC (as amended by Directive (EU) 2018/852)":
+        "https://eur-lex.europa.eu/eli/dir/2018/852/oj/eng",
 }
 
 
