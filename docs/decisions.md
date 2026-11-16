@@ -6,6 +6,10 @@ For data decisions, the full explanation and its consequences are in [method_not
 
 ## 16 November 2026
 
+**Favicon: a recycling symbol.**
+- Decision (user): the browser tab shows a recycling symbol (three arrows round a triangle) in the dashboard's orange (#e36f25, `--color-waste`), visible on light and dark tab bars.
+- Applied in: `dashboard/public/favicon.svg`, `dashboard/index.html`.
+
 **Reviewer feedback before Thursday: no compliance wording, a disclaimer, postponed materials, sign errors.**
 - Decision (user, from a reviewer's feedback): the rates are Eurostat's published rates, not compliance figures, so texts say "at or above the 2025 target level", never "beats"; the chart legend keeps the short "Target reached" (user), and the lede says the dots are Eurostat rates (a sentence saying it is "not an official check" was dropped as redundant, user); for the EU, "the EU-wide rate", since the targets bind Member States. The hero and README say "An independent learning exercise built from Eurostat data. Not an EEA or European Commission product." The README says the project "replicates part of the data cycle from Eurostat's published data", not "the full data cycle".
 - Packaging postponements: 8 Member States, not 7 (Hungary added, plastic and glass), with the materials named for 7 of them (Malta not known), from the EEA country profiles 2025; the ECA list is kept as a second source, as the two disagree on Hungary. New finding: every postponed material with 2023 data is below its 2025 level, except Sweden's glass.

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- recycling symbol: three arrows chasing each other round a triangle (brand orange, color-waste token) -->
+  <g fill="none" stroke="#e36f25" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M26.4 18.7 L32.0 9.0 L40.9 24.4 M49.8 39.8 L55.4 49.5 L37.6 49.5 M19.8 49.5 L8.6 49.5 L17.5 34.1"/>
+  </g>
+  <path fill="#e36f25" stroke="#e36f25" stroke-width="2" stroke-linejoin="round" d="M32.6 27.0 L46.0 33.3 L47.3 18.5Z M39.5 41.0 L27.3 49.5 L39.5 58.0Z M23.9 40.0 L22.6 25.2 L9.2 31.5Z"/>
+</svg>
