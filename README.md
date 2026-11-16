@@ -108,14 +108,14 @@ The pipeline stops at the first script that fails. Every script can also be run 
 | `data/interim/nama_10_pc.parquet` | Real GDP per person (euro, 2020 prices) per country and year, 2010–2025 |
 | `data/processed/recycling_distance_to_target.json` | Recycling rate (%) and distance to the 2025 target (percentage points) per country and waste category, 2023 |
 | `data/processed/municipal_waste.json` | Municipal waste generated per person (kg per year, and kg per day = per year / 365) and in total (thousand tonnes), per country and year, 2010–2024 |
-| `data/processed/municipal_waste_treatment.json` | Municipal waste by step of the waste hierarchy (preparing for re-use, recycling, energy recovery, disposal, and their parts), the remainder not accounted for and all waste treated, all in % of waste generated, per country and year, 2010–2024 |
+| `data/processed/municipal_waste_treatment.json` | Municipal waste by step of the waste hierarchy (preparing for re-use, recycling, energy recovery, disposal, and their parts), the remainder not accounted for and all waste treated, in % of waste generated (`*_pct`) and in kg per person a year (`*_kg_pc`, with waste generated `mw_kg_pc`), per country and year, 2010–2024 |
 | `data/processed/municipal_waste_decoupling.json` | Municipal waste and real GDP per person, and both indexed to 2011 = 100, per country and year, 2010–2024 |
 
 Raw and interim tables keep all geographies in the source (EU and non-EU countries, EU and euro area totals). Processed tables keep only the 27 EU Member States and the `EU27_2020` total, filtered with `keep_eu27()` from the `geo` package; `run_pipeline.py` checks this at the end. The dashboard can show names instead of codes with `data/lookups/geo_eu27.json`. See the method notes for the full list of decisions.
 
 ## The dashboard
 
-A React app in `dashboard/`, built with [Vite](https://vite.dev/) and published on GitHub Pages. D3 does the maths (scales, line paths, axis ticks) and React renders the SVG. Use only D3's maths modules (`d3-array`, `d3-scale`, `d3-shape`), not `d3-selection`, which edits the page directly and conflicts with React.
+A React app in `dashboard/`, built with [Vite](https://vite.dev/) and published on GitHub Pages. D3 does the maths (scales, line paths, axis ticks) and React renders the SVG. Use only D3's maths modules (`d3-array`, `d3-scale`, `d3-shape`, and `d3-sankey` for the sankey layout), not `d3-selection`, which edits the page directly and conflicts with React.
 
 Requires Node.js (developed with Node 26). From the `dashboard/` folder:
 
@@ -134,6 +134,7 @@ npm run preview    # preview the built site
 | Municipal waste generation | `municipal_waste/` | `WastePerCapitaBarChart.jsx`: waste per person by country |
 | Decoupling | `decoupling/` | `DecouplingLineChart.jsx`: waste and GDP indexes, 2011 = 100 |
 | Distance to target | `distance_to_target/` | `DistanceToTargetScatter.jsx`: recycling rates against the 2025 targets |
+| Where the waste ends up | `waste_treatment/` | `WasteTreatmentSankey.jsx`: sankey of the waste generated per person (kg) across the levels of the waste hierarchy |
 | Closing panel: back to the waste hierarchy | `closing/` | the hierarchy pyramid again |
 | Methodological note | `method_note/` | |
 | How I did this | `how_i_did_this/` | |

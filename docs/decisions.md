@@ -4,6 +4,46 @@ Every decision taken on the way, newest first: data, dashboard and project organ
 
 For data decisions, the full explanation and its consequences are in [method_notes.md](method_notes.md), which describes the data as it stands now; this log records when and why each decision was taken. Open questions still to decide are in [method_notes.md, section 7](method_notes.md#7-open-points).
 
+## 16 November 2026
+
+**No space between a number and %.**
+- Decision (user): every percentage on the page is written "47.9%", not "47.9 %". Applied to all texts in the lookups; the chart code already wrote "%" without a space. The UK number style rule in communication.md now says so.
+- Applied in: `scripts/lookups/create_dashboard_texts.py`, `create_decoupling_notes.py`; [communication.md](communication.md) section 4.
+
+**The sankey explains each level of the waste hierarchy, and shows % next to the kg.**
+- Decision: under each level's label (wide screens), a one-line definition ("Burnt, and the energy is used" for Other recovery, "Got rid of: the last option" for Disposal, etc.); the hover card (the only place on small screens) explains the level and, for Other recovery, its place between recycling and disposal. Proposed by the data-storyteller and ux-copywriter because most readers don't know what "other recovery" is; fixed by the fact-checker ("preparing for re-use", not "re-use"; "Mostly buried in landfill", as the figure includes other disposal; no "because", as EU law gives the order, not the reasons; "Malta, which landfills the most per person", as Greece has the highest share). No energy amounts, uses or emissions are claimed. The try line adds Denmark (burns the most per person for energy). Recycling, Other recovery and Disposal show "kg (share %)" of the waste generated (user). The pyramid and the glossary now say "Burn waste and use the energy".
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`WASTE_TREATMENT["level_notes"]`, `["level_hover"]`, `["value_share"]`, `SECTIONS["waste-treatment"]["try"]`, `HIERARCHY_STEPS`), `WasteTreatmentSankey.jsx`, `index.css`; [communication.md](communication.md) section 4 (glossary).
+
+**EU27 2023 disposal estimate confirmed safe to publish (fact-checker).**
+- Decision: the estimate stays (Eurostat's own previous-year method; effect at most 0.05 point and 0.2 kg). The claim that Eurostat publishes no EU27 value "because" Latvia is missing is removed: in 2024 Eurostat estimated a missing country itself, so the data does not say why. The sankey's "About this chart" now reads: "Eurostat has no EU figure for landfill and burning without energy recovery in 2023, and Latvia has none either. I estimated both by adding up all 27 countries, using Latvia's 2022 figures."
+- Applied in: [findings.md](findings.md) §4 bullets 1–2, [method_notes.md](method_notes.md#2-municipal-waste-env_wasmun) section 2, `scripts/interim/env_wasmun.py` (comment), `create_dashboard_texts.py` (`WASTE_TREATMENT["about"]`, `METHOD_NOTE`).
+
+**Small negative "not in the figures" treated as rounding.**
+- Decision: Luxembourg (-1.5 kg) and Czechia (-0.4 kg) in 2023 get no note; like Portugal, the sankey draws no "not in the figures" band for them. The methodological note keeps its typed recycling figures (47.9 %, 47.7 %), with no placeholders.
+
+**Sankey section built: "Where do our {eu_kg} kg of waste end up?"** (ux-copywriter's texts, with the fact-checker's fixes)
+- Decision: section `waste-treatment` after "Are we recycling enough?", eyebrow "Other recovery and disposal", title option 1 of the copywriter (it picks up the hero figure; "the rest" was dropped because the chart also shows recycling). Key message from findings §4 bullet 2, with new placeholders `{recycling_kg}`, `{energy_kg}`, `{disposal_kg}` (whole kg) and `{recycling_rate}` (47.9 %). The fact-checker's fixes are applied: the lede says "per person" (not "one person's waste"); re-use reads "Not reported" only where the data is empty (0.0 is shown as 0 kg) and "No EU figure" for the EU27; the EU re-use, Latvia and "About this chart" notes are reworded. The pyramid's Other recovery and Disposal levels link to the section, and its icon fills both levels (a section's `step` can now be a list). Section titles now accept placeholders.
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`SECTIONS["waste-treatment"]`, `WASTE_TREATMENT`, `HIERARCHY_STEPS`), `create_data_sources.py` (`CHARTS`), `dashboard/src/sections/waste_treatment/`, `App.jsx`, `components/Section.jsx`, `components/HierarchyMotif.jsx`, `sections/waste_hierarchy/WasteHierarchySection.jsx`, `lib/keyFigures.js`, `index.css`; `d3-sankey` 0.12.3 added; [communication.md](communication.md) sections 2, 3, 5 and 6.
+
+**"I", never "we", in "How I did this" and the methodological note.**
+- Decision (user): these two parts speak for the author. Three sentences of the methodological note change ("the date I downloaded them", "I show it as 'not in the figures'", "my own estimate"); "How I did this" had none. "Recycling, two ways" now also points to the sankey chart. The "we/our waste" voice of the rest of the page stays.
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`METHOD_NOTE`); [communication.md](communication.md) section 4.
+
+**New section: "the life of waste", a sankey of municipal waste across the waste hierarchy.**
+- Decision: a new section after "Are we recycling enough?" and before the closing panel (working title "Where does the rest of our waste go?"; the ux-copywriter words it), so the levels without a section (preparing for re-use, other recovery, disposal) get one. A d3-sankey chart from waste generated to the levels of the hierarchy, with flows labelled in kg per person a year (% in the hover card), for 2023 only (no year switch), with its own country search (EU27 by default). Waste types on the left (data-storyteller's proposal: bio-waste, paper and cardboard, plastics, glass, metals, wood, textiles, electrical items and batteries, bulky waste, mixed waste; packaging not a node, as it overlaps the materials) only if the data allows: the data-scientist first reports which sources exist, and the user decides before anything is built.
+- Downloads: only the new datasets are downloaded; the existing ones are not refreshed, so the current figures stay as they are.
+- Why: completes the story of the waste hierarchy; kg per person is more concrete for the public than %.
+- Applied in: to do; [communication.md](communication.md) section 2 once the texts are approved. Needs findings: kg per person by level (NF4), and, if data exists, amounts and treatment by waste type (NF1–NF3).
+
+**The sankey shows municipal waste as a whole, not by waste type or packaging.**
+- Decision: one chart, municipal waste generated → every level of the waste hierarchy, from `env_wasmun` (the source of the pyramid), EU27 by default with a country search. Waste types are dropped.
+- Why: the only source by waste type, `env_wasobl` (municipal reporting under Implementing Decision (EU) 2019/1004), has no landfill or incineration without energy recovery by type, its totals differ from `env_wasmun` (EU27 2023: 234.4 against 229.0 Mt; recycling and preparing for re-use 44.8 % against 47.7 % in the pyramid), and mixed waste depends on how each country reports (flag `d`). Packaging cannot be identified inside municipal waste: `env_waspac` covers packaging from all sources and has no disposal split. `env_wasobl` is not re-downloaded, as nothing uses it.
+
+**Sankey design: RdYlBu colours by level, Portugal as a note, pyramid unchanged.**
+- Decision: the brand designer's layout (two columns; recycling and disposal each split into two bands; levels in hierarchy order; direct labels in kg per person; % in the hover card; preparing for re-use without data as an empty dashed slot). Colours follow the distance-to-target scale (RdYlBu), as the user proposed, instead of the designer's orange-and-grey ramp: source node in waste orange `#e36f25`; preparing for re-use darkest blue; recycling two blues (material, composting and digestion); other recovery pale yellow with an ink outline on the node; disposal two reds (landfill darkest); "not in the figures" hatched grey, outside the scale. Portugal's negative "not in the figures" is shown with a note only, with no flow. The pyramid keeps its ink and grey.
+- Why: blue = better, red = worse means the same in both charts; a note is easier to read than a hatched surplus.
+- Kg per person (data-scientist, NF4): `*_kg_pc` columns in `municipal_waste_treatment.json` = share of waste generated × Eurostat's kg per person (`GEN_PC`), one decimal, so the levels add up to the published waste per person ([findings.md](findings.md) §4 bullet 2; [method_notes.md](method_notes.md#2-municipal-waste-env_wasmun) section 2).
+
 ## 15 November 2026
 
 **Two recycling figures, both kept: the hierarchy follows the EEA, the targets chart follows Eurostat's cei_wm011.**

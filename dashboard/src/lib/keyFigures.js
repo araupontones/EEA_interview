@@ -93,6 +93,14 @@ export const KEY_FIGURES = {
   plastic_met: String(plastic.filter((d) => d.distance_to_target >= 0).length),
   plastic_n: String(plastic.length),
   target_year: String(targetYear),
+  // EU27 municipal recycling rate as in the targets chart (RCY / GEN, findings §3 and §4)
+  recycling_rate: pct(
+    recyclingDistanceToTarget.find((d) => d.geo === EU27_TOTAL && d.waste_name === "Municipal waste")?.value,
+  ),
+  // EU27 kg per person a year by level of the waste hierarchy (findings §4 bullet 2)
+  recycling_kg: whole(euTreatment.recycling_kg_pc),
+  energy_kg: whole(euTreatment.energy_recovery_kg_pc),
+  disposal_kg: whole(euTreatment.disposal_kg_pc),
 };
 
 // Replace "{name}" placeholders with values (KEY_FIGURES by default, plus any extra values).

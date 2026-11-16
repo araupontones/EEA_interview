@@ -113,10 +113,10 @@ def main():
 # =====================================================================================
 
 # EU27 total missing for a treatment operation.
-# Issue: Eurostat publishes no EU27 total for an operation in a year if a Member State has
-# no figure for it. In the current release, the EU27 2023 values for incineration without
-# energy recovery (DSP_I) and landfill (DSP_L_OTH) are missing because Latvia has none, so
-# the EU27 treatment shares for 2023 would be incomplete.
+# Issue: in the current release, the EU27 2023 values for incineration without energy
+# recovery (DSP_I) and landfill (DSP_L_OTH) are empty, and Latvia has no figure for either
+# (the data does not say why Eurostat left the EU27 empty), so the EU27 treatment shares for
+# 2023 would be incomplete.
 # Adjustment: the EU27 value is estimated as the sum of the 27 Member States, with each
 # missing Member State at its previous-year value. This is how Eurostat estimates missing
 # countries in EU aggregates (env_wasmun metadata, section 18.5). In years with all Member

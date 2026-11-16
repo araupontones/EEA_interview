@@ -511,7 +511,8 @@ svg text {
 }
 
 figure.bar-chart,
-figure.line-chart {
+figure.line-chart,
+figure.sankey-chart {
   margin: 0;
 }
 
@@ -703,6 +704,121 @@ figure.line-chart {
   font-weight: 600;
   font-size: 16px;
   margin-top: 2px;
+}
+
+.hover-card-sankey {
+  width: 300px; /* CARD_WIDTH in WasteTreatmentSankey.jsx */
+}
+
+.hover-card-sankey .hover-card-values {
+  margin-top: 8px;
+}
+
+/* --- waste-treatment sankey ------------------------------------------------------------- */
+
+.sankey-label {
+  font-family: var(--font-sans);
+  fill: var(--color-ink);
+}
+
+.sankey-source-name {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sankey-source-value {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.sankey-name {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sankey-value {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sankey-note {
+  font-size: 13px;
+  font-style: italic;
+  fill: var(--color-ink);
+}
+
+.hover-card-explain {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--color-ink);
+  margin: 4px 0 8px;
+}
+
+.sankey-sub,
+.sankey-name.is-muted {
+  font-size: 13px;
+  font-weight: 400;
+  fill: var(--color-ink-muted);
+}
+
+.sankey-name.is-muted {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.sankey-link,
+.sankey-level-label {
+  transition: stroke-opacity var(--duration-fast), opacity var(--duration-fast);
+  cursor: pointer;
+}
+
+.sankey-chart rect:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* table version of a chart (under "Show as a table") */
+.chart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-3);
+  font-size: 14px;
+}
+
+.chart-table th,
+.chart-table td {
+  text-align: left;
+  padding: 4px 8px 4px 0;
+  border-bottom: var(--rule-soft);
+  vertical-align: top;
+}
+
+.chart-table td:nth-child(n + 3),
+.chart-table thead th:nth-child(n + 3) {
+  text-align: right;
+}
+
+.chart-table tbody tr:first-child td:nth-child(n + 2) {
+  text-align: right;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sankey-link,
+  .sankey-level-label {
+    transition: none;
+  }
 }
 
 /* Recycling targets chart: only its font changes (decision 15 Nov 2026); its search box, hover

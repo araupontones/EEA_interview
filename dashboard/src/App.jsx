@@ -8,6 +8,7 @@ import HowIDidThisSection from "./sections/how_i_did_this/HowIDidThisSection.jsx
 import MethodNoteSection from "./sections/method_note/MethodNoteSection.jsx";
 import MunicipalWasteSection from "./sections/municipal_waste/MunicipalWasteSection.jsx";
 import WasteHierarchySection from "./sections/waste_hierarchy/WasteHierarchySection.jsx";
+import WasteTreatmentSection from "./sections/waste_treatment/WasteTreatmentSection.jsx";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <MunicipalWasteSection />
       <DecouplingSection />
       <DistanceToTargetSection />
+      <WasteTreatmentSection />
       <ClosingPanel />
       <MethodNoteSection />
       <HowIDidThisSection />

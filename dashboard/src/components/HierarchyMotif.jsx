@@ -10,7 +10,7 @@
 // without energy recovery (also disposal) and the share "not in the figures". Hovering a step
 // shows its explanation.
 // size="small" (section headings): a 40 px icon without labels; the step of the section
-// (highlight) is filled in ink.
+// (highlight: one step key, or a list of keys) is filled in ink.
 //
 // Steps without data in the dashboard are never highlighted (communication.md, section 5).
 import { dashboardTexts } from "../data.js";
@@ -140,7 +140,8 @@ function SmallMotif({ highlight }) {
   const stepHeight = 5;
   const gap = 1;
   const height = steps.length * (stepHeight + gap) - gap;
-  const name = steps.find((s) => s.key === highlight)?.name;
+  const keys = Array.isArray(highlight) ? highlight : [highlight];
+  const name = steps.filter((s) => keys.includes(s.key)).map((s) => s.name).join(", ");
   return (
     <svg
       className="hierarchy-icon"
@@ -151,7 +152,7 @@ function SmallMotif({ highlight }) {
       aria-label={name ? `${TITLE}: ${name}` : TITLE}
     >
       {steps.map((step, i) => {
-        const isHighlight = step.key === highlight;
+        const isHighlight = keys.includes(step.key);
         return (
           <path
             key={step.key}

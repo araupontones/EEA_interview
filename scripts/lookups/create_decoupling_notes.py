@@ -59,7 +59,7 @@ LABELS = {
 
 GENERAL_NOTE = (
     "Both lines start at 100 in 2011, so you can compare how fast each one grew: 110 means "
-    "10 % more than in 2011. The economy is GDP per person, adjusted for inflation (2020 prices). "
+    "10% more than in 2011. The economy is GDP per person, adjusted for inflation (2020 prices). "
     "When the blue line is above the orange one, the economy grew faster than waste. This is "
     "called decoupling."
 )
@@ -72,33 +72,33 @@ COUNTRY_NOTES = [
      "waste is probably smaller than the line shows."),
     ("CZ", 2017,
      "From 2017 Czechia also counts similar waste from businesses. Its waste per person jumped "
-     "by 44 % in one year: a change in counting, not more waste generated. Before the change, "
+     "by 44% in one year: a change in counting, not more waste generated. Before the change, "
      "waste grew more slowly than the economy."),
     ("BE", 2020,
      "From 2020 Belgium also counts similar waste from businesses. Its waste per person jumped "
-     "by 75 % in one year: a change in counting, not more waste generated. Before the change, "
+     "by 75% in one year: a change in counting, not more waste generated. Before the change, "
      "waste per person fell while the economy grew."),
     ("AT", 2020,
      "From 2020 Austria also counts waste from shops and businesses. Its waste per person "
-     "jumped by 42 % in one year: a change in counting, not more waste generated. Before the "
+     "jumped by 42% in one year: a change in counting, not more waste generated. Before the "
      "change, waste grew more slowly than the economy."),
     ("SK", 2020,
      "From 2020 Slovakia also counts waste from businesses, which raised its waste per person "
-     "by 14 % in one year. But its waste was already growing faster than its economy before "
-     "that: +35 % against +22 % from 2011 to 2019."),
+     "by 14% in one year. But its waste was already growing faster than its economy before "
+     "that: +35% against +22% from 2011 to 2019."),
     ("LU", 2016,
      "From 2016 Luxembourg counts more waste from sources other than homes. Its waste per "
-     "person jumped by 34 % in one year: a change in counting, not more waste generated. "
+     "person jumped by 34% in one year: a change in counting, not more waste generated. "
      "Before the change, waste per person fell while the economy stayed about the same."),
     ("EE", 2014,
-     "From 2014 Estonia also counts packaging waste. Its waste per person rose by 22 % in one "
+     "From 2014 Estonia also counts packaging waste. Its waste per person rose by 22% in one "
      "year, when it started counting packaging waste. Before the change, waste per person fell while the "
      "economy grew."),
     ("SI", 2013,
      "From 2013 Slovenia also counts waste from special waste collectors. Its waste per person "
-     "rose by 14 % in one year, partly because of this change."),
+     "rose by 14% in one year, partly because of this change."),
     ("IE", 2014,
-     "Ireland's GDP per person jumped by 23.5 % in 2015 alone, mostly because multinational "
+     "Ireland's GDP per person jumped by 23.5% in 2015 alone, mostly because multinational "
      "companies moved assets such as intellectual property to Ireland (Irish Central "
      "Statistics Office). So the economy looks bigger than it is, and decoupling looks "
      "stronger than it is; the fall in waste per person is not affected. Ireland also changed how "
@@ -135,8 +135,8 @@ def build_break_note(names):
     rises = DEFINITION_CHANGES.values()
     return (
         f"Some countries changed what they count: {join_names(groups)} started counting "
-        f"waste from businesses, so their waste per person jumped by {min(rises)} % to "
-        f"{max(rises)} % in one year without more waste being generated. The EU figure "
+        f"waste from businesses, so their waste per person jumped by {min(rises)}% to "
+        f"{max(rises)}% in one year without more waste being generated. The EU figure "
         f"includes these jumps. Pick one of these countries to see the year of its change."
     )
 

@@ -49,6 +49,7 @@ CHARTS = {
     "municipal_waste": ["env_wasmun"],
     "decoupling": ["env_wasmun", "nama_10_pc"],
     "distance_to_target": ["env_wasmun", "env_waspacr"],
+    "waste_treatment": ["env_wasmun"],
 }
 
 # charts that show the recycling targets

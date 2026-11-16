@@ -56,5 +56,16 @@
         }
       ]
     }
+  },
+  "waste_treatment": {
+    "prefix": "Source: Eurostat",
+    "datasets": [
+      {
+        "code": "env_wasmun",
+        "label": "Municipal waste by waste management operations",
+        "url": "https://ec.europa.eu/eurostat/databrowser/view/env_wasmun/default/table",
+        "text": "(env_wasmun), updated by Eurostat on 15 October 2026, downloaded on 13 November 2026"
+      }
+    ]
   }
 }

@@ -35,7 +35,7 @@ export default function WasteHierarchySection() {
                 <span className="level-explanation">{step.explanation}</span>
                 {target && (
                   <a className="level-link" href={`#${step.section}`}>
-                    {SEE_ALSO.replace("{title}", target.title)}
+                    {SEE_ALSO.replace("{title}", fill(target.title))}
                   </a>
                 )}
               </li>

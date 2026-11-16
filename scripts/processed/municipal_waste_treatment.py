@@ -2,7 +2,8 @@
 Municipal waste treatment processing script.
 
 Builds the shares of municipal waste generated that go to each treatment operation, per
-country and year, for the waste hierarchy in the dashboard.
+country and year, for the waste hierarchy in the dashboard, and the same operations in kg
+per person a year (for the sankey of waste generated -> levels of the hierarchy).
 
 All shares are of waste GENERATED (not of waste treated), in % with one decimal, so they
 are measured like the recycling rate and the EU targets (recycling and landfill targets are
@@ -10,6 +11,13 @@ set as a share of municipal waste generated). Because treatment is not always eq
 generation (temporary storage, exports, weight losses in pre-treatment, waste not
 collected), the operations do not always add up to 100 %; the remainder is kept in
 `unaccounted_pct`. See docs/method_notes.md, section 2 ("Treatment across the waste hierarchy").
+
+Kg per person a year (`*_kg_pc` columns): share of waste generated (unrounded) x municipal
+waste generated per person (`municipal_waste_gen_pc`, kg, Eurostat's own per-person figure,
+the same value as `mw_pc` in municipal_waste.json), i.e. operation (thousand tonnes) / waste
+generated (thousand tonnes) x waste generated per person (kg). All from the same env_wasmun
+rows as the shares, so the kg columns add up to `mw_kg_pc` like the shares add up to 100 %
+(up to rounding). Rounded to one decimal (the dashboard can round for display).
 
 Mapping of the Eurostat operations to the five steps of the waste hierarchy
 (Waste Framework Directive, Art. 4):
@@ -42,6 +50,13 @@ year (overwritten on each run). Columns:
                             preparing for re-use is missing; where preparing for re-use is
                             missing, it may contain it.
     treated_pct             all waste treated (TRT), % of generated
+    mw_kg_pc                municipal waste generated, kg per person a year (= mw_pc in
+                            municipal_waste.json)
+    prep_reuse_kg_pc, recycling_material_kg_pc, recycling_compost_kg_pc, recycling_kg_pc,
+    energy_recovery_kg_pc, incineration_kg_pc, landfill_kg_pc, disposal_kg_pc,
+    unaccounted_kg_pc       the same operations and steps as the *_pct columns, in kg per
+                            person a year, one decimal; empty where the share is empty;
+                            unaccounted_kg_pc negative where unaccounted_pct is (Portugal)
     estimated               True where the EU27 value of an operation was estimated by the
                             interim data validation (EU27 2023: incineration without energy
                             recovery and landfill, Latvia missing)
@@ -106,15 +121,31 @@ df_trt.describe().T
 
 
 # %%
-# Round rates to one decimal, order the columns, keep rows with waste generated
+# Kg per person a year: unrounded share x waste generated per person (kg). Empty where the
+# share or the per-person figure is empty.
+KG_STEPS = [
+    "prep_reuse", "recycling_material", "recycling_compost", "recycling",
+    "energy_recovery", "incineration", "landfill", "disposal", "unaccounted",
+]
+df_trt["mw_kg_pc"] = df_wasmun["municipal_waste_gen_pc"]
+for step in KG_STEPS:
+    df_trt[f"{step}_kg_pc"] = df_trt[f"{step}_pct"] / 100 * df_trt["mw_kg_pc"]
+
+df_trt.filter(regex="geo|year|_kg_pc").query("year == 2023")
+
+
+# %%
+# Round rates and kg per person to one decimal, order the columns, keep rows with waste generated
 COLUMNS = [
     "geo", "year", "mw_tt",
     "prep_reuse_pct", "recycling_material_pct", "recycling_compost_pct", "recycling_pct",
     "energy_recovery_pct", "incineration_pct", "landfill_pct", "disposal_pct",
-    "unaccounted_pct", "treated_pct", "estimated",
+    "unaccounted_pct", "treated_pct",
+    "mw_kg_pc", *[f"{step}_kg_pc" for step in KG_STEPS],
+    "estimated",
 ]
-pct_cols = [c for c in COLUMNS if c.endswith("_pct")]
-df_trt[pct_cols] = df_trt[pct_cols].round(1)
+num_cols = [c for c in COLUMNS if c.endswith(("_pct", "_kg_pc"))]
+df_trt[num_cols] = df_trt[num_cols].round(1)
 df_trt = (
     df_trt.loc[df_trt["mw_tt"].notna(), COLUMNS]
     .sort_values(["geo", "year"])

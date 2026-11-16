@@ -1,6 +1,6 @@
 """
 Create the texts of the dashboard page: hero, waste hierarchy, section headings,
-distance-to-target chart texts, closing panel, methodological note, "How I did this" and
+distance-to-target and waste-treatment chart texts, closing panel, methodological note, "How I did this" and
 interface labels.
 
 Chart-specific notes of the other charts stay in their own lookups (decoupling_notes.json,
@@ -28,6 +28,11 @@ facts come only from docs/findings.md. "How I did this" describes the project it
     {plastic_met}, {plastic_n}
                         Member States reaching the plastic packaging target, and with data
     ladder values: {recycling}, {energy_recovery}, {landfill}, {incineration}, {unaccounted}
+    {recycling_rate}    EU27 municipal recycling rate as in the targets chart, % (findings §3, §4)
+    {recycling_kg}, {energy_kg}, {disposal_kg}
+                        EU27 kg per person recycled, burnt for energy, disposed of ({year};
+                        findings §4 bullet 2)
+    sankey (filled in the chart): {name}, {kg}, {share}, {label}
     hover card: {value}, {distance}, {target}
 
 The names and order of the waste-hierarchy steps follow the Waste Framework Directive
@@ -54,8 +59,8 @@ HERO = {
         {"text": "On average, each of us in the EU generates "},
         {"figure": "{eu_kg} kg"},
         {"text": " of municipal waste a year, and "},
-        {"figure": "{landfill} %"},
-        {"text": " of the EU's municipal waste still goes to landfill, down from {landfill_2011} % "
+        {"figure": "{landfill}%"},
+        {"text": " of the EU's municipal waste still goes to landfill, down from {landfill_2011}% "
                  "in 2011. Follow your waste down the waste hierarchy, from best to worst for the "
                  "environment, and find your country."},
     ],
@@ -82,19 +87,19 @@ HIERARCHY_STEPS = [
      None),  # no EU figure: 8 Member States do not report it (findings §4)
     ("recycling", "Recycling", "distance-to-target",
      "Turn waste into new materials, or into compost.",
-     "{recycling} %"),
-    ("other_recovery", "Other recovery", None,
-     "Burn waste to make energy.",
-     "{energy_recovery} %"),
-    ("disposal", "Disposal", None,
+     "{recycling}%"),
+    ("other_recovery", "Other recovery", "waste-treatment",
+     "Burn waste and use the energy.",
+     "{energy_recovery}%"),
+    ("disposal", "Disposal", "waste-treatment",
      "Bury it in landfill, or burn it without using the energy.",
-     "{landfill} % landfill"),
+     "{landfill}% landfill"),
 ]
 
 HIERARCHY = {
     "title": "The waste hierarchy: where the EU's municipal waste goes ({year})",
-    "burnt": "Also disposal: {incineration} % burnt without energy recovery",
-    "not_accounted": "Not in the figures: {unaccounted} %",
+    "burnt": "Also disposal: {incineration}% burnt without energy recovery",
+    "not_accounted": "Not in the figures: {unaccounted}%",
     "not_accounted_note": (
         "Counted when it was generated, but in no treatment figure. Eurostat lists possible "
         "reasons, such as estimates, storage, trade or waste counted twice; the data does not "
@@ -131,8 +136,8 @@ SECTIONS = {
     "decoupling": {
         "eyebrow": "Prevention, over time",
         "title": "Can the economy grow without more waste?",
-        "key_message": "Mostly yes: since 2011 the EU's economy grew by {gdp_growth} % per "
-                       "person, but waste per person by only {waste_growth} %.",
+        "key_message": "Mostly yes: since 2011 the EU's economy grew by {gdp_growth}% per "
+                       "person, but waste per person by only {waste_growth}%.",
         "lede": "When the blue line (the economy) is above the orange line (waste), the economy "
                 "has grown more than waste since 2011. In {n_absolute} countries, waste per person even "
                 "fell while the economy grew.",
@@ -149,6 +154,20 @@ SECTIONS = {
                 "reached the 2025 target; red and orange dots are still below it.",
         "try": "Find your country: has your country met the 2025 target for each type of waste?",
         "step": "recycling",
+    },
+    # sankey of where the waste generated per person goes (sections/waste_treatment/)
+    "waste-treatment": {
+        "eyebrow": "Other recovery and disposal",
+        "title": "Where do our {eu_kg} kg of waste end up?",
+        "key_message": "Of the {eu_kg} kg each of us generated in {year}, about {recycling_kg} kg "
+                       "were recycled, {energy_kg} kg burnt for energy and {disposal_kg} kg "
+                       "disposed of.",
+        "lede": "Follow a year of municipal waste, per person, down the waste hierarchy. The "
+                "wider the band, the more kilos go that way.",
+        "try": "Try Austria, which recycles the most per person, Malta, which landfills the "
+               "most per person, and Denmark, which burns the most per person for energy.",
+        # levels filled in the section icon (a list: the section covers several levels)
+        "step": ["other_recovery", "disposal"],
     },
     "method-note": {
         "eyebrow": "About the data",
@@ -181,25 +200,115 @@ DISTANCE_TO_TARGET = {
         "eu": "EU27",
     },
     "hover": {
-        "rate": "{value} % recycled",
-        "above": "{distance} points above the 2025 target of {target} %",
-        "below": "{distance} points below the 2025 target of {target} %",
-        "on": "Right on the 2025 target of {target} %",
+        "rate": "{value}% recycled",
+        "above": "{distance} points above the 2025 target of {target}%",
+        "below": "{distance} points below the 2025 target of {target}%",
+        "on": "Right on the 2025 target of {target}%",
     },
     "notes": [
         "Below the target in 2023 doesn't mean failing. Countries still had two years to go, "
-        "and 8 countries postponed the municipal waste deadline (they must reach at least 50 % "
+        "and 8 countries postponed the municipal waste deadline (they must reach at least 50% "
         "by 2025). 7 postponed some packaging materials; which ones is not known yet.",
         "Poland changed how it measures in 2023: its treatment figures are now reported "
         "directly by companies instead of being partly estimated. Its recycling rate fell from "
-        "40.9 % to 27.6 % while its waste stayed the same, so 2023 cannot be compared with "
+        "40.9% to 27.6% while its waste stayed the same, so 2023 cannot be compared with "
         "earlier years.",
         "The municipal waste rate includes composting and, for some countries, preparing "
         "things for re-use.",
-        "Some packaging rates are above 100 % (Slovenia, Poland), which makes them look further "
-        "above the target than they are. Cyprus's steel rate (221.5 %) is left out. Bulgaria, "
+        "Some packaging rates are above 100% (Slovenia, Poland), which makes them look further "
+        "above the target than they are. Cyprus's steel rate (221.5%) is left out. Bulgaria, "
         "Czechia and Hungary have no packaging rates for 2023.",
     ],
+}
+
+# texts of the waste-treatment sankey (sections/waste_treatment/WasteTreatmentSankey.jsx).
+# Node and band keys match the columns of municipal_waste_treatment.json (*_kg_pc).
+WASTE_TREATMENT = {
+    "caption": "{name}: where each person's municipal waste went in {year}, in kg",
+    "aria_label": "Sankey chart: municipal waste generated per person in {name} in {year}, split "
+                  "by level of the waste hierarchy",
+    "source": "Waste generated",
+    "levels": {
+        "prep_reuse": "Preparing for re-use",
+        "recycling": "Recycling",
+        "energy_recovery": "Other recovery",
+        "disposal": "Disposal",
+        "unaccounted": "Not in the figures",
+    },
+    "bands": {
+        "recycling_material": "Material recycling",
+        "recycling_compost": "Composting and digestion",
+        "energy_recovery": "Burnt for energy",
+        "landfill": "Landfill",
+        "incineration": "Burnt without using the energy",
+    },
+    "value": "{kg} kg",
+    # one-line definition of each level, under its label on wide screens (copywriter, 16 Nov 2026)
+    "level_notes": {
+        "prep_reuse": "Checked or repaired to be used again",
+        "recycling": "Made into new materials, or compost",
+        "energy_recovery": "Burnt, and the energy is used",
+        "disposal": "Got rid of: the last option",
+        "unaccounted": "Counted, but in no treatment figure",
+    },
+    # explanation of each level in the hover card (on small screens, the only place it shows)
+    "level_hover": {
+        "prep_reuse": "Things checked, cleaned or repaired so they can be used again. Second "
+                      "best, after not making the waste at all.",
+        "recycling": "Waste made into new materials, or into compost. Next best after preparing "
+                     "for re-use.",
+        "energy_recovery": "Burnt in plants that use the energy. Below recycling: the waste is "
+                           "burnt, not made into something new. Above disposal, where it is "
+                           "buried or burnt without using the energy.",
+        "disposal": "Mostly buried in landfill, or burnt without using the energy. The last "
+                    "option in the waste hierarchy.",
+        "unaccounted": "Counted when it was generated, but in no treatment figure. The data "
+                       "does not show what happened to it.",
+        # added for the EU27 (findings §4 bullets 2-3)
+        "unaccounted_eu": "It includes the small amount prepared for re-use.",
+    },
+    # recycling, other recovery and disposal: kg and share of the waste generated
+    "value_share": "{kg} kg ({share}%)",
+    "missing": "Not reported",  # a country without a figure (null in the data)
+    "no_eu_figure": "No EU figure",  # preparing for re-use, EU27
+    "hover": {
+        "kg": "{kg} kg per person a year",
+        "share": "{share}% of the waste generated",
+    },
+    # notes under the chart, each shown only when it applies
+    "notes": {
+        "reuse_missing_eu": "There is no EU figure for preparing for re-use: Eurostat publishes "
+                            "none, and 8 countries do not report it. The little that is prepared "
+                            "for re-use is inside 'not in the figures'.",
+        "reuse_missing_country": "{name} does not report preparing for re-use, so that level is "
+                                 "empty.",
+        "not_accounted": "Not in the figures: waste counted when it was generated, but in no "
+                         "treatment figure. The data does not say where it went.",
+        "two_recycling": "Recycling here ({recycling}% for the EU) leaves out preparing for "
+                         "re-use. Some countries count re-use in the recycling rate in the section "
+                         "above ({recycling_rate}%), which is why the two differ.",
+    },
+    # country notes (geo -> text), shown when the country is selected
+    "country_notes": {
+        "PT": "Portugal treated more waste than it generated in {year}, so it has no 'not in the "
+              "figures' band. The data does not say why.",
+        "PL": "Poland changed how it measures in 2023: companies now report treatment directly, "
+              "instead of it being partly estimated. That is why 21.5% of its waste is not in "
+              "the figures. Its 2023 figures cannot be compared with earlier years.",
+        "LV": "Latvia has no disposal figure for 2023, so its chart has no disposal and no "
+              "'not in the figures' band, and is incomplete.",
+    },
+    "about": "Each band is a share of all municipal waste generated in {name} in {year}, turned "
+             "into kg per person: the country's waste divided by its people. These are yearly "
+             "averages, not what one household throws away. They include similar waste from "
+             "businesses where a country counts it. Eurostat has no EU figure for landfill and "
+             "burning without energy recovery in 2023, and Latvia has none either. I estimated "
+             "both by adding up all 27 countries, using Latvia's 2022 figures.",
+    "table": {
+        "show": "Show as a table",
+        "headers": ["Level of the waste hierarchy", "Where it goes", "Kg per person a year",
+                    "% of the waste generated"],
+    },
 }
 
 CLOSING = {
@@ -216,7 +325,7 @@ METHOD_NOTE = [
     ("Where the numbers come from.",
      "All figures come from Eurostat, the EU's statistics office: municipal waste (env_wasmun), "
      "packaging recycling (env_waspacr) and GDP per person (nama_10_pc). Each chart names its "
-     "sources and the date we downloaded them. Figures in the texts are for 2023, the latest "
+     "sources and the date I downloaded them. Figures in the texts are for 2023, the latest "
      "year with data for all 27 countries; the line chart goes up to 2024."),
     ("Countries count waste differently.",
      "Czechia, Belgium, Austria, Slovakia and Luxembourg widened their definition to include "
@@ -227,17 +336,19 @@ METHOD_NOTE = [
      "Romania (2011), Finland (2022) and Latvia (2015) show large jumps that are not explained; "
      "they should be checked with the countries."),
     ("Recycling, two ways.",
-     "The recycling rate (47.9 % for the EU) also counts some preparing for re-use, as the "
-     "target does. The waste hierarchy section shows recycling on its own (47.7 %), with "
+     "The recycling rate (47.9% for the EU) also counts some preparing for re-use, as the "
+     "target does. The waste hierarchy, and the chart of where each person's waste ends "
+     "up, show recycling on its own (47.7%), with "
      "re-use as its own level, so nothing is counted twice."),
-    ("The waste hierarchy figures don't always add up to 100 %.",
+    ("The waste hierarchy figures don't always add up to 100%.",
      "Each level is a share of the waste generated, like the recycling targets. Some waste "
-     "generated shows up in no treatment figure: 5.0 % for the EU, and more than a tenth in "
-     "7 countries. We show it as 'not in the figures' rather than guess where it went. The "
-     "EU's 2023 landfill figure is our own estimate, because Latvia has none."),
+     "generated shows up in no treatment figure: 5.0% for the EU, and more than a tenth in "
+     "7 countries. I show it as 'not in the figures' rather than guess where it went. The "
+     "EU's 2023 landfill and burnt-without-energy figures are my own estimate, as Latvia "
+     "has no figure for them."),
     ("Targets.",
-     "The 2025 recycling targets are set by EU law: 55 % for municipal waste (Waste Framework "
-     "Directive) and 65 % for all packaging, with separate targets per material (Packaging and "
+     "The 2025 recycling targets are set by EU law: 55% for municipal waste (Waste Framework "
+     "Directive) and 65% for all packaging, with separate targets per material (Packaging and "
      "Packaging Waste Regulation). 2023 is a snapshot two years before the deadline, and some "
      "countries legally postponed it."),
     ("The economy.",
@@ -287,7 +398,10 @@ UI = {
 
 def main():
     step_keys = {key for key, *_ in HIERARCHY_STEPS}
-    bad = {sid: s["step"] for sid, s in SECTIONS.items() if s["step"] not in step_keys | {None}}
+    # a section's step is one level, a list of levels, or None
+    as_list = lambda step: step if isinstance(step, list) else [step]
+    bad = {sid: s["step"] for sid, s in SECTIONS.items()
+           if any(k not in step_keys | {None} for k in as_list(s["step"]))}
     if bad:
         raise ValueError(f"sections pointing to unknown hierarchy steps: {bad}")
     bad = [key for key, _, section, *_ in HIERARCHY_STEPS if section and section not in SECTIONS]
@@ -306,6 +420,7 @@ def main():
         },
         "sections": SECTIONS,
         "distance_to_target": DISTANCE_TO_TARGET,
+        "waste_treatment": WASTE_TREATMENT,
         "closing": CLOSING,
         "method_note": [{"lead": lead, "text": text} for lead, text in METHOD_NOTE],
         "how_i_did_this": [{"lead": lead, "text": text} for lead, text in HOW_I_DID_THIS],

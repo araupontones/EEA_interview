@@ -9,7 +9,7 @@ How this file relates to the others:
 
 Agents propose changes to this file; the main session applies them after the user approves.
 
-Last updated: 15 November 2026.
+Last updated: 16 November 2026.
 
 ## 1. Audience and goal
 
@@ -26,8 +26,9 @@ The dashboard follows the waste hierarchy from top to bottom: the reader learns 
 2. **How much waste do we generate?** Waste per person by country: an introduction, not linked to a level of the waste hierarchy (levels between countries are not a ranking of prevention, findings §1 bullet 14).
 3. **Can the economy grow without more waste? (prevention over time).** Decoupling; the Prevention level of the waste hierarchy section links here.
 4. **Are we recycling enough? (recycling).** Recycling rates against the 2025 targets.
-5. **Back to the waste hierarchy.** A short closing panel: recycling is only halfway up the waste hierarchy, prevention comes first. No new facts.
-6. **Methodological note** and **How I did this**, at the end.
+5. **Where do our {eu_kg} kg of waste end up? (other recovery and disposal).** A sankey from the waste generated per person to every level of the waste hierarchy, in kg, EU27 by default with a country search (approved 16 November 2026). The pyramid's Other recovery and Disposal levels link here. Municipal waste as a whole: no breakdown by waste type or packaging (decisions, 16 November 2026).
+6. **Back to the waste hierarchy.** A short closing panel: recycling is only halfway up the waste hierarchy, prevention comes first. No new facts.
+7. **Methodological note** and **How I did this**, at the end.
 
 - **Section titles are questions** (e.g. "How much do we throw away?"), worded by the ux-copywriter.
 - **Treatment data across the waste hierarchy** comes from findings §4 (data-scientist): each level of the pyramid shows its EU27 figure where there is one.
@@ -46,16 +47,18 @@ Approved on 15 November 2026 (ux-copywriter's wording; figures are filled from t
 | How much waste do we generate? | In {year}, the EU generated about {eu_mt} million tonnes of municipal waste, about {eu_kg} kg per person. The key message answers the title's question; no comparison between countries (it would need an explanation of the countries left out) | §1 bullets 1, 2 and 12 | Countries count differently, also in the same year (§1 bullets 4–5 and 13) | Is your country above or below the EU27 bar? |
 | Can the economy grow without more waste? | Mostly yes: the EU economy grew much faster than its waste; in {n_absolute} countries waste fell while the economy grew | §2 bullets 1–2 | Counting changes (§1 bullets 4–6, 10–11; §2 bullet 6); Irish GDP (§2 bullet 5) | Search for the Netherlands; a country against the grey EU27 lines |
 | Are we recycling enough? | Ahead on packaging, still short on municipal waste and plastic | §3 municipal bullet 1, packaging bullets 1–2 | Not "failing": two years left, postponements (§3; §5); Poland's change in method (§4) | Your country across 8 rows; the plastic row |
+| Where do our {eu_kg} kg of waste end up? | Of the {eu_kg} kg each of us generated, about {recycling_kg} kg were recycled, {energy_kg} kg burnt for energy and {disposal_kg} kg disposed of | §4 bullet 2 | Yearly averages per resident, not one household; re-use not reported (no EU figure); "not in the figures" (negative in Portugal: no band); Poland's change in method; Latvia without disposal; the two recycling figures (§4 bullet 3) | Austria (most recycled per person), then Malta (most landfilled per person) |
 | Back to the waste hierarchy | Recycling is only halfway up the waste hierarchy; generating less waste comes first, and there little has changed | §1 bullet 1; §4 bullet 1 | None (no new facts) | Back to the top |
 
 ## 4. Voice, tone and wording
 
 - **Voice and tone**: a curious, friendly guide. Talk to "you" and about "we/our waste". Direct, warm, a little playful; never preachy, never guilt-tripping. Never call a country "failing", "bad" or "lagging": say "below the 2025 target", "postponed its deadline". When the findings give no cause, say "the data does not say why".
 - **"Level", not "step"**: the levels of the waste hierarchy are a ranking of options, not steps in a sequence; no step numbers in section labels.
-- **Writing rules**: headlines up to ~10 words; section titles are questions; key messages one sentence; ledes two lines at most; notes 1–2 sentences. Reading age about 12; no acronyms except EU, EU27, GDP. UK number style (7,142; 47.9 %). Distances to targets are "points above/below the target", never "pp".
+- **Writing rules**: headlines up to ~10 words; section titles are questions; key messages one sentence; ledes two lines at most; notes 1–2 sentences. Reading age about 12; no acronyms except EU, EU27, GDP. UK number style (7,142; 47.9%), with no space before % (user, 16 November 2026). Distances to targets are "points above/below the target", never "pp".
 - **"Waste hierarchy", not "waste ladder"**: use the Waste Framework Directive's own name, explained as "from best to worst for the environment".
 - **"Generate", not "make"**: the texts use "generate" (waste generated), for consistency with the Commission's early warning reports.
 - **Figures come from the data, not from the text**: wherever a text shows a figure that comes from the data (hero, waste hierarchy, section headers, closing panel), the lookup holds a placeholder (e.g. `{eu_kg}`) that the dashboard fills from the processed files (`dashboard/src/lib/keyFigures.js`), so the figures follow every new download. Each one must still be a finding.
+- **"I", never "we", in "How I did this" and the methodological note**: these speak for the author (user's rule, 16 November 2026). The "we/our waste" voice of the rest of the page stays.
 - **"How I did this"** describes the project (Eurostat API, Python pipeline, D3 and React, Claude Code and the agents), not waste facts; it is checked against the README, not the findings.
 - **Glossary**:
 
@@ -66,7 +69,7 @@ Approved on 15 November 2026 (ux-copywriter's wording; figures are filled from t
 | Prevention | Not generating the waste in the first place. |
 | Preparing for re-use | Checking, cleaning or repairing things so they can be used again. |
 | Recycling | Turning waste into new materials, including composting food and garden waste. |
-| Other recovery | Burning waste to make energy. |
+| Other recovery | Burning waste and using the energy. |
 | Disposal | Landfill, or burning waste without using the energy. |
 | Not in the figures | Waste counted when it was generated but in no treatment figure; the data does not say where it went. |
 | Recycling rate | The share of waste generated that is recycled, in %. |
@@ -93,6 +96,7 @@ Approved on 15 November 2026 (ux-copywriter's wording; figures are filled from t
 - **Waste-hierarchy motif**: a flat inverted pyramid of stacked trapezoids, best option at the top. Levels covered by a section are white with an ink outline and an arrow, and fill with ink (white text) on hover; levels without a section are light grey `#f2f2f2` with muted text. The EU figures in the levels come from the data (findings §4). A 40 px version sits next to each section label, with the section's level filled in ink.
 - **Layout**: hero in one column (label, headline, lede with the EU kg per person and the landfill share in bold Barlow, findings §1 bullet 1 and §4, and a button). Then a first section, "The waste hierarchy": the pyramid with the EU figures on the left and, beside each level, its explanation and a link to its section if it has one (on mobile the levels are listed under the pyramid); under it, the share burnt without energy recovery and the share "not in the figures" with its explanation. Each section: rule, icon and label, question title, key message, lede, "try this" hint marked by a short ink rule, then the chart at full width with no box, the country note, "About this chart" and the source lines. Closing panel between rules, with the pyramid. Method note and "How I did this" in two columns on desktop (heading left, serif text right). A slot for a wordmark is foreseen above the hero once a name is chosen.
 - **Charts**: direct labels instead of legends where possible (line ends and the 2011 = 100 line in the decoupling chart; the legend only on small screens); bars with square ends; decoupling lines 3 px; hover cards square with an ink border and 28 px flags; square search boxes. The recycling targets chart keeps its design (colours, marks, layout, label sizes and colours) and changes only its font; its search box, caption and hover card follow the page.
+- **Waste-treatment sankey**: two columns, from "Waste generated" (waste orange) to the levels in hierarchy order; recycling and disposal each receive two bands. Colours follow the RdYlBu scale of the recycling targets chart: re-use `#313695`, material recycling `#4575b4`, composting and digestion `#74add1`, energy recovery `#fee090` (nodes with a thin ink outline), burnt without energy recovery `#d73027`, landfill `#a50026`; "not in the figures" hatched grey. Direct labels in kg per person (whole kg, one decimal under 10 kg); the hover card adds kg with one decimal, % of waste generated and the bands. A level without a figure is an empty dashed slot ("Not reported", "No EU figure"); a negative remainder gets no band. A "Show as a table" version under the chart.
 - **Small screens**: one column; the beeswarm puts row labels above the rows, the decoupling chart drops line-end labels and shows its legend, the bar chart narrows its label column.
 - **Motion**: only a short fade when the selected country changes and colour transitions on hover; none with `prefers-reduced-motion`.
 
@@ -104,6 +108,9 @@ Figures or facts the communication would need that are not in `findings.md` yet.
 |---|---|---|
 | data-storyteller | **Treatment of municipal waste across the hierarchy.** Question: what happens to the EU's municipal waste? Figure: shares of municipal waste generated that are prepared for re-use, recycled (material), composted and digested, incinerated with energy recovery, incinerated without, and landfilled, in % (each / generated). Scope: EU27 and each Member State, 2023, and the EU27 trend since 2011. Likely source: `env_wasmun` (`wst_oper` codes such as `PRP_REU`, `RCY_M`, `RCY_C_D`, `RCV_E`, `DSP_I`, `DSP_L_OTH`). Used for: the greyed levels of the waste hierarchy in the hero. Caveats: RCY sometimes includes PRP_REU (method notes §2); breaks in series; treatment can differ from generation (temporary storage). | Done: findings §4 (treatment) |
 | data-storyteller | **Waste per person per day.** EU27 and each Member State, 2023, = kg per person per year / 365, for a human-scale headline. Source: findings §1 (kg per person). | Done: findings §1, last bullet |
+| data-storyteller | **Municipal waste by waste type, and its treatment** (NF1–NF3). | Checked: only `env_wasobl` has it, without disposal by type and with totals that differ from `env_wasmun`; dropped by the user (decisions, 16 November 2026) |
+| data-storyteller, brand-designer | **Kg per person a year by level of the waste hierarchy** (NF4), EU27 and Member States. | Done: findings §4 bullet 2 |
+| fact-checker | **Luxembourg (-1.5 kg) and Czechia (-0.4 kg) also have a negative "not in the figures" in 2023**; only Portugal is named in the findings. Note, or rounding? | Decided: treated as rounding, no note; the chart shows no band (decisions, 16 November 2026) |
 | data-storyteller | **Trend of the EU27 municipal recycling rate** since 2011 (or 2020, given the break). | On hold |
 | data-storyteller | **Decoupling class per Member State** (absolute, relative, none), 2023. | On hold |
 | data-storyteller | **Irish GDP**: confirm that GDP per person overstates the Irish economy (multinationals), and the +23 % in 2015 in the dashboard note. | Done: confirmed, findings §2 (+23.5 % in 2015, CSO and Central Bank of Ireland); Irish note corrected |

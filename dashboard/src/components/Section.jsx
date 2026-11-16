@@ -15,7 +15,7 @@ export default function Section({ id, className = "", children }) {
           {texts.step && <HierarchyMotif size="small" highlight={texts.step} />}
           {texts.eyebrow && <span className="eyebrow">{texts.eyebrow}</span>}
         </div>
-        <h2>{texts.title}</h2>
+        <h2>{fill(texts.title)}</h2>
         {texts.key_message && <p className="key-message">{fill(texts.key_message)}</p>}
         {texts.lede && <p className="lede">{fill(texts.lede)}</p>}
         {texts.try && <p className="try-hint">{fill(texts.try)}</p>}
