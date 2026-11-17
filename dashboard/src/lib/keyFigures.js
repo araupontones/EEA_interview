@@ -101,6 +101,8 @@ export const KEY_FIGURES = {
   recycling_kg: whole(euTreatment.recycling_kg_pc),
   energy_kg: whole(euTreatment.energy_recovery_kg_pc),
   disposal_kg: whole(euTreatment.disposal_kg_pc),
+  // EU27 share disposed of: landfill + incineration without energy recovery (findings §4 bullet 1)
+  disposal: pct(euTreatment.disposal_pct),
 };
 
 // Replace "{name}" placeholders with values (KEY_FIGURES by default, plus any extra values).

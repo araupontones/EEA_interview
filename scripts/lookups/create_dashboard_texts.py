@@ -32,6 +32,8 @@ facts come only from docs/findings.md. "How I did this" describes the project it
     {recycling_kg}, {energy_kg}, {disposal_kg}
                         EU27 kg per person recycled, burnt for energy, disposed of ({year};
                         findings §4 bullet 2)
+    {disposal}          EU27 share of municipal waste disposed of (landfill and incineration
+                        without energy recovery), % ({year}; findings §4 bullet 1)
     sankey (filled in the chart): {name}, {kg}, {share}, {label}
     hover card: {value}, {distance}, {target}
 
@@ -56,13 +58,12 @@ HERO = {
     "title": "Where does our waste go?",
     # lede as parts in reading order: text, and figures set in bold (lib/keyFigures.js fills them)
     "lede": [
-        {"text": "On average, each of us in the EU generates "},
+        {"text": "In {year}, each of us in the EU generated on average "},
         {"figure": "{eu_kg} kg"},
-        {"text": " of municipal waste a year, and "},
+        {"text": " of municipal waste. "},
         {"figure": "{landfill}%"},
-        {"text": " of the EU's municipal waste still goes to landfill, down from {landfill_2011}% "
-                 "in 2011. Follow your waste down the waste hierarchy, from best to worst for the "
-                 "environment, and find your country."},
+        {"text": " of it went to landfill, down from {landfill_2011}% in 2011. Follow it down the "
+                 "waste hierarchy, from best to worst for the environment, and find your country."},
     ],
     # byline under the lede: author (link to LinkedIn) · publication date (fixed, change it when
     # republishing), and below it the date of the latest Eurostat download (from the data)
@@ -167,8 +168,8 @@ SECTIONS = {
         "eyebrow": "Other recovery and disposal",
         "title": "Where do our {eu_kg} kg of waste end up?",
         "key_message": "Of the {eu_kg} kg each of us generated in {year}, about {recycling_kg} kg "
-                       "were recycled, {energy_kg} kg burnt for energy and {disposal_kg} kg "
-                       "disposed of.",
+                       "({recycling}%) were recycled, {energy_kg} kg ({energy_recovery}%) burnt for "
+                       "energy and {disposal_kg} kg ({disposal}%) disposed of.",
         "lede": "Follow a year of municipal waste, per person, down the waste hierarchy. The "
                 "wider the band, the more kilos go that way.",
         "try": "Try Austria, which recycles the most per person, Malta, which landfills the "

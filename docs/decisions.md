@@ -4,6 +4,16 @@ Every decision taken on the way, newest first: data, dashboard and project organ
 
 For data decisions, the full explanation and its consequences are in [method_notes.md](method_notes.md), which describes the data as it stands now; this log records when and why each decision was taken. Open questions still to decide are in [method_notes.md, section 7](method_notes.md#7-open-points).
 
+## 17 November 2026
+
+**The sankey's key message gives each level's share next to its kg.**
+- Decision (user): "Of the {eu_kg} kg each of us generated in {year}, about {recycling_kg} kg ({recycling}%) were recycled, {energy_kg} kg ({energy_recovery}%) burnt for energy and {disposal_kg} kg ({disposal}%) disposed of.", so the reader sees what part of the total each figure is. Shares of waste generated, as in the sankey labels; disposal is landfill plus incineration without energy recovery (22.0% in 2023, added to findings §4 bullet 1). The shares add up to 95.0%, because 5.0% of the waste is not in the figures.
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`SECTIONS["waste-treatment"]["key_message"]`), `dashboard/src/lib/keyFigures.js` (new `{disposal}`), [findings.md](findings.md) §4 bullet 1.
+
+**Shorter hero lede, keeping the landfill trend.**
+- Decision (user, from the data-storyteller's option B, with the fact-checker's two fixes): "In {year}, each of us in the EU generated on average {eu_kg} kg of municipal waste. {landfill}% of it went to landfill, down from {landfill_2011}% in 2011. Follow it down the waste hierarchy, from best to worst for the environment, and find your country." The previous version repeated "the EU" and "municipal waste"; short sentences replace it. The fall since 2011 is kept because it is the page's only sign of landfill moving down (findings §4). "On average" stays so the reader does not take 510 kg as their own household's waste (findings §4 bullet 2); the year is named because the figures are for 2023, not today.
+- Applied in: `scripts/lookups/create_dashboard_texts.py` (`HERO["lede"]`).
+
 ## 16 November 2026
 
 **Favicon: a recycling symbol.**
