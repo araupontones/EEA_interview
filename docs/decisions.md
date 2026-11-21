@@ -4,6 +4,12 @@ Every decision taken on the way, newest first: data, dashboard and project organ
 
 For data decisions, the full explanation and its consequences are in [method_notes.md](method_notes.md), which describes the data as it stands now; this log records when and why each decision was taken. Open questions still to decide are in [method_notes.md, section 7](method_notes.md#7-open-points).
 
+## 21 November 2026
+
+**Link previews show the sankey.**
+- Decision (user): when the dashboard is shared on WhatsApp, LinkedIn or X, the preview card shows the sankey (headline "Where do our 510 kg of waste end up?", caption and chart, EU27 2023) instead of a bare URL, because it is the chart most likely to draw readers in. Preview title "Where does our waste go?", description from the hero lede without figures. The image is a static screenshot (1200×630): retake it if the figures change.
+- Applied in: `dashboard/index.html` (Open Graph and Twitter meta tags), `dashboard/public/og-image.png`.
+
 ## 17 November 2026
 
 **The sankey's key message gives each level's share next to its kg.**
